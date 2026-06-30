@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="images/logo_empresa.png" alt="Logo de la Empresa" width="180"/>
+  <img src="./images/logo_empresa.png" alt="Logo de la Empresa" width="180"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="images/logo_producto.png" alt="Logo de TraveXperience" width="180"/>
+  <img src="./images/logo_producto.png" alt="Logo de TraveXperience" width="180"/>
 </p>
 
 <h1 align="center">TraveXperience</h1>
@@ -171,8 +171,8 @@ El equipo de desarrollo está conformado por integrantes con responsabilidades e
 | Karen Lizbeth Negrete Hernández | https://github.com/KarenNegrete06 | Líder de Documentación · Gestión Documental |
 | Esther Gonzales Peralta | https://github.com/Esther-Gonzalez04 | Líder de Base de Datos · Modelado y Administración de Datos |
 
-<img src="images/MatrizRACI.png" alt="MatrizRoles"/>
-<img src="images/TraveExperience.png" alt="Responsabilidades"/>
+<img src="./images/MatrizRACI.png" alt="MatrizRoles"/>
+<img src="./images/TraveExperience.png" alt="Responsabilidades"/>
 
 ---
 
@@ -290,7 +290,7 @@ La calidad del proyecto se garantiza mediante la adopción de estándares de des
 La identificación y administración de riesgos permite reducir el impacto de posibles incidentes durante el desarrollo del proyecto.
 
 ## Matriz de Riesgos
-<img src="images/MatrizRiesgos-Trave.png" alt="Logo de TraveXperience">
+<img src="./images/MatrizRiesgos-Trave.png" alt="Logo de TraveXperience">
 
 | Riesgo | Probabilidad | Impacto | Estrategia de Mitigación |
 |--------|--------------|----------|--------------------------|
