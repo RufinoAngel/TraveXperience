@@ -171,6 +171,9 @@ El equipo de desarrollo está conformado por integrantes con responsabilidades e
 | Karen Lizbeth Negrete Hernández | https://github.com/KarenNegrete06 | Líder de Documentación · Gestión Documental |
 | Esther Gonzales Peralta | https://github.com/Esther-Gonzalez04 | Líder de Base de Datos · Modelado y Administración de Datos |
 
+<img src="images/MatrizRACI.png" alt="MatrizRoles"/>
+<img src="images/TraveExperience.png" alt="Responsabilidades"/>
+
 ---
 
 # Gestión de Interesados (Stakeholders)
