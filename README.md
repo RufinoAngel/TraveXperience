@@ -120,8 +120,15 @@ Toda la documentación oficial del proyecto se encuentra organizada en la nube p
 
 | Documento | Enlace |
 |------------|---------|
+| Acta de Inicio del Proyecto| [Acta Inicio](https://docs.google.com/document/d/16_z9WfvqtbjjSKTI0kx8ubD_eVxhxp5C/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true)|
 | Documento de Requerimientos Funcionales | [RF](https://docs.google.com/document/d/1uPKkbRELlQZyM3R7ph1ygHaBQfVo5SBS/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Documento de Requerimientos No Funcionales  | [RNF](https://docs.google.com/document/d/1-R3D4sHswrpXpU1gkiQw6Fo9ZMjvmysR/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Bitacora |[Bitacora](https://docs.google.com/document/d/1lWPqyHjlPCMqC1OkHWAnwC_Et9cTdbsv/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Informe de Avance | [Informe](https://docs.google.com/document/d/1lWPqyHjlPCMqC1OkHWAnwC_Et9cTdbsv/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Acuerdos de Comunicación del Proyecto| [Acuerdos](https://docs.google.com/document/d/1HiWvkllrFyUQLuqHqkTnWENDlYkNoBFS/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Minuta | [Minuta](https://docs.google.com/document/d/1rLzDgaxX1NFwCuAeGY2T8-blOClBV5sP/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true)|
+| Plan de Pruebas | [Plan de Pruebas](https://docs.google.com/document/d/1NWitr0lyHtEWb6S4q6MOjf2UZl38IipO/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Control de Cambios | [Control de Cambios]() |
 | Documento de Reglas de Negocio (BR) | LINK |
 | Casos de Uso | LINK |
 | Diagramas UML | LINK |
