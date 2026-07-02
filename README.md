@@ -128,7 +128,7 @@ Toda la documentación oficial del proyecto se encuentra organizada en la nube p
 | Acuerdos de Comunicación del Proyecto| [Acuerdos](https://docs.google.com/document/d/1HiWvkllrFyUQLuqHqkTnWENDlYkNoBFS/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Minuta | [Minuta](https://docs.google.com/document/d/1rLzDgaxX1NFwCuAeGY2T8-blOClBV5sP/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true)|
 | Plan de Pruebas | [Plan de Pruebas](https://docs.google.com/document/d/1NWitr0lyHtEWb6S4q6MOjf2UZl38IipO/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
-| Control de Cambios | [Control de Cambios]() |
+| Control de Cambios | [Control de Cambios](https://docs.google.com/document/d/1hcdH6Ma6WtBED87mdF6k35e4y85KsZCe/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Documento de Reglas de Negocio (BR) | LINK |
 | Casos de Uso | LINK |
 | Diagramas UML | LINK |
