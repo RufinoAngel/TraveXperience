@@ -46,7 +46,7 @@ Proyecto\
 | Angel de Jesús Rufino Mendoza | [RufinoAngel](https://github.com/RufinoAngel) | Líder del proyecto y Desarrollo | ✅ Aprobado |
 | Abril Guzman Barrera | [abrilgb](https://github.com/Abrilgb) | Líder de FrontEnd  | ❌No revisado |
 | Karen Lizbeth Negrete Hernandez | [KarenNegrete06](https://github.com/karenNegrete06) | Líder de Documentación | ❌ No revisado |
-| Esther Gonzalez Peralta | [Esther-Gonzalez](https://github.com/Esther-Gonzalez04) | Líder de Base de Datos  | ❌ No revisado |
+| Esther Gonzalez Peralta | [Esther-Gonzalez](https://github.com/Esther-Gonzalez04) | Líder de Base de Datos  | ✅ Aprobado |
 
 
 
