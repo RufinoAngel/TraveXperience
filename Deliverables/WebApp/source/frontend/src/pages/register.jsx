@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Register() {
+function Register({ onNavigate, onRegisterSuccess }) {
   const [role, setRole] = useState('user');
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
@@ -11,6 +11,11 @@ function Register() {
     
     setTimeout(() => {
       setStatus('success');
+      setTimeout(() => {
+        if (onRegisterSuccess) {
+          onRegisterSuccess();
+        }
+      }, 600);
     }, 1500);
   };
 
@@ -58,7 +63,7 @@ function Register() {
                       <span className="material-symbols-outlined">person</span>
                     </div>
                     <h3 className="text-lg font-bold block">Usuario</h3>
-                    <p className="text-[11px] leading-tight text-on-surface-variant mt-1">Planea viajes y descubre destinos.</p>
+                    <p className="text-[11px] leading-tight text-on-surface-variant mt-1">Planea viajes and descubre destinos.</p>
                   </div>
                 </label>
 
@@ -145,7 +150,7 @@ function Register() {
             {/* CTA and Action Button */}
             <div className="pt-4 space-y-6">
               <button 
-                className={`w-full py-4 rounded-full text-lg font-bold transition-all duration-300 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 ${
+                className={`w-full py-4 rounded-full text-lg font-bold transition-all duration-300 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 cursor-pointer border-none ${
                   status === 'success'
                     ? 'bg-secondary-container text-primary'
                     : 'bg-primary text-on-primary hover:bg-opacity-90'
@@ -169,7 +174,14 @@ function Register() {
               </button>
 
               <div className="text-center">
-                <a className="text-base text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4 decoration-outline-variant" href="#">
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onNavigate) onNavigate('login');
+                  }}
+                  className="text-base text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4 decoration-outline-variant cursor-pointer" 
+                  href="#login"
+                >
                   Ya tengo cuenta, Iniciar sesión
                 </a>
               </div>

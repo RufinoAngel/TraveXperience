@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Login() {
+function Login({ onNavigate, onLoginSuccess }) {
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
 
@@ -11,6 +11,11 @@ function Login() {
     // Simulación del proceso de login
     setTimeout(() => {
       setStatus('success');
+      setTimeout(() => {
+        if (onLoginSuccess) {
+          onLoginSuccess();
+        }
+      }, 600);
     }, 1500);
   };
 
@@ -52,7 +57,14 @@ function Login() {
                   <label className="text-xs font-semibold text-on-surface-variant uppercase group-focus-within:text-primary transition-colors block" htmlFor="password">
                     Contraseña
                   </label>
-                  <a className="text-xs text-on-surface-variant/80 hover:text-primary underline underline-offset-2" href="#">
+                  <a 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onNavigate) onNavigate('forgot-password');
+                    }}
+                    className="text-xs text-on-surface-variant/80 hover:text-primary underline underline-offset-2 cursor-pointer" 
+                    href="#forgot-password"
+                  >
                     ¿La olvidaste?
                   </a>
                 </div>
@@ -80,7 +92,7 @@ function Login() {
             {/* CTA and Action Button */}
             <div className="pt-4 space-y-6">
               <button 
-                className={`w-full py-4 rounded-full text-lg font-bold transition-all duration-300 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 ${
+                className={`w-full py-4 rounded-full text-lg font-bold transition-all duration-300 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 cursor-pointer border-none ${
                   status === 'success'
                     ? 'bg-secondary-container text-primary'
                     : 'bg-primary text-on-primary hover:bg-opacity-90'
@@ -104,7 +116,14 @@ function Login() {
               </button>
 
               <div className="text-center">
-                <a className="text-base text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4 decoration-outline-variant" href="#">
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onNavigate) onNavigate('register');
+                  }}
+                  className="text-base text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4 decoration-outline-variant cursor-pointer" 
+                  href="#register"
+                >
                   ¿No tienes una cuenta? Regístrate
                 </a>
               </div>

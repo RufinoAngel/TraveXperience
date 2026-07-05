@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import MapSidebar from '../components/MapSidebar.jsx';
 
-function InteractiveMap() {
+function InteractiveMap({ onNavigate }) {
+  const [activeMapTool, setActiveMapTool] = useState('Capas');
   // Estado para el Toast informativo inferior
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -59,8 +61,11 @@ function InteractiveMap() {
       {/* Contenedor del Explorador */}
       <div className="flex flex-1 pt-20 relative overflow-hidden">
         
+        {/* Map Sidebar */}
+        <MapSidebar currentTab={activeMapTool} onTabChange={setActiveMapTool} />
+
         {/* Sidebar Lateral */}
-        <aside className="w-80 bg-white/95 backdrop-blur-md border-r border-outline-variant/50 h-full z-30 flex flex-col shadow-lg transition-transform duration-300">
+        <aside className="w-80 md:ml-64 bg-white/95 backdrop-blur-md border-r border-outline-variant/50 h-full z-30 flex flex-col shadow-lg transition-transform duration-300">
           <div className="p-6 border-b border-outline-variant/30">
             <h1 className="text-xl font-bold text-primary mb-1">París, Francia</h1>
             <p className="text-xs text-on-surface-variant flex items-center gap-1 font-medium">
@@ -194,7 +199,10 @@ function InteractiveMap() {
                     <p className="text-xs text-on-primary/70 mt-0.5 font-medium">{selectedPlace.desc}</p>
                   </div>
                 </div>
-                <button className="bg-secondary-container text-on-secondary-container px-4 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-opacity whitespace-nowrap ml-4 border-none cursor-pointer">
+                <button 
+                  onClick={() => { if (onNavigate) onNavigate('hotel-detail', { hotel: selectedPlace }); }}
+                  className="bg-secondary-container text-on-secondary-container px-4 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-opacity whitespace-nowrap ml-4 border-none cursor-pointer"
+                >
                   Explorar
                 </button>
                 <button 

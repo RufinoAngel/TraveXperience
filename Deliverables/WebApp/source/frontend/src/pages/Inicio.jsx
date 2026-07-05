@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-function NearMeHome() {
+function NearMeHome({ onNavigate }) {
   // Estado para los filtros de categorías cercanos
   const [activeFilter, setActiveFilter] = useState('All Nearby');
   
@@ -83,31 +83,9 @@ function NearMeHome() {
 
   return (
     <div className="bg-background text-on-background font-body-md overflow-hidden h-screen flex flex-col antialiased">
-      
-      {/* Top Navigation Bar */}
-      <header className="bg-primary backdrop-blur-xl bg-primary/95 top-0 z-50 w-full border-b border-white/5">
-        <div className="flex justify-between items-center w-full px-6 md:px-16 h-20 max-w-7xl mx-auto">
-          <div className="flex items-center gap-8">
-            <span className="font-headline-md text-xl md:text-2xl font-bold text-on-primary tracking-tight">TraveXperience</span>
-            <nav className="hidden md:flex items-center gap-6">
-              <a className="font-label-md text-sm text-secondary-container border-b-2 border-secondary-container pb-1 font-semibold" href="#explore">Explore</a>
-              <a className="font-label-md text-sm text-on-primary/70 hover:text-on-primary transition-colors font-semibold" href="#trips">My Trips</a>
-              <a className="font-label-md text-sm text-on-primary/70 hover:text-on-primary transition-colors font-semibold" href="#saved">Saved</a>
-              <a className="font-label-md text-sm text-on-primary/70 hover:text-on-primary transition-colors font-semibold" href="#community">Community</a>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="p-2 text-on-primary hover:bg-on-primary/10 rounded-full transition-all bg-transparent border-none cursor-pointer material-symbols-outlined">notifications</button>
-            <button className="p-2 text-on-primary hover:bg-on-primary/10 rounded-full transition-all bg-transparent border-none cursor-pointer material-symbols-outlined">settings</button>
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-on-primary/20 cursor-pointer">
-              <img alt="User profile settings" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" />
-            </div>
-          </div>
-        </div>
-      </header>
 
       {/* Main Area: Interactive Map Background Layout */}
-      <main className="relative flex-grow overflow-hidden flex flex-col">
+      <main className="relative flex-grow overflow-hidden flex flex-col pt-20">
         
         {/* Map Background Canvas Component */}
         <div className="absolute inset-0 z-0">
@@ -234,7 +212,10 @@ function NearMeHome() {
                               <span key={tag} className="bg-surface-container px-2 py-0.5 rounded-md text-[10px] font-semibold text-on-surface-variant">{tag}</span>
                             ))}
                           </div>
-                          <button className="text-xs font-bold text-primary bg-transparent border-none p-0 flex items-center gap-0.5 hover:text-secondary transition-colors cursor-pointer group/btn">
+                          <button 
+                            onClick={() => { if (onNavigate) onNavigate('hotel-detail', { hotel: place }); }}
+                            className="text-xs font-bold text-primary bg-transparent border-none p-0 flex items-center gap-0.5 hover:text-secondary transition-colors cursor-pointer group/btn"
+                          >
                             <span>Details</span>
                             <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
                           </button>

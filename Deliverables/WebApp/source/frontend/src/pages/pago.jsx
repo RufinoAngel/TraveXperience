@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Checkout() {
+function Checkout({ onNavigate, hotel }) {
   const [paymentMethod, setPaymentMethod] = useState('saved-card');
   const [billingSameAsTraveler, setBillingSameAsTraveler] = useState(true);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
@@ -11,6 +11,12 @@ function Checkout() {
     // Simulación del proceso de pago de lujo
     setTimeout(() => {
       setStatus('success');
+      setTimeout(() => {
+        if (onNavigate) {
+          onNavigate('payment-success');
+        }
+        setStatus('idle');
+      }, 800);
     }, 1800);
   };
 
@@ -148,7 +154,7 @@ function Checkout() {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
                   <div className="absolute bottom-4 left-6">
                     <p className="text-secondary-container text-xs font-bold uppercase tracking-widest mb-1">Viaje a París</p>
-                    <h3 className="text-white font-bold text-lg">Verano en la Ciudad de la Luz</h3>
+                    <h3 className="text-white font-bold text-lg">{hotel ? hotel.title : 'Verano en la Ciudad de la Luz'}</h3>
                   </div>
                 </div>
 
@@ -160,7 +166,7 @@ function Checkout() {
                     <div className="space-y-3">
                       <div className="flex justify-between items-start">
                         <div>
-                          <p className="text-sm font-semibold text-primary">Le Meurice Luxury Suite</p>
+                          <p className="text-sm font-semibold text-primary">{hotel ? hotel.title : 'Le Meurice Luxury Suite'}</p>
                           <p className="text-xs text-on-surface-variant">5 noches, 2 huéspedes</p>
                         </div>
                         <p className="text-sm font-medium text-primary">$4,250.00</p>
@@ -199,7 +205,9 @@ function Checkout() {
                       <div className="flex justify-between items-center">
                         <span className="text-lg font-bold text-primary">Total</span>
                         <div className="text-right">
-                          <span className="text-2xl font-bold block text-primary">$8,882.50</span>
+                          <span className="text-2xl font-bold block text-primary">
+                            {hotel && hotel.price ? `$${hotel.price.toLocaleString()}` : '$8,882.50'}
+                          </span>
                           <span className="text-xs text-on-surface-variant">Impuestos incluidos</span>
                         </div>
                       </div>

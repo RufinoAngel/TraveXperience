@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function HotelDetail() {
+function HotelDetail({ onNavigate, hotel }) {
   // Estado para el cálculo interactivo del formulario de reserva
   const [roomType, setRoomType] = useState('Executive Suite');
   const [nights, setNights] = useState(3);
@@ -27,56 +27,46 @@ function HotelDetail() {
       setBookingStatus('success');
       setShowToast(true);
       
-      // Ocultar el toast automáticamente después de 4 segundos
+      // Auto-navigate to checkout with parameters after a short timeout
       setTimeout(() => {
+        if (onNavigate) {
+          onNavigate('checkout', { 
+            hotel: hotel || { 
+              title: 'Grand Alpine Resort & Spa', 
+              price: totalPrice,
+              location: 'Zermatt, Switzerland'
+            } 
+          });
+        }
+        setBookingStatus('idle');
         setShowToast(false);
-      }, 4000);
+      }, 1000);
     }, 1500);
   };
 
   return (
     <div className="bg-background text-on-background font-body-md min-h-screen selection:bg-secondary-container selection:text-on-secondary-container antialiased">
-      
-      {/* Top Navigation Bar */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
-        <div className="flex justify-between items-center px-6 md:px-16 py-4 max-w-7xl mx-auto">
-          <div className="flex items-center gap-8">
-            <span className="font-headline-lg text-xl md:text-2xl font-bold tracking-tighter text-primary">TraveXperience</span>
-            <div className="hidden md:flex items-center gap-6">
-              <a className="text-primary border-b-2 border-primary font-semibold pb-1 text-sm" href="#explore">Explorar</a>
-              <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#trips">Mis Viajes</a>
-              <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#saved">Guardados</a>
-              <a className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#community">Comunidad</a>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="p-2 hover:bg-surface-container-high/50 rounded-lg transition-all duration-200 cursor-pointer bg-transparent border-none">
-              <span className="material-symbols-outlined text-on-surface-variant">notifications</span>
-            </button>
-            <div className="h-10 w-10 rounded-full bg-surface-variant border border-outline-variant/30 overflow-hidden cursor-pointer">
-              <img className="w-full h-full object-cover" alt="User Avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" />
-            </div>
-          </div>
-        </div>
-      </nav>
 
       <main className="pt-28 pb-20 max-w-7xl mx-auto px-6 md:px-16">
         
         {/* Header Actions */}
         <div className="flex justify-between items-center mb-8">
-          <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors bg-transparent border-none cursor-pointer">
+          <button 
+            onClick={() => { if (onNavigate) onNavigate('mapa'); }}
+            className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+          >
             <span className="material-symbols-outlined">arrow_back</span>
             <span className="text-xs font-bold uppercase tracking-widest">Volver a Resultados</span>
           </button>
           
           <div className="flex gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-xl border border-outline-variant/60 bg-white hover:bg-surface-container-low transition-all cursor-pointer text-xs font-bold text-on-surface">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-xl border border-solid border-outline-variant/60 bg-white hover:bg-surface-container-low transition-all cursor-pointer text-xs font-bold text-on-surface">
               <span className="material-symbols-outlined text-sm">share</span>
               <span>Compartir</span>
             </button>
             <button 
               onClick={() => setIsSaved(!isSaved)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all cursor-pointer text-xs font-bold ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl border border-solid transition-all cursor-pointer text-xs font-bold ${
                 isSaved 
                   ? 'bg-secondary-container border-secondary text-primary' 
                   : 'bg-white border-outline-variant/60 text-on-surface hover:bg-surface-container-low'

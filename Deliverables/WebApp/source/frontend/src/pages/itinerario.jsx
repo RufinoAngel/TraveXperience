@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AwayFromHomePlanner() {
+function AwayFromHomePlanner({ onNavigate }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('#Luxury');
 
@@ -99,7 +99,10 @@ function AwayFromHomePlanner() {
               <span className="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1.5 block">Your Journey</span>
               <h2 className="text-2xl font-bold font-headline-lg text-primary tracking-tight">Mediterranean Dream</h2>
             </div>
-            <button className="bg-secondary-container text-on-secondary-container px-5 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-all flex items-center gap-2 border-none cursor-pointer shadow-sm active:scale-[0.98]">
+            <button 
+              onClick={() => { if (onNavigate) onNavigate('mapa'); }}
+              className="bg-secondary-container text-on-secondary-container px-5 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-all flex items-center gap-2 border-none cursor-pointer shadow-sm active:scale-[0.98]"
+            >
               <span className="material-symbols-outlined text-[16px]">add</span>
               <span>New Event</span>
             </button>
@@ -176,7 +179,10 @@ function AwayFromHomePlanner() {
                 <span className="text-on-primary/60 text-xs font-bold uppercase tracking-wider">Estimated Budget</span>
                 <div className="text-2xl font-bold font-headline-md mt-0.5">€4,250.00</div>
               </div>
-              <button className="bg-secondary-container text-on-secondary-container h-12 w-12 rounded-full flex items-center justify-center hover:scale-105 transition-transform border-none cursor-pointer shadow-md">
+              <button 
+                onClick={() => { if (onNavigate) onNavigate('settings', { tab: 'Payments' }); }}
+                className="bg-secondary-container text-on-secondary-container h-12 w-12 rounded-full flex items-center justify-center hover:scale-105 transition-transform border-none cursor-pointer shadow-md"
+              >
                 <span className="material-symbols-outlined text-xl">payments</span>
               </button>
             </div>

@@ -2,23 +2,53 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-primary dark:bg-surface-container-lowest mt-12">
-      <div className="flex flex-col md:flex-row justify-between items-center px-16 py-12 mx-auto max-w-[1280px]">
-        <div className="mb-8 md:mb-0 text-center md:text-left">
-          <div className="text-xl text-on-primary dark:text-on-surface font-bold mb-2">
-            TraveXperience
+    <footer className="bg-primary pt-12 pb-12">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-16">
+        
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6 border-0 border-b border-solid border-white/10 pb-6 mb-6">
+          <div className="max-w-xs">
+            <div className="font-display-lg text-2xl text-on-primary font-bold mb-4 tracking-tighter">
+              TraveXperience
+            </div>
+            <p className="text-white/60 font-sans text-sm leading-relaxed">
+              Empowering explorers to discover the world through seamless, collaborative, and intelligent planning.
+            </p>
           </div>
-          <p className="text-xs text-on-primary/70 dark:text-on-surface/70">
-            © 2026 TraveXperience. All rights reserved.
-          </p>
+
+          {/* Links Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+            <div className="flex flex-col gap-3">
+              <span className="font-sans text-sm font-semibold tracking-wide text-secondary-container">Company</span>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#about">About Us</a>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#careers">Careers</a>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#press">Press</a>
+            </div>
+            <div className="flex flex-col gap-3">
+              <span className="font-sans text-sm font-semibold tracking-wide text-secondary-container">Product</span>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#features">Features</a>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#pricing">Pricing</a>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#mobile">Mobile App</a>
+            </div>
+            <div className="flex flex-col gap-3">
+              <span className="font-sans text-sm font-semibold tracking-wide text-secondary-container">Support</span>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#help">Help Center</a>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#privacy">Privacy Policy</a>
+              <a className="text-white/70 hover:text-white transition-colors text-xs font-medium" href="#terms">Terms</a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-8">
-          <a className="text-on-primary/70 dark:text-on-surface/70 hover:text-secondary transition-colors text-xs" href="#">About Us</a>
-          <a className="text-on-primary/70 dark:text-on-surface/70 hover:text-secondary transition-colors text-xs" href="#">Careers</a>
-          <a className="text-on-primary/70 dark:text-on-surface/70 hover:text-secondary transition-colors text-xs" href="#">Privacy Policy</a>
-          <a className="text-on-primary/70 dark:text-on-surface/70 hover:text-secondary transition-colors text-xs" href="#">Terms of Service</a>
-          <a className="text-on-primary/70 dark:text-on-surface/70 hover:text-secondary transition-colors text-xs" href="#">Support</a>
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs font-medium">
+          <p>© {new Date().getFullYear()} TraveXperience. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a className="hover:text-white transition-colors" href="#instagram">Instagram</a>
+            <a className="hover:text-white transition-colors" href="#twitter">Twitter</a>
+            <a className="hover:text-white transition-colors" href="#linkedin">LinkedIn</a>
+          </div>
         </div>
+
       </div>
     </footer>
   );

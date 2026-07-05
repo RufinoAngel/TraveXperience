@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function BookingConfirmed() {
+function BookingConfirmed({ onNavigate }) {
   const successContainerRef = useRef(null);
   const bookingRefCell = useRef(null);
 
@@ -173,7 +173,10 @@ function BookingConfirmed() {
 
         {/* Action Buttons */}
         <div className="flex flex-col md:flex-row gap-4 w-full">
-          <button className="flex-1 bg-primary text-on-primary font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer border-none">
+          <button 
+            onClick={() => { if (onNavigate) onNavigate('itinerario'); }}
+            className="flex-1 bg-primary text-on-primary font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer border-none"
+          >
             <span className="material-symbols-outlined">event_note</span>
             View Itinerary
           </button>
@@ -181,7 +184,10 @@ function BookingConfirmed() {
             <span className="material-symbols-outlined">download</span>
             Download Receipt
           </button>
-          <button className="flex-1 bg-transparent text-on-surface-variant font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-container transition-colors active:scale-[0.98] transition-all cursor-pointer border-none">
+          <button 
+            onClick={() => { if (onNavigate) onNavigate('inicio'); }}
+            className="flex-1 bg-transparent text-on-surface-variant font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-container transition-colors active:scale-[0.98] transition-all cursor-pointer border-none"
+          >
             <span className="material-symbols-outlined">dashboard</span>
             Back to Dashboard
           </button>

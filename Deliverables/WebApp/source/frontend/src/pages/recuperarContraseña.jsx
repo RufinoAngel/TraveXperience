@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ForgotPassword() {
+function ForgotPassword({ onNavigate }) {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -16,12 +16,22 @@ function ForgotPassword() {
     <div className="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col justify-between">
       
       {/* TopNavBar Simplificado */}
-      <header className="bg-primary/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full border-b border-white/5">
+      <header className="bg-primary/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full border-0 border-b border-solid border-white/5">
         <div className="flex justify-between items-center w-full px-6 md:px-16 h-20 max-w-7xl mx-auto">
-          <div className="font-headline-md text-xl md:text-2xl font-bold text-on-primary tracking-tight cursor-pointer">
+          <div 
+            onClick={() => { if (onNavigate) onNavigate('landing'); }}
+            className="font-headline-md text-xl md:text-2xl font-bold text-on-primary tracking-tight cursor-pointer"
+          >
             TraveXperience
           </div>
-          <a href="#login" className="text-on-primary/80 hover:text-on-primary text-xs font-bold transition-colors">
+          <a 
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('login');
+            }}
+            href="#login" 
+            className="text-on-primary/80 hover:text-on-primary text-xs font-bold transition-colors cursor-pointer"
+          >
             Iniciar Sesión
           </a>
         </div>
@@ -29,7 +39,7 @@ function ForgotPassword() {
 
       {/* Contenedor Principal */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 pt-28 pb-16 w-full max-w-md mx-auto">
-        <div className="w-full bg-surface border border-outline-variant/40 rounded-2xl p-8 shadow-[0px_12px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full bg-surface border border-solid border-outline-variant/40 rounded-2xl p-8 shadow-[0px_12px_40px_rgba(0,0,0,0.03)]">
           
           {!isSubmitted ? (
             /* Estado 1: Formulario de solicitud */
@@ -62,7 +72,7 @@ function ForgotPassword() {
                     placeholder="ejemplo@travexperience.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl outline-none transition-all text-sm text-on-surface"
+                    className="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-solid border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl outline-none transition-all text-sm text-on-surface"
                   />
                 </div>
               </div>
@@ -78,7 +88,14 @@ function ForgotPassword() {
 
               {/* Regresar */}
               <div className="text-center pt-2">
-                <a href="#login" className="inline-flex items-center gap-1 text-xs font-bold text-outline hover:text-primary transition-colors">
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onNavigate) onNavigate('login');
+                  }}
+                  href="#login" 
+                  className="inline-flex items-center gap-1 text-xs font-bold text-outline hover:text-primary transition-colors cursor-pointer"
+                >
                   <span className="material-symbols-outlined text-[16px]">arrow_back</span>
                   Volver al inicio de sesión
                 </a>
@@ -101,7 +118,7 @@ function ForgotPassword() {
                 </p>
               </div>
 
-              <div className="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 text-[11px] text-on-surface-variant font-medium leading-normal">
+              <div className="bg-surface-container-low border border-solid border-outline-variant/30 rounded-xl p-4 text-[11px] text-on-surface-variant font-medium leading-normal">
                 ¿No recibiste el correo? Revisa tu carpeta de spam o correo no deseado.
               </div>
 
@@ -113,7 +130,14 @@ function ForgotPassword() {
                   Intentar con otro correo
                 </button>
                 
-                <a href="#login" className="text-xs font-bold text-outline hover:text-primary transition-colors block pt-2">
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onNavigate) onNavigate('login');
+                  }}
+                  href="#login" 
+                  className="text-xs font-bold text-outline hover:text-primary transition-colors block pt-2 cursor-pointer"
+                >
                   Volver al inicio de sesión
                 </a>
               </div>
@@ -124,7 +148,7 @@ function ForgotPassword() {
       </main>
 
       {/* Footer minimalista */}
-      <footer className="py-6 border-t border-outline-variant/30 text-center text-[11px] text-on-surface-variant/60 font-medium bg-surface-bright">
+      <footer className="py-6 border-0 border-t border-solid border-outline-variant/30 text-center text-[11px] text-on-surface-variant/60 font-medium bg-surface-bright">
         &copy; {new Date().getFullYear()} TraveXperience. Away From Home S.A.
       </footer>
 
