@@ -2,8 +2,8 @@ import React from 'react';
 
 function LandingPage({ onNavigate }) {
   return (
-    <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen">
-      <main className="pt-20">
+    <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen flex flex-col">
+      <main className="pt-20 flex-grow flex items-center justify-center">
         
         {/* Hero Section */}
         <section className="relative min-h-[921px] flex items-center overflow-hidden">
