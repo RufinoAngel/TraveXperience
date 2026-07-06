@@ -56,6 +56,7 @@ function SettingsSidebar({ currentTab = 'Personal Info', onTabChange, onSignOut 
       {/* Botón de Cierre de Sesión en la parte inferior */}
       <div className="mt-auto">
         <button 
+          type="button"
           onClick={() => {
             if (onSignOut) {
               onSignOut();

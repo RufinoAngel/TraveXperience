@@ -24,7 +24,6 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
 
   const panelContent = (
     <div className="space-y-8 w-full max-w-4xl mx-auto px-6 md:px-12 py-12">
-      <Header />
       {/* Sección: Visibilidad del Perfil */}
       <div className="bg-white border border-solid border-outline-variant/40 rounded-3xl p-6 md:p-8 shadow-sm">
         <div className="flex items-center gap-2 mb-2 text-primary">
@@ -32,7 +31,7 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
           <h2 className="text-base font-bold tracking-tight m-0">Visibilidad del Perfil</h2>
         </div>
         <p className="text-xs font-semibold text-on-surface-variant mb-4">
-          Elige cómo se muestra tu perfil e itinerarios ante la comunidad global de TraveXperience.
+          Elige cómo se muestra tu perfil e itinerarios ante la comunidad de viajeros de Xicotepec Xperience.
         </p>
 
         <div className={`p-5 rounded-2xl border border-solid flex justify-between items-center transition-all ${isPrivateProfile ? 'border-primary bg-primary/[0.02]' : 'border-outline-variant/40 bg-transparent'}`}>
@@ -133,7 +132,6 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 
@@ -142,27 +140,15 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
   }
 
   return (
-    <div className="bg-background text-on-background font-body-md min-h-screen selection:bg-secondary-container selection:text-on-secondary-container antialiased">
-      
-      {/* Barra de Navegación Superior */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-0 border-b border-solid border-outline-variant/30 shadow-sm">
-        <div className="flex justify-between items-center px-6 md:px-16 py-4 max-w-7xl mx-auto">
-          <div className="flex items-center gap-8">
-            <span 
-              onClick={() => { if (onNavigate) onNavigate('inicio'); }}
-              className="font-headline-lg text-xl md:text-2xl font-bold tracking-tighter text-primary cursor-pointer"
-            >
-              TraveXperience
-            </span>
-          </div>
-        </div>
-      </nav>
+    <div className="bg-background text-on-background font-body-md min-h-screen selection:bg-secondary-container selection:text-on-secondary-container antialiased flex flex-col">
+      <Header />
 
       {/* Contenedor Principal */}
-      <main className="pt-28 pb-20 max-w-7xl mx-auto px-6 md:px-16 flex">
+      <main className="pt-16 pb-20 max-w-7xl mx-auto px-6 md:px-16 flex flex-1">
         {panelContent}
       </main>
 
+      <Footer />
     </div>
   );
 }

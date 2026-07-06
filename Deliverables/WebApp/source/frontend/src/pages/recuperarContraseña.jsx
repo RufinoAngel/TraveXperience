@@ -47,7 +47,7 @@ function ForgotPassword({ onNavigate }) {
                     id="email"
                     type="email"
                     required
-                    placeholder="ejemplo@travexperience.com"
+                    placeholder="ejemplo@xicotepecxperience.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-solid border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl outline-none transition-all text-sm text-on-surface"

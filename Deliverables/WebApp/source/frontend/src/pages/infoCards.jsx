@@ -15,9 +15,9 @@ function HotelDetail({ onNavigate, hotel }) {
 
   // Precios configurados según el tipo de habitación
   const roomPrices = {
-    'Deluxe Room': 450,
-    'Executive Suite': 850,
-    'Presidential Suite': 1800,
+    'Deluxe Room': 1200,
+    'Executive Suite': 1800,
+    'Presidential Suite': 2800,
   };
 
   const pricePerNight = roomPrices[roomType] || 850;
@@ -34,9 +34,9 @@ function HotelDetail({ onNavigate, hotel }) {
         if (onNavigate) {
           onNavigate('checkout', { 
             hotel: hotel || { 
-              title: 'Grand Alpine Resort & Spa', 
+              title: 'Posada del Café Xicotepec', 
               price: totalPrice,
-              location: 'Zermatt, Switzerland'
+              location: 'Xicotepec de Juárez, Puebla'
             } 
           });
         }
@@ -48,7 +48,6 @@ function HotelDetail({ onNavigate, hotel }) {
 
   return (
     <div className="bg-background text-on-background font-body-md min-h-screen selection:bg-secondary-container selection:text-on-secondary-container antialiased">
-      <Header />
       <main className="pt-28 pb-20 max-w-7xl mx-auto px-6 md:px-16">
         
         {/* Header Actions */}
@@ -85,8 +84,8 @@ function HotelDetail({ onNavigate, hotel }) {
           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10 pointer-events-none"></div>
           <img 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-            alt="Grand Alpine Resort exterior panoramic view" 
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80" 
+            alt="Vista panorámica de la Posada del Café en Xicotepec de Juárez" 
+            src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1600&q=80" 
           />
         </section>
 
@@ -104,13 +103,13 @@ function HotelDetail({ onNavigate, hotel }) {
                     <span key={i} className="material-symbols-outlined text-sm fill-1 text-secondary-container">star</span>
                   ))}
                 </div>
-                <span className="text-xs font-bold text-on-surface-variant tracking-wider uppercase">5 Estrellas • Zermatt, Suiza</span>
+                <span className="text-xs font-bold text-on-surface-variant tracking-wider uppercase">5 Estrellas • Xicotepec de Juárez, Puebla</span>
               </div>
               <h1 className="text-3xl md:text-5xl font-black font-display-lg text-primary tracking-tight mb-4">
-                Grand Alpine Resort & Spa
+                Posada del Café Xicotepec
               </h1>
               <p className="text-sm md:text-base text-on-surface-variant leading-relaxed max-w-2xl font-medium">
-                Lujo alpino en el corazón de Zermatt. Disfrute de vistas exclusivas al Matterhorn, gastronomía de autor y un spa de clase mundial diseñado para el bienestar absoluto.
+                Hospedaje boutique en el corazón de la Sierra Norte de Puebla. Disfruta vistas al valle, gastronomía regional y el aroma del café recién tostado en un ambiente diseñado para el descanso absoluto.
               </p>
             </header>
 
@@ -119,10 +118,10 @@ function HotelDetail({ onNavigate, hotel }) {
               <h2 className="text-lg font-bold text-primary tracking-tight mb-6">Servicios Destacados</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { icon: 'wifi', label: 'Wi-Fi Premium' },
-                  { icon: 'spa', label: 'Spa & Wellness' },
-                  { icon: 'pool', label: 'Piscina Climatizada' },
-                  { icon: 'restaurant', label: 'Alta Cocina' }
+                  { icon: 'wifi', label: 'Wi-Fi en Áreas Comunes' },
+                  { icon: 'local_fire_department', label: 'Chimenea y Terraza' },
+                  { icon: 'landscape', label: 'Vista a la Sierra' },
+                  { icon: 'restaurant', label: 'Cocina Regional' }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 bg-surface-container-low p-3.5 rounded-xl border border-outline-variant/20">
                     <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm text-primary">
@@ -142,10 +141,10 @@ function HotelDetail({ onNavigate, hotel }) {
                 <h3 className="text-base font-bold text-primary tracking-tight mb-4">Lo que incluye</h3>
                 <ul className="space-y-3 p-0 list-none">
                   {[
-                    'Acceso ilimitado al Alpine Wellness Club',
-                    'Traslado privado desde la estación de Zermatt',
-                    'Minibar premium con selección local',
-                    'Servicio de conserjería 24/7'
+                    'Desayuno con café de Xicotepec incluido',
+                    'Traslado desde la central de autobuses',
+                    'Minibar con productos artesanales locales',
+                    'Recepción y asistencia 24/7'
                   ].map((text, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <span className="material-symbols-outlined text-secondary text-base mt-0.5 fill-1">check_circle</span>
@@ -159,7 +158,7 @@ function HotelDetail({ onNavigate, hotel }) {
                 <h3 className="text-base font-bold text-primary tracking-tight mb-4">Política de cancelación</h3>
                 <div className="p-4 rounded-xl border-l-4 border-error bg-error-container/10">
                   <p className="text-xs font-semibold text-on-surface-variant leading-relaxed m-0">
-                    Cancelación gratuita hasta 48 horas antes de la llegada. Después de ese período, se cargará la primera noche de estancia de tus coordenadas estipuladas.
+                    Cancelación gratuita hasta 48 horas antes de la llegada. Después de ese período, se cargará la primera noche de tu estancia.
                   </p>
                 </div>
               </div>
@@ -172,7 +171,7 @@ function HotelDetail({ onNavigate, hotel }) {
               
               <div className="flex justify-between items-end mb-6">
                 <div>
-                  <span className="text-2xl md:text-3xl font-black font-display-lg text-primary tracking-tight">${pricePerNight}</span>
+                  <span className="text-2xl md:text-3xl font-black font-display-lg text-primary tracking-tight">${pricePerNight} MXN</span>
                   <span className="text-xs font-semibold text-on-surface-variant"> / noche</span>
                 </div>
                 <div className="flex items-center gap-1 text-on-surface-variant text-xs font-bold bg-surface-container px-2.5 py-1 rounded-md">
@@ -225,7 +224,7 @@ function HotelDetail({ onNavigate, hotel }) {
               {/* desglose de tarifas */}
               <div className="flex justify-between items-center mb-6 pt-4 border-t border-0 border-solid border-outline-variant/20">
                 <span className="text-xs font-bold text-on-surface-variant">Estancia Total ({nights} noches)</span>
-                <span className="text-xl md:text-2xl font-black text-primary tracking-tight">${totalPrice.toLocaleString()}</span>
+                <span className="text-xl md:text-2xl font-black text-primary tracking-tight">${totalPrice.toLocaleString()} MXN</span>
               </div>
 
               {/* Botón con Estado Cambiante */}
@@ -261,7 +260,7 @@ function HotelDetail({ onNavigate, hotel }) {
                 <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
               </div>
               <p className="text-xs font-semibold text-on-surface-variant m-0">
-                <strong className="text-primary font-bold">Mateo</strong> está visualizando este resort alpino ahora mismo.
+                <strong className="text-primary font-bold">Mateo</strong> está visualizando esta posada ahora mismo.
               </p>
             </div>
           </aside>
@@ -273,9 +272,9 @@ function HotelDetail({ onNavigate, hotel }) {
       <footer className="bg-white border-t border-solid border-outline-variant/30 py-12 px-6 md:px-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <span className="text-xl font-bold tracking-tighter text-primary">TraveXperience</span>
+            <span className="text-xl font-bold tracking-tighter text-primary">Xicotepec Xperience</span>
             <p className="text-xs text-on-surface-variant font-medium leading-relaxed">
-              Redefiniendo el viaje de lujo mediante la precisión logística y el descubrimiento emocional.
+              Redefiniendo la manera de descubrir Xicotepec de Juárez mediante la precisión logística y el descubrimiento local.
             </p>
           </div>
           {['Compañía', 'Soporte', 'Legal'].map((title, idx) => (
@@ -290,7 +289,7 @@ function HotelDetail({ onNavigate, hotel }) {
           ))}
         </div>
         <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-solid border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-semibold text-on-surface-variant">
-          <p>© {new Date().getFullYear()} TraveXperience. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Xicotepec Xperience. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <span className="cursor-pointer hover:text-primary">Español (ES)</span>
             <span className="cursor-pointer hover:text-primary">USD ($)</span>
@@ -308,7 +307,6 @@ function HotelDetail({ onNavigate, hotel }) {
           <span className="text-[11px] font-medium opacity-80 mt-1">Tu itinerario de estancia ha sido guardado.</span>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,22 +1,8 @@
 import React from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
 
 function NotFound() {
   return (
     <div className="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col justify-between">
-      <Header />
-      {/* TopNavBar Simplificado */}
-      <header className="bg-primary/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full border-b border-white/5">
-        <div className="flex justify-between items-center w-full px-6 md:px-16 h-20 max-w-7xl mx-auto">
-          <div className="font-headline-md text-xl md:text-2xl font-bold text-on-primary tracking-tight cursor-pointer">
-            TraveXperience
-          </div>
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-on-primary/20">
-            <img alt="User profile" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" />
-          </div>
-        </div>
-      </header>
 
       {/* Contenido Principal de Error */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 pt-28 pb-16 text-center max-w-2xl mx-auto">
@@ -74,9 +60,6 @@ function NotFound() {
           <a href="#report" className="hover:text-primary transition-colors">Reportar un error</a>
         </div>
       </main>
-
-      {/* Footer minimalista */}
-      <Footer />
 
     </div>
   );

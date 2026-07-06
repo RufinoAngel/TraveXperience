@@ -7,46 +7,46 @@ function PaymentsBilling({ onNavigate, isSettingsTab = false }) {
   const transactions = [
     {
       id: 1,
-      date: 'Oct 24, 2023',
-      description: 'Air France - CDG to JFK',
-      category: 'flight',
+      date: '24 Oct, 2026',
+      description: 'ADO - CDMX a Xicotepec de Juárez',
+      category: 'directions_bus',
       categoryBg: 'bg-secondary-container/20 text-secondary',
-      method: 'Visa ending 4242',
-      amount: '$1,240.00',
-      status: 'Completed',
+      method: 'Visa terminación 4242',
+      amount: '$680.00',
+      status: 'Completado',
       statusClass: 'bg-green-50 text-green-700 border-green-200'
     },
     {
       id: 2,
-      date: 'Oct 22, 2023',
-      description: 'Hôtel Le Meurice - 4 Nights',
+      date: '22 Oct, 2026',
+      description: 'Posada del Café Xicotepec - 3 Noches',
       category: 'hotel',
       categoryBg: 'bg-tertiary-fixed text-on-tertiary-fixed-variant',
-      method: 'Visa ending 4242',
-      amount: '$4,500.00',
-      status: 'Processing',
+      method: 'Visa terminación 4242',
+      amount: '$5,400.00',
+      status: 'Procesando',
       statusClass: 'bg-amber-50 text-amber-700 border-amber-200'
     },
     {
       id: 3,
-      date: 'Oct 18, 2023',
-      description: 'Septime Paris - Dinner',
+      date: '18 Oct, 2026',
+      description: 'Restaurante Las Acamayas - Cena',
       category: 'restaurant',
       categoryBg: 'bg-primary-fixed text-primary',
-      method: 'Mastercard ending 8819',
-      amount: '$320.00',
-      status: 'Completed',
+      method: 'Mastercard terminación 8819',
+      amount: '$620.00',
+      status: 'Completado',
       statusClass: 'bg-green-50 text-green-700 border-green-200'
     },
     {
       id: 4,
-      date: 'Oct 15, 2023',
-      description: 'Louvre Private Tour',
+      date: '15 Oct, 2026',
+      description: 'Tour Ruta del Café - Museo Casa Carranza',
       category: 'close',
       categoryBg: 'bg-error-container text-error',
-      method: 'Visa ending 4242',
+      method: 'Visa terminación 4242',
       amount: '-$450.00',
-      status: 'Refunded',
+      status: 'Reembolsado',
       statusClass: 'bg-red-50 text-red-700 border-red-200',
       lineThrough: true
     }
@@ -92,7 +92,7 @@ function PaymentsBilling({ onNavigate, isSettingsTab = false }) {
             <div className="relative z-10">
               <p className="font-mono text-lg tracking-[0.2em]">•••• •••• •••• 4242</p>
               <div className="flex justify-between items-end mt-4">
-                <p className="text-xs opacity-80 font-semibold tracking-wider">JONATHAN TRAVELLER</p>
+                <p className="text-xs opacity-80 font-semibold tracking-wider">JONATHAN HERNANDEZ</p>
                 <p className="text-xs opacity-80 font-semibold">12/26</p>
               </div>
             </div>
@@ -115,7 +115,7 @@ function PaymentsBilling({ onNavigate, isSettingsTab = false }) {
             <div>
               <p className="font-mono text-lg tracking-[0.2em] text-primary">•••• •••• •••• 8819</p>
               <div className="flex justify-between items-end mt-4">
-                <p className="text-xs text-on-surface-variant font-semibold tracking-wider">JONATHAN TRAVELLER</p>
+                <p className="text-xs text-on-surface-variant font-semibold tracking-wider">JONATHAN HERNANDEZ</p>
                 <p className="text-xs text-on-surface-variant font-semibold">08/25</p>
               </div>
             </div>
@@ -199,19 +199,19 @@ function PaymentsBilling({ onNavigate, isSettingsTab = false }) {
                   </td>
                   <td className="py-5 px-4 text-center">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-solid text-[10px] font-bold uppercase tracking-wider ${transaction.statusClass}`}>
-                      <span className={`w-1.5 h-1.5 rounded-full ${transaction.status === 'Processing' ? 'bg-amber-500 animate-pulse' : transaction.status === 'Refunded' ? 'bg-red-500' : 'bg-green-500'}`}></span>
+                      <span className={`w-1.5 h-1.5 rounded-full ${transaction.status === 'Procesando' ? 'bg-amber-500 animate-pulse' : transaction.status === 'Reembolsado' ? 'bg-red-500' : 'bg-green-500'}`}></span>
                       {transaction.status}
                     </span>
                   </td>
                   <td className="py-5 px-4 text-right">
                     <button 
                       type="button"
-                      className={`p-1 transition-colors bg-transparent border-none ${transaction.status === 'Processing' ? 'text-outline-variant cursor-not-allowed' : 'text-primary hover:text-secondary'}`}
-                      disabled={transaction.status === 'Processing'}
+                      className={`p-1 transition-colors bg-transparent border-none ${transaction.status === 'Procesando' ? 'text-outline-variant cursor-not-allowed' : 'text-primary hover:text-secondary'}`}
+                      disabled={transaction.status === 'Procesando'}
                       title="Descargar PDF"
                     >
                       <span className="material-symbols-outlined text-[20px]">
-                        {transaction.status === 'Refunded' ? 'receipt_long' : 'download'}
+                        {transaction.status === 'Reembolsado' ? 'receipt_long' : 'download'}
                       </span>
                     </button>
                   </td>

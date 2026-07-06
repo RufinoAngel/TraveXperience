@@ -4,11 +4,11 @@ import Footer from '../components/footer';
 
 function UserProfile({ onNavigate, isSettingsTab = false }) {
   const [formData, setFormData] = useState({
-    fullName: 'Sophia Martinez',
-    email: 'sophia.martinez@example.com',
-    phone: '+44 7700 900077',
-    location: 'Londres, Reino Unido',
-    bio: 'Amante de los viajes de lujo, la fotografía de paisajes y la exploración gastronómica en cada rincón del mundo.',
+    fullName: 'Sofía Martínez',
+    email: 'sofia.martinez@example.com',
+    phone: '+52 776 123 4567',
+    location: 'Xicotepec de Juárez, Puebla',
+    bio: 'Amante del café de la Sierra Norte de Puebla, la fotografía de paisajes y la exploración gastronómica de Xicotepec y sus alrededores.',
   });
 
   const [isSaving, setIsSaving] = useState(false);
@@ -29,7 +29,7 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
 
   return (
     <>
-      <Header />
+      {!isSettingsTab && <Header />}
     <form
       onSubmit={handleSubmit}
       className={`space-y-8 ${isSettingsTab ? 'flex flex-col min-h-full' : ''}`}
@@ -39,7 +39,7 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
           <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">Mi Perfil</h1>
           <p className="text-sm text-on-surface-variant max-w-2xl leading-relaxed">
             Modifica tu información pública, datos de contacto y presentación personal para
-            personalizar tus itinerarios premium.
+            personalizar tus itinerarios en Xicotepec de Juárez.
           </p>
         </header>
 
@@ -166,7 +166,7 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
         </div>
       </main>
     </form>
-      <Footer />
+      {!isSettingsTab && <Footer />}
     </>
   );
 }

@@ -3,94 +3,94 @@ import React, { useState } from 'react';
 const destinations = [
   {
     id: 1,
-    title: 'Amalfi Coast, Italy',
-    desc: 'Dramatic cliffs and coastal elegance.',
+    title: 'Cascada de Tlaxcalantongo',
+    desc: 'Cascada rodeada de vegetación, a 25 km del centro.',
     size: 'col-span-2 row-span-1',
-    image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 2,
-    title: 'Kyoto, Japan',
-    desc: 'Tradition and serene autumn landscapes.',
+    title: 'Cerro del Tabacal',
+    desc: 'Mirador con la Virgen de Guadalupe monumental.',
     size: 'col-span-1 row-span-1',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80',
   },
   {
     id: 3,
-    title: 'Santorini, Greece',
-    desc: 'Minimal architecture and deep blue seas.',
+    title: 'Centro Ceremonial Xochipila',
+    desc: 'Peña sagrada y punto de rituales prehispánicos.',
     size: 'col-span-1 row-span-1',
-    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=500&q=80',
   },
   {
     id: 4,
-    title: 'Patagonia, Argentina',
-    desc: 'Wild landscapes and untouched wilderness.',
+    title: 'Museo Casa Carranza',
+    desc: 'Historia viva de la Revolución Mexicana.',
     size: 'col-span-1 row-span-1',
-    image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1584285405429-136bf988e786?auto=format&fit=crop&w=500&q=80',
   },
   {
     id: 5,
-    title: 'Maldives',
-    desc: 'Crystal lagoons and overwater luxury.',
+    title: 'Ruta del Café',
+    desc: 'Cafetales, tueste artesanal y degustación local.',
     size: 'col-span-1 row-span-1',
-    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=500&q=80',
   },
 ];
 
-const filters = ['#Luxury', '#Beach', '#Adventure', '#Cultural', '#Mountains'];
+const filters = ['#Naturaleza', '#Cultura', '#Aventura', '#Café', '#Sierra'];
 
 const itineraryDays = [
   {
-    day: 'Day 1',
-    title: 'Arrival & Coastal Wander',
+    day: 'Día 1',
+    title: 'Llegada y Centro Histórico',
     active: true,
     events: [
       {
         time: '09:30 AM',
-        title: 'Landing at Naples International',
-        desc: 'Private transfer arranged to Positano villa.',
-        category: 'Transport',
-        icon: 'flight_land',
+        title: 'Llegada a Xicotepec de Juárez',
+        desc: 'Traslado privado desde la terminal de autobuses al hospedaje.',
+        category: 'Traslado',
+        icon: 'directions_bus',
         img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=200&q=80',
       },
       {
         time: '01:00 PM',
-        title: 'Lunch at Da Adolfo',
-        desc: 'Classic seafood pasta by the private beach.',
-        category: 'Dining',
+        title: 'Comida en Restaurante Las Acamayas',
+        desc: 'Acamayas al mojo de ajo y molotes de tinga en los portales del zócalo.',
+        category: 'Comida',
         icon: 'restaurant',
-        img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80',
+        img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=200&q=80',
       },
       {
         time: '04:00 PM',
-        title: 'Check-in at Le Sirenuse',
-        desc: 'Breathtaking cliffside suite overlooking the Tyrrhenian Sea.',
-        category: 'Hotel',
+        title: 'Check-in en Posada del Café Xicotepec',
+        desc: 'Habitación con vista a la sierra y aroma a café recién tostado.',
+        category: 'Hospedaje',
         icon: 'hotel',
         img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=200&q=80',
       },
     ],
   },
   {
-    day: 'Day 2',
-    title: 'Capri Boat Excursion',
+    day: 'Día 2',
+    title: 'Cascada de Tlaxcalantongo',
     active: false,
     events: [],
   },
   {
-    day: 'Day 3',
-    title: 'Ravello & Wine Tasting',
+    day: 'Día 3',
+    title: 'Ruta del Café y Xochipila',
     active: false,
     events: [],
   },
 ];
 
 const categoryColors = {
-  Transport: 'bg-blue-100 text-blue-700',
-  Dining: 'bg-amber-100 text-amber-700',
-  Hotel: 'bg-emerald-100 text-emerald-700',
-  Activity: 'bg-purple-100 text-purple-700',
+  Traslado: 'bg-blue-100 text-blue-700',
+  Comida: 'bg-amber-100 text-amber-700',
+  Hospedaje: 'bg-emerald-100 text-emerald-700',
+  Actividad: 'bg-purple-100 text-purple-700',
 };
 
 function AwayFromHomePlanner({ onNavigate }) {
@@ -113,13 +113,13 @@ function AwayFromHomePlanner({ onNavigate }) {
         <div className="relative max-w-[1280px] mx-auto">
           <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-secondary-container mb-4">
             <span className="material-symbols-outlined text-[14px]">explore</span>
-            Your Journeys
+            Tus Recorridos
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-on-primary mb-3 tracking-tight">
-            Away From Home
+            Xicotepec de Juárez
           </h1>
           <p className="text-on-primary/60 text-base max-w-xl">
-            Discover curated luxury destinations and build your perfect itinerary in one place.
+            Descubre los atractivos del Pueblo Mágico y arma tu itinerario perfecto en un solo lugar.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ function AwayFromHomePlanner({ onNavigate }) {
             <span className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[20px]">search</span>
             <input
               className="w-full pl-12 pr-4 py-3.5 bg-surface-container-low border border-outline-variant/60 focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-2xl outline-none transition-all text-sm text-on-surface placeholder:text-outline"
-              placeholder="Where do you want to go?"
+              placeholder="¿A dónde quieres ir en Xicotepec?"
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -186,7 +186,7 @@ function AwayFromHomePlanner({ onNavigate }) {
             className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-dashed border-outline-variant/60 rounded-2xl text-on-surface-variant text-sm font-semibold hover:border-primary hover:text-primary transition-all cursor-pointer bg-transparent"
           >
             <span className="material-symbols-outlined text-[20px]">add_location_alt</span>
-            Add New Destination
+            Agregar Nuevo Destino
           </button>
         </aside>
 
@@ -196,20 +196,20 @@ function AwayFromHomePlanner({ onNavigate }) {
           {/* Trip Header Card */}
           <div className="bg-primary-container rounded-2xl p-6 flex items-start justify-between gap-4">
             <div>
-              <span className="text-[10px] font-bold text-on-primary-container/60 uppercase tracking-widest mb-1 block">Current Trip</span>
-              <h2 className="text-2xl font-bold text-on-primary-container tracking-tight">Mediterranean Dream</h2>
+              <span className="text-[10px] font-bold text-on-primary-container/60 uppercase tracking-widest mb-1 block">Viaje Actual</span>
+              <h2 className="text-2xl font-bold text-on-primary-container tracking-tight">Escapada Serrana</h2>
               <div className="flex items-center gap-4 mt-3 text-xs text-on-primary-container/70 font-medium">
                 <span className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[14px]">calendar_month</span>
-                  Jul 14 – Jul 21, 2025
+                  12 – 15 Dic, 2026
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[14px]">group</span>
-                  2 Travelers
+                  2 Viajeros
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[14px]">payments</span>
-                  €4,250 budget
+                  $2,850 MXN presupuesto
                 </span>
               </div>
             </div>
@@ -218,7 +218,7 @@ function AwayFromHomePlanner({ onNavigate }) {
               className="flex-shrink-0 bg-primary text-on-primary px-5 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-all flex items-center gap-2 cursor-pointer shadow-sm active:scale-[0.98]"
             >
               <span className="material-symbols-outlined text-[16px]">shopping_bag</span>
-              Book Now
+              Reservar Ahora
             </button>
           </div>
 
@@ -238,7 +238,7 @@ function AwayFromHomePlanner({ onNavigate }) {
               </button>
             ))}
             <button className="flex-shrink-0 px-4 py-2 rounded-xl text-xs font-bold border border-dashed border-outline-variant/60 text-outline hover:border-primary hover:text-primary transition-all cursor-pointer bg-transparent">
-              + Add Day
+              + Agregar Día
             </button>
           </div>
 
@@ -278,20 +278,20 @@ function AwayFromHomePlanner({ onNavigate }) {
                     className="w-full flex items-center gap-3 px-4 py-3.5 bg-surface-container border-2 border-dashed border-outline-variant/60 rounded-2xl text-on-surface-variant text-sm font-semibold hover:border-primary hover:text-primary transition-all cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-[20px]">add_circle</span>
-                    Add event to this day
+                    Agregar evento a este día
                   </button>
                 </div>
               </div>
             ) : (
               <div className="bg-surface-container rounded-2xl border border-outline-variant/40 p-12 flex flex-col items-center justify-center text-center gap-3">
                 <span className="material-symbols-outlined text-[48px] text-outline-variant">event_note</span>
-                <p className="font-bold text-on-surface-variant">No events planned yet</p>
-                <p className="text-sm text-outline">Start adding activities, restaurants, and hotels for {itineraryDays[activeDay].title}</p>
+                <p className="font-bold text-on-surface-variant">Aún no hay eventos planeados</p>
+                <p className="text-sm text-outline">Comienza a agregar actividades, restaurantes y hospedajes para {itineraryDays[activeDay].title}</p>
                 <button
                   onClick={() => { if (onNavigate) onNavigate('mapa'); }}
                   className="mt-2 bg-primary text-on-primary px-6 py-2.5 rounded-xl text-sm font-bold hover:opacity-90 transition-all cursor-pointer"
                 >
-                  Explore on Map
+                  Explorar en el Mapa
                 </button>
               </div>
             )}
@@ -300,12 +300,12 @@ function AwayFromHomePlanner({ onNavigate }) {
           {/* Budget Summary */}
           <div className="bg-primary rounded-2xl p-5 flex items-center justify-between mt-2">
             <div>
-              <span className="text-on-primary/50 text-[10px] font-bold uppercase tracking-wider block mb-1">Estimated Budget</span>
-              <div className="text-3xl font-bold text-on-primary">€4,250.00</div>
+              <span className="text-on-primary/50 text-[10px] font-bold uppercase tracking-wider block mb-1">Presupuesto Estimado</span>
+              <div className="text-3xl font-bold text-on-primary">$2,850.00 MXN</div>
               <div className="flex gap-4 mt-2 text-xs text-on-primary/60 font-medium">
-                <span>Flights · €1,200</span>
-                <span>Hotels · €2,100</span>
-                <span>Activities · €950</span>
+                <span>Transporte · $600</span>
+                <span>Hospedaje · $1,500</span>
+                <span>Actividades · $750</span>
               </div>
             </div>
             <button

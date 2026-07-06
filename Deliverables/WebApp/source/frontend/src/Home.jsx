@@ -154,6 +154,7 @@ function Home() {
         <SettingsSidebar 
           currentTab={settingsTab} 
           onTabChange={(tab) => navigate('settings', { tab })} 
+          onSignOut={handleSignOut}
         />
         <div className="flex-1 md:pl-64 pt-20">
           {renderActiveTab()}

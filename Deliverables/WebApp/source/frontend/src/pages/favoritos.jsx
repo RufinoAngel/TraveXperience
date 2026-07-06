@@ -7,27 +7,27 @@ function SavedTrips({ onNavigate, isSettingsTab = false }) {
   const [savedItems, setSavedItems] = useState([
     {
       id: 1,
-      title: 'Amalfi Coast, Italy',
-      category: 'Luxury • Beach',
+      title: 'Cascada de Tlaxcalantongo',
+      category: 'Naturaleza • Cascada',
       rating: '4.9',
-      image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=600&q=80',
-      desc: 'Acantilados espectaculares, villas exclusivas y aguas cristalinas.'
+      image: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80',
+      desc: 'Refugio natural entre exuberante vegetación, a 25 km del centro de Xicotepec.'
     },
     {
       id: 2,
-      title: 'Kyoto, Japan',
-      category: 'Cultural • Nature',
+      title: 'Centro Ceremonial Xochipila',
+      category: 'Cultural • Ceremonial',
       rating: '4.8',
-      image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80',
-      desc: 'Templos ancestrales y paisajes icónicos cubiertos de hojas de otoño.'
+      image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=600&q=80',
+      desc: 'Peña sagrada en pleno centro, sitio de rituales prehispánicos y sincretismo vivo.'
     },
     {
       id: 3,
-      title: 'Santorini, Greece',
-      category: 'Beach • Romantic',
-      rating: '4.7',
-      image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80',
-      desc: 'Arquitectura minimalista con domos azules frente al mar Egeo.'
+      title: 'Virgen de Guadalupe, Cerro El Tabacal',
+      category: 'Mirador • Panorámica',
+      rating: '4.9',
+      image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80',
+      desc: 'Escultura de 20 metros de altura con la vista más completa del Pueblo Mágico.'
     }
   ]);
 
@@ -44,7 +44,7 @@ function SavedTrips({ onNavigate, isSettingsTab = false }) {
         <div>
           <h1 className="text-3xl font-bold text-primary tracking-tight font-headline-lg mb-1">Mis Guardados</h1>
           <p className="text-on-surface-variant text-sm font-medium">
-            Tus destinos premium y experiencias de lujo listas para planificar.
+            Tus lugares favoritos de Xicotepec de Juárez listos para planificar.
           </p>
         </div>
         
@@ -150,7 +150,9 @@ function SavedTrips({ onNavigate, isSettingsTab = false }) {
 
   return (
     <div className="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col pt-16">
+      <Header />
       {content}
+      <Footer />
     </div>
   );
 }

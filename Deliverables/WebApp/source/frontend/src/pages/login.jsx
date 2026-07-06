@@ -23,7 +23,6 @@ function Login({ onNavigate, onLoginSuccess }) {
 
   return (
     <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen flex flex-col justify-between">
-      <Header />
       {/* Main Content Canvas */}
       <main className="flex-grow flex items-center justify-center pt-24 pb-12 px-6">
         <div className="w-full max-w-[480px] space-y-8 animate-fade-in-up">
@@ -134,7 +133,6 @@ function Login({ onNavigate, onLoginSuccess }) {
           </form>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -22,7 +22,7 @@ function Register({ onNavigate, onRegisterSuccess }) {
 
   return (
     <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen flex flex-col justify-between">
-      <Header />
+    
       {/* Main Content Canvas */}
       <main className="flex-grow flex items-center justify-center pt-24 pb-12 px-6">
         <div className="w-full max-w-[480px] space-y-8 animate-fade-in-up">
@@ -64,7 +64,7 @@ function Register({ onNavigate, onRegisterSuccess }) {
                       <span className="material-symbols-outlined">person</span>
                     </div>
                     <h3 className="text-lg font-bold block">Usuario</h3>
-                    <p className="text-[11px] leading-tight text-on-surface-variant mt-1">Planea viajes and descubre destinos.</p>
+                    <p className="text-[11px] leading-tight text-on-surface-variant mt-1">Planea viajes y descubre destinos.</p>
                   </div>
                 </label>
 
@@ -190,7 +190,6 @@ function Register({ onNavigate, onRegisterSuccess }) {
           </form>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

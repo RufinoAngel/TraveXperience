@@ -10,17 +10,17 @@ function LandingPage({ onNavigate }) {
           <div className="absolute inset-0 z-0">
             <div 
               className="w-full h-full bg-cover bg-center scale-105 animate-[pulse_10s_infinite_alternate]" 
-              style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80')` }}
+              style={{ backgroundImage: `url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1920&q=80')` }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-16 w-full">
             <div className="max-w-2xl text-on-primary">
               <h1 className="text-6xl font-bold mb-3 animate-fade-in-up leading-tight">
-                Viaja Más Inteligente, <span className="text-secondary-container">Juntos.</span>
+                Descubre Xicotepec, <span className="text-secondary-container">a tu Manera.</span>
               </h1>
               <p className="text-lg mb-12 text-on-primary-container leading-relaxed">
-                La plataforma integral para el descubrimiento inteligente, la planificación colaborativa y la gestión de gastos sin complicaciones. Vive el mundo sin la fricción logística.
+                La plataforma integral para descubrir el Pueblo Mágico de Xicotepec de Juárez, planificar tu recorrido y organizar tus gastos sin complicaciones. Vive la Sierra Norte de Puebla sin la fricción logística.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button 
@@ -56,7 +56,7 @@ function LandingPage({ onNavigate }) {
                   <span className="material-symbols-outlined text-on-primary-fixed group-hover:text-primary">explore</span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Descubrimiento Inteligente</h3>
-                <p className="text-sm text-on-surface-variant">Encuentra joyas escondidas con recomendaciones potenciadas por IA, adaptadas a tu estilo. Nuestro motor aprende tus preferencias para sugerir rutas alternativas y favoritos locales.</p>
+                <p className="text-sm text-on-surface-variant">Encuentra los rincones escondidos de Xicotepec con recomendaciones adaptadas a tu estilo: cascadas, miradores, cafetales y rutas culturales cerca de ti.</p>
               </div>
 
               {/* Card 2 */}
@@ -65,7 +65,7 @@ function LandingPage({ onNavigate }) {
                   <span className="material-symbols-outlined text-on-primary-fixed group-hover:text-primary">group</span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Itinerarios Colaborativos</h3>
-                <p className="text-sm text-on-surface-variant">Planifica con tus amigos en tiempo real. Sincroniza vuelos, estadías y actividades en una sola línea de tiempo compartida que mantiene a todos alineados, literalmente.</p>
+                <p className="text-sm text-on-surface-variant">Planifica con tus amigos o familia en tiempo real. Organiza traslados, hospedaje y actividades por el municipio en una sola línea de tiempo compartida.</p>
               </div>
 
               {/* Card 3 */}
@@ -74,7 +74,7 @@ function LandingPage({ onNavigate }) {
                   <span className="material-symbols-outlined text-on-primary-fixed group-hover:text-primary">account_balance_wallet</span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">Billetera Inteligente</h3>
-                <p className="text-sm text-on-surface-variant">Registra tus gastos, divide cuentas y administra tu presupuesto de viaje sin esfuerzo. Conversión de moneda automática y liquidaciones instantáneas para viajes en grupo.</p>
+                <p className="text-sm text-on-surface-variant">Registra tus gastos en pesos mexicanos, divide cuentas y administra tu presupuesto sin esfuerzo. Liquidaciones instantáneas para viajes en grupo por la sierra.</p>
               </div>
 
             </div>
@@ -89,20 +89,20 @@ function LandingPage({ onNavigate }) {
                 <span className="text-secondary font-bold uppercase tracking-widest text-sm">La Experiencia</span>
                 <h2 className="text-4xl font-bold mt-2 mb-6 leading-tight">Descubrimiento Visual con Planificación de Precisión</h2>
                 <p className="text-lg text-on-surface-variant mb-6">
-                  Nuestro mapa interactivo no es solo una vista; es un lienzo de planificación dinámico. Arrastra y suelta destinos, visualiza tiempos de viaje y observa cómo tu itinerario cobra vida geográficamente.
+                  Nuestro mapa interactivo de Xicotepec de Juárez no es solo una vista; es un lienzo de planificación dinámico. Localiza cascadas, miradores y restaurantes, calcula tiempos de traslado y observa cómo tu itinerario cobra vida por el municipio.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">check_circle</span>
-                    <span className="text-base">Capas de clima en vivo para una ruta óptima</span>
+                    <span className="text-base">Alertas de clima y neblina para una ruta óptima por la sierra</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">check_circle</span>
-                    <span className="text-base">Reservas integradas de estadías y transporte</span>
+                    <span className="text-base">Reservas integradas de hospedaje y transporte local</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">check_circle</span>
-                    <span className="text-base">Sincronización de mapas sin conexión para aventuras remotas</span>
+                    <span className="text-base">Mapas sin conexión para las zonas de senderismo más remotas</span>
                   </li>
                 </ul>
                 <button 
@@ -116,7 +116,7 @@ function LandingPage({ onNavigate }) {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
                   <div 
                     className="aspect-video bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80')` }}
+                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80')` }}
                   ></div>
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
@@ -130,12 +130,12 @@ function LandingPage({ onNavigate }) {
           <div className="max-w-[1280px] mx-auto px-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center border-y border-solid border-outline-variant/30 py-6">
               <div className="text-center md:text-left">
-                <p className="text-2xl font-bold mb-1">500k+</p>
-                <p className="text-xs text-on-surface-variant">Viajeros a Nivel Global</p>
+                <p className="text-2xl font-bold mb-1">25k+</p>
+                <p className="text-xs text-on-surface-variant">Viajeros en Xicotepec</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold mb-1">120+</p>
-                <p className="text-xs text-on-surface-variant">Países Explorados</p>
+                <p className="text-2xl font-bold mb-1">30+</p>
+                <p className="text-xs text-on-surface-variant">Atractivos del Municipio</p>
               </div>
               <div className="text-center md:text-right">
                 <div className="flex justify-center md:justify-end gap-1 text-secondary mb-1">
@@ -143,21 +143,21 @@ function LandingPage({ onNavigate }) {
                     <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                   ))}
                 </div>
-                <p className="text-xs text-on-surface-variant">Planificador Mejor Valorado</p>
+                <p className="text-xs text-on-surface-variant">Planificador Mejor Valorado del Pueblo Mágico</p>
               </div>
             </div>
 
             {/* Marquee Slider */}
             <div className="mt-12 overflow-hidden relative w-full">
               <div className="flex gap-8 w-max animate-[marquee_20s_linear_infinite]">
-                {['Santorini, Grecia', 'Kioto, Japón', 'Reikiavik, Islandia', 'Costa Amalfitana, Italia', 'Patagonia, Chile'].map((dest, i) => (
+                {['Cascada de Tlaxcalantongo', 'Cerro del Tabacal', 'Centro Ceremonial Xochipila', 'Museo Casa Carranza', 'Mirador Cruz Celestial'].map((dest, i) => (
                   <div key={i} className="flex items-center gap-4 bg-surface-container-high px-6 py-3 rounded-full">
                     <span className="material-symbols-outlined text-secondary">location_on</span>
                     <span className="font-semibold text-sm">{dest}</span>
                   </div>
                 ))}
                 {/* Duplicado para el loop */}
-                {['Santorini, Grecia', 'Kioto, Japón', 'Reikiavik, Islandia', 'Costa Amalfitana, Italia', 'Patagonia, Chile'].map((dest, i) => (
+                {['Cascada de Tlaxcalantongo', 'Cerro del Tabacal', 'Centro Ceremonial Xochipila', 'Museo Casa Carranza', 'Mirador Cruz Celestial'].map((dest, i) => (
                   <div key={`dup-${i}`} className="flex items-center gap-4 bg-surface-container-high px-6 py-3 rounded-full">
                     <span className="material-symbols-outlined text-secondary">location_on</span>
                     <span className="font-semibold text-sm">{dest}</span>

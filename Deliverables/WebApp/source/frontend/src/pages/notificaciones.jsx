@@ -13,7 +13,7 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
     {
       id: 1,
       title: '¡Reserva Confirmada!',
-      desc: 'Tu estancia en Grand Alpine Resort & Spa en Zermatt está confirmada. Referencia: TX-8829-ALP-2026.',
+      desc: 'Tu estancia en Posada del Café Xicotepec está confirmada. Referencia: TX-8829-XIC-2026.',
       time: 'Hace 1 hora',
       icon: 'verified',
       iconBg: 'bg-green-500/10 text-green-600',
@@ -22,7 +22,7 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
     {
       id: 2,
       title: 'Invitación a Colaborar',
-      desc: 'Sophia Martinez te ha invitado a editar el itinerario "Verano en París".',
+      desc: 'Sofía Martínez te ha invitado a editar el itinerario "Ruta del Café en Xicotepec".',
       time: 'Hace 1 día',
       icon: 'group_add',
       iconBg: 'bg-primary-container text-primary',
@@ -31,7 +31,7 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
     {
       id: 3,
       title: 'Gasto Registrado',
-      desc: 'Sophia Martinez agregó un gasto de €45.00 por "Entradas Louvre" a la billetera compartida.',
+      desc: 'Sofía Martínez agregó un gasto de $180.00 MXN por "Entradas Museo Casa Carranza" a la billetera compartida.',
       time: 'Hace 2 días',
       icon: 'payments',
       iconBg: 'bg-secondary-container text-primary',
@@ -49,7 +49,6 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
 
   const content = (
     <main className="max-w-4xl mx-auto px-6 md:px-12 py-12 w-full flex-grow">
-      <Header />
       <header className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">Notificaciones</h1>
@@ -179,7 +178,6 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
 
           </div>
         </section>
-        <Footer />
       </div>
     </main>
   );
@@ -190,7 +188,9 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
 
   return (
     <div className="bg-background text-on-background font-sans selection:bg-secondary-container min-h-screen flex flex-col pt-16">
+      <Header />
       {content}
+      <Footer />
     </div>
   );
 }

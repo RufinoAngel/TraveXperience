@@ -9,7 +9,6 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
 
   const content = (
     <main className="flex-grow max-w-4xl mx-auto px-6 md:px-12 py-12 w-full">
-      <Header />
       <header className="mb-12">
         <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">Privacidad y Seguridad</h1>
         <p className="text-sm text-on-surface-variant max-w-2xl leading-relaxed">
@@ -31,7 +30,7 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
             <div className={`bg-surface-container-lowest border border-solid p-6 rounded-xl flex justify-between items-center transition-all ${insightsEnabled ? 'border-primary' : 'border-outline-variant/40 hover:border-outline-variant'}`}>
               <div className="flex-1 pr-6">
                 <h3 className="text-sm font-bold text-primary mb-1">Análisis de Viajes Personalizado</h3>
-                <p className="text-xs text-on-surface-variant leading-relaxed">Permítenos analizar tu historial de viajes para sugerir destinos premium e itinerarios optimizados a tu medida.</p>
+                <p className="text-xs text-on-surface-variant leading-relaxed">Permítenos analizar tu historial de visitas para sugerir rutas e itinerarios optimizados dentro de Xicotepec de Juárez.</p>
               </div>
               <button 
                 type="button"
@@ -46,7 +45,7 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
             <div className={`bg-surface-container-lowest border border-solid p-6 rounded-xl flex justify-between items-center transition-all ${marketingEnabled ? 'border-primary' : 'border-outline-variant/40 hover:border-outline-variant'}`}>
               <div className="flex-1 pr-6">
                 <h3 className="text-sm font-bold text-primary mb-1">Preferencias de Marketing</h3>
-                <p className="text-xs text-on-surface-variant leading-relaxed">Recibe actualizaciones exclusivas sobre experiencias de viaje de lujo y funciones especiales de TraveXperience.</p>
+                <p className="text-xs text-on-surface-variant leading-relaxed">Recibe actualizaciones exclusivas sobre experiencias en la Sierra Norte de Puebla y funciones especiales de Xicotepec Xperience.</p>
               </div>
               <button 
                 type="button"
@@ -102,7 +101,7 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
                   <div className="flex items-center gap-4">
                     <span className="material-symbols-outlined text-on-surface-variant">laptop_mac</span>
                     <div>
-                      <p className="text-xs font-bold text-primary">MacBook Pro 16" — Londres, Reino Unido</p>
+                      <p className="text-xs font-bold text-primary">MacBook Pro 16" — Xicotepec de Juárez, Puebla</p>
                       <p className="text-[11px] text-on-surface-variant">Sesión actual • Chrome</p>
                     </div>
                   </div>
@@ -112,7 +111,7 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
                   <div className="flex items-center gap-4">
                     <span className="material-symbols-outlined text-on-surface-variant">smartphone</span>
                     <div>
-                      <p className="text-xs font-bold text-primary">iPhone 15 Pro — París, Francia</p>
+                      <p className="text-xs font-bold text-primary">iPhone 15 Pro — Poza Rica, Veracruz</p>
                       <p className="text-[11px] text-on-surface-variant">Última actividad: hace 2 horas • Safari</p>
                     </div>
                   </div>
@@ -162,7 +161,6 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
           </div>
         </section>
       </div>
-      <Footer />
     </main>
   );
 
@@ -172,9 +170,11 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
 
   return (
     <div className="bg-background text-on-background font-sans selection:bg-secondary-container min-h-screen flex flex-col antialiased">
+      <Header />
       <div className="flex pt-16 flex-1">
         {content}
       </div>
+      <Footer />
     </div>
   );
 }

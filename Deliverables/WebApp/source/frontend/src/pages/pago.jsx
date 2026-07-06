@@ -150,11 +150,11 @@ function Checkout({ onNavigate, hotel }) {
               <div className="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm">
                 
                 {/* Header / Hero Image */}
-                <div className="h-40 bg-cover bg-center relative bg-[url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80')]">
+                <div className="h-40 bg-cover bg-center relative bg-[url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=600&q=80')]">
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
                   <div className="absolute bottom-4 left-6">
-                    <p className="text-secondary-container text-xs font-bold uppercase tracking-widest mb-1">Viaje a París</p>
-                    <h3 className="text-white font-bold text-lg">{hotel ? hotel.title : 'Verano en la Ciudad de la Luz'}</h3>
+                    <p className="text-secondary-container text-xs font-bold uppercase tracking-widest mb-1">Viaje a Xicotepec de Juárez</p>
+                    <h3 className="text-white font-bold text-lg">{hotel ? hotel.title : 'Escapada al Pueblo Mágico del Café'}</h3>
                   </div>
                 </div>
 
@@ -166,24 +166,24 @@ function Checkout({ onNavigate, hotel }) {
                     <div className="space-y-3">
                       <div className="flex justify-between items-start">
                         <div>
-                          <p className="text-sm font-semibold text-primary">{hotel ? hotel.title : 'Le Meurice Luxury Suite'}</p>
-                          <p className="text-xs text-on-surface-variant">5 noches, 2 huéspedes</p>
+                          <p className="text-sm font-semibold text-primary">{hotel ? hotel.title : 'Posada del Café Xicotepec'}</p>
+                          <p className="text-xs text-on-surface-variant">3 noches, 2 huéspedes</p>
                         </div>
-                        <p className="text-sm font-medium text-primary">$4,250.00</p>
+                        <p className="text-sm font-medium text-primary">$1,850.00</p>
                       </div>
                       <div className="flex justify-between items-start">
                         <div>
-                          <p className="text-sm font-semibold text-primary">Air France - Clase Ejecutiva</p>
-                          <p className="text-xs text-on-surface-variant">NYC (JFK) ↔ París (CDG)</p>
+                          <p className="text-sm font-semibold text-primary">ADO - Autobús Ejecutivo</p>
+                          <p className="text-xs text-on-surface-variant">CDMX ↔ Xicotepec de Juárez</p>
                         </div>
-                        <p className="text-sm font-medium text-primary">$2,840.00</p>
+                        <p className="text-sm font-medium text-primary">$780.00</p>
                       </div>
                       <div className="flex justify-between items-start">
                         <div>
-                          <p className="text-sm font-semibold text-primary">Experiencias Exclusivas</p>
-                          <p className="text-xs text-on-surface-variant">Louvre Privado, Cena en Crucero</p>
+                          <p className="text-sm font-semibold text-primary">Experiencias Locales</p>
+                          <p className="text-xs text-on-surface-variant">Ruta del Café, Cena en Las Acamayas</p>
                         </div>
-                        <p className="text-sm font-medium text-primary">$1,150.00</p>
+                        <p className="text-sm font-medium text-primary">$620.00</p>
                       </div>
                     </div>
 
@@ -192,8 +192,8 @@ function Checkout({ onNavigate, hotel }) {
                     {/* Fees & Taxes */}
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-on-surface-variant">Impuestos y tasas</span>
-                        <span className="font-medium text-primary">$642.50</span>
+                        <span className="text-on-surface-variant">Impuestos y cuotas</span>
+                        <span className="font-medium text-primary">$180.00</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-on-surface-variant">Tarifa de reserva</span>
@@ -206,7 +206,7 @@ function Checkout({ onNavigate, hotel }) {
                         <span className="text-lg font-bold text-primary">Total</span>
                         <div className="text-right">
                           <span className="text-2xl font-bold block text-primary">
-                            {hotel && hotel.price ? `$${hotel.price.toLocaleString()}` : '$8,882.50'}
+                            {hotel && hotel.price ? `$${hotel.price.toLocaleString()} MXN` : '$3,430.00 MXN'}
                           </span>
                           <span className="text-xs text-on-surface-variant">Impuestos incluidos</span>
                         </div>
@@ -268,7 +268,7 @@ function Checkout({ onNavigate, hotel }) {
             </div>
             <h2 className="text-2xl font-bold text-primary mb-2">¡Reserva Confirmada!</h2>
             <p className="text-on-surface-variant mb-8 text-sm">
-              ¡Prepara tus maletas! Tu itinerario completo para París ha sido enviado a tu correo electrónico.
+              ¡Prepara tus maletas! Tu itinerario completo para Xicotepec de Juárez ha sido enviado a tu correo electrónico.
             </p>
             <button 
               className="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold w-full transition-all active:scale-[0.98]" 

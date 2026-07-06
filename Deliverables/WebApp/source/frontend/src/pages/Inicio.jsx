@@ -4,7 +4,7 @@ import Footer from '../components/footer';
 
 function NearMeHome({ onNavigate }) {
   // Estado para los filtros de categorías cercanos
-  const [activeFilter, setActiveFilter] = useState('All Nearby');
+  const [activeFilter, setActiveFilter] = useState('Todo Cerca');
   
   // Estado para manejar favoritos de forma interactiva
   const [favorites, setFavorites] = useState({});
@@ -12,45 +12,45 @@ function NearMeHome({ onNavigate }) {
   // Lista enriquecida de experiencias cercanas (Ubicación: Londres / South Kensington)
   const [places, setPlaces] = useState([
     {
-      id: 'gilded-ivy',
-      title: 'The Gilded Ivy',
-      type: 'Restaurant',
+      id: 'acamayas-portal',
+      title: 'Restaurante Las Acamayas',
+      type: 'Restaurantes',
       icon: 'restaurant',
       pinColor: 'bg-error text-white',
       distance: '0.4 km',
       rating: '4.9',
       reviews: '1.2k',
-      tags: ['#Michelin', '#FineDining'],
-      desc: 'Exquisite modern European cuisine set in a stunning botanical-themed conservatory. Famous for their white truffle risotto.',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80',
+      tags: ['#Regional', '#Acamayas'],
+      desc: 'Cocina típica de la Sierra Norte de Puebla en los portales del centro. Famoso por sus acamayas al mojo de ajo y molotes de tinga.',
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80',
       coords: { top: '40%', left: '30%' }
     },
     {
-      id: 'victoria-albert',
-      title: 'Victoria & Albert',
-      type: 'Museum',
+      id: 'museo-carranza',
+      title: 'Museo Casa Carranza',
+      type: 'Museos',
       icon: 'museum',
       pinColor: 'bg-secondary-container text-primary',
       distance: '0.8 km',
       rating: '4.8',
       reviews: '3.5k',
-      tags: ['#Art', '#Design'],
-      desc: "World's leading museum of art and design, housing a permanent collection of over 2.3 million objects.",
-      image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80',
+      tags: ['#Historia', '#Cultura'],
+      desc: 'Casa donde fue velado Venustiano Carranza en 1920, con objetos personales, documentos y fotografías de la Revolución.',
+      image: 'https://images.unsplash.com/photo-1584285405429-136bf988e786?auto=format&fit=crop&w=600&q=80',
       coords: { top: '35%', left: '55%' }
     },
     {
-      id: 'jazz-lounge',
-      title: 'The Jazz Lounge',
-      type: 'Entertainment',
+      id: 'xochipila',
+      title: 'Centro Ceremonial Xochipila',
+      type: 'Entretenimiento',
       icon: 'theater_comedy',
       pinColor: 'bg-secondary text-white',
       distance: '1.2 km',
       rating: '4.7',
       reviews: '850',
-      tags: ['#Jazz', '#Nightlife'],
-      desc: 'An intimate basement venue hosting world-renowned jazz artists every night. Handcrafted cocktails and smooth rhythms.',
-      image: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80',
+      tags: ['#Tradición', '#Rituales'],
+      desc: 'Peña sagrada en el corazón del pueblo, punto de encuentro para rituales indígenas y celebraciones del solsticio.',
+      image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=600&q=80',
       coords: { top: '50%', left: '75%' }
     }
   ]);
@@ -63,9 +63,9 @@ function NearMeHome({ onNavigate }) {
   };
 
   // Filtrar lugares según selección
-  const filteredPlaces = activeFilter === 'All Nearby' 
+  const filteredPlaces = activeFilter === 'Todo Cerca' 
     ? places 
-    : places.filter(place => place.type.toLowerCase() === activeFilter.toLowerCase() || (activeFilter === 'Events' && place.type === 'Event'));
+    : places.filter(place => place.type.toLowerCase() === activeFilter.toLowerCase() || (activeFilter === 'Eventos' && place.type === 'Evento'));
 
   // Hacer scroll automático a la tarjeta cuando se presiona un pin del mapa
   const scrollToCard = (id) => {
@@ -76,16 +76,16 @@ function NearMeHome({ onNavigate }) {
   };
 
   const categories = [
-    { name: 'All Nearby', icon: 'explore' },
-    { name: 'Restaurants', icon: 'restaurant' },
-    { name: 'Museums', icon: 'museum' },
-    { name: 'Events', icon: 'event' },
-    { name: 'Entertainment', icon: 'theater_comedy' }
+    { name: 'Todo Cerca', icon: 'explore' },
+    { name: 'Restaurantes', icon: 'restaurant' },
+    { name: 'Museos', icon: 'museum' },
+    { name: 'Eventos', icon: 'event' },
+    { name: 'Entretenimiento', icon: 'theater_comedy' }
   ];
 
   return (
     <div className="bg-background text-on-background font-body-md overflow-hidden h-screen flex flex-col antialiased">
-      <Header />
+
       {/* Main Area: Interactive Map Background Layout */}
       <main className="relative flex-grow overflow-hidden flex flex-col pt-20">
         
@@ -93,8 +93,8 @@ function NearMeHome({ onNavigate }) {
         <div className="absolute inset-0 z-0">
           <img 
             className="w-full h-full object-cover opacity-90 select-none pointer-events-none" 
-            alt="London Map Blueprint" 
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80" 
+            alt="Vista aérea de la sierra de Xicotepec de Juárez" 
+            src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1920&q=80" 
           />
           {/* Capa de degradados premium */}
           <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-background pointer-events-none"></div>
@@ -137,7 +137,7 @@ function NearMeHome({ onNavigate }) {
                   }`}
                 >
                   <span className="material-symbols-outlined text-base">{cat.icon}</span>
-                  <span>{cat.name === 'All Nearby' ? 'All Nearby' : cat.name}</span>
+                  <span>{cat.name}</span>
                 </button>
               ))}
             </div>
@@ -147,10 +147,10 @@ function NearMeHome({ onNavigate }) {
           <section className="px-6 md:px-16 mt-4 flex-grow flex flex-col justify-center">
             <div className="max-w-7xl w-full mx-auto">
               <h1 className="text-4xl md:text-5xl font-black font-display-lg text-primary tracking-tight">
-                Discover <span className="text-secondary-fixed-dim border-b-4 border-secondary-container">London</span>
+                Descubre <span className="text-secondary-fixed-dim border-b-4 border-secondary-container">Xicotepec</span>
               </h1>
               <p className="text-sm md:text-base text-on-surface-variant max-w-md mt-3 font-medium leading-relaxed drop-shadow-sm">
-                Find curated experiences within 2km of your current location in South Kensington.
+                Encuentra experiencias seleccionadas a 2 km de tu ubicación actual en el centro de Xicotepec de Juárez.
               </p>
             </div>
           </section>
@@ -218,7 +218,7 @@ function NearMeHome({ onNavigate }) {
                             onClick={() => { if (onNavigate) onNavigate('hotel-detail', { hotel: place }); }}
                             className="text-xs font-bold text-primary bg-transparent border-none p-0 flex items-center gap-0.5 hover:text-secondary transition-colors cursor-pointer group/btn"
                           >
-                            <span>Details</span>
+                            <span>Ver más</span>
                             <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
                           </button>
                         </div>
@@ -232,8 +232,8 @@ function NearMeHome({ onNavigate }) {
                 {filteredPlaces.length === 0 && (
                   <div className="w-full bg-white/90 backdrop-blur-md rounded-2xl p-8 text-center border border-dashed border-outline-variant/60">
                     <span className="material-symbols-outlined text-outline-variant text-4xl mb-2">location_away</span>
-                    <h4 className="text-sm font-bold text-primary">No experiences found</h4>
-                    <p className="text-xs text-on-surface-variant font-medium mt-1">Try selecting another filter category above.</p>
+                    <h4 className="text-sm font-bold text-primary">No se encontraron experiencias</h4>
+                    <p className="text-xs text-on-surface-variant font-medium mt-1">Intenta seleccionar otra categoría de filtro arriba.</p>
                   </div>
                 )}
               </div>
@@ -246,12 +246,11 @@ function NearMeHome({ onNavigate }) {
         <div className="fixed bottom-24 md:bottom-8 right-6 z-20 pointer-events-auto">
           <button className="flex items-center gap-2 bg-primary text-on-primary px-5 py-3.5 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all border-none cursor-pointer font-bold text-xs tracking-wide">
             <span className="material-symbols-outlined text-base">my_location</span>
-            <span>Recenter Map</span>
+            <span>Recentrar Mapa</span>
           </button>
         </div>
       </main>
 
-      <Footer />
 
     </div>
   );

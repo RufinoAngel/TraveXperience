@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 // Fix leaflet default icon (broken in bundled environments)
@@ -40,84 +39,84 @@ const iconTertiary  = createIcon('#38260b');
 const places = [
   {
     id: 1,
-    title: 'Le Jules Verne',
-    type: 'Fine Dining',
+    title: 'Restaurante Las Acamayas',
+    type: 'Cocina Regional',
     distance: '0.2 km',
     rating: '4.9',
     icon: 'restaurant',
-    latlng: [48.8584, 2.2945],
+    latlng: [20.2820, -97.9495],
     markerIcon: iconSecondary,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80',
-    desc: 'Alta cocina parisina con vistas a la Torre Eiffel.',
-    category: 'Dining',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80',
+    desc: 'Acamayas al mojo de ajo y molotes de tinga en pleno centro de Xicotepec.',
+    category: 'Comida',
   },
   {
     id: 2,
-    title: 'Louvre Museum',
-    type: 'Culture',
+    title: 'Museo Casa Carranza',
+    type: 'Cultura',
     distance: '1.1 km',
     rating: '4.7',
     icon: 'museum',
-    latlng: [48.8606, 2.3376],
+    latlng: [20.2812, -97.9483],
     markerIcon: iconPrimary,
-    image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=400&q=80',
-    desc: 'El museo de arte más grande e icónico del mundo.',
-    category: 'Culture',
+    image: 'https://images.unsplash.com/photo-1584285405429-136bf988e786?auto=format&fit=crop&w=400&q=80',
+    desc: 'Casa donde fue velado Venustiano Carranza tras su asesinato en 1920.',
+    category: 'Cultura',
   },
   {
     id: 3,
-    title: 'Skyline Lounge',
-    type: 'Nightlife',
+    title: 'La Cantina del Portal',
+    type: 'Vida Nocturna',
     distance: '0.8 km',
-    rating: '4.8',
+    rating: '4.6',
     icon: 'local_bar',
-    latlng: [48.8738, 2.295],
+    latlng: [20.2828, -97.9502],
     markerIcon: iconTertiary,
     image: 'https://images.unsplash.com/photo-1536489885071-87983c3e2859?auto=format&fit=crop&w=400&q=80',
-    desc: 'Cócteles artesanales y vistas espectaculares del horizonte.',
-    category: 'Nightlife',
+    desc: 'Cantina tradicional con bebidas artesanales de la región y ambiente local.',
+    category: 'Vida Nocturna',
   },
   {
     id: 4,
-    title: 'Notre-Dame de Paris',
-    type: 'Landmark',
+    title: 'Virgen de Guadalupe, Cerro El Tabacal',
+    type: 'Mirador',
     distance: '2.4 km',
-    rating: '4.8',
+    rating: '4.9',
     icon: 'church',
-    latlng: [48.853, 2.3499],
+    latlng: [20.2775, -97.9525],
     markerIcon: iconPrimary,
-    image: 'https://images.unsplash.com/photo-1508050919630-b135583b29ab?auto=format&fit=crop&w=400&q=80',
-    desc: 'Catedral gótica medieval en el corazón de París.',
-    category: 'Landmark',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=80',
+    desc: 'Escultura de 20 metros de altura con la vista más completa del Pueblo Mágico.',
+    category: 'Mirador',
   },
   {
     id: 5,
-    title: 'Café de Flore',
-    type: 'Café',
-    distance: '1.8 km',
+    title: 'Portal del Café',
+    type: 'Cafetería',
+    distance: '0.1 km',
     rating: '4.6',
     icon: 'local_cafe',
-    latlng: [48.854, 2.332],
+    latlng: [20.2823, -97.9498],
     markerIcon: iconSecondary,
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80',
-    desc: 'Histórico café parisino frecuentado por escritores y artistas.',
-    category: 'Dining',
+    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=400&q=80',
+    desc: 'Los históricos portales del zócalo donde se sirve el reconocido café de Xicotepec.',
+    category: 'Café',
   },
 ];
 
 const categoryIcons = {
-  Dining: 'restaurant',
-  Culture: 'museum',
-  Nightlife: 'local_bar',
-  Landmark: 'account_balance',
+  Comida: 'restaurant',
+  Cultura: 'museum',
+  'Vida Nocturna': 'local_bar',
+  Mirador: 'account_balance',
   Café: 'local_cafe',
 };
 
 const categoryColors = {
-  Dining: 'bg-amber-100 text-amber-700',
-  Culture: 'bg-blue-100 text-blue-700',
-  Nightlife: 'bg-purple-100 text-purple-700',
-  Landmark: 'bg-emerald-100 text-emerald-700',
+  Comida: 'bg-amber-100 text-amber-700',
+  Cultura: 'bg-blue-100 text-blue-700',
+  'Vida Nocturna': 'bg-purple-100 text-purple-700',
+  Mirador: 'bg-emerald-100 text-emerald-700',
   Café: 'bg-orange-100 text-orange-700',
 };
 
@@ -138,7 +137,7 @@ function InteractiveMap({ onNavigate }) {
   const [activeFilter, setActiveFilter] = useState('Todo');
   const [mapStyle, setMapStyle] = useState('streets');
 
-  const filters = ['Todo', 'Dining', 'Culture', 'Nightlife', 'Landmark', 'Café'];
+  const filters = ['Todo', 'Comida', 'Cultura', 'Vida Nocturna', 'Mirador', 'Café'];
 
   const filteredPlaces = places.filter((p) => {
     const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -162,17 +161,17 @@ function InteractiveMap({ onNavigate }) {
   };
 
   return (
-    <div className="h-screen bg-surface text-on-surface font-sans flex flex-col overflow-hidden">
-      <Header />
-      {/* Content area below fixed header (pt-20) */}
-      <div className="flex flex-1 pt-20 overflow-hidden">
+    <div className="min-h-screen bg-surface text-on-surface font-sans flex flex-col">
+
+      {/* Área del mapa: ocupa la altura visible bajo el header fijo (20 = h-20 del Header) */}
+      <div className="flex h-[calc(100vh-5rem)] pt-20 overflow-hidden">
 
         {/* ── Left Sidebar ── */}
         <aside className="w-80 bg-surface/95 backdrop-blur-xl border-r border-outline-variant/40 flex flex-col shadow-lg z-30 flex-shrink-0">
 
           {/* Sidebar Header */}
           <div className="p-5 border-b border-outline-variant/30 bg-primary">
-            <h1 className="text-lg font-bold text-on-primary">Explorar París</h1>
+            <h1 className="text-lg font-bold text-on-primary">Explorar Xicotepec de Juárez</h1>
             <p className="text-xs text-on-primary/60 flex items-center gap-1 mt-1 font-medium">
               <span className="material-symbols-outlined text-[13px]">location_on</span>
               {filteredPlaces.length} experiencias curadas
@@ -270,8 +269,8 @@ function InteractiveMap({ onNavigate }) {
           </div>
 
           <MapContainer
-            center={[48.8566, 2.3522]}
-            zoom={14}
+            center={[20.2822, -97.9497]}
+            zoom={15}
             style={{ height: '100%', width: '100%' }}
             zoomControl={false}
           >
@@ -360,7 +359,6 @@ function InteractiveMap({ onNavigate }) {
 
       <Footer />
     </div>
-    
   );
 }
 
