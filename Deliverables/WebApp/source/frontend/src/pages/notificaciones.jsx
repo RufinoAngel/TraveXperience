@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function UserNotifications({ onNavigate, isSettingsTab = false }) {
   // Estado para los interruptores de notificaciones
@@ -47,6 +49,7 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
 
   const content = (
     <main className="max-w-4xl mx-auto px-6 md:px-12 py-12 w-full flex-grow">
+      <Header />
       <header className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">Notificaciones</h1>
@@ -176,7 +179,7 @@ function UserNotifications({ onNavigate, isSettingsTab = false }) {
 
           </div>
         </section>
-
+        <Footer />
       </div>
     </main>
   );

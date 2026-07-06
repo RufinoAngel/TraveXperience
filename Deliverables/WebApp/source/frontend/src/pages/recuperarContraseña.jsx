@@ -13,32 +13,10 @@ function ForgotPassword({ onNavigate }) {
   };
 
   return (
-    <div className="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col justify-between">
-      
-      {/* TopNavBar Simplificado */}
-      <header className="bg-primary/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full border-0 border-b border-solid border-white/5">
-        <div className="flex justify-between items-center w-full px-6 md:px-16 h-20 max-w-7xl mx-auto">
-          <div 
-            onClick={() => { if (onNavigate) onNavigate('landing'); }}
-            className="font-headline-md text-xl md:text-2xl font-bold text-on-primary tracking-tight cursor-pointer"
-          >
-            TraveXperience
-          </div>
-          <a 
-            onClick={(e) => {
-              e.preventDefault();
-              if (onNavigate) onNavigate('login');
-            }}
-            href="#login" 
-            className="text-on-primary/80 hover:text-on-primary text-xs font-bold transition-colors cursor-pointer"
-          >
-            Iniciar Sesión
-          </a>
-        </div>
-      </header>
+    <div className="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col justify-center pt-20">
 
       {/* Contenedor Principal */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 pt-28 pb-16 w-full max-w-md mx-auto">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 pb-16 w-full max-w-md mx-auto">
         <div className="w-full bg-surface border border-solid border-outline-variant/40 rounded-2xl p-8 shadow-[0px_12px_40px_rgba(0,0,0,0.03)]">
           
           {!isSubmitted ? (
@@ -146,11 +124,6 @@ function ForgotPassword({ onNavigate }) {
 
         </div>
       </main>
-
-      {/* Footer minimalista */}
-      <footer className="py-6 border-0 border-t border-solid border-outline-variant/30 text-center text-[11px] text-on-surface-variant/60 font-medium bg-surface-bright">
-        &copy; {new Date().getFullYear()} TraveXperience. Away From Home S.A.
-      </footer>
 
     </div>
   );

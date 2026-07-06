@@ -3,7 +3,7 @@ import React from 'react';
 function LandingPage({ onNavigate }) {
   return (
     <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen flex flex-col">
-      <main className="pt-20 flex-grow flex items-center justify-center">
+      <main className="pt-20 flex-grow flex flex-col">
         
         {/* Hero Section */}
         <section className="relative min-h-[921px] flex items-center overflow-hidden">
@@ -17,24 +17,24 @@ function LandingPage({ onNavigate }) {
           <div className="relative z-10 max-w-[1280px] mx-auto px-16 w-full">
             <div className="max-w-2xl text-on-primary">
               <h1 className="text-6xl font-bold mb-3 animate-fade-in-up leading-tight">
-                Travel Smarter, <span className="text-secondary-container">Together.</span>
+                Viaja Más Inteligente, <span className="text-secondary-container">Juntos.</span>
               </h1>
               <p className="text-lg mb-12 text-on-primary-container leading-relaxed">
-                The all-in-one platform for intelligent discovery, collaborative planning, and seamless expense management. Experience the world without the logistics friction.
+                La plataforma integral para el descubrimiento inteligente, la planificación colaborativa y la gestión de gastos sin complicaciones. Vive el mundo sin la fricción logística.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={() => onNavigate('register')}
                   className="bg-secondary-container text-primary font-semibold px-8 py-4 rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 cursor-pointer border-none"
                 >
-                  Start Your Journey
+                  Comienza tu Viaje
                 </button>
                 <button 
                   onClick={() => onNavigate('login')}
                   className="flex items-center gap-2 border border-solid border-on-primary/30 text-on-primary font-semibold px-8 py-4 rounded-lg hover:bg-white/10 glass-effect active:scale-95 transition-all cursor-pointer bg-transparent"
                 >
                   <span className="material-symbols-outlined">play_circle</span>
-                  Watch Demo
+                  Ver Demo
                 </button>
               </div>
             </div>
@@ -45,8 +45,8 @@ function LandingPage({ onNavigate }) {
         <section className="py-12 bg-surface">
           <div className="max-w-[1280px] mx-auto px-16">
             <div className="text-center mb-12">
-              <span className="text-secondary font-bold uppercase tracking-widest text-sm">Platform Core</span>
-              <h2 className="text-4xl font-bold mt-2">Engineered for Explorers</h2>
+              <span className="text-secondary font-bold uppercase tracking-widest text-sm">Núcleo de la Plataforma</span>
+              <h2 className="text-4xl font-bold mt-2">Diseñado para Exploradores</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
@@ -55,8 +55,8 @@ function LandingPage({ onNavigate }) {
                 <div className="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
                   <span className="material-symbols-outlined text-on-primary-fixed group-hover:text-primary">explore</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Smart Discovery</h3>
-                <p className="text-sm text-on-surface-variant">Find hidden gems with AI-powered recommendations tailored to your style. Our engine learns your preferences to suggest off-beat paths and local favorites.</p>
+                <h3 className="text-xl font-bold mb-3">Descubrimiento Inteligente</h3>
+                <p className="text-sm text-on-surface-variant">Encuentra joyas escondidas con recomendaciones potenciadas por IA, adaptadas a tu estilo. Nuestro motor aprende tus preferencias para sugerir rutas alternativas y favoritos locales.</p>
               </div>
 
               {/* Card 2 */}
@@ -64,8 +64,8 @@ function LandingPage({ onNavigate }) {
                 <div className="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
                   <span className="material-symbols-outlined text-on-primary-fixed group-hover:text-primary">group</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Collaborative Itineraries</h3>
-                <p className="text-sm text-on-surface-variant">Plan with friends in real-time. Sync flights, stays, and activities in one shared timeline that keeps everyone on the same page, literally.</p>
+                <h3 className="text-xl font-bold mb-3">Itinerarios Colaborativos</h3>
+                <p className="text-sm text-on-surface-variant">Planifica con tus amigos en tiempo real. Sincroniza vuelos, estadías y actividades en una sola línea de tiempo compartida que mantiene a todos alineados, literalmente.</p>
               </div>
 
               {/* Card 3 */}
@@ -73,8 +73,8 @@ function LandingPage({ onNavigate }) {
                 <div className="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
                   <span className="material-symbols-outlined text-on-primary-fixed group-hover:text-primary">account_balance_wallet</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Smart Wallet</h3>
-                <p className="text-sm text-on-surface-variant">Track expenses, split bills, and manage your travel budget effortlessly. Automated currency conversion and instant settling for group trips.</p>
+                <h3 className="text-xl font-bold mb-3">Billetera Inteligente</h3>
+                <p className="text-sm text-on-surface-variant">Registra tus gastos, divide cuentas y administra tu presupuesto de viaje sin esfuerzo. Conversión de moneda automática y liquidaciones instantáneas para viajes en grupo.</p>
               </div>
 
             </div>
@@ -86,30 +86,30 @@ function LandingPage({ onNavigate }) {
           <div className="max-w-[1280px] mx-auto px-16">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="w-full lg:w-1/2 order-2 lg:order-1">
-                <span className="text-secondary font-bold uppercase tracking-widest text-sm">The Experience</span>
-                <h2 className="text-4xl font-bold mt-2 mb-6 leading-tight">Visual Discovery Meets Precision Planning</h2>
+                <span className="text-secondary font-bold uppercase tracking-widest text-sm">La Experiencia</span>
+                <h2 className="text-4xl font-bold mt-2 mb-6 leading-tight">Descubrimiento Visual con Planificación de Precisión</h2>
                 <p className="text-lg text-on-surface-variant mb-6">
-                  Our interactive map isn't just a view; it's a dynamic planning canvas. Drag and drop destinations, visualize travel times, and see your itinerary come to life geographically. 
+                  Nuestro mapa interactivo no es solo una vista; es un lienzo de planificación dinámico. Arrastra y suelta destinos, visualiza tiempos de viaje y observa cómo tu itinerario cobra vida geográficamente.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">check_circle</span>
-                    <span className="text-base">Live weather overlays for optimal routing</span>
+                    <span className="text-base">Capas de clima en vivo para una ruta óptima</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">check_circle</span>
-                    <span className="text-base">Integrated booking for stays and transport</span>
+                    <span className="text-base">Reservas integradas de estadías y transporte</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary">check_circle</span>
-                    <span className="text-base">Offline map sync for remote adventures</span>
+                    <span className="text-base">Sincronización de mapas sin conexión para aventuras remotas</span>
                   </li>
                 </ul>
                 <button 
                   onClick={() => onNavigate('login')}
                   className="border-0 border-b-2 border-solid border-primary text-primary font-bold pb-1 hover:text-secondary hover:border-secondary transition-all bg-transparent cursor-pointer"
                 >
-                  Explore the Map Experience
+                  Explora la Experiencia del Mapa
                 </button>
               </div>
               <div className="w-full lg:w-1/2 order-1 lg:order-2">
@@ -131,11 +131,11 @@ function LandingPage({ onNavigate }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center border-y border-solid border-outline-variant/30 py-6">
               <div className="text-center md:text-left">
                 <p className="text-2xl font-bold mb-1">500k+</p>
-                <p className="text-xs text-on-surface-variant">Global Travelers</p>
+                <p className="text-xs text-on-surface-variant">Viajeros a Nivel Global</p>
               </div>
               <div className="text-center">
                 <p className="text-2xl font-bold mb-1">120+</p>
-                <p className="text-xs text-on-surface-variant">Countries Explored</p>
+                <p className="text-xs text-on-surface-variant">Países Explorados</p>
               </div>
               <div className="text-center md:text-right">
                 <div className="flex justify-center md:justify-end gap-1 text-secondary mb-1">
@@ -143,21 +143,21 @@ function LandingPage({ onNavigate }) {
                     <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                   ))}
                 </div>
-                <p className="text-xs text-on-surface-variant">Top Rated Planner</p>
+                <p className="text-xs text-on-surface-variant">Planificador Mejor Valorado</p>
               </div>
             </div>
 
             {/* Marquee Slider */}
             <div className="mt-12 overflow-hidden relative w-full">
               <div className="flex gap-8 w-max animate-[marquee_20s_linear_infinite]">
-                {['Santorini, Greece', 'Kyoto, Japan', 'Reykjavik, Iceland', 'Amalfi Coast, Italy', 'Patagonia, Chile'].map((dest, i) => (
+                {['Santorini, Grecia', 'Kioto, Japón', 'Reikiavik, Islandia', 'Costa Amalfitana, Italia', 'Patagonia, Chile'].map((dest, i) => (
                   <div key={i} className="flex items-center gap-4 bg-surface-container-high px-6 py-3 rounded-full">
                     <span className="material-symbols-outlined text-secondary">location_on</span>
                     <span className="font-semibold text-sm">{dest}</span>
                   </div>
                 ))}
-                {/* Duplicated for loop */}
-                {['Santorini, Greece', 'Kyoto, Japan', 'Reykjavik, Iceland', 'Amalfi Coast, Italy', 'Patagonia, Chile'].map((dest, i) => (
+                {/* Duplicado para el loop */}
+                {['Santorini, Grecia', 'Kioto, Japón', 'Reikiavik, Islandia', 'Costa Amalfitana, Italia', 'Patagonia, Chile'].map((dest, i) => (
                   <div key={`dup-${i}`} className="flex items-center gap-4 bg-surface-container-high px-6 py-3 rounded-full">
                     <span className="material-symbols-outlined text-secondary">location_on</span>
                     <span className="font-semibold text-sm">{dest}</span>
@@ -177,15 +177,15 @@ function LandingPage({ onNavigate }) {
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container rounded-full blur-[100px]"></div>
               </div>
               <div className="relative z-10">
-                <h2 className="text-5xl font-bold text-on-primary mb-3">Ready for your next adventure?</h2>
+                <h2 className="text-5xl font-bold text-on-primary mb-3">¿Listo para tu próxima aventura?</h2>
                 <p className="text-base text-on-primary-container max-w-xl mx-auto mb-12">
-                  Join thousands of travelers who are already planning smarter, saving more, and exploring deeper. Your journey begins with a single click.
+                  Únete a miles de viajeros que ya están planificando de forma más inteligente, ahorrando más y explorando más profundo. Tu viaje comienza con un solo clic.
                 </p>
                 <button 
                   onClick={() => onNavigate('register')}
                   className="bg-secondary-container text-primary font-bold px-10 py-5 rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-xl cursor-pointer border-none"
                 >
-                  Get Started for Free
+                  Comienza Gratis
                 </button>
               </div>
             </div>

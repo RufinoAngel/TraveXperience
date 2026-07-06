@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function AccountSettings({ onNavigate, isSettingsTab = false }) {
   // Estado para el interruptor de Perfil Privado
@@ -22,6 +24,7 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
 
   const panelContent = (
     <div className="space-y-8 w-full max-w-4xl mx-auto px-6 md:px-12 py-12">
+      <Header />
       {/* Sección: Visibilidad del Perfil */}
       <div className="bg-white border border-solid border-outline-variant/40 rounded-3xl p-6 md:p-8 shadow-sm">
         <div className="flex items-center gap-2 mb-2 text-primary">
@@ -130,6 +133,7 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 

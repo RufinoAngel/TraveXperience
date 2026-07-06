@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function NearMeHome({ onNavigate }) {
   // Estado para los filtros de categorías cercanos
@@ -83,7 +85,7 @@ function NearMeHome({ onNavigate }) {
 
   return (
     <div className="bg-background text-on-background font-body-md overflow-hidden h-screen flex flex-col antialiased">
-
+      <Header />
       {/* Main Area: Interactive Map Background Layout */}
       <main className="relative flex-grow overflow-hidden flex flex-col pt-20">
         
@@ -249,27 +251,7 @@ function NearMeHome({ onNavigate }) {
         </div>
       </main>
 
-      {/* Bottom Navigation Menu Footer (Mobile view) */}
-      <footer className="md:hidden bg-surface-container-lowest border-t border-outline-variant/40 py-2 px-4 fixed bottom-0 left-0 w-full z-50 shadow-lg">
-        <div className="flex justify-around items-center">
-          <button className="flex flex-col items-center gap-0.5 text-secondary-container bg-transparent border-none cursor-pointer">
-            <span className="material-symbols-outlined text-[22px] fill-1">explore</span>
-            <span className="text-[10px] font-bold">Explore</span>
-          </button>
-          <button className="flex flex-col items-center gap-0.5 text-on-surface-variant/70 hover:text-primary bg-transparent border-none cursor-pointer">
-            <span className="material-symbols-outlined text-[22px]">map</span>
-            <span className="text-[10px] font-medium">Trips</span>
-          </button>
-          <button className="flex flex-col items-center gap-0.5 text-on-surface-variant/70 hover:text-primary bg-transparent border-none cursor-pointer">
-            <span className="material-symbols-outlined text-[22px]">favorite</span>
-            <span className="text-[10px] font-medium">Saved</span>
-          </button>
-          <button className="flex flex-col items-center gap-0.5 text-on-surface-variant/70 hover:text-primary bg-transparent border-none cursor-pointer">
-            <span className="material-symbols-outlined text-[22px]">account_circle</span>
-            <span className="text-[10px] font-medium">Profile</span>
-          </button>
-        </div>
-      </footer>
+      <Footer />
 
     </div>
   );

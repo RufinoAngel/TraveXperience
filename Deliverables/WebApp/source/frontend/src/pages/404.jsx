@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function NotFound() {
   return (
     <div className="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col justify-between">
-      
+      <Header />
       {/* TopNavBar Simplificado */}
       <header className="bg-primary/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full border-b border-white/5">
         <div className="flex justify-between items-center w-full px-6 md:px-16 h-20 max-w-7xl mx-auto">
@@ -74,9 +76,7 @@ function NotFound() {
       </main>
 
       {/* Footer minimalista */}
-      <footer className="py-6 border-t border-outline-variant/30 text-center text-[11px] text-on-surface-variant/60 font-medium bg-surface-bright">
-        &copy; {new Date().getFullYear()} TraveXperience. Away From Home S.A.
-      </footer>
+      <Footer />
 
     </div>
   );

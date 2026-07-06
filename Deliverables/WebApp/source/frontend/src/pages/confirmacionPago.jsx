@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function BookingConfirmed({ onNavigate }) {
   const successContainerRef = useRef(null);
@@ -62,6 +64,8 @@ function BookingConfirmed({ onNavigate }) {
 
   return (
     <div className="bg-background text-on-background font-sans selection:bg-secondary-container min-h-screen flex flex-col antialiased">
+      
+      <Header />
       
       {/* Estilos CSS Inline necesarios únicamente para las animaciones del SVG Checkbox */}
       <style>{`
@@ -194,7 +198,8 @@ function BookingConfirmed({ onNavigate }) {
         </div>
       </main>
 
-
+      {/* Footer minimalista */}
+      <Footer />
 
     </div>
   );

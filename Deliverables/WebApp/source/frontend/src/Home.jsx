@@ -81,7 +81,8 @@ function Home() {
 
   // Determine if we should show standard header/footer
   const showHeader = true; // Every page gets a header
-  const showFooter = ['landing', 'login', 'register', 'forgot-password'].includes(currentPage);
+  const noFooterPages = ['mapa']; // fullscreen pages skip footer
+  const showFooter = !noFooterPages.includes(currentPage);
 
   const renderPage = () => {
     switch (currentPage) {

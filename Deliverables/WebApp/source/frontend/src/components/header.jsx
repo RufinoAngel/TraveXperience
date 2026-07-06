@@ -22,9 +22,16 @@ function Header({ isLoggedIn = false, onNavigate, currentPage = 'landing', curre
         <div className="flex items-center gap-8">
           <span 
             onClick={handleLogoClick}
-            className="font-display-lg text-2xl font-bold text-on-primary tracking-tighter cursor-pointer selection:bg-transparent"
+            className="flex items-center gap-2 cursor-pointer selection:bg-transparent"
           >
-            TraveXperience
+            <img 
+              src="/src/assets/logo_transparente.png" 
+              alt="TraveXperience" 
+              className="h-12 w-12 object-contain"
+            />
+            <span className="font-display-lg text-2xl font-bold text-on-primary tracking-tighter">
+              TraveXperience
+            </span>
           </span>
           
           <nav className="hidden md:flex items-center gap-6">

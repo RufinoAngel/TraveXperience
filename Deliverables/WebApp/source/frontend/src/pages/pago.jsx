@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Layout from '../components/Layout.jsx';
 
 function Checkout({ onNavigate, hotel }) {
   const [paymentMethod, setPaymentMethod] = useState('saved-card');
@@ -21,8 +22,7 @@ function Checkout({ onNavigate, hotel }) {
   };
 
   return (
-    <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen">
-
+    <Layout>
       {/* Main Container */}
       <main className="pt-24 pb-20 px-6 md:px-16 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -279,7 +279,7 @@ function Checkout({ onNavigate, hotel }) {
           </div>
         </div>
       )}
-    </div>
+    </Layout>
   );
 }
 

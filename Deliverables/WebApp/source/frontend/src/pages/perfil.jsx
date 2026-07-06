@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function UserProfile({ onNavigate, isSettingsTab = false }) {
   const [formData, setFormData] = useState({
@@ -26,6 +28,8 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
   };
 
   return (
+    <>
+      <Header />
     <form
       onSubmit={handleSubmit}
       className={`space-y-8 ${isSettingsTab ? 'flex flex-col min-h-full' : ''}`}
@@ -162,6 +166,8 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
         </div>
       </main>
     </form>
+      <Footer />
+    </>
   );
 }
 

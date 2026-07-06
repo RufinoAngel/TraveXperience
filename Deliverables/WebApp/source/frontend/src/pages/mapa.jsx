@@ -1,117 +1,248 @@
-import React, { useState } from 'react';
-import MapSidebar from '../components/MapSidebar.jsx';
+import React, { useState, useEffect, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+import Header from '../components/header';
+import Footer from '../components/footer';
+
+// Fix leaflet default icon (broken in bundled environments)
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+});
+
+// Custom colored marker factory
+function createIcon(color = '#041627') {
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="36" height="48">
+      <filter id="drop" x="-30%" y="-20%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.25)"/>
+      </filter>
+      <path d="M18 0C8.059 0 0 8.059 0 18c0 13.5 18 30 18 30S36 31.5 36 18C36 8.059 27.941 0 18 0z"
+            fill="${color}" filter="url(#drop)"/>
+      <circle cx="18" cy="18" r="8" fill="white"/>
+    </svg>`;
+  return L.divIcon({
+    html: svg,
+    className: '',
+    iconSize: [36, 48],
+    iconAnchor: [18, 48],
+    popupAnchor: [0, -50],
+  });
+}
+
+const iconPrimary   = createIcon('#041627');
+const iconSecondary = createIcon('#775a00');
+const iconTertiary  = createIcon('#38260b');
+
+const places = [
+  {
+    id: 1,
+    title: 'Le Jules Verne',
+    type: 'Fine Dining',
+    distance: '0.2 km',
+    rating: '4.9',
+    icon: 'restaurant',
+    latlng: [48.8584, 2.2945],
+    markerIcon: iconSecondary,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80',
+    desc: 'Alta cocina parisina con vistas a la Torre Eiffel.',
+    category: 'Dining',
+  },
+  {
+    id: 2,
+    title: 'Louvre Museum',
+    type: 'Culture',
+    distance: '1.1 km',
+    rating: '4.7',
+    icon: 'museum',
+    latlng: [48.8606, 2.3376],
+    markerIcon: iconPrimary,
+    image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=400&q=80',
+    desc: 'El museo de arte más grande e icónico del mundo.',
+    category: 'Culture',
+  },
+  {
+    id: 3,
+    title: 'Skyline Lounge',
+    type: 'Nightlife',
+    distance: '0.8 km',
+    rating: '4.8',
+    icon: 'local_bar',
+    latlng: [48.8738, 2.295],
+    markerIcon: iconTertiary,
+    image: 'https://images.unsplash.com/photo-1536489885071-87983c3e2859?auto=format&fit=crop&w=400&q=80',
+    desc: 'Cócteles artesanales y vistas espectaculares del horizonte.',
+    category: 'Nightlife',
+  },
+  {
+    id: 4,
+    title: 'Notre-Dame de Paris',
+    type: 'Landmark',
+    distance: '2.4 km',
+    rating: '4.8',
+    icon: 'church',
+    latlng: [48.853, 2.3499],
+    markerIcon: iconPrimary,
+    image: 'https://images.unsplash.com/photo-1508050919630-b135583b29ab?auto=format&fit=crop&w=400&q=80',
+    desc: 'Catedral gótica medieval en el corazón de París.',
+    category: 'Landmark',
+  },
+  {
+    id: 5,
+    title: 'Café de Flore',
+    type: 'Café',
+    distance: '1.8 km',
+    rating: '4.6',
+    icon: 'local_cafe',
+    latlng: [48.854, 2.332],
+    markerIcon: iconSecondary,
+    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80',
+    desc: 'Histórico café parisino frecuentado por escritores y artistas.',
+    category: 'Dining',
+  },
+];
+
+const categoryIcons = {
+  Dining: 'restaurant',
+  Culture: 'museum',
+  Nightlife: 'local_bar',
+  Landmark: 'account_balance',
+  Café: 'local_cafe',
+};
+
+const categoryColors = {
+  Dining: 'bg-amber-100 text-amber-700',
+  Culture: 'bg-blue-100 text-blue-700',
+  Nightlife: 'bg-purple-100 text-purple-700',
+  Landmark: 'bg-emerald-100 text-emerald-700',
+  Café: 'bg-orange-100 text-orange-700',
+};
+
+// Component that flies the map to a selected place
+function FlyToMarker({ place }) {
+  const map = useMap();
+  useEffect(() => {
+    if (place) {
+      map.flyTo(place.latlng, 16, { duration: 1.2 });
+    }
+  }, [place, map]);
+  return null;
+}
 
 function InteractiveMap({ onNavigate }) {
-  const [activeMapTool, setActiveMapTool] = useState('Capas');
-  // Estado para el Toast informativo inferior
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeFilter, setActiveFilter] = useState('Todo');
+  const [mapStyle, setMapStyle] = useState('streets');
 
-  // Lugares reales mapeados con coordenadas relativas listas para renderizar de manera interactiva
-  const places = [
-    {
-      id: 1,
-      title: 'Le Jules Verne',
-      type: 'Fine Dining',
-      distance: '0.2 km',
-      rating: '4.9',
-      icon: 'restaurant',
-      top: '35%',
-      left: '42%',
-      bgClass: 'bg-secondary-container text-on-secondary-container',
-      image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80',
-      desc: 'Alta cocina parisina con vistas a la Torre Eiffel.'
-    },
-    {
-      id: 2,
-      title: 'Louvre Museum',
-      type: 'Culture',
-      distance: '1.1 km',
-      rating: '4.7',
-      icon: 'museum',
-      top: '48%',
-      left: '62%',
-      bgClass: 'bg-primary text-white',
-      image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=400&q=80',
-      desc: 'El museo de arte más grande e icónico del mundo.'
-    },
-    {
-      id: 3,
-      title: 'Skyline Lounge',
-      type: 'Nightlife',
-      distance: '0.8 km',
-      rating: '4.8',
-      icon: 'local_bar',
-      top: '25%',
-      left: '52%',
-      bgClass: 'bg-tertiary-fixed-dim text-on-tertiary-fixed',
-      image: 'https://images.unsplash.com/photo-1536489885071-87983c3e2859?auto=format&fit=crop&w=400&q=80',
-      desc: 'Cócteles artesanales y vistas espectaculares del horizonte.'
-    }
-  ];
+  const filters = ['Todo', 'Dining', 'Culture', 'Nightlife', 'Landmark', 'Café'];
 
-  const filteredPlaces = places.filter(place =>
-    place.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredPlaces = places.filter((p) => {
+    const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchFilter = activeFilter === 'Todo' || p.category === activeFilter;
+    return matchSearch && matchFilter;
+  });
+
+  const tileLayers = {
+    streets: {
+      url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    },
+    dark: {
+      url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    },
+    satellite: {
+      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      attribution: '&copy; Esri &mdash; Source: Esri, Maxar, GeoEye, Earthstar Geographics',
+    },
+  };
 
   return (
-    <div className="bg-background text-on-background font-sans selection:bg-secondary-container h-screen overflow-hidden flex flex-col antialiased">
-      
+    <div className="h-screen bg-surface text-on-surface font-sans flex flex-col overflow-hidden">
+      <Header />
+      {/* Content area below fixed header (pt-20) */}
+      <div className="flex flex-1 pt-20 overflow-hidden">
 
-      {/* Contenedor del Explorador */}
-      <div className="flex flex-1 pt-20 relative overflow-hidden">
-        
-        {/* Map Sidebar */}
-        <MapSidebar currentTab={activeMapTool} onTabChange={setActiveMapTool} />
+        {/* ── Left Sidebar ── */}
+        <aside className="w-80 bg-surface/95 backdrop-blur-xl border-r border-outline-variant/40 flex flex-col shadow-lg z-30 flex-shrink-0">
 
-        {/* Sidebar Lateral */}
-        <aside className="w-80 md:ml-64 bg-white/95 backdrop-blur-md border-r border-outline-variant/50 h-full z-30 flex flex-col shadow-lg transition-transform duration-300">
-          <div className="p-6 border-b border-outline-variant/30">
-            <h1 className="text-xl font-bold text-primary mb-1">París, Francia</h1>
-            <p className="text-xs text-on-surface-variant flex items-center gap-1 font-medium">
-              <span className="material-symbols-outlined text-[14px]">location_on</span> 124 experiencias curadas
+          {/* Sidebar Header */}
+          <div className="p-5 border-b border-outline-variant/30 bg-primary">
+            <h1 className="text-lg font-bold text-on-primary">Explorar París</h1>
+            <p className="text-xs text-on-primary/60 flex items-center gap-1 mt-1 font-medium">
+              <span className="material-symbols-outlined text-[13px]">location_on</span>
+              {filteredPlaces.length} experiencias curadas
             </p>
           </div>
 
-          {/* Barra de búsqueda interactiva */}
-          <div className="p-4 px-6">
+          {/* Search */}
+          <div className="p-4">
             <div className="relative">
-              <input 
-                className="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl py-2.5 pl-10 pr-4 text-sm font-medium focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" 
-                placeholder="Buscar destinos..." 
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+              <input
+                className="w-full bg-surface-container-low border border-outline-variant/60 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                placeholder="Buscar lugares..."
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
             </div>
           </div>
 
-          {/* Lista de lugares (Tarjetas Bento reactivas al clic) */}
-          <div className="flex-1 overflow-y-auto space-y-4 px-6 pb-6 scrollbar-thin scrollbar-thumb-gray-300">
-            <h2 className="text-[10px] font-bold text-primary tracking-wider uppercase pt-2">Lugares destacados</h2>
-            
-            {filteredPlaces.map((place) => (
-              <div 
-                key={place.id} 
-                onClick={() => setSelectedPlace(place)}
-                className="group cursor-pointer bg-surface border border-outline-variant/40 rounded-xl p-3 transition-all hover:shadow-md hover:border-outline"
+          {/* Filter chips */}
+          <div className="px-4 pb-3 flex gap-1.5 flex-wrap">
+            {filters.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all cursor-pointer border ${
+                  activeFilter === f
+                    ? 'bg-primary text-on-primary border-primary'
+                    : 'bg-surface-container border-outline-variant/40 text-on-surface-variant hover:bg-surface-container-high'
+                }`}
               >
-                <div className="relative h-36 rounded-lg overflow-hidden mb-3">
-                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={place.title} src={place.image}/>
-                  <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2 py-0.5 rounded-md flex items-center gap-1 shadow-sm">
-                    <span className="material-symbols-outlined text-secondary text-sm fill-1">star</span>
+                {f}
+              </button>
+            ))}
+          </div>
+
+          {/* Place list */}
+          <div className="flex-1 overflow-y-auto px-4 pb-4 space-y-3">
+            {filteredPlaces.map((place) => (
+              <div
+                key={place.id}
+                onClick={() => setSelectedPlace(place)}
+                className={`group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${
+                  selectedPlace?.id === place.id
+                    ? 'border-primary shadow-md ring-2 ring-primary/20'
+                    : 'border-outline-variant/40 bg-surface'
+                }`}
+              >
+                <div className="relative h-32">
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={place.title} src={place.image} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+                  <div className="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-0.5 rounded-lg flex items-center gap-1">
+                    <span className="material-symbols-outlined text-secondary text-[13px]" style={{fontVariationSettings: "'FILL' 1"}}>star</span>
                     <span className="text-xs font-bold text-primary">{place.rating}</span>
                   </div>
+                  <span className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-md text-[10px] font-bold ${categoryColors[place.category]}`}>
+                    {place.category}
+                  </span>
                 </div>
-                <div className="flex justify-between items-start">
+                <div className="p-3 flex justify-between items-start">
                   <div>
-                    <h3 className="text-sm font-bold text-primary group-hover:text-secondary transition-colors">{place.title}</h3>
-                    <p className="text-xs text-on-surface-variant font-medium mt-0.5">{place.type} • {place.distance}</p>
+                    <h3 className="text-sm font-bold text-primary">{place.title}</h3>
+                    <p className="text-xs text-on-surface-variant mt-0.5">{place.type} · {place.distance}</p>
                   </div>
-                  <button className="flex items-center gap-0.5 text-secondary hover:opacity-80 transition-opacity border-none bg-transparent cursor-pointer font-bold text-xs">
-                    <span className="material-symbols-outlined text-[14px]">navigation</span>
-                    <span>Ir</span>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); if (onNavigate) onNavigate('hotel-detail', { hotel: place }); }}
+                    className="flex-shrink-0 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2.5 py-1 rounded-lg hover:opacity-90 cursor-pointer border-none"
+                  >
+                    Ver más
                   </button>
                 </div>
               </div>
@@ -119,105 +250,117 @@ function InteractiveMap({ onNavigate }) {
           </div>
         </aside>
 
-        {/* Canvas del Mapa Real (Capa Interactiva SVG Vectorial Limpia) */}
-        <main className="flex-1 relative h-full bg-surface-container overflow-hidden">
-          
-          {/* El contenedor simula una red de calles reales escalable y estilizada */}
-          <div className="absolute inset-0 w-full h-full bg-[#f4f5f6] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] flex items-center justify-center">
-            
-            {/* Líneas de cuadrícula/ríos vectoriales reales que componen el esqueleto urbano premium */}
-            <svg className="absolute w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,300 Q300,250 600,400 T1200,350" fill="none" stroke="#b1cbe3" strokeWidth="40" strokeLinecap="round" />
-              <line x1="10%" y1="0" x2="90%" y2="100%" stroke="#e0e3e6" strokeWidth="4" />
-              <line x1="80%" y1="0" x2="20%" y2="100%" stroke="#e0e3e6" strokeWidth="3" />
-              <line x1="0" y1="70%" x2="100%" y2="40%" stroke="#e0e3e6" strokeWidth="5" />
-            </svg>
-
-            {/* Marcadores/Pines Interactivos sobre el Mapa Vectorial */}
-            {filteredPlaces.map((place) => (
-              <div 
-                key={place.id}
-                onClick={() => setSelectedPlace(place)}
-                style={{ top: place.top, left: place.left }}
-                className="absolute map-pin cursor-pointer group z-20"
+        {/* ── Map ── */}
+        <main className="flex-1 relative">
+          {/* Map style switcher */}
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-[999] flex items-center gap-1 bg-white/90 backdrop-blur-md p-1 rounded-full shadow-lg border border-white/50">
+            {Object.keys(tileLayers).map((style) => (
+              <button
+                key={style}
+                onClick={() => setMapStyle(style)}
+                className={`px-4 py-1.5 rounded-full text-xs font-bold capitalize transition-all cursor-pointer border-none ${
+                  mapStyle === style
+                    ? 'bg-primary text-on-primary shadow-sm'
+                    : 'text-on-surface-variant hover:bg-surface-container'
+                }`}
               >
-                <div className={`${place.bgClass} p-3 rounded-full shadow-xl border-2 border-white flex items-center justify-center transition-transform duration-300 hover:scale-110 active:scale-95`}>
-                  <span className="material-symbols-outlined text-xl">{place.icon}</span>
-                </div>
-                {/* Tooltip flotante */}
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
-                  {place.title}
-                </div>
-              </div>
+                {style === 'streets' ? 'Calles' : style === 'dark' ? 'Oscuro' : 'Satélite'}
+              </button>
             ))}
           </div>
 
-          {/* Filtros Flotantes Superiores */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/90 backdrop-blur-md p-1.5 rounded-full shadow-lg border border-white/50 z-10">
-            <button className="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 border-none cursor-pointer">
-              <span className="material-symbols-outlined text-sm">auto_awesome</span> Todo
+          <MapContainer
+            center={[48.8566, 2.3522]}
+            zoom={14}
+            style={{ height: '100%', width: '100%' }}
+            zoomControl={false}
+          >
+            <TileLayer
+              key={mapStyle}
+              url={tileLayers[mapStyle].url}
+              attribution={tileLayers[mapStyle].attribution}
+              maxZoom={20}
+            />
+
+            {selectedPlace && <FlyToMarker place={selectedPlace} />}
+
+            {filteredPlaces.map((place) => (
+              <Marker
+                key={place.id}
+                position={place.latlng}
+                icon={place.markerIcon}
+                eventHandlers={{ click: () => setSelectedPlace(place) }}
+              >
+                <Popup>
+                  <div className="font-sans" style={{ minWidth: 160 }}>
+                    <img src={place.image} alt={place.title} style={{ width: '100%', height: 90, objectFit: 'cover', borderRadius: 8, marginBottom: 8 }} />
+                    <strong style={{ fontSize: 13, color: '#041627' }}>{place.title}</strong>
+                    <p style={{ fontSize: 11, color: '#44474c', marginTop: 2 }}>{place.type} · {place.distance}</p>
+                    <p style={{ fontSize: 11, color: '#44474c', marginTop: 4 }}>{place.desc}</p>
+                  </div>
+                </Popup>
+              </Marker>
+            ))}
+          </MapContainer>
+
+          {/* Zoom controls */}
+          <div className="absolute right-5 bottom-24 flex flex-col gap-2 z-[999]">
+            <button
+              onClick={() => document.querySelector('.leaflet-control-zoom-in')?.click()}
+              className="w-10 h-10 bg-white text-primary rounded-xl shadow-md flex items-center justify-center hover:bg-surface-container transition-colors cursor-pointer border border-outline-variant/20"
+            >
+              <span className="material-symbols-outlined">add</span>
             </button>
-            <button className="hover:bg-surface-container-high text-primary px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 border-none bg-transparent cursor-pointer">
-              <span className="material-symbols-outlined text-sm">restaurant</span> Comida
-            </button>
-            <button className="hover:bg-surface-container-high text-primary px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95 border-none bg-transparent cursor-pointer">
-              <span className="material-symbols-outlined text-sm">museum</span> Cultura
-            </button>
-            <div className="w-px h-5 bg-outline-variant/40 mx-1"></div>
-            <button className="hover:bg-surface-container-high text-primary p-2 rounded-full transition-all border-none bg-transparent cursor-pointer flex items-center">
-              <span className="material-symbols-outlined text-base">tune</span>
+            <button
+              onClick={() => document.querySelector('.leaflet-control-zoom-out')?.click()}
+              className="w-10 h-10 bg-white text-primary rounded-xl shadow-md flex items-center justify-center hover:bg-surface-container transition-colors cursor-pointer border border-outline-variant/20"
+            >
+              <span className="material-symbols-outlined">remove</span>
             </button>
           </div>
 
-          {/* Controles del Mapa (Zoom e Info) */}
-          <div className="absolute right-6 bottom-6 flex flex-col gap-2 z-10">
-            <button className="w-11 h-11 bg-white text-primary rounded-xl shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-95 border-none cursor-pointer">
-              <span className="material-symbols-outlined font-bold">add</span>
-            </button>
-            <button className="w-11 h-11 bg-white text-primary rounded-xl shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-95 border-none cursor-pointer">
-              <span className="material-symbols-outlined font-bold">remove</span>
-            </button>
-            <button className="w-11 h-11 bg-primary text-white rounded-xl shadow-md flex items-center justify-center mt-1 hover:opacity-90 transition-opacity active:scale-95 border-none cursor-pointer">
-              <span className="material-symbols-outlined text-base">my_location</span>
-            </button>
-          </div>
-
-          {/* Ventana Deslizable Inferior (Toast de Detalles Reactivo) */}
-          <div 
-            className={`absolute bottom-6 left-1/2 -translate-x-1/2 w-full max-w-lg bg-primary text-white p-5 rounded-2xl shadow-2xl flex items-center justify-between z-40 transition-all duration-300 ease-out border border-white/10 ${
-              selectedPlace ? 'transform translate-y-0 opacity-100' : 'transform translate-y-[150%] opacity-0'
+          {/* Selected place bottom card */}
+          <div
+            className={`absolute bottom-5 left-1/2 -translate-x-1/2 w-full max-w-md z-[999] transition-all duration-300 px-4 ${
+              selectedPlace ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-8 opacity-0 pointer-events-none'
             }`}
           >
             {selectedPlace && (
-              <>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-white/10">
-                    <img className="w-full h-full object-cover" alt={selectedPlace.title} src={selectedPlace.image}/>
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-white">{selectedPlace.title}</h4>
-                    <p className="text-xs text-on-primary/70 mt-0.5 font-medium">{selectedPlace.desc}</p>
+              <div className="bg-primary text-on-primary rounded-2xl shadow-2xl p-4 flex items-center gap-4 border border-white/10 relative">
+                <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                  <img className="w-full h-full object-cover" alt={selectedPlace.title} src={selectedPlace.image} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-bold text-sm text-on-primary truncate">{selectedPlace.title}</h4>
+                  <p className="text-xs text-on-primary/60 mt-0.5 line-clamp-2">{selectedPlace.desc}</p>
+                  <div className="flex items-center gap-2 mt-1.5">
+                    <span className="material-symbols-outlined text-secondary-container text-[14px]" style={{fontVariationSettings: "'FILL' 1"}}>star</span>
+                    <span className="text-xs font-bold text-on-primary/80">{selectedPlace.rating}</span>
+                    <span className="text-xs text-on-primary/40">·</span>
+                    <span className="text-xs text-on-primary/60">{selectedPlace.distance}</span>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => { if (onNavigate) onNavigate('hotel-detail', { hotel: selectedPlace }); }}
-                  className="bg-secondary-container text-on-secondary-container px-4 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-opacity whitespace-nowrap ml-4 border-none cursor-pointer"
+                  className="flex-shrink-0 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-xl text-xs font-bold hover:opacity-90 transition-opacity cursor-pointer border-none"
                 >
                   Explorar
                 </button>
-                <button 
-                  className="absolute -top-2 -right-2 w-7 h-7 bg-white text-primary rounded-full shadow-lg flex items-center justify-center border-none cursor-pointer"
+                <button
                   onClick={() => setSelectedPlace(null)}
+                  className="absolute -top-2 -right-2 w-6 h-6 bg-white text-primary rounded-full shadow-lg flex items-center justify-center border-none cursor-pointer hover:bg-surface-container"
                 >
-                  <span className="material-symbols-outlined text-sm font-bold">close</span>
+                  <span className="material-symbols-outlined text-[14px]">close</span>
                 </button>
-              </>
+              </div>
             )}
           </div>
-
         </main>
       </div>
+
+      <Footer />
     </div>
+    
   );
 }
 

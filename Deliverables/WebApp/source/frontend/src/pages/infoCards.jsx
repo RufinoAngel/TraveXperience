@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function HotelDetail({ onNavigate, hotel }) {
   // Estado para el cálculo interactivo del formulario de reserva
@@ -46,7 +48,7 @@ function HotelDetail({ onNavigate, hotel }) {
 
   return (
     <div className="bg-background text-on-background font-body-md min-h-screen selection:bg-secondary-container selection:text-on-secondary-container antialiased">
-
+      <Header />
       <main className="pt-28 pb-20 max-w-7xl mx-auto px-6 md:px-16">
         
         {/* Header Actions */}
@@ -306,7 +308,7 @@ function HotelDetail({ onNavigate, hotel }) {
           <span className="text-[11px] font-medium opacity-80 mt-1">Tu itinerario de estancia ha sido guardado.</span>
         </div>
       </div>
-
+      <Footer />
     </div>
   );
 }

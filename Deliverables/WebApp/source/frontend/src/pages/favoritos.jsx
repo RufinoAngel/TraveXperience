@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function SavedTrips({ onNavigate, isSettingsTab = false }) {
   // Estado inicial con las tarjetas guardadas por el usuario

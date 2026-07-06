@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
   // Estados para controlar los interruptores de privacidad de forma reactiva
@@ -7,6 +9,7 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
 
   const content = (
     <main className="flex-grow max-w-4xl mx-auto px-6 md:px-12 py-12 w-full">
+      <Header />
       <header className="mb-12">
         <h1 className="text-3xl font-bold text-primary tracking-tight mb-2">Privacidad y Seguridad</h1>
         <p className="text-sm text-on-surface-variant max-w-2xl leading-relaxed">
@@ -159,6 +162,7 @@ function PrivacySecurity({ onNavigate, isSettingsTab = false }) {
           </div>
         </section>
       </div>
+      <Footer />
     </main>
   );
 
