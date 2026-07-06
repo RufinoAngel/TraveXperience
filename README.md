@@ -129,9 +129,9 @@ Toda la documentación oficial del proyecto se encuentra organizada en la nube p
 | Minuta | [Minuta](https://docs.google.com/document/d/1rLzDgaxX1NFwCuAeGY2T8-blOClBV5sP/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true)|
 | Plan de Pruebas | [Plan de Pruebas](https://docs.google.com/document/d/1NWitr0lyHtEWb6S4q6MOjf2UZl38IipO/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Control de Cambios | [Control de Cambios](https://docs.google.com/document/d/1hcdH6Ma6WtBED87mdF6k35e4y85KsZCe/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
-| Documento de Reglas de Negocio (BR) | LINK |
-| Casos de Uso | LINK |
-| Diagramas UML | LINK |
+| Documento de Reglas de Negocio (BR) | [BR](https://docs.google.com/document/d/1s9fk1gCRu_dE1HFDjWW800ylvd0n4PQp/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Casos de Uso | [Casos de Uso](https://docs.google.com/document/d/1N8pGBkkbKoxazM9j5Od8pUSq1WCVEdVh/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Diagramas UML | [Diagramas UML](https://docs.google.com/document/d/1e2Vr-3G3BnmKDv26ZD3ZOXDAwSqhxTeF/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Manual de Usuario | LINK |
 | Manual Técnico | LINK |
 | Manual de Despliegue | LINK |
