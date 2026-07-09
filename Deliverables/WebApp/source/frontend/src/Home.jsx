@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import SettingsSidebar from './components/SettingsSidebar.jsx';
+import AdminLayout from './components/adminLayout.jsx';
 
 // Pages
 import LandingPage from './pages/landing.jsx';
@@ -14,6 +15,14 @@ import AwayFromHomePlanner from './pages/itinerario.jsx';
 import HotelDetail from './pages/infoCards.jsx';
 import Checkout from './pages/pago.jsx';
 import BookingConfirmed from './pages/confirmacionPago.jsx';
+
+//Admin Pages
+import AdminDashboard from './pages/Admin/dashboard.jsx';
+import AdminInventario from './pages/Admin/inventario.jsx';
+import AdminPagos from './pages/Admin/pagosAdmin.jsx';
+import AdminHoteles from './pages/Admin/registroHotel.jsx';
+import AdminTransporte from './pages/Admin/registroTransporte.jsx';
+
 
 // Settings sub-pages
 import UserProfile from './pages/perfil.jsx';
