@@ -236,6 +236,9 @@ El presupuesto del proyecto contempla los recursos humanos, tecnológicos y de i
 | Herramientas de Desarrollo | IDEs, control de versiones y herramientas colaborativas. |
 | Diseño UI/UX | Recursos gráficos, tipografías e iconografía. |
 
+### Documento Extenso de la Gestión de Costos
+[Gestión de Costos](https://docs.google.com/document/d/1mDbsHdOuU6ens2yfiujg_7j6WtUufq12/edit?usp=drivesdk&ouid=106142142983528326169&rtpof=true&sd=true)
+
 ---
 
 # Gestión de Adquisiciones
@@ -289,6 +292,9 @@ La calidad del proyecto se garantiza mediante la adopción de estándares de des
 | Revisión de Código | Cada funcionalidad deberá ser revisada antes de integrarse a la rama principal. |
 | Machine Learning | Los modelos desarrollados en TensorFlow.js deberán cumplir con métricas de precisión establecidas antes de ser desplegados. |
 | Base de Datos | Validación de integridad, consistencia y respaldo periódico de la información almacenada. |
+
+### Documento de Calidad del Código del Backend
+[Calidad del Código](https://docs.google.com/document/d/1iXhVqEa2d7yJA0jSOURq8tHyKHH8sWsP/edit?usp=drivesdk&ouid=106142142983528326169&rtpof=true&sd=true)
 
 ---
 
