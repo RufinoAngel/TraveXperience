@@ -2,25 +2,113 @@ import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
+// Reglas de la nueva contraseña: mínimo 8 caracteres, al menos una letra y un número
+const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+
+function validatePasswordField(field, values) {
+  const { currentPassword, newPassword, confirmPassword } = values;
+  switch (field) {
+    case 'currentPassword': {
+      if (!currentPassword) return 'Ingresa tu contraseña actual.';
+      return '';
+    }
+    case 'newPassword': {
+      if (!newPassword) return 'La nueva contraseña es obligatoria.';
+      if (!PASSWORD_REGEX.test(newPassword)) {
+        return 'Debe tener al menos 8 caracteres, incluyendo letras y números.';
+      }
+      if (currentPassword && newPassword === currentPassword) {
+        return 'La nueva contraseña debe ser diferente a la actual.';
+      }
+      return '';
+    }
+    case 'confirmPassword': {
+      if (!confirmPassword) return 'Confirma tu nueva contraseña.';
+      if (confirmPassword !== newPassword) return 'Las contraseñas no coinciden.';
+      return '';
+    }
+    default:
+      return '';
+  }
+}
+
 function AccountSettings({ onNavigate, isSettingsTab = false }) {
   // Estado para el interruptor de Perfil Privado
   const [isPrivateProfile, setIsPrivateProfile] = useState(true);
 
   // Estados para simular el cambio de contraseña
-  const [currentPassword, setCurrentPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
+  const [passwordValues, setPasswordValues] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: '',
+  });
+  const [passwordErrors, setPasswordErrors] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: '',
+  });
+  const [passwordTouched, setPasswordTouched] = useState({
+    currentPassword: false,
+    newPassword: false,
+    confirmPassword: false,
+  });
   const [isChangingPassword, setIsChangingPassword] = useState(false);
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+
+  const handlePasswordChange = (field) => (e) => {
+    const value = e.target.value;
+    const nextValues = { ...passwordValues, [field]: value };
+    setPasswordValues(nextValues);
+
+    if (passwordTouched[field]) {
+      setPasswordErrors((prev) => ({ ...prev, [field]: validatePasswordField(field, nextValues) }));
+    }
+    // Si cambia la nueva contraseña y ya se había tocado la confirmación, la revalidamos
+    if (field === 'newPassword' && passwordTouched.confirmPassword) {
+      setPasswordErrors((prev) => ({
+        ...prev,
+        confirmPassword: validatePasswordField('confirmPassword', nextValues),
+      }));
+    }
+  };
+
+  const handlePasswordBlur = (field) => () => {
+    setPasswordTouched((prev) => ({ ...prev, [field]: true }));
+    setPasswordErrors((prev) => ({ ...prev, [field]: validatePasswordField(field, passwordValues) }));
+  };
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
+
+    const newErrors = {
+      currentPassword: validatePasswordField('currentPassword', passwordValues),
+      newPassword: validatePasswordField('newPassword', passwordValues),
+      confirmPassword: validatePasswordField('confirmPassword', passwordValues),
+    };
+    setPasswordErrors(newErrors);
+    setPasswordTouched({ currentPassword: true, newPassword: true, confirmPassword: true });
+
+    if (!Object.values(newErrors).every((err) => !err)) {
+      return; // hay errores, no se envía
+    }
+
     setIsChangingPassword(true);
     setTimeout(() => {
       setIsChangingPassword(false);
-      setCurrentPassword('');
-      setNewPassword('');
+      setPasswordValues({ currentPassword: '', newPassword: '', confirmPassword: '' });
+      setPasswordTouched({ currentPassword: false, newPassword: false, confirmPassword: false });
+      setPasswordErrors({ currentPassword: '', newPassword: '', confirmPassword: '' });
       alert('¡Contraseña actualizada correctamente!');
     }, 1200);
   };
+
+  const passwordInputClasses = (field) =>
+    `w-full px-4 py-2.5 bg-surface-container-lowest border border-solid rounded-xl text-sm font-medium text-primary outline-none transition-colors ${
+      passwordErrors[field] && passwordTouched[field]
+        ? 'border-error focus:border-error'
+        : 'border-outline-variant focus:border-primary'
+    }`;
 
   const panelContent = (
     <div className="space-y-8 w-full max-w-4xl mx-auto px-6 md:px-12 py-12">
@@ -59,29 +147,86 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
           <h2 className="text-base font-bold tracking-tight m-0">Actualizar Contraseña</h2>
         </div>
 
-        <form onSubmit={handlePasswordSubmit} className="space-y-4 max-w-md">
+        <form onSubmit={handlePasswordSubmit} className="space-y-4 max-w-md" noValidate>
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Contraseña Actual</label>
-            <input 
-              type="password"
-              value={currentPassword}
-              onChange={(e) => setCurrentPassword(e.target.value)}
-              placeholder="••••••••"
-              required
-              className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
-            />
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="currentPassword">
+              Contraseña Actual
+            </label>
+            <div className="relative">
+              <input
+                id="currentPassword"
+                type={showCurrentPassword ? 'text' : 'password'}
+                value={passwordValues.currentPassword}
+                onChange={handlePasswordChange('currentPassword')}
+                onBlur={handlePasswordBlur('currentPassword')}
+                placeholder="••••••••"
+                className={`${passwordInputClasses('currentPassword')} pr-10`}
+                aria-invalid={!!(passwordErrors.currentPassword && passwordTouched.currentPassword)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowCurrentPassword((prev) => !prev)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  {showCurrentPassword ? 'visibility_off' : 'visibility'}
+                </span>
+              </button>
+            </div>
+            {passwordErrors.currentPassword && passwordTouched.currentPassword && (
+              <p className="text-xs text-error">{passwordErrors.currentPassword}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Nueva Contraseña</label>
-            <input 
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="newPassword">
+              Nueva Contraseña
+            </label>
+            <div className="relative">
+              <input
+                id="newPassword"
+                type={showNewPassword ? 'text' : 'password'}
+                value={passwordValues.newPassword}
+                onChange={handlePasswordChange('newPassword')}
+                onBlur={handlePasswordBlur('newPassword')}
+                placeholder="Mínimo 8 caracteres"
+                className={`${passwordInputClasses('newPassword')} pr-10`}
+                aria-invalid={!!(passwordErrors.newPassword && passwordTouched.newPassword)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowNewPassword((prev) => !prev)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  {showNewPassword ? 'visibility_off' : 'visibility'}
+                </span>
+              </button>
+            </div>
+            {passwordErrors.newPassword && passwordTouched.newPassword ? (
+              <p className="text-xs text-error">{passwordErrors.newPassword}</p>
+            ) : (
+              <p className="text-[11px] text-on-surface-variant/70">Al menos una letra y un número.</p>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="confirmPassword">
+              Confirmar Nueva Contraseña
+            </label>
+            <input
+              id="confirmPassword"
               type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              placeholder="Mínimo 8 caracteres"
-              required
-              className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+              value={passwordValues.confirmPassword}
+              onChange={handlePasswordChange('confirmPassword')}
+              onBlur={handlePasswordBlur('confirmPassword')}
+              placeholder="Repite la nueva contraseña"
+              className={passwordInputClasses('confirmPassword')}
+              aria-invalid={!!(passwordErrors.confirmPassword && passwordTouched.confirmPassword)}
             />
+            {passwordErrors.confirmPassword && passwordTouched.confirmPassword && (
+              <p className="text-xs text-error">{passwordErrors.confirmPassword}</p>
+            )}
           </div>
 
           <button 
@@ -107,7 +252,12 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
         <div className="space-y-4">
           <div className="flex justify-between items-center p-4 border border-solid border-outline-variant/30 rounded-2xl">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-2xl text-[#ea4335]">google</span>
+              <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.55c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.55-2.77c-.99.66-2.25 1.06-3.73 1.06-2.87 0-5.3-1.94-6.17-4.53H2.18v2.85A11 11 0 0 0 12 23z" fill="#34A853"/>
+                <path d="M5.83 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.65-2.85z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 1.99 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.65 2.85C6.7 7.32 9.13 5.38 12 5.38z" fill="#EA4335"/>
+              </svg>
               <div>
                 <p className="text-sm font-bold text-primary">Cuenta Google</p>
                 <p className="text-xs text-on-surface-variant">Sincroniza tus itinerarios con Google Calendar</p>
@@ -120,7 +270,12 @@ function AccountSettings({ onNavigate, isSettingsTab = false }) {
 
           <div className="flex justify-between items-center p-4 border border-solid border-outline-variant/30 rounded-2xl">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-2xl text-primary">apple</span>
+              <svg className="w-6 h-6 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                  d="M16.365 1.43c0 1.14-.462 2.06-1.155 2.75-.75.75-1.98 1.32-2.985 1.24-.135-1.11.435-2.28 1.11-3 .75-.81 2.04-1.41 3.03-1.44.015.15.015.3.015.45zM20.4 17.19c-.555 1.29-.825 1.86-1.53 3-.99 1.575-2.385 3.54-4.11 3.555-1.53.015-1.92-1.005-3.99-.99-2.07.015-2.505 1.005-4.035.99-1.725-.015-3.045-1.785-4.035-3.36C-.06 17.19-.855 13.2.615 10.5c1.02-1.875 2.85-3.06 4.83-3.075 1.635-.015 2.895 1.11 3.99 1.11 1.08 0 2.7-1.365 4.53-1.17.75.03 2.865.3 4.29 2.31-.105.07-2.565 1.5-2.535 4.47.03 3.57 3.12 4.755 3.15 4.77-.03.09-.5 1.68-1.47 3.275z"
+                  fill="currentColor"
+                />
+              </svg>
               <div>
                 <p className="text-sm font-bold text-primary">Apple iCloud</p>
                 <p className="text-xs text-on-surface-variant">Sincroniza tus reservas con tu Apple Wallet</p>

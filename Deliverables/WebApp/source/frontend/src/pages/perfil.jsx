@@ -2,6 +2,54 @@ import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
+// --- Reglas de validación ---
+const NAME_REGEX = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,60}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Acepta números telefónicos con espacios, guiones, paréntesis y un + opcional al inicio (7 a 15 dígitos)
+const PHONE_REGEX = /^\+?[\d\s\-()]{7,20}$/;
+const BIO_MAX_LENGTH = 300;
+
+function validateProfileField(field, value) {
+  switch (field) {
+    case 'fullName': {
+      const trimmed = value.trim();
+      if (!trimmed) return 'El nombre completo es obligatorio.';
+      if (!NAME_REGEX.test(trimmed)) {
+        return 'Ingresa un nombre válido (mínimo 3 letras, solo letras y espacios).';
+      }
+      return '';
+    }
+    case 'email': {
+      const trimmed = value.trim();
+      if (!trimmed) return 'El correo electrónico es obligatorio.';
+      if (!EMAIL_REGEX.test(trimmed)) return 'Ingresa un correo electrónico válido.';
+      return '';
+    }
+    case 'phone': {
+      const trimmed = value.trim();
+      if (!trimmed) return ''; // el teléfono es opcional
+      const digitCount = trimmed.replace(/\D/g, '').length;
+      if (!PHONE_REGEX.test(trimmed) || digitCount < 7 || digitCount > 15) {
+        return 'Ingresa un número de teléfono válido.';
+      }
+      return '';
+    }
+    case 'location': {
+      const trimmed = value.trim();
+      if (trimmed && trimmed.length < 2) return 'La ubicación es demasiado corta.';
+      return '';
+    }
+    case 'bio': {
+      if (value.length > BIO_MAX_LENGTH) {
+        return `La biografía no puede superar los ${BIO_MAX_LENGTH} caracteres.`;
+      }
+      return '';
+    }
+    default:
+      return '';
+  }
+}
+
 function UserProfile({ onNavigate, isSettingsTab = false }) {
   const [formData, setFormData] = useState({
     fullName: 'Sofía Martínez',
@@ -11,15 +59,54 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
     bio: 'Amante del café de la Sierra Norte de Puebla, la fotografía de paisajes y la exploración gastronómica de Xicotepec y sus alrededores.',
   });
 
+  const [errors, setErrors] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    location: '',
+    bio: '',
+  });
+  const [touched, setTouched] = useState({
+    fullName: false,
+    email: false,
+    phone: false,
+    location: false,
+    bio: false,
+  });
+
   const [isSaving, setIsSaving] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateProfileField(name, value) }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({ ...prev, [name]: validateProfileField(name, value) }));
+  };
+
+  const validateAll = () => {
+    const newErrors = {};
+    Object.keys(formData).forEach((field) => {
+      newErrors[field] = validateProfileField(field, formData[field]);
+    });
+    setErrors(newErrors);
+    setTouched({ fullName: true, email: true, phone: true, location: true, bio: true });
+    return Object.values(newErrors).every((err) => !err);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateAll()) {
+      return; // hay errores, no se guarda
+    }
+
     setIsSaving(true);
     setTimeout(() => {
       setIsSaving(false);
@@ -27,12 +114,18 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
     }, 1000);
   };
 
+  const inputClasses = (field) =>
+    `w-full px-4 py-2.5 bg-surface-container-lowest border border-solid rounded-xl text-sm font-medium text-primary outline-none transition-colors ${
+      errors[field] && touched[field] ? 'border-error focus:border-error' : 'border-outline-variant focus:border-primary'
+    }`;
+
   return (
     <>
       {!isSettingsTab && <Header />}
     <form
       onSubmit={handleSubmit}
       className={`space-y-8 ${isSettingsTab ? 'flex flex-col min-h-full' : ''}`}
+      noValidate
     >
       <main className="flex-grow max-w-4xl mx-auto px-6 md:px-12 py-12 w-full">
         <header className="mb-10">
@@ -79,71 +172,110 @@ function UserProfile({ onNavigate, isSettingsTab = false }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="fullName">
                   Nombre Completo
                 </label>
                 <input
+                  id="fullName"
                   type="text"
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                  onBlur={handleBlur}
+                  className={inputClasses('fullName')}
+                  aria-invalid={!!(errors.fullName && touched.fullName)}
                   required
                 />
+                {errors.fullName && touched.fullName && (
+                  <p className="text-xs text-error">{errors.fullName}</p>
+                )}
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="location">
                   Ubicación base
                 </label>
                 <input
+                  id="location"
                   type="text"
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                  onBlur={handleBlur}
+                  className={inputClasses('location')}
+                  aria-invalid={!!(errors.location && touched.location)}
                 />
+                {errors.location && touched.location && (
+                  <p className="text-xs text-error">{errors.location}</p>
+                )}
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="email">
                   Correo Electrónico
                 </label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                  onBlur={handleBlur}
+                  className={inputClasses('email')}
+                  aria-invalid={!!(errors.email && touched.email)}
                   required
                 />
+                {errors.email && touched.email && (
+                  <p className="text-xs text-error">{errors.email}</p>
+                )}
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="phone">
                   Teléfono de Contacto
                 </label>
                 <input
+                  id="phone"
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                  onBlur={handleBlur}
+                  className={inputClasses('phone')}
+                  aria-invalid={!!(errors.phone && touched.phone)}
                 />
+                {errors.phone && touched.phone && (
+                  <p className="text-xs text-error">{errors.phone}</p>
+                )}
               </div>
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
-                Biografía del viajero
-              </label>
+              <div className="flex items-center justify-between">
+                <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider" htmlFor="bio">
+                  Biografía del viajero
+                </label>
+                <span
+                  className={`text-[10px] font-medium ${
+                    formData.bio.length > BIO_MAX_LENGTH ? 'text-error' : 'text-on-surface-variant/60'
+                  }`}
+                >
+                  {formData.bio.length}/{BIO_MAX_LENGTH}
+                </span>
+              </div>
               <textarea
+                id="bio"
                 name="bio"
                 rows="3"
                 value={formData.bio}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors resize-none leading-relaxed"
+                onBlur={handleBlur}
+                className={`${inputClasses('bio')} resize-none leading-relaxed`}
+                aria-invalid={!!(errors.bio && touched.bio)}
               />
+              {errors.bio && touched.bio && (
+                <p className="text-xs text-error">{errors.bio}</p>
+              )}
             </div>
           </div>
         </div>

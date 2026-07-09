@@ -1,12 +1,140 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout.jsx';
 
+// --- Helpers de formato ---
+const onlyDigits = (value) => value.replace(/\D/g, '');
+
+function formatCardNumber(value) {
+  const digits = onlyDigits(value).slice(0, 19);
+  return digits.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+}
+
+function formatExpiry(value) {
+  const digits = onlyDigits(value).slice(0, 4);
+  if (digits.length <= 2) return digits;
+  return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+}
+
+// Algoritmo de Luhn para validar el número de tarjeta
+function luhnCheck(numberStr) {
+  const digits = onlyDigits(numberStr);
+  let sum = 0;
+  let shouldDouble = false;
+  for (let i = digits.length - 1; i >= 0; i--) {
+    let digit = parseInt(digits[i], 10);
+    if (shouldDouble) {
+      digit *= 2;
+      if (digit > 9) digit -= 9;
+    }
+    sum += digit;
+    shouldDouble = !shouldDouble;
+  }
+  return digits.length > 0 && sum % 10 === 0;
+}
+
+const NAME_REGEX = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,60}$/;
+
+function validateCardField(field, value) {
+  switch (field) {
+    case 'cardholderName': {
+      const trimmed = value.trim();
+      if (!trimmed) return 'El nombre del titular es obligatorio.';
+      if (!NAME_REGEX.test(trimmed)) return 'Ingresa el nombre tal como aparece en la tarjeta.';
+      return '';
+    }
+    case 'cardNumber': {
+      const digits = onlyDigits(value);
+      if (!digits) return 'El número de tarjeta es obligatorio.';
+      if (digits.length < 13 || digits.length > 19) return 'El número de tarjeta no es válido.';
+      if (!luhnCheck(digits)) return 'El número de tarjeta ingresado no es válido.';
+      return '';
+    }
+    case 'expiry': {
+      if (!value) return 'La fecha de expiración es obligatoria.';
+      const match = /^(\d{2})\/(\d{2})$/.exec(value);
+      if (!match) return 'Usa el formato MM/AA.';
+      const month = parseInt(match[1], 10);
+      const year = parseInt(`20${match[2]}`, 10);
+      if (month < 1 || month > 12) return 'El mes ingresado no es válido.';
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth() + 1;
+      if (year < currentYear || (year === currentYear && month < currentMonth)) {
+        return 'Esta tarjeta ya expiró.';
+      }
+      return '';
+    }
+    case 'cvc': {
+      const digits = onlyDigits(value);
+      if (!digits) return 'El CVC es obligatorio.';
+      if (digits.length < 3 || digits.length > 4) return 'El CVC debe tener 3 o 4 dígitos.';
+      return '';
+    }
+    default:
+      return '';
+  }
+}
+
 function Checkout({ onNavigate, hotel }) {
-  const [paymentMethod, setPaymentMethod] = useState('saved-card');
+  const [paymentMethod, setPaymentMethod] = useState('saved-card'); // 'saved-card' | 'new-card'
   const [billingSameAsTraveler, setBillingSameAsTraveler] = useState(true);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
 
+  const [cardValues, setCardValues] = useState({
+    cardholderName: '',
+    cardNumber: '',
+    expiry: '',
+    cvc: '',
+  });
+  const [cardErrors, setCardErrors] = useState({
+    cardholderName: '',
+    cardNumber: '',
+    expiry: '',
+    cvc: '',
+  });
+  const [cardTouched, setCardTouched] = useState({
+    cardholderName: false,
+    cardNumber: false,
+    expiry: false,
+    cvc: false,
+  });
+
+  const handleCardChange = (field) => (e) => {
+    let value = e.target.value;
+    if (field === 'cardNumber') value = formatCardNumber(value);
+    if (field === 'expiry') value = formatExpiry(value);
+    if (field === 'cvc') value = onlyDigits(value).slice(0, 4);
+
+    setCardValues((prev) => ({ ...prev, [field]: value }));
+    if (cardTouched[field]) {
+      setCardErrors((prev) => ({ ...prev, [field]: validateCardField(field, value) }));
+    }
+  };
+
+  const handleCardBlur = (field) => () => {
+    setCardTouched((prev) => ({ ...prev, [field]: true }));
+    setCardErrors((prev) => ({ ...prev, [field]: validateCardField(field, cardValues[field]) }));
+  };
+
+  const validateNewCard = () => {
+    const newErrors = {
+      cardholderName: validateCardField('cardholderName', cardValues.cardholderName),
+      cardNumber: validateCardField('cardNumber', cardValues.cardNumber),
+      expiry: validateCardField('expiry', cardValues.expiry),
+      cvc: validateCardField('cvc', cardValues.cvc),
+    };
+    setCardErrors(newErrors);
+    setCardTouched({ cardholderName: true, cardNumber: true, expiry: true, cvc: true });
+    return Object.values(newErrors).every((err) => err === '');
+  };
+
   const handleCompleteBooking = () => {
+    // Solo validamos los campos de tarjeta nueva si el usuario eligió esa opción.
+    // Si eligió la tarjeta guardada, no hay nada que validar en el formulario.
+    if (paymentMethod === 'new-card' && !validateNewCard()) {
+      return;
+    }
+
     setStatus('loading');
     
     // Simulación del proceso de pago de lujo
@@ -20,6 +148,13 @@ function Checkout({ onNavigate, hotel }) {
       }, 800);
     }, 1800);
   };
+
+  const cardInputClasses = (field) =>
+    `w-full bg-surface p-4 rounded-lg border transition-all outline-none ${
+      cardErrors[field] && cardTouched[field]
+        ? 'border-error focus:border-error'
+        : 'border-transparent focus:border-primary focus:bg-white'
+    }`;
 
   return (
     <Layout>
@@ -43,13 +178,34 @@ function Checkout({ onNavigate, hotel }) {
                 Pago Exprés
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button className="flex items-center justify-center gap-2 py-4 bg-primary text-on-primary rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                  <span className="material-symbols-outlined">apple</span>
-                  Apple Pay
+                {/* Apple Pay — botón oficial: fondo negro, logotipo blanco */}
+                <button
+                  type="button"
+                  className="flex items-center justify-center gap-2 py-3.5 bg-black text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                  aria-label="Pagar con Apple Pay"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M16.365 1.43c0 1.14-.462 2.06-1.155 2.75-.75.75-1.98 1.32-2.985 1.24-.135-1.11.435-2.28 1.11-3 .75-.81 2.04-1.41 3.03-1.44.015.15.015.3.015.45zM20.4 17.19c-.555 1.29-.825 1.86-1.53 3-.99 1.575-2.385 3.54-4.11 3.555-1.53.015-1.92-1.005-3.99-.99-2.07.015-2.505 1.005-4.035.99-1.725-.015-3.045-1.785-4.035-3.36C-.06 17.19-.855 13.2.615 10.5c1.02-1.875 2.85-3.06 4.83-3.075 1.635-.015 2.895 1.11 3.99 1.11 1.08 0 2.7-1.365 4.53-1.17.75.03 2.865.3 4.29 2.31-.105.07-2.565 1.5-2.535 4.47.03 3.57 3.12 4.755 3.15 4.77-.03.09-.5 1.68-1.47 3.275z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span className="text-sm">Apple Pay</span>
                 </button>
-                <button className="flex items-center justify-center gap-2 py-4 border border-outline rounded-lg font-semibold hover:bg-surface-container-low transition-colors bg-transparent">
-                  <span className="material-symbols-outlined text-secondary">google</span>
-                  Google Pay
+
+                {/* Google Pay — botón oficial: fondo blanco, borde gris, "G" multicolor */}
+                <button
+                  type="button"
+                  className="flex items-center justify-center gap-2 py-3.5 border border-outline rounded-lg font-semibold hover:bg-surface-container-low transition-colors bg-white text-[#3c4043]"
+                  aria-label="Pagar con Google Pay"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.55c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.55-2.77c-.99.66-2.25 1.06-3.73 1.06-2.87 0-5.3-1.94-6.17-4.53H2.18v2.85A11 11 0 0 0 12 23z" fill="#34A853"/>
+                    <path d="M5.83 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.65-2.85z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 1.99 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.65 2.85C6.7 7.32 9.13 5.38 12 5.38z" fill="#EA4335"/>
+                  </svg>
+                  <span className="text-sm">Google Pay</span>
                 </button>
               </div>
             </div>
@@ -69,7 +225,6 @@ function Checkout({ onNavigate, hotel }) {
                       ? 'border-secondary bg-secondary/5' 
                       : 'border-outline-variant/40 bg-transparent'
                   }`}
-                  onClick={() => setPaymentMethod('saved-card')}
                 >
                   <input 
                     checked={paymentMethod === 'saved-card'} 
@@ -90,31 +245,105 @@ function Checkout({ onNavigate, hotel }) {
 
               {/* New Card Form */}
               <div className="space-y-6">
-                <div className="flex items-center gap-2 mb-4">
+                <label
+                  className={`flex items-center gap-2 mb-4 cursor-pointer transition-colors ${
+                    paymentMethod === 'new-card' ? 'text-primary' : 'text-on-surface-variant/70'
+                  }`}
+                >
+                  <input
+                    checked={paymentMethod === 'new-card'}
+                    onChange={() => setPaymentMethod('new-card')}
+                    className="text-secondary focus:ring-secondary mr-1"
+                    name="payment"
+                    type="radio"
+                  />
                   <div className="h-px bg-outline-variant/40 flex-1"></div>
-                  <span className="text-xs font-bold text-on-surface-variant/70 px-4 tracking-wider">O PAGA CON OTRA TARJETA</span>
+                  <span className="text-xs font-bold px-2 tracking-wider">O PAGA CON OTRA TARJETA</span>
                   <div className="h-px bg-outline-variant/40 flex-1"></div>
-                </div>
+                </label>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="md:col-span-2">
-                    <label className="block text-xs font-semibold text-on-surface-variant mb-2">Nombre del Titular</label>
-                    <input className="w-full bg-surface p-4 rounded-lg border border-transparent focus:border-primary focus:bg-white transition-all outline-none" placeholder="Julian Casablancas" type="text" />
+                    <label className="block text-xs font-semibold text-on-surface-variant mb-2" htmlFor="cardholderName">
+                      Nombre del Titular
+                    </label>
+                    <input
+                      id="cardholderName"
+                      className={cardInputClasses('cardholderName')}
+                      placeholder="Julian Casablancas"
+                      type="text"
+                      value={cardValues.cardholderName}
+                      onChange={handleCardChange('cardholderName')}
+                      onFocus={() => setPaymentMethod('new-card')}
+                      onBlur={handleCardBlur('cardholderName')}
+                      aria-invalid={!!(cardErrors.cardholderName && cardTouched.cardholderName)}
+                    />
+                    {cardErrors.cardholderName && cardTouched.cardholderName && (
+                      <p className="text-xs text-error pt-1">{cardErrors.cardholderName}</p>
+                    )}
                   </div>
                   <div className="md:col-span-2 relative">
-                    <label className="block text-xs font-semibold text-on-surface-variant mb-2">Número de Tarjeta</label>
+                    <label className="block text-xs font-semibold text-on-surface-variant mb-2" htmlFor="cardNumber">
+                      Número de Tarjeta
+                    </label>
                     <div className="relative">
-                      <input className="w-full bg-surface p-4 rounded-lg border border-transparent focus:border-primary focus:bg-white transition-all pr-12 outline-none" placeholder="0000 0000 0000 0000" type="text" />
+                      <input
+                        id="cardNumber"
+                        className={`${cardInputClasses('cardNumber')} pr-12`}
+                        placeholder="0000 0000 0000 0000"
+                        type="text"
+                        inputMode="numeric"
+                        value={cardValues.cardNumber}
+                        onChange={handleCardChange('cardNumber')}
+                        onFocus={() => setPaymentMethod('new-card')}
+                        onBlur={handleCardBlur('cardNumber')}
+                        aria-invalid={!!(cardErrors.cardNumber && cardTouched.cardNumber)}
+                      />
                       <span className="material-symbols-outlined absolute right-4 top-4 text-outline text-[20px]">lock</span>
                     </div>
+                    {cardErrors.cardNumber && cardTouched.cardNumber && (
+                      <p className="text-xs text-error pt-1">{cardErrors.cardNumber}</p>
+                    )}
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-on-surface-variant mb-2">Fecha de Expiración</label>
-                    <input className="w-full bg-surface p-4 rounded-lg border border-transparent focus:border-primary focus:bg-white transition-all outline-none" placeholder="MM/YY" type="text" />
+                    <label className="block text-xs font-semibold text-on-surface-variant mb-2" htmlFor="expiry">
+                      Fecha de Expiración
+                    </label>
+                    <input
+                      id="expiry"
+                      className={cardInputClasses('expiry')}
+                      placeholder="MM/YY"
+                      type="text"
+                      inputMode="numeric"
+                      value={cardValues.expiry}
+                      onChange={handleCardChange('expiry')}
+                      onFocus={() => setPaymentMethod('new-card')}
+                      onBlur={handleCardBlur('expiry')}
+                      aria-invalid={!!(cardErrors.expiry && cardTouched.expiry)}
+                    />
+                    {cardErrors.expiry && cardTouched.expiry && (
+                      <p className="text-xs text-error pt-1">{cardErrors.expiry}</p>
+                    )}
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-on-surface-variant mb-2">CVC / CVV</label>
-                    <input className="w-full bg-surface p-4 rounded-lg border border-transparent focus:border-primary focus:bg-white transition-all outline-none" placeholder="•••" type="text" />
+                    <label className="block text-xs font-semibold text-on-surface-variant mb-2" htmlFor="cvc">
+                      CVC / CVV
+                    </label>
+                    <input
+                      id="cvc"
+                      className={cardInputClasses('cvc')}
+                      placeholder="•••"
+                      type="text"
+                      inputMode="numeric"
+                      value={cardValues.cvc}
+                      onChange={handleCardChange('cvc')}
+                      onFocus={() => setPaymentMethod('new-card')}
+                      onBlur={handleCardBlur('cvc')}
+                      aria-invalid={!!(cardErrors.cvc && cardTouched.cvc)}
+                    />
+                    {cardErrors.cvc && cardTouched.cvc && (
+                      <p className="text-xs text-error pt-1">{cardErrors.cvc}</p>
+                    )}
                   </div>
                 </div>
               </div>

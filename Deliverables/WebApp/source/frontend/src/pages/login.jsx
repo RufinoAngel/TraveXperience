@@ -2,14 +2,70 @@ import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function Login({ onNavigate, onLoginSuccess }) {
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
 
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'email':
+        if (!value.trim()) return 'El correo electrónico es obligatorio.';
+        if (!EMAIL_REGEX.test(value.trim())) return 'Introduce un correo electrónico válido.';
+        return '';
+      case 'password':
+        if (!value) return 'La contraseña es obligatoria.';
+        if (value.length < 6) return 'La contraseña debe tener al menos 6 caracteres.';
+        return '';
+      default:
+        return '';
+    }
+  };
+
+  const validateAll = (data) => {
+    const newErrors = {};
+    Object.keys(data).forEach((key) => {
+      const error = validateField(key, data[key]);
+      if (error) newErrors[key] = error;
+    });
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Si el campo ya fue tocado, revalidar en vivo mientras el usuario escribe
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newErrors = validateAll(formData);
+    setErrors(newErrors);
+    setTouched({ email: true, password: true });
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setStatus('loading');
-    
+
     // Simulación del proceso de login
     setTimeout(() => {
       setStatus('success');
@@ -34,7 +90,7 @@ function Login({ onNavigate, onLoginSuccess }) {
           </div>
 
           {/* Login Form */}
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit} noValidate>
             
             {/* Input Fields */}
             <div className="space-y-4">
@@ -45,12 +101,27 @@ function Login({ onNavigate, onLoginSuccess }) {
                   Correo Electrónico
                 </label>
                 <input 
-                  className="w-full bg-transparent border-b border-outline-variant py-3 px-1 text-base focus:outline-none focus:border-primary transition-colors placeholder:text-outline/40" 
-                  id="email" 
+                  className={`w-full bg-transparent border-b py-3 px-1 text-base focus:outline-none transition-colors placeholder:text-outline/40 ${
+                    errors.email && touched.email
+                      ? 'border-error focus:border-error'
+                      : 'border-outline-variant focus:border-primary'
+                  }`}
+                  id="email"
+                  name="email"
                   placeholder="nombre@ejemplo.com" 
                   type="email"
-                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  aria-invalid={!!(errors.email && touched.email)}
+                  aria-describedby="email-error"
                 />
+                {errors.email && touched.email && (
+                  <p id="email-error" className="text-xs text-error font-medium flex items-center gap-1 pt-1">
+                    <span className="material-symbols-outlined text-[14px]">error</span>
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               {/* Password */}
@@ -72,29 +143,45 @@ function Login({ onNavigate, onLoginSuccess }) {
                 </div>
                 <div className="relative">
                   <input 
-                    className="w-full bg-transparent border-b border-outline-variant py-3 px-1 text-base focus:outline-none focus:border-primary transition-colors placeholder:text-outline/40" 
+                    className={`w-full bg-transparent border-b py-3 px-1 text-base focus:outline-none transition-colors placeholder:text-outline/40 ${
+                      errors.password && touched.password
+                        ? 'border-error focus:border-error'
+                        : 'border-outline-variant focus:border-primary'
+                    }`}
                     id="password" 
+                    name="password"
                     placeholder="Introduce tu contraseña" 
                     type={showPassword ? 'text' : 'password'}
-                    required
+                    value={formData.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    aria-invalid={!!(errors.password && touched.password)}
+                    aria-describedby="password-error"
                   />
                   <button 
-                    className="absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant/60 hover:text-primary transition-colors" 
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant/60 hover:text-primary transition-colors bg-transparent border-none cursor-pointer" 
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    tabIndex={-1}
                   >
                     <span className="material-symbols-outlined text-[20px]">
                       {showPassword ? 'visibility_off' : 'visibility'}
                     </span>
                   </button>
                 </div>
+                {errors.password && touched.password && (
+                  <p id="password-error" className="text-xs text-error font-medium flex items-center gap-1 pt-1">
+                    <span className="material-symbols-outlined text-[14px]">error</span>
+                    {errors.password}
+                  </p>
+                )}
               </div>
             </div>
 
             {/* CTA and Action Button */}
             <div className="pt-4 space-y-6">
               <button 
-                className={`w-full py-4 rounded-full text-lg font-bold transition-all duration-300 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 cursor-pointer border-none ${
+                className={`w-full py-4 rounded-full text-lg font-bold transition-all duration-300 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 cursor-pointer border-none disabled:opacity-60 disabled:cursor-not-allowed ${
                   status === 'success'
                     ? 'bg-secondary-container text-primary'
                     : 'bg-primary text-on-primary hover:bg-opacity-90'

@@ -1,15 +1,105 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+
+
+const NAME_REGEX = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,60}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Password: distinta exigencia según el rol.
+// user  -> mínimo 8 caracteres, al menos 1 letra y 1 número
+// admin -> mínimo 10 caracteres, mayúscula, minúscula, número y carácter especial
+const PASSWORD_RULES = {
+  user: {
+    minLength: 8,
+    regex: /^(?=.*[A-Za-z])(?=.*\d).{8,}$/,
+    message: 'La contraseña debe tener al menos 8 caracteres, incluyendo letras y números.',
+  },
+  admin: {
+    minLength: 10,
+    regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{10,}$/,
+    message: 'Como administrador, tu contraseña debe tener al menos 10 caracteres, con mayúsculas, minúsculas, números y un carácter especial.',
+  },
+};
+
+function validateField(field, value, role) {
+  switch (field) {
+    case 'fullName': {
+      const trimmed = value.trim();
+      if (!trimmed) return 'El nombre completo es obligatorio.';
+      if (!NAME_REGEX.test(trimmed)) {
+        return 'Ingresa un nombre válido (mínimo 3 letras, solo letras y espacios).';
+      }
+      return '';
+    }
+    case 'email': {
+      const trimmed = value.trim();
+      if (!trimmed) return 'El correo electrónico es obligatorio.';
+      if (!EMAIL_REGEX.test(trimmed)) return 'Ingresa un correo electrónico válido.';
+      return '';
+    }
+    case 'password': {
+      if (!value) return 'La contraseña es obligatoria.';
+      const rule = PASSWORD_RULES[role] || PASSWORD_RULES.user;
+      if (!rule.regex.test(value)) return rule.message;
+      return '';
+    }
+    default:
+      return '';
+  }
+}
+
 function Register({ onNavigate, onRegisterSuccess }) {
   const [role, setRole] = useState('user');
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
 
+  const [values, setValues] = useState({ fullName: '', email: '', password: '' });
+  const [errors, setErrors] = useState({ fullName: '', email: '', password: '' });
+  const [touched, setTouched] = useState({ fullName: false, email: false, password: false });
+
+  const handleChange = (field) => (e) => {
+    const value = e.target.value;
+    setValues((prev) => ({ ...prev, [field]: value }));
+    // Si el campo ya fue tocado, validamos en vivo para dar feedback inmediato
+    if (touched[field]) {
+      setErrors((prev) => ({ ...prev, [field]: validateField(field, value, role) }));
+    }
+  };
+
+  const handleBlur = (field) => () => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    setErrors((prev) => ({ ...prev, [field]: validateField(field, values[field], role) }));
+  };
+
+  // Al cambiar de rol, re-validamos la contraseña porque sus reglas dependen del rol
+  const handleRoleChange = (newRole) => {
+    setRole(newRole);
+    if (touched.password) {
+      setErrors((prev) => ({ ...prev, password: validateField('password', values.password, newRole) }));
+    }
+  };
+
+  const validateAll = () => {
+    const newErrors = {
+      fullName: validateField('fullName', values.fullName, role),
+      email: validateField('email', values.email, role),
+      password: validateField('password', values.password, role),
+    };
+    setErrors(newErrors);
+    setTouched({ fullName: true, email: true, password: true });
+    return Object.values(newErrors).every((err) => err === '');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateAll()) {
+      return; // hay errores, no se envía el formulario
+    }
+
     setStatus('loading');
-    
+
     setTimeout(() => {
       setStatus('success');
       setTimeout(() => {
@@ -19,6 +109,13 @@ function Register({ onNavigate, onRegisterSuccess }) {
       }, 600);
     }, 1500);
   };
+
+  const inputClasses = (field) =>
+    `w-full bg-transparent border-b py-3 px-1 text-base focus:outline-none transition-colors placeholder:text-outline/40 ${
+      errors[field] && touched[field]
+        ? 'border-error focus:border-error'
+        : 'border-outline-variant focus:border-primary'
+    }`;
 
   return (
     <div className="bg-surface text-on-surface font-sans selection:bg-secondary-container min-h-screen flex flex-col justify-between">
@@ -34,7 +131,7 @@ function Register({ onNavigate, onRegisterSuccess }) {
           </div>
 
           {/* Registration Form */}
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit} noValidate>
             
             {/* Role Selection */}
             <div className="space-y-3">
@@ -51,7 +148,7 @@ function Register({ onNavigate, onRegisterSuccess }) {
                     type="radio" 
                     value="user"
                     checked={role === 'user'}
-                    onChange={() => setRole('user')}
+                    onChange={() => handleRoleChange('user')}
                   />
                   <div className={`h-full p-5 border rounded-xl transition-all duration-300 active:scale-[0.98] ${
                     role === 'user' 
@@ -76,7 +173,7 @@ function Register({ onNavigate, onRegisterSuccess }) {
                     type="radio" 
                     value="admin"
                     checked={role === 'admin'}
-                    onChange={() => setRole('admin')}
+                    onChange={() => handleRoleChange('admin')}
                   />
                   <div className={`h-full p-5 border rounded-xl transition-all duration-300 active:scale-[0.98] ${
                     role === 'admin' 
@@ -102,12 +199,20 @@ function Register({ onNavigate, onRegisterSuccess }) {
                   Nombre Completo
                 </label>
                 <input 
-                  className="w-full bg-transparent border-b border-outline-variant py-3 px-1 text-base focus:outline-none focus:border-primary transition-colors placeholder:text-outline/40" 
+                  className={inputClasses('fullName')}
                   id="full_name" 
                   placeholder="Ej: Julian Casablancas" 
                   type="text"
+                  value={values.fullName}
+                  onChange={handleChange('fullName')}
+                  onBlur={handleBlur('fullName')}
+                  aria-invalid={!!(errors.fullName && touched.fullName)}
+                  aria-describedby="full_name_error"
                   required
                 />
+                {errors.fullName && touched.fullName && (
+                  <p id="full_name_error" className="text-xs text-error pt-1">{errors.fullName}</p>
+                )}
               </div>
               
               <div className="space-y-1 group">
@@ -115,12 +220,20 @@ function Register({ onNavigate, onRegisterSuccess }) {
                   Correo Electrónico
                 </label>
                 <input 
-                  className="w-full bg-transparent border-b border-outline-variant py-3 px-1 text-base focus:outline-none focus:border-primary transition-colors placeholder:text-outline/40" 
+                  className={inputClasses('email')}
                   id="email" 
                   placeholder="nombre@ejemplo.com" 
                   type="email"
+                  value={values.email}
+                  onChange={handleChange('email')}
+                  onBlur={handleBlur('email')}
+                  aria-invalid={!!(errors.email && touched.email)}
+                  aria-describedby="email_error"
                   required
                 />
+                {errors.email && touched.email && (
+                  <p id="email_error" className="text-xs text-error pt-1">{errors.email}</p>
+                )}
               </div>
 
               <div className="space-y-1 group">
@@ -129,10 +242,15 @@ function Register({ onNavigate, onRegisterSuccess }) {
                 </label>
                 <div className="relative">
                   <input 
-                    className="w-full bg-transparent border-b border-outline-variant py-3 px-1 text-base focus:outline-none focus:border-primary transition-colors placeholder:text-outline/40" 
+                    className={inputClasses('password')}
                     id="password" 
-                    placeholder="Mínimo 8 caracteres" 
+                    placeholder={role === 'admin' ? 'Mínimo 10 caracteres' : 'Mínimo 8 caracteres'} 
                     type={showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    onChange={handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    aria-invalid={!!(errors.password && touched.password)}
+                    aria-describedby="password_error"
                     required
                   />
                   <button 
@@ -145,6 +263,15 @@ function Register({ onNavigate, onRegisterSuccess }) {
                     </span>
                   </button>
                 </div>
+                {errors.password && touched.password ? (
+                  <p id="password_error" className="text-xs text-error pt-1">{errors.password}</p>
+                ) : (
+                  <p className="text-[11px] text-on-surface-variant/70 pt-1">
+                    {role === 'admin'
+                      ? 'Mayúscula, minúscula, número y carácter especial.'
+                      : 'Al menos una letra y un número.'}
+                  </p>
+                )}
               </div>
             </div>
 

@@ -47,7 +47,7 @@ function Header({ isLoggedIn = false, onNavigate, currentPage = 'landing', curre
                   }`} 
                   href="#explore"
                 >
-                  Explore
+                  Explorar
                 </a>
                 <a 
                   onClick={(e) => handleNavClick(e, 'landing')}
@@ -94,7 +94,7 @@ function Header({ isLoggedIn = false, onNavigate, currentPage = 'landing', curre
                   }`} 
                   href="#mapa"
                 >
-                  Interactive Map
+                  Mapa 
                 </a>
                 <a 
                   onClick={(e) => handleNavClick(e, 'itinerario')}
@@ -105,7 +105,7 @@ function Header({ isLoggedIn = false, onNavigate, currentPage = 'landing', curre
                   }`} 
                   href="#itinerario"
                 >
-                  My Trips
+                  Mis viajes
                 </a>
                 <a 
                   onClick={(e) => handleNavClick(e, 'settings', { tab: 'Favorites' })}
@@ -116,7 +116,7 @@ function Header({ isLoggedIn = false, onNavigate, currentPage = 'landing', curre
                   }`} 
                   href="#favorites"
                 >
-                  Saved
+                  Favoritos
                 </a>
               </>
             )}
