@@ -129,9 +129,9 @@ Toda la documentación oficial del proyecto se encuentra organizada en la nube p
 | Minuta | [Minuta](https://docs.google.com/document/d/1rLzDgaxX1NFwCuAeGY2T8-blOClBV5sP/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true)|
 | Plan de Pruebas | [Plan de Pruebas](https://docs.google.com/document/d/1NWitr0lyHtEWb6S4q6MOjf2UZl38IipO/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Control de Cambios | [Control de Cambios](https://docs.google.com/document/d/1hcdH6Ma6WtBED87mdF6k35e4y85KsZCe/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
-| Documento de Reglas de Negocio (BR) | LINK |
-| Casos de Uso | LINK |
-| Diagramas UML | LINK |
+| Documento de Reglas de Negocio (BR) | [BR](https://docs.google.com/document/d/1s9fk1gCRu_dE1HFDjWW800ylvd0n4PQp/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Casos de Uso | [Casos de Uso](https://docs.google.com/document/d/1N8pGBkkbKoxazM9j5Od8pUSq1WCVEdVh/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
+| Diagramas UML | [Diagramas UML](https://docs.google.com/document/d/1e2Vr-3G3BnmKDv26ZD3ZOXDAwSqhxTeF/edit?usp=sharing&ouid=106142142983528326169&rtpof=true&sd=true) |
 | Manual de Usuario | LINK |
 | Manual Técnico | LINK |
 | Manual de Despliegue | LINK |
@@ -236,6 +236,9 @@ El presupuesto del proyecto contempla los recursos humanos, tecnológicos y de i
 | Herramientas de Desarrollo | IDEs, control de versiones y herramientas colaborativas. |
 | Diseño UI/UX | Recursos gráficos, tipografías e iconografía. |
 
+### Documento Extenso de la Gestión de Costos
+[Gestión de Costos](https://docs.google.com/document/d/1mDbsHdOuU6ens2yfiujg_7j6WtUufq12/edit?usp=drivesdk&ouid=106142142983528326169&rtpof=true&sd=true)
+
 ---
 
 # Gestión de Adquisiciones
@@ -289,6 +292,9 @@ La calidad del proyecto se garantiza mediante la adopción de estándares de des
 | Revisión de Código | Cada funcionalidad deberá ser revisada antes de integrarse a la rama principal. |
 | Machine Learning | Los modelos desarrollados en TensorFlow.js deberán cumplir con métricas de precisión establecidas antes de ser desplegados. |
 | Base de Datos | Validación de integridad, consistencia y respaldo periódico de la información almacenada. |
+
+### Documento de Calidad del Código del Backend
+[Calidad del Código](https://docs.google.com/document/d/1iXhVqEa2d7yJA0jSOURq8tHyKHH8sWsP/edit?usp=drivesdk&ouid=106142142983528326169&rtpof=true&sd=true)
 
 ---
 
