@@ -103,7 +103,12 @@ function Register({ onNavigate, onRegisterSuccess }) {
     setTimeout(() => {
       setStatus('success');
       setTimeout(() => {
-        if (onRegisterSuccess) {
+        if (role === 'admin') {
+          // Los administradores van directo al panel de administración
+          if (onNavigate) {
+            onNavigate('admin-dashboard');
+          }
+        } else if (onRegisterSuccess) {
           onRegisterSuccess();
         }
       }, 600);

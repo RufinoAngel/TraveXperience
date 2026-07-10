@@ -1,28 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AdminLayout from '../../components/adminLayout.jsx';
 
-// Datos simulados para el gráfico de tendencias de reservas
-const TREND_POINTS = [12, 18, 22, 30, 34, 31, 28, 33, 45, 42];
-const TREND_LABELS = ['01 May', '08 May', '15 May', '22 May', '31 May'];
+// Datos simulados para el gráfico de tendencias de reservas, por rango de fecha
+const TREND_DATASETS = {
+  '7d': {
+    label: 'Últimos 7 días',
+    points: [30, 34, 31, 28, 33, 45, 42],
+    labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+  },
+  '30d': {
+    label: 'Últimos 30 días',
+    points: [12, 18, 22, 30, 34, 31, 28, 33, 45, 42],
+    labels: ['01 May', '08 May', '15 May', '22 May', '31 May'],
+  },
+  '90d': {
+    label: 'Últimos 90 días',
+    points: [8, 14, 12, 20, 18, 25, 22, 30, 28, 34, 31, 38, 33, 45, 42],
+    labels: ['Mar', 'Abr', 'May'],
+  },
+  '1y': {
+    label: 'Este año',
+    points: [10, 14, 16, 20, 24, 22, 28, 34, 31, 38, 42, 45],
+    labels: ['Ene', 'Mar', 'May', 'Jul', 'Sep', 'Nov'],
+  },
+};
 
-function TrendChart() {
+function TrendChart({ points }) {
   const width = 800;
   const height = 260;
-  const max = Math.max(...TREND_POINTS);
-  const min = Math.min(...TREND_POINTS);
-  const step = width / (TREND_POINTS.length - 1);
+  const max = Math.max(...points);
+  const min = Math.min(...points);
+  const step = width / (points.length - 1);
 
-  const points = TREND_POINTS.map((val, i) => {
-    const x = i * step;
-    const y = height - ((val - min) / (max - min)) * (height - 40) - 20;
-    return [x, y];
-  });
+  const norm = (val) => {
+    if (max === min) return height / 2;
+    return height - ((val - min) / (max - min)) * (height - 40) - 20;
+  };
 
-  const linePath = points
+  const chartPoints = points.map((val, i) => [i * step, norm(val)]);
+
+  const linePath = chartPoints
     .map(([x, y], i) => (i === 0 ? `M ${x},${y}` : `L ${x},${y}`))
     .join(' ');
 
   const areaPath = `${linePath} L ${width},${height} L 0,${height} Z`;
+
+  // Marca un par de puntos destacados (aprox. a 1/3 y 2/3 del recorrido)
+  const highlightIdx = new Set([
+    Math.round(chartPoints.length * 0.3),
+    Math.round(chartPoints.length * 0.7),
+  ]);
 
   return (
     <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-64" preserveAspectRatio="none">
@@ -34,8 +61,8 @@ function TrendChart() {
       </defs>
       <path d={areaPath} fill="url(#trendGradient)" />
       <path d={linePath} fill="none" stroke="var(--color-secondary)" strokeWidth="2.5" />
-      {points.map(([x, y], i) => (
-        (i === 2 || i === 4) && (
+      {chartPoints.map(([x, y], i) => (
+        highlightIdx.has(i) && (
           <circle key={i} cx={x} cy={y} r="4" fill="var(--color-secondary)" />
         )
       ))}
@@ -51,6 +78,15 @@ const DESTINOS = [
 ];
 
 function AdminDashboard({ onNavigate }) {
+  const [range, setRange] = useState('30d');
+  const [rangeMenuOpen, setRangeMenuOpen] = useState(false);
+  const dataset = TREND_DATASETS[range];
+
+  const selectRange = (key) => {
+    setRange(key);
+    setRangeMenuOpen(false);
+  };
+
   return (
     <AdminLayout activePage="admin-dashboard" onNavigate={onNavigate}>
 
@@ -113,15 +149,36 @@ function AdminDashboard({ onNavigate }) {
           <div className="flex justify-between items-start mb-6">
             <div>
               <h3 className="text-xl font-bold text-primary mb-1">Booking Trends</h3>
-              <p className="text-xs text-on-surface-variant">Métricas de rendimiento de los últimos 30 días</p>
+              <p className="text-xs text-on-surface-variant">Métricas de rendimiento de {dataset.label.toLowerCase()}</p>
             </div>
-            <button className="px-4 py-2 bg-surface-container-low rounded-lg text-xs font-bold text-primary border-none cursor-pointer">
-              Últimos 30 días
-            </button>
+            <div className="relative">
+              <button
+                onClick={() => setRangeMenuOpen((prev) => !prev)}
+                className="px-4 py-2 bg-surface-container-low rounded-lg text-xs font-bold text-primary border-none cursor-pointer flex items-center gap-1.5"
+              >
+                {dataset.label}
+                <span className="material-symbols-outlined text-[16px]">expand_more</span>
+              </button>
+              {rangeMenuOpen && (
+                <div className="absolute right-0 mt-2 w-44 bg-surface border border-solid border-outline-variant/40 rounded-xl shadow-lg overflow-hidden z-10">
+                  {Object.entries(TREND_DATASETS).map(([key, d]) => (
+                    <button
+                      key={key}
+                      onClick={() => selectRange(key)}
+                      className={`w-full text-left px-4 py-2.5 text-xs font-semibold border-none cursor-pointer transition-colors ${
+                        key === range ? 'bg-primary/10 text-primary' : 'bg-transparent text-on-surface-variant hover:bg-surface-container-low'
+                      }`}
+                    >
+                      {d.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-          <TrendChart />
+          <TrendChart points={dataset.points} />
           <div className="flex justify-between mt-2 px-1">
-            {TREND_LABELS.map((label) => (
+            {dataset.labels.map((label) => (
               <span key={label} className="text-[11px] text-on-surface-variant font-medium">{label}</span>
             ))}
           </div>

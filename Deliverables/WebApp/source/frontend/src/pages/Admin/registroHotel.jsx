@@ -10,12 +10,62 @@ const AMENITIES = [
   { key: 'parking', label: 'Parking', icon: 'local_parking' },
 ];
 
+// ---- Validaciones ----
+function validateHotelField(field, value) {
+  switch (field) {
+    case 'nombre': {
+      const trimmed = (value || '').trim();
+      if (!trimmed) return 'El nombre del hotel es obligatorio.';
+      if (trimmed.length < 3) return 'El nombre debe tener al menos 3 caracteres.';
+      return '';
+    }
+    case 'categoria': {
+      if (!value || value === 'Seleccione nivel') return 'Selecciona una categoría.';
+      return '';
+    }
+    case 'precio': {
+      if (value === '' || value === null || value === undefined) return 'El precio base es obligatorio.';
+      const num = Number(value);
+      if (Number.isNaN(num) || num <= 0) return 'Ingresa un precio válido mayor a 0.';
+      return '';
+    }
+    case 'ubicacion': {
+      const trimmed = (value || '').trim();
+      if (!trimmed) return 'La ubicación / dirección es obligatoria.';
+      if (trimmed.length < 8) return 'Ingresa una dirección más completa.';
+      return '';
+    }
+    default:
+      return '';
+  }
+}
+
 function AdminHoteles({ onNavigate }) {
   const [selectedAmenities, setSelectedAmenities] = useState({});
   const [rooms, setRooms] = useState([
     { id: 1, name: 'Habitación Estándar', details: 'Cama Queen, Vistas a la ciudad, 25m²', price: '€180/noche' },
     { id: 2, name: 'Suite Ejecutiva', details: 'Cama King, Terraza privada, 55m²', price: '€450/noche' },
   ]);
+  const [mainImage, setMainImage] = useState(null);
+
+  const [values, setValues] = useState({ nombre: '', categoria: '', precio: '', ubicacion: '' });
+  const [errors, setErrors] = useState({ nombre: '', categoria: '', precio: '', ubicacion: '' });
+  const [touched, setTouched] = useState({ nombre: false, categoria: false, precio: false, ubicacion: false });
+  const [roomsError, setRoomsError] = useState('');
+  const [submitStatus, setSubmitStatus] = useState('idle'); // idle | success
+
+  const handleChange = (field) => (e) => {
+    const value = e.target.value;
+    setValues((prev) => ({ ...prev, [field]: value }));
+    if (touched[field]) {
+      setErrors((prev) => ({ ...prev, [field]: validateHotelField(field, value) }));
+    }
+  };
+
+  const handleBlur = (field) => () => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    setErrors((prev) => ({ ...prev, [field]: validateHotelField(field, values[field]) }));
+  };
 
   const toggleAmenity = (key) => {
     setSelectedAmenities((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -23,6 +73,35 @@ function AdminHoteles({ onNavigate }) {
 
   const removeRoom = (id) => {
     setRooms((prev) => prev.filter((r) => r.id !== id));
+  };
+
+  const inputClasses = (field) =>
+    `w-full px-4 py-3 bg-surface-container-lowest border border-solid rounded-xl text-sm font-medium text-primary outline-none transition-colors ${
+      errors[field] && touched[field] ? 'border-error focus:border-error' : 'border-outline-variant focus:border-primary'
+    }`;
+
+  const handleRegister = () => {
+    const newErrors = {
+      nombre: validateHotelField('nombre', values.nombre),
+      categoria: validateHotelField('categoria', values.categoria),
+      precio: validateHotelField('precio', values.precio),
+      ubicacion: validateHotelField('ubicacion', values.ubicacion),
+    };
+    setErrors(newErrors);
+    setTouched({ nombre: true, categoria: true, precio: true, ubicacion: true });
+
+    const roomsMsg = rooms.length === 0 ? 'Agrega al menos un tipo de habitación.' : '';
+    setRoomsError(roomsMsg);
+
+    const hasErrors = Object.values(newErrors).some((e) => e !== '') || !!roomsMsg;
+    if (hasErrors) {
+      setSubmitStatus('idle');
+      return;
+    }
+
+    // Aquí iría la llamada real a tu API para registrar el hotel
+    setSubmitStatus('success');
+    setTimeout(() => setSubmitStatus('idle'), 3000);
   };
 
   return (
@@ -52,18 +131,32 @@ function AdminHoteles({ onNavigate }) {
                 <input
                   type="text"
                   placeholder="Ej. Grand Hyatt Barcelona"
-                  className="w-full px-4 py-3 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                  className={inputClasses('nombre')}
+                  value={values.nombre}
+                  onChange={handleChange('nombre')}
+                  onBlur={handleBlur('nombre')}
                 />
+                {errors.nombre && touched.nombre && (
+                  <p className="text-xs text-error">{errors.nombre}</p>
+                )}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Categoría (Estrellas)</label>
-                  <select className="w-full px-4 py-3 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors">
-                    <option>Seleccione nivel</option>
+                  <select
+                    className={inputClasses('categoria')}
+                    value={values.categoria}
+                    onChange={handleChange('categoria')}
+                    onBlur={handleBlur('categoria')}
+                  >
+                    <option value="">Seleccione nivel</option>
                     <option>3 estrellas</option>
                     <option>4 estrellas</option>
                     <option>5 estrellas</option>
                   </select>
+                  {errors.categoria && touched.categoria && (
+                    <p className="text-xs text-error">{errors.categoria}</p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Precio base por noche (EUR)</label>
@@ -71,10 +164,18 @@ function AdminHoteles({ onNavigate }) {
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-semibold">€</span>
                     <input
                       type="number"
+                      min="0"
+                      step="0.01"
                       placeholder="0.00"
-                      className="w-full pl-8 pr-4 py-3 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                      className={`${inputClasses('precio')} pl-8`}
+                      value={values.precio}
+                      onChange={handleChange('precio')}
+                      onBlur={handleBlur('precio')}
                     />
                   </div>
+                  {errors.precio && touched.precio && (
+                    <p className="text-xs text-error">{errors.precio}</p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col gap-1.5">
@@ -82,8 +183,14 @@ function AdminHoteles({ onNavigate }) {
                 <input
                   type="text"
                   placeholder="Calle, número, ciudad, código postal..."
-                  className="w-full px-4 py-3 bg-surface-container-lowest border border-solid border-outline-variant rounded-xl text-sm font-medium text-primary outline-none focus:border-primary transition-colors"
+                  className={inputClasses('ubicacion')}
+                  value={values.ubicacion}
+                  onChange={handleChange('ubicacion')}
+                  onBlur={handleBlur('ubicacion')}
                 />
+                {errors.ubicacion && touched.ubicacion && (
+                  <p className="text-xs text-error">{errors.ubicacion}</p>
+                )}
               </div>
             </div>
           </div>
@@ -124,7 +231,10 @@ function AdminHoteles({ onNavigate }) {
               </div>
               <button
                 type="button"
-                onClick={() => setRooms((prev) => [...prev, { id: Date.now(), name: 'Nueva Habitación', details: 'Describe la habitación...', price: '€0/noche' }])}
+                onClick={() => {
+                  setRooms((prev) => [...prev, { id: Date.now(), name: 'Nueva Habitación', details: 'Describe la habitación...', price: '€0/noche' }]);
+                  setRoomsError('');
+                }}
                 className="flex items-center gap-1 text-xs font-bold text-secondary bg-transparent border-none cursor-pointer hover:text-primary transition-colors"
               >
                 <span className="material-symbols-outlined text-[16px]">add</span>
@@ -150,7 +260,11 @@ function AdminHoteles({ onNavigate }) {
                   </div>
                 </div>
               ))}
+              {rooms.length === 0 && (
+                <p className="text-xs text-on-surface-variant italic">No hay habitaciones agregadas todavía.</p>
+              )}
             </div>
+            {roomsError && <p className="text-xs text-error mt-3">{roomsError}</p>}
           </div>
         </div>
 
@@ -160,9 +274,16 @@ function AdminHoteles({ onNavigate }) {
             <h3 className="text-base font-bold text-primary mb-4">Galería de Imágenes</h3>
             <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-secondary/50 rounded-xl py-8 px-4 text-center cursor-pointer hover:bg-secondary-container/5 transition-colors mb-3">
               <span className="material-symbols-outlined text-secondary text-3xl">cloud_upload</span>
-              <span className="text-sm font-semibold text-primary">Arrastre o haga clic para subir<br />la imagen principal</span>
+              <span className="text-sm font-semibold text-primary">
+                {mainImage ? mainImage.name : (<>Arrastre o haga clic para subir<br />la imagen principal</>)}
+              </span>
               <span className="text-[11px] text-on-surface-variant">Soporta JPG, PNG (Max 5MB)</span>
-              <input type="file" className="hidden" accept="image/png, image/jpeg" />
+              <input
+                type="file"
+                className="hidden"
+                accept="image/png, image/jpeg"
+                onChange={(e) => setMainImage(e.target.files && e.target.files[0] ? e.target.files[0] : null)}
+              />
             </label>
             <div className="grid grid-cols-3 gap-2">
               {[1, 2, 3].map((i) => (
@@ -192,8 +313,19 @@ function AdminHoteles({ onNavigate }) {
             </p>
           </div>
 
-          <button className="w-full bg-secondary-container text-primary font-bold py-4 rounded-xl hover:opacity-90 active:scale-[0.98] transition-all border-none cursor-pointer">
-            Register Hotel
+          <button
+            type="button"
+            onClick={handleRegister}
+            className="w-full bg-secondary-container text-primary font-bold py-4 rounded-xl hover:opacity-90 active:scale-[0.98] transition-all border-none cursor-pointer flex items-center justify-center gap-2"
+          >
+            {submitStatus === 'success' ? (
+              <>
+                <span className="material-symbols-outlined">check_circle</span>
+                Hotel Registrado
+              </>
+            ) : (
+              'Register Hotel'
+            )}
           </button>
           <button className="w-full bg-transparent border border-solid border-outline text-primary font-bold py-3.5 rounded-xl hover:bg-surface-container-low transition-all cursor-pointer">
             Guardar como Borrador

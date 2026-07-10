@@ -22,6 +22,11 @@ import AdminInventario from './pages/Admin/inventario.jsx';
 import AdminPagos from './pages/Admin/pagosAdmin.jsx';
 import AdminHoteles from './pages/Admin/registroHotel.jsx';
 import AdminTransporte from './pages/Admin/registroTransporte.jsx';
+import AdminPerfil from './pages/Admin/adminPerfil.jsx';
+import ConfiguracionesAdmin from './pages/Admin/configuracionesAdmin.jsx';
+// NOTA: verifica el nombre real de este archivo — "notificacionesafmin.jsx" parece un typo
+// de "notificacionesAdmin.jsx". Si el archivo en disco tiene otro nombre, el build va a fallar.
+import NotificacionesAdmin from './pages/Admin/notificacionesafmin.jsx';
 
 
 // Settings sub-pages
@@ -31,6 +36,22 @@ import UserNotifications from './pages/notificaciones.jsx';
 import SavedTrips from './pages/favoritos.jsx';
 import PaymentsBilling from './pages/historialPagos.jsx';
 import AccountSettings from './pages/privacidad.jsx';
+
+// Páginas cuyo currentPage corresponde a una vista de Admin.
+// AdminLayout ya trae su propio header/nav, así que estas páginas
+// no deben llevar el Header/Footer públicos encima.
+const ADMIN_PAGES = [
+  'admin-dashboard',
+  'admin-inventario',
+  'admin-pagos',
+  'admin-hoteles',
+  'admin-transporte',
+  'admin-perfil',
+  'admin-configuraciones',
+  'admin-notificaciones'
+
+
+];
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -44,7 +65,11 @@ function Home() {
       const hash = window.location.hash.replace('#', '');
       if (!hash) return;
 
-      if (['landing', 'login', 'register', 'forgot-password', 'inicio', 'mapa', 'itinerario', 'hotel-detail', 'checkout', 'payment-success'].includes(hash)) {
+      if ([
+        'landing', 'login', 'register', 'forgot-password', 'inicio', 'mapa',
+        'itinerario', 'hotel-detail', 'checkout', 'payment-success',
+        ...ADMIN_PAGES,
+      ].includes(hash)) {
         setCurrentPage(hash);
       } else if (['personal-info', 'security', 'notifications', 'favorites', 'payments', 'privacy'].includes(hash)) {
         setCurrentPage('settings');
@@ -88,10 +113,12 @@ function Home() {
     navigate('landing');
   };
 
+  const isAdminPage = ADMIN_PAGES.includes(currentPage);
+
   // Determine if we should show standard header/footer
-  const showHeader = true; // Every page gets a header
+  const showHeader = !isAdminPage; // Admin pages use their own AdminLayout header
   const noFooterPages = ['mapa']; // fullscreen pages skip footer
-  const showFooter = !noFooterPages.includes(currentPage);
+  const showFooter = !isAdminPage && !noFooterPages.includes(currentPage);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -131,6 +158,22 @@ function Home() {
         return <Checkout onNavigate={navigate} hotel={selectedHotel} />;
       case 'payment-success':
         return <BookingConfirmed onNavigate={navigate} />;
+      case 'admin-dashboard':
+        return <AdminDashboard onNavigate={navigate} />;
+      case 'admin-inventario':
+        return <AdminInventario onNavigate={navigate} />;
+      case 'admin-pagos':
+        return <AdminPagos onNavigate={navigate} />;
+      case 'admin-hoteles':
+        return <AdminHoteles onNavigate={navigate} />;
+      case 'admin-transporte':
+        return <AdminTransporte onNavigate={navigate} />;
+      case 'admin-perfil':
+        return <AdminPerfil onNavigate={navigate} />;
+      case 'admin-configuraciones':
+        return <ConfiguracionesAdmin onNavigate={navigate} />;
+      case 'admin-notificaciones':
+        return <NotificacionesAdmin onNavigate={navigate} />;
       case 'settings':
         return renderSettingsPage();
       default:
@@ -171,6 +214,11 @@ function Home() {
       </div>
     );
   };
+
+  // Admin pages render their own AdminLayout without the public shell
+  if (isAdminPage) {
+    return renderPage();
+  }
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-background text-on-background selection:bg-secondary-container antialiased">
