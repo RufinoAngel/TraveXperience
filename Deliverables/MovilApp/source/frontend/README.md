@@ -1,56 +1,66 @@
-# Welcome to your Expo app 👋
+# TraveXperience — React Native (Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Réplica en React Native de las pantallas de TraveXperience, con **Header** y **BottomNav**
+extraídos como componentes reutilizables e independientes, y navegación real con
+**React Navigation** (stack anidado dentro de bottom tabs).
 
-## Get started
+## Estructura
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+App.js
+src/
+  theme/index.js            # colores, tipografía, spacing, radios (design tokens)
+  components/
+    Header.js                # header reutilizable: variant="main" | "sub", tone="navy"|"amber"|"light"
+    BottomNav.js              # barra de navegación inferior (tab bar personalizada)
+    UI.js                     # Card, Badge, SearchBar, PrimaryButton, etc.
+  data/mock.js                # datos de ejemplo usados en todas las pantallas
+  navigation/
+    RootNavigator.js          # Stack raíz: Login -> Main (tabs)
+    MainTabNavigator.js        # Bottom tabs usando <BottomNav />
+    DiscoverStack.js / ItineraryStack.js / WalletStack.js / ProfileStack.js
+  screens/                    # 16 pantallas (una por cada mockup)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Pantallas incluidas
 
-### Other setup steps
+| Pantalla | Archivo |
+|---|---|
+| Login / Splash | `LoginScreen.js` |
+| Descubrir (home) | `DiscoverHomeScreen.js` |
+| Descubrir (búsqueda/categorías) | `DiscoverSearchScreen.js` |
+| Descubrir (mapa) | `DiscoverMapScreen.js` |
+| Itinerario (cronograma) | `ItineraryScreen.js` |
+| Gestión de Transporte | `TransportManagementScreen.js` |
+| Pago Exitoso | `PaymentSuccessScreen.js` |
+| Cartera (métodos de pago) | `WalletScreen.js` |
+| Historial de Pagos | `PaymentHistoryScreen.js` |
+| Historial de Vuelos | `FlightHistoryScreen.js` |
+| Historial de Hoteles | `HotelHistoryScreen.js` |
+| Historial de Transporte | `TransportHistoryScreen.js` |
+| Perfil | `ProfileScreen.js` |
+| Información Personal | `PersonalInfoScreen.js` |
+| Seguridad (2FA) | `SecurityScreen.js` |
+| Guardados | `SavedScreen.js` |
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Cómo correrlo
 
-## Learn more
+Este entorno no tiene acceso a red, así que las dependencias no están instaladas.
+En tu máquina, con Node.js instalado:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+cd travexperience
+npm install
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Luego escanea el QR con la app **Expo Go** (Android/iOS) o presiona `w` para abrir en el navegador.
 
-## Join the community
+## Notas de diseño
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Header** tiene dos variantes:
+  - `variant="main"`: header oscuro (navy) con logo "TraveXperience" + campana de notificaciones. Se usa en la pantalla raíz de cada tab.
+  - `variant="sub"`: header con flecha de regreso + título, con `tone` de fondo `amber` (dorado, historial) o `light` (blanco, Cartera/Guardados).
+- **BottomNav** es un componente 100% independiente del Header, pasado a `Tab.Navigator` vía la prop `tabBar`.
+- La pantalla de mapa (`DiscoverMapScreen`) usa una imagen estilizada con pines superpuestos en vez de `react-native-maps`, para no requerir configuración nativa adicional. Si quieres un mapa real, puedo integrar `react-native-maps` o `expo-location`.
+- Los datos son mock (`src/data/mock.js`) — listos para conectar a tu API/backend.

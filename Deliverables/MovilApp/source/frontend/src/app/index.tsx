@@ -1,98 +1,75 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react';
+import { View, Text, TouchableOpacity, ImageBackground, StatusBar } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+export default function LandingPage() {
+  const router = useRouter();
 
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
   return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
+    <View className="flex-1 bg-[#0F1B2D]">
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+      
+      <ImageBackground
+        source={{
+          uri: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80',
+        }}
+        className="flex-1"
+        imageStyle={{ opacity: 0.8 }}
+      >
+        {/* Capa de gradiente oscuro para asegurar legibilidad del texto */}
+        <View className="flex-1 bg-black/40 justify-between px-6 pb-12 pt-20">
+          
+          {/* Logo Superior */}
+          <View className="items-center mt-8">
+            <View className="w-16 h-16 rounded-3xl bg-white/20 items-center justify-center mb-4 backdrop-blur-md border border-white/30">
+              <MaterialIcons name="flight-takeoff" size={36} color="#F4B400" />
+            </View>
+            <Text className="text-white text-3xl font-extrabold tracking-widest text-center">
+              TraveXperience
+            </Text>
+            <Text className="text-gray-300 mt-2 font-medium tracking-wider text-center">
+              PREMIUM TRAVEL APP
+            </Text>
+          </View>
+
+          {/* Textos y Botones Inferiores */}
+          <View className="w-full">
+            <Text className="text-white text-5xl font-bold mb-4 leading-tight shadow-sm">
+              Descubre el mundo a tu manera.
+            </Text>
+            <Text className="text-gray-200 text-base mb-10 leading-relaxed font-medium shadow-sm">
+              Planifica, reserva y gestiona tus viajes soñados con itinerarios inteligentes y sugerencias personalizadas.
+            </Text>
+
+            <View className="gap-4">
+              {/* Botón Principal - Register */}
+              <TouchableOpacity
+                onPress={() => router.push('/auth/register')}
+                activeOpacity={0.85}
+                className="bg-[#F4B400] w-full py-4 rounded-2xl items-center shadow-lg flex-row justify-center gap-2"
+              >
+                <Text className="text-[#0F1B2D] font-bold text-lg">
+                  Empezar aventura
+                </Text>
+                <MaterialIcons name="arrow-forward" size={20} color="#0F1B2D" />
+              </TouchableOpacity>
+
+              {/* Botón Secundario - Login */}
+              <TouchableOpacity
+                onPress={() => router.push('/auth/login')}
+                activeOpacity={0.8}
+                className="w-full py-4 rounded-2xl items-center border-2 border-white/80 bg-white/10 backdrop-blur-sm"
+              >
+                <Text className="text-white font-bold text-lg">
+                  Ya tengo cuenta
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+        </View>
+      </ImageBackground>
+    </View>
   );
 }
-
-export default function HomeScreen() {
-  return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
-
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
-
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
-
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
-  },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
-  },
-  title: {
-    textAlign: 'center',
-  },
-  code: {
-    textTransform: 'uppercase',
-  },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
-  },
-});
