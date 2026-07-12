@@ -8,6 +8,7 @@ import {
   Pressable,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../components/Header';
 import Fab from '../../components/Fab';
@@ -200,6 +201,7 @@ function TransactionRow({ item }: { item: Transaction }) {
 
 /* ─── Pantalla principal ─────────────────────────── */
 export default function Billetera() {
+  const router = useRouter();
   const [addModal, setAddModal] = useState(false);
 
   return (
@@ -229,13 +231,18 @@ export default function Billetera() {
             <Text className="text-base font-bold text-primary">
               Métodos de pago
             </Text>
-            <TouchableOpacity
-              onPress={() => setAddModal(true)}
-              className="flex-row items-center gap-1"
-            >
-              <MaterialIcons name="add" size={16} color="#F4B400" />
-              <Text className="text-xs font-bold text-secondary">Agregar</Text>
-            </TouchableOpacity>
+            <View className="flex-row items-center gap-4">
+              <TouchableOpacity onPress={() => router.push('/metodos-pago' as any)}>
+                <Text className="text-xs font-bold text-secondary">Ver todos</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setAddModal(true)}
+                className="flex-row items-center gap-1"
+              >
+                <MaterialIcons name="add" size={16} color="#F4B400" />
+                <Text className="text-xs font-bold text-secondary">Agregar</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
           {/* Métodos guardados */}

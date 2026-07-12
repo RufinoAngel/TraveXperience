@@ -47,6 +47,14 @@ export default function RootLayout() {
           name="gestion-transporte"
           options={{ animation: 'slide_from_right' }}
         />
+        <Stack.Screen
+          name="reservar"
+          options={{ animation: 'slide_from_right' }}
+        />
+        <Stack.Screen
+          name="metodos-pago"
+          options={{ animation: 'slide_from_right' }}
+        />
       </Stack>
     </SafeAreaProvider>
   );

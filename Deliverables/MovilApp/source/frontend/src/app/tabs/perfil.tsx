@@ -32,7 +32,7 @@ const MENU_SECTIONS: { title: string; items: MenuRow[] }[] = [
     items: [
       { id: 'perfil', icon: 'person-outline', label: 'Información personal', route: '/informe-personal' },
       { id: 'reservas', icon: 'bookmark-border', label: 'Reservas guardadas', route: '/mis-alojamientos' },
-      { id: 'pagos', icon: 'credit-card', label: 'Métodos de pago' },
+      { id: 'pagos', icon: 'credit-card', label: 'Métodos de pago', route: '/metodos-pago' },
       { id: 'histpagos', icon: 'receipt-long', label: 'Historial de pagos', route: '/historial-pagos' },
     ],
   },
@@ -55,7 +55,7 @@ const MENU_SECTIONS: { title: string; items: MenuRow[] }[] = [
     title: '',
     items: [
       { id: 'soporte', icon: 'help-outline', label: 'Centro de ayuda' },
-      { id: 'logout', icon: 'logout', label: 'Cerrar sesión', danger: true },
+      { id: 'logout', icon: 'logout', label: 'Cerrar sesión', danger: true, route: '/auth/login' },
     ],
   },
 ];

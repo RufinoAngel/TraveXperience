@@ -63,7 +63,7 @@ const STATUS_STYLE: Record<Route['status'], { bg: string; text: string }> = {
 /* ─── Pantalla ───────────────────────────────────── */
 export default function GestionTransporte() {
   const router = useRouter();
-  const [successModal, setSuccessModal] = useState(false);
+  const [addedModal, setAddedModal] = useState(false);
 
   return (
     <SafeAreaView edges={['top']} className="flex-1 bg-white">
@@ -181,7 +181,7 @@ export default function GestionTransporte() {
 
         {/* Reservar nuevo transporte */}
         <TouchableOpacity
-          onPress={() => setSuccessModal(true)}
+          onPress={() => setAddedModal(true)}
           className="bg-primary rounded-2xl py-4 items-center mt-2"
           activeOpacity={0.85}
         >
@@ -189,16 +189,16 @@ export default function GestionTransporte() {
         </TouchableOpacity>
       </ScrollView>
 
-      {/* Modal Pago Exitoso */}
+      {/* Modal Agregado al Itinerario */}
       <Modal
-        visible={successModal}
+        visible={addedModal}
         transparent
         animationType="fade"
-        onRequestClose={() => setSuccessModal(false)}
+        onRequestClose={() => setAddedModal(false)}
       >
         <Pressable
           className="flex-1 bg-black/50 items-center justify-center px-8"
-          onPress={() => setSuccessModal(false)}
+          onPress={() => setAddedModal(false)}
         >
           <View className="bg-white rounded-3xl p-8 w-full items-center">
             {/* Check */}
@@ -207,27 +207,27 @@ export default function GestionTransporte() {
             </View>
 
             <Text className="text-2xl font-bold text-primary text-center mb-2">
-              ¡Pago Exitoso!
+              ¡Agregado al Itinerario!
             </Text>
-            <Text className="text-sm text-gray-500 text-center leading-relaxed mb-5">
-              Tu transporte ha sido reservado correctamente.
+            <Text className="text-sm text-gray-500 text-center leading-relaxed mb-6">
+              Tu transporte se agregó correctamente a tu itinerario de viaje.
             </Text>
-
-            {/* Número de referencia */}
-            <View className="bg-gray-50 border border-gray-100 rounded-2xl px-6 py-3 mb-5">
-              <Text className="text-xs text-gray-400 text-center mb-1">
-                Número de referencia
-              </Text>
-              <Text className="text-lg font-bold text-primary text-center tracking-widest">
-                JTX 785310
-              </Text>
-            </View>
 
             <TouchableOpacity
-              onPress={() => setSuccessModal(false)}
+              onPress={() => {
+                setAddedModal(false);
+                router.push('/tabs/itinerario' as any);
+              }}
               className="bg-primary rounded-2xl py-3.5 w-full items-center"
             >
               <Text className="text-white font-bold text-sm">Ver Itinerario</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => setAddedModal(false)}
+              className="mt-3 py-2 items-center"
+            >
+              <Text className="text-sm font-semibold text-gray-400">Cerrar</Text>
             </TouchableOpacity>
           </View>
         </Pressable>

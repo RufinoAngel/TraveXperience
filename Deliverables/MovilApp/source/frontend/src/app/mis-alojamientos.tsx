@@ -9,6 +9,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import PlaceDetailModal, { PlaceDetail } from '../components/PlaceDetailModal';
 
 /* ─── Tipos ──────────────────────────────────────── */
 interface Accommodation {
@@ -22,56 +23,67 @@ interface Accommodation {
   img: string;
   tag?: string;
   saved: boolean;
+  horario: string;
+  description: string;
 }
 
 /* ─── Datos ──────────────────────────────────────── */
 const ACCOMMODATIONS: Accommodation[] = [
   {
     id: 'a1',
-    name: 'Hotel Ritz Carlton',
-    location: 'Madrid, España',
-    price: '€320',
+    name: 'Hotel Casablanca Xicotepec',
+    location: 'Xicotepec de Juárez, Puebla',
+    price: '$1,200',
     priceUnit: '/noche',
-    rating: 4.9,
-    reviews: 412,
-    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80',
-    tag: 'LUJO',
+    rating: 4.5,
+    reviews: 688,
+    img: 'https://lh3.googleusercontent.com/place-photos/AJRVUZNAacpVw3Gs9c95WGNFPKfML0csS41l-LGzQ_Zoy8uu41ywHpWIYIf3orNCfeYvuvJEQooHGmjJc7mc4_v-SOL_aCv-Wi7psoaJorKdQhZqWR_FBE1rOUHlQOm7wTTMaOd0-w_gW27gV_2jyg=s4800-w800-h600',
+    tag: 'ALBERCA Y TEMASCAL',
     saved: true,
+    horario: 'Recepción abierta 24 horas',
+    description: 'Hotel moderno con alberca, temascal y gimnasio pequeño. Ubicado a un lado de un supermercado, fuera del bullicio del centro.',
   },
   {
     id: 'a2',
-    name: 'Sunset Paradise',
-    location: 'Santorini, Grecia',
-    price: '€285',
+    name: 'Hotel Mi Ranchito',
+    location: 'Xicotepec de Juárez, Puebla',
+    price: '$950',
     priceUnit: '/noche',
-    rating: 4.8,
-    reviews: 387,
-    img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80',
-    tag: 'VISTA AL MAR',
+    rating: 4.5,
+    reviews: 1099,
+    img: 'https://lh3.googleusercontent.com/place-photos/AG9NLjDZhBmu1McOVmIKhWEZbhzuH0TRky9Uqd8J56EIiec70kios2bNPSOylzuQT01ahK6VxAtoQW3m9Rt364GnwNiItu8l9uCNOZDIteO3aKUZp3Ww7qeuA41zWg1IwK1V9D9N6ygzfGf9LAWN1Ek=s4800-w800-h600',
+    tag: 'AMBIENTE CAMPESTRE',
     saved: true,
+    horario: 'Consultar disponibilidad',
+    description: 'Terrenos hermosos y ambiente campestre. Su restaurante es muy recomendado para desayunar.',
   },
   {
     id: 'a3',
-    name: 'Jungla de Bali',
-    location: 'Bali, Indonesia',
-    price: '€195',
+    name: 'Hotel El Cafetalero',
+    location: 'Xicotepec de Juárez, Puebla',
+    price: '$1,050',
     priceUnit: '/noche',
-    rating: 4.7,
-    reviews: 298,
-    img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80',
-    tag: 'AVENTURA',
+    rating: 4.4,
+    reviews: 768,
+    img: 'https://lh3.googleusercontent.com/place-photos/AG9NLjBFo383EO3OEUZbwDA3XT51Q6EOySuQrEnB-ec7ah75XisayBhgOUNFI7IcNdyLnmFi6Dulw5P20l9ZLdGMcnPHnUF6yEZDT02GGxNKGGtr0CYH5_-oxbbMLOiKzXJRgEoxaW15-1amJm9d=s4800-w800-h600',
+    tag: 'CAFÉ DE LA CASA',
     saved: true,
+    horario: 'Recepción abierta 24 horas',
+    description: 'Habitaciones limpias y cómodas, con el café de la casa muy bien valorado por los huéspedes.',
   },
   {
     id: 'a4',
-    name: 'Atelier del Café',
-    location: 'Barcelona, España',
-    price: '€120',
+    name: 'Hotel Plaza San Carlos',
+    location: 'Xicotepec de Juárez, Puebla',
+    price: '$880',
     priceUnit: '/noche',
-    rating: 4.6,
-    reviews: 213,
-    img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80',
+    rating: 4.3,
+    reviews: 712,
+    img: 'https://lh3.googleusercontent.com/place-photos/AJRVUZOC6PrAOZjbAZHUfF5XzBidXoptG5IJxBV3-VZHLU8BtEE5sFKQDv2mQTHr4sGz6u0AmptDadGIaj2Gr5hHUk4qeObNOP7ElJ4_bkPcM8J4e9ovvMBwD2acHgDXXtq1Bfo1ZAhO0XUjCFlqnSWWnG-u=s4800-w800-h600',
+    tag: 'EN EL CENTRO',
     saved: true,
+    horario: 'Consultar disponibilidad',
+    description: 'Justo frente a la plaza principal. Buena relación calidad-precio, con restaurante y bar propios.',
   },
 ];
 
@@ -81,6 +93,32 @@ export default function MisAlojamientos() {
   const [saved, setSaved] = useState<Record<string, boolean>>(
     Object.fromEntries(ACCOMMODATIONS.map((a) => [a.id, a.saved]))
   );
+  const [selectedPlace, setSelectedPlace] = useState<PlaceDetail | null>(null);
+
+  const openDetail = (item: Accommodation) => {
+    setSelectedPlace({
+      name: item.name,
+      category: 'Hotel',
+      price: `${item.price}${item.priceUnit}`,
+      horario: item.horario,
+      img: item.img,
+      rating: item.rating,
+      location: item.location,
+      description: item.description,
+    });
+  };
+
+  const handleReservar = (place: PlaceDetail) => {
+    router.push({
+      pathname: '/reservar',
+      params: {
+        name: place.name,
+        img: place.img ?? '',
+        price: place.price,
+        category: place.category,
+      },
+    } as any);
+  };
 
   return (
     <SafeAreaView edges={['top']} className="flex-1 bg-white">
@@ -112,6 +150,7 @@ export default function MisAlojamientos() {
           <TouchableOpacity
             key={item.id}
             activeOpacity={0.88}
+            onPress={() => openDetail(item)}
             className="bg-white rounded-2xl overflow-hidden border border-gray-100"
             style={{
               shadowColor: '#000',
@@ -183,13 +222,31 @@ export default function MisAlojamientos() {
                 </View>
               </View>
 
-              <TouchableOpacity className="mt-3 bg-primary rounded-xl py-2.5 items-center">
+              <TouchableOpacity
+                onPress={() =>
+                  handleReservar({
+                    name: item.name,
+                    category: 'Hotel',
+                    price: `${item.price}${item.priceUnit}`,
+                    horario: item.horario,
+                    img: item.img,
+                  })
+                }
+                className="mt-3 bg-primary rounded-xl py-2.5 items-center"
+              >
                 <Text className="text-white text-sm font-bold">Reservar ahora</Text>
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
         ))}
       </ScrollView>
+
+      <PlaceDetailModal
+        visible={!!selectedPlace}
+        place={selectedPlace}
+        onClose={() => setSelectedPlace(null)}
+        onReservar={handleReservar}
+      />
     </SafeAreaView>
   );
 }
