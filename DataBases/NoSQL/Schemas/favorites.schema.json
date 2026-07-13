@@ -1,0 +1,13 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "favorites",
+    "description": "Lugares guardados como favoritos por el usuario. Índice compuesto único { userId, placeId } para evitar duplicados.",
+    "required": ["userId", "placeId"],
+    "properties": {
+      "userId": { "bsonType": "int", "description": "Puente lógico -> MySQL users.id" },
+      "placeId": { "bsonType": "objectId", "description": "ObjectId de places" },
+      "createdAt": { "bsonType": "date", "description": "Fecha en que se marcó como favorito" }
+    }
+  }
+}

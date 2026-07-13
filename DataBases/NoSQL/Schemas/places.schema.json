@@ -1,0 +1,35 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "places",
+    "description": "Catálogo de lugares turísticos (playas, sitios culturales, restaurantes, eventos). Fuente de datos para 'Cerca de Mí' (App Móvil) y el Smartwatch.",
+    "required": ["name", "category", "location"],
+    "properties": {
+      "name": { "bsonType": "string", "description": "Nombre del lugar - requerido" },
+      "category": {
+        "enum": ["playa", "sitio_cultural", "hotel", "restaurante", "evento", "entretenimiento", "naturaleza"],
+        "description": "Categoría del lugar"
+      },
+      "description": { "bsonType": "string", "maxLength": 800, "description": "Descripción del lugar, máx. 800 caracteres" },
+      "address": { "bsonType": "string", "description": "Dirección física del lugar" },
+      "municipality": { "bsonType": "string", "description": "Municipio, default 'Xicotepec'" },
+      "location": {
+        "bsonType": "object",
+        "required": ["type", "coordinates"],
+        "description": "GeoJSON Point - índice 2dsphere para búsquedas de proximidad",
+        "properties": {
+          "type": { "enum": ["Point"], "description": "Tipo GeoJSON, siempre 'Point'" },
+          "coordinates": { "bsonType": "array", "items": { "bsonType": "double" }, "description": "[longitud, latitud]" }
+        }
+      },
+      "images": { "bsonType": "array", "items": { "bsonType": "string" }, "description": "URLs de imágenes del lugar" },
+      "tags": { "bsonType": "array", "items": { "bsonType": "string" }, "description": "Etiquetas para búsqueda" },
+      "priceLevel": { "bsonType": "int", "minimum": 1, "maximum": 4, "description": "Nivel de precio, rango de 1 a 4" },
+      "ratingAvg": { "bsonType": ["double", "int"], "description": "Promedio de calificación, denormalizado desde reviews" },
+      "ratingCount": { "bsonType": "int", "description": "Total de reseñas, denormalizado desde reviews" },
+      "isActive": { "bsonType": "bool", "description": "Estado del registro" },
+      "createdAt": { "bsonType": "date", "description": "Fecha de creación (timestamp automático)" },
+      "updatedAt": { "bsonType": "date", "description": "Fecha de última actualización (timestamp automático)" }
+    }
+  }
+}

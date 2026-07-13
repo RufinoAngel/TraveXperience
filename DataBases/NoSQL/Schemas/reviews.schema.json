@@ -1,0 +1,19 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "reviews",
+    "description": "Reseñas y calificaciones (1-5 estrellas) de los lugares.",
+    "required": ["userId", "placeId", "rating"],
+    "properties": {
+      "userId": { "bsonType": "int", "description": "Puente lógico -> MySQL users.id" },
+      "placeId": { "bsonType": "objectId", "description": "ObjectId de places" },
+      "placeName": { "bsonType": "string", "description": "Nombre del lugar reseñado" },
+      "rating": { "bsonType": "int", "minimum": 1, "maximum": 5, "description": "Calificación de 1 a 5" },
+      "comment": { "bsonType": "string", "maxLength": 1000, "description": "Comentario de la reseña, máx. 1000 caracteres" },
+      "photos": { "bsonType": "array", "items": { "bsonType": "string" }, "description": "URLs de fotos adjuntas a la reseña" },
+      "tags": { "bsonType": "array", "items": { "bsonType": "string" }, "description": "Etiquetas de la reseña" },
+      "createdAt": { "bsonType": "date", "description": "Fecha de creación (timestamp automático)" },
+      "updatedAt": { "bsonType": "date", "description": "Fecha de última actualización (timestamp automático)" }
+    }
+  }
+}
