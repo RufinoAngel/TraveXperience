@@ -16,10 +16,11 @@ interface Payment {
   amount: string;
   positive: boolean;
   status: 'Completado' | 'Pendiente' | 'Cancelado';
+  category: 'Hoteles' | 'Vuelos' | 'Otros';
 }
 
 /* ─── Datos ──────────────────────────────────────── */
-const FILTERS = ['Todos', 'Hoteles', 'Vuelos', 'Otros'];
+const FILTERS = ['Todos', 'Hoteles', 'Vuelos', 'Otros'] as const;
 
 const GROUPS: { month: string; items: Payment[] }[] = [
   {
@@ -34,6 +35,7 @@ const GROUPS: { month: string; items: Payment[] }[] = [
         amount: '-€452,00',
         positive: false,
         status: 'Completado',
+        category: 'Vuelos',
       },
       {
         id: 'p2',
@@ -44,6 +46,7 @@ const GROUPS: { month: string; items: Payment[] }[] = [
         amount: '-€1.240,00',
         positive: false,
         status: 'Completado',
+        category: 'Hoteles',
       },
     ],
   },
@@ -59,6 +62,7 @@ const GROUPS: { month: string; items: Payment[] }[] = [
         amount: '-€18,45',
         positive: false,
         status: 'Completado',
+        category: 'Otros',
       },
       {
         id: 'p4',
@@ -69,6 +73,7 @@ const GROUPS: { month: string; items: Payment[] }[] = [
         amount: '-€340',
         positive: false,
         status: 'Completado',
+        category: 'Vuelos',
       },
       {
         id: 'p5',
@@ -79,6 +84,7 @@ const GROUPS: { month: string; items: Payment[] }[] = [
         amount: '+€210,00',
         positive: true,
         status: 'Completado',
+        category: 'Hoteles',
       },
     ],
   },
@@ -93,7 +99,16 @@ const STATUS_STYLE: Record<Payment['status'], { bg: string; text: string }> = {
 /* ─── Componente ─────────────────────────────────── */
 export default function HistorialPagos() {
   const router = useRouter();
-  const [activeFilter, setActiveFilter] = useState('Todos');
+  const [activeFilter, setActiveFilter] = useState<(typeof FILTERS)[number]>('Todos');
+
+  // Filtra cada grupo por categoría y descarta los meses que se quedan sin items
+  const filteredGroups = GROUPS.map((group) => ({
+    month: group.month,
+    items:
+      activeFilter === 'Todos'
+        ? group.items
+        : group.items.filter((item) => item.category === activeFilter),
+  })).filter((group) => group.items.length > 0);
 
   return (
     <SafeAreaView edges={['top']} className="flex-1 bg-white">
@@ -158,58 +173,67 @@ export default function HistorialPagos() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 40 }}
       >
-        {GROUPS.map((group) => (
-          <View key={group.month}>
-            <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 mt-2">
-              {group.month}
+        {filteredGroups.length === 0 ? (
+          <View className="items-center py-16">
+            <MaterialIcons name="receipt-long" size={40} color="#D1D5DB" />
+            <Text className="text-sm text-gray-400 mt-3">
+              No hay pagos en esta categoría
             </Text>
-            {group.items.map((item) => (
-              <TouchableOpacity
-                key={item.id}
-                activeOpacity={0.7}
-                className="flex-row items-center gap-3 bg-gray-50 rounded-2xl p-3.5 mb-2.5"
-              >
-                {/* Ícono */}
-                <View className="w-11 h-11 rounded-full bg-white border border-gray-100 items-center justify-center">
-                  <MaterialIcons name={item.icon} size={20} color="#0F1B2D" />
-                </View>
-                {/* Info */}
-                <View className="flex-1">
-                  <Text className="text-sm font-bold text-primary">
-                    {item.title}
-                  </Text>
-                  <Text className="text-xs text-gray-500 mt-0.5">
-                    {item.subtitle}
-                  </Text>
-                  <Text className="text-[10px] text-gray-400 mt-0.5">
-                    {item.date}
-                  </Text>
-                </View>
-                {/* Monto + estado */}
-                <View className="items-end gap-1.5">
-                  <Text
-                    className={`text-sm font-bold ${
-                      item.positive ? 'text-green-600' : 'text-primary'
-                    }`}
-                  >
-                    {item.amount}
-                  </Text>
-                  <View
-                    style={{ backgroundColor: STATUS_STYLE[item.status].bg }}
-                    className="px-2 py-0.5 rounded-full"
-                  >
-                    <Text
-                      style={{ color: STATUS_STYLE[item.status].text }}
-                      className="text-[10px] font-semibold"
-                    >
-                      {item.status}
+          </View>
+        ) : (
+          filteredGroups.map((group) => (
+            <View key={group.month}>
+              <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 mt-2">
+                {group.month}
+              </Text>
+              {group.items.map((item) => (
+                <TouchableOpacity
+                  key={item.id}
+                  activeOpacity={0.7}
+                  className="flex-row items-center gap-3 bg-gray-50 rounded-2xl p-3.5 mb-2.5"
+                >
+                  {/* Ícono */}
+                  <View className="w-11 h-11 rounded-full bg-white border border-gray-100 items-center justify-center">
+                    <MaterialIcons name={item.icon} size={20} color="#0F1B2D" />
+                  </View>
+                  {/* Info */}
+                  <View className="flex-1">
+                    <Text className="text-sm font-bold text-primary">
+                      {item.title}
+                    </Text>
+                    <Text className="text-xs text-gray-500 mt-0.5">
+                      {item.subtitle}
+                    </Text>
+                    <Text className="text-[10px] text-gray-400 mt-0.5">
+                      {item.date}
                     </Text>
                   </View>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
-        ))}
+                  {/* Monto + estado */}
+                  <View className="items-end gap-1.5">
+                    <Text
+                      className={`text-sm font-bold ${
+                        item.positive ? 'text-green-600' : 'text-primary'
+                      }`}
+                    >
+                      {item.amount}
+                    </Text>
+                    <View
+                      style={{ backgroundColor: STATUS_STYLE[item.status].bg }}
+                      className="px-2 py-0.5 rounded-full"
+                    >
+                      <Text
+                        style={{ color: STATUS_STYLE[item.status].text }}
+                        className="text-[10px] font-semibold"
+                      >
+                        {item.status}
+                      </Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
+          ))
+        )}
       </ScrollView>
     </SafeAreaView>
   );

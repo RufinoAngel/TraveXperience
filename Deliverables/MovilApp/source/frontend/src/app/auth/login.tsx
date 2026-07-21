@@ -11,18 +11,56 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
+interface FormErrors {
+  email?: string;
+  password?: string;
+  terms?: string;
+}
+
+/* ─── Validadores (autocontenidos, no requieren utils externos) ─── */
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function isValidEmail(value: string): boolean {
+  return EMAIL_REGEX.test(value.trim());
+}
+
+function isValidPassword(value: string): boolean {
+  return value.length >= 6;
+}
+
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [accepted, setAccepted] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const validate = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!email.trim()) {
+      newErrors.email = 'El correo es obligatorio.';
+    } else if (!isValidEmail(email)) {
+      newErrors.email = 'Ingresa un correo válido (ej. nombre@dominio.com).';
+    }
+
+    if (!password) {
+      newErrors.password = 'La contraseña es obligatoria.';
+    } else if (!isValidPassword(password)) {
+      newErrors.password = 'La contraseña debe tener al menos 6 caracteres.';
+    }
+
+    if (!accepted) {
+      newErrors.terms = 'Debes aceptar los Términos y Condiciones.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleLogin = () => {
-    // Si aceptó términos, ir al Home (tabs)
-    if (accepted) {
+    if (validate()) {
       router.replace('/tabs');
-    } else {
-      alert('Debes aceptar los Términos y Condiciones.');
     }
   };
 
@@ -66,13 +104,23 @@ export default function Login() {
               </Text>
               <TextInput
                 value={email}
-                onChangeText={setEmail}
+                onChangeText={(t) => {
+                  setEmail(t);
+                  if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                }}
                 placeholder="viajero@ejemplo.com"
                 placeholderTextColor="#9CA3AF"
                 keyboardType="email-address"
                 autoCapitalize="none"
-                className="bg-gray-50 border border-gray-100 rounded-2xl px-5 py-4 text-primary font-semibold"
+                className={`bg-gray-50 border rounded-2xl px-5 py-4 text-primary font-semibold ${
+                  errors.email ? 'border-red-400' : 'border-gray-100'
+                }`}
               />
+              {errors.email ? (
+                <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">
+                  {errors.email}
+                </Text>
+              ) : null}
             </View>
 
             <View>
@@ -81,33 +129,55 @@ export default function Login() {
               </Text>
               <TextInput
                 value={password}
-                onChangeText={setPassword}
+                onChangeText={(t) => {
+                  setPassword(t);
+                  if (errors.password) setErrors((prev) => ({ ...prev, password: undefined }));
+                }}
                 placeholder="••••••••"
                 placeholderTextColor="#9CA3AF"
                 secureTextEntry
-                className="bg-gray-50 border border-gray-100 rounded-2xl px-5 py-4 text-primary font-semibold"
+                className={`bg-gray-50 border rounded-2xl px-5 py-4 text-primary font-semibold ${
+                  errors.password ? 'border-red-400' : 'border-gray-100'
+                }`}
               />
+              {errors.password ? (
+                <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">
+                  {errors.password}
+                </Text>
+              ) : null}
             </View>
 
             {/* Checkbox */}
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => setAccepted(!accepted)}
-              className="flex-row items-center gap-3 mt-2 pr-4"
-            >
-              <View
-                className={`w-6 h-6 rounded-md items-center justify-center border ${
-                  accepted
-                    ? 'bg-primary border-primary'
-                    : 'bg-transparent border-gray-300'
-                }`}
+            <View>
+              <TouchableOpacity
+                activeOpacity={0.8}
+                onPress={() => {
+                  setAccepted(!accepted);
+                  if (errors.terms) setErrors((prev) => ({ ...prev, terms: undefined }));
+                }}
+                className="flex-row items-center gap-3 mt-2 pr-4"
               >
-                {accepted && <MaterialIcons name="check" size={16} color="#FFFFFF" />}
-              </View>
-              <Text className="flex-1 text-xs text-gray-500 leading-relaxed">
-                Acepto los Términos y Condiciones y la Política de Privacidad
-              </Text>
-            </TouchableOpacity>
+                <View
+                  className={`w-6 h-6 rounded-md items-center justify-center border ${
+                    accepted
+                      ? 'bg-primary border-primary'
+                      : errors.terms
+                      ? 'bg-transparent border-red-400'
+                      : 'bg-transparent border-gray-300'
+                  }`}
+                >
+                  {accepted && <MaterialIcons name="check" size={16} color="#FFFFFF" />}
+                </View>
+                <Text className="flex-1 text-xs text-gray-500 leading-relaxed">
+                  Acepto los Términos y Condiciones y la Política de Privacidad
+                </Text>
+              </TouchableOpacity>
+              {errors.terms ? (
+                <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">
+                  {errors.terms}
+                </Text>
+              ) : null}
+            </View>
           </View>
 
           {/* Botón */}

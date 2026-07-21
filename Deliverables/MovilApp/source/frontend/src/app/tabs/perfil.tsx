@@ -44,6 +44,12 @@ const MENU_SECTIONS: { title: string; items: MenuRow[] }[] = [
     ],
   },
   {
+    title: 'Dispositivos',
+    items: [
+      { id: 'smartwatch', icon: 'watch', label: 'Conectar smartwatch', route: '/smartwatch' },
+    ],
+  },
+  {
     title: 'Seguridad',
     items: [
       { id: 'dosfactor', icon: 'security', label: 'Autenticación de dos pasos', toggle: true },

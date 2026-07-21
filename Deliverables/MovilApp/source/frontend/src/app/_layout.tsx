@@ -55,6 +55,10 @@ export default function RootLayout() {
           name="metodos-pago"
           options={{ animation: 'slide_from_right' }}
         />
+        <Stack.Screen
+          name="smartwatch"
+          options={{ animation: 'slide_from_right' }}
+        />
       </Stack>
     </SafeAreaProvider>
   );

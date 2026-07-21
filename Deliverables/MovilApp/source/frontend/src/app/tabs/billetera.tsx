@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Modal,
   Pressable,
+  TextInput,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -22,6 +23,29 @@ interface Transaction {
   amount: string;
   positive: boolean;
   status: 'completado' | 'pendiente' | 'cancelado';
+}
+
+interface SavedMethod {
+  id: string;
+  label: string;
+  icon: React.ComponentProps<typeof MaterialIcons>['name'];
+  active: boolean;
+}
+
+type AddStep = 'options' | 'card-form' | 'paypal-form';
+
+interface CardFormState {
+  number: string;
+  holder: string;
+  expiry: string;
+  cvv: string;
+}
+
+interface CardFormErrors {
+  number?: string;
+  holder?: string;
+  expiry?: string;
+  cvv?: string;
 }
 
 /* ─── Datos de ejemplo ───────────────────────────── */
@@ -64,11 +88,95 @@ const TRANSACTIONS: Transaction[] = [
   },
 ];
 
+const INITIAL_METHODS: SavedMethod[] = [
+  { id: 'm1', label: 'Tarjeta Mastercard ••4821', icon: 'credit-card', active: true },
+  { id: 'm2', label: 'PayPal — julian@mail.com', icon: 'account-balance-wallet', active: false },
+];
+
+const ADD_OPTIONS: { icon: React.ComponentProps<typeof MaterialIcons>['name']; label: string; key: 'card' | 'paypal' | 'transfer' }[] = [
+  { icon: 'credit-card', label: 'Tarjeta de crédito / débito', key: 'card' },
+  { icon: 'account-balance-wallet', label: 'PayPal', key: 'paypal' },
+  { icon: 'account-balance', label: 'Transferencia bancaria', key: 'transfer' },
+];
+
 const STATUS_COLOR: Record<string, string> = {
   completado: 'bg-green-100 text-green-700',
   pendiente: 'bg-yellow-100 text-yellow-700',
   cancelado: 'bg-red-100 text-red-700',
 };
+
+/* ─── Validadores (mismos que en metodos-pago.tsx) ─── */
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function luhnCheck(cardNumber: string): boolean {
+  const digits = cardNumber.replace(/\s/g, '');
+  let sum = 0;
+  let shouldDouble = false;
+  for (let i = digits.length - 1; i >= 0; i--) {
+    let digit = parseInt(digits[i], 10);
+    if (shouldDouble) {
+      digit *= 2;
+      if (digit > 9) digit -= 9;
+    }
+    sum += digit;
+    shouldDouble = !shouldDouble;
+  }
+  return sum % 10 === 0;
+}
+
+function formatCardNumber(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 16);
+  return digits.replace(/(\d{4})(?=\d)/g, '$1 ');
+}
+
+function formatExpiry(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 4);
+  if (digits.length <= 2) return digits;
+  return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+}
+
+function validateCardNumber(value: string): string | undefined {
+  const digits = value.replace(/\s/g, '');
+  if (!digits) return 'El número de tarjeta es obligatorio.';
+  if (digits.length < 13 || digits.length > 16) return 'El número de tarjeta no es válido.';
+  if (!luhnCheck(digits)) return 'El número de tarjeta no es válido.';
+  return undefined;
+}
+
+function validateHolder(value: string): string | undefined {
+  const trimmed = value.trim();
+  if (!trimmed) return 'El nombre del titular es obligatorio.';
+  if (trimmed.length < 3) return 'Ingresa el nombre completo del titular.';
+  if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(trimmed)) return 'Solo se permiten letras y espacios.';
+  return undefined;
+}
+
+function validateExpiry(value: string): string | undefined {
+  if (!value) return 'La fecha de vencimiento es obligatoria.';
+  const match = value.match(/^(\d{2})\/(\d{2})$/);
+  if (!match) return 'Usa el formato MM/AA.';
+  const month = parseInt(match[1], 10);
+  const year = 2000 + parseInt(match[2], 10);
+  if (month < 1 || month > 12) return 'El mes no es válido.';
+  const now = new Date();
+  const expiryDate = new Date(year, month, 0);
+  if (expiryDate < new Date(now.getFullYear(), now.getMonth(), 1)) {
+    return 'La tarjeta ya está vencida.';
+  }
+  return undefined;
+}
+
+function validateCvv(value: string): string | undefined {
+  if (!value) return 'El CVV es obligatorio.';
+  if (!/^\d{3,4}$/.test(value)) return 'El CVV debe tener 3 o 4 dígitos.';
+  return undefined;
+}
+
+function validatePaypalEmail(value: string): string | undefined {
+  if (!value.trim()) return 'El correo de PayPal es obligatorio.';
+  if (!EMAIL_REGEX.test(value.trim())) return 'Ingresa un correo válido.';
+  return undefined;
+}
 
 /* ─── Componente tarjeta de crédito ─────────────── */
 function CreditCard() {
@@ -203,6 +311,107 @@ function TransactionRow({ item }: { item: Transaction }) {
 export default function Billetera() {
   const router = useRouter();
   const [addModal, setAddModal] = useState(false);
+  const [step, setStep] = useState<AddStep>('options');
+
+  // Métodos guardados (ahora sí en estado, para reflejar lo que se agrega)
+  const [methods, setMethods] = useState<SavedMethod[]>(INITIAL_METHODS);
+
+  // Formulario de tarjeta
+  const [cardForm, setCardForm] = useState<CardFormState>({ number: '', holder: '', expiry: '', cvv: '' });
+  const [cardErrors, setCardErrors] = useState<CardFormErrors>({});
+  const [cardTouched, setCardTouched] = useState<Record<string, boolean>>({});
+
+  // Formulario de PayPal
+  const [paypalEmail, setPaypalEmail] = useState('');
+  const [paypalError, setPaypalError] = useState<string | undefined>();
+  const [paypalTouched, setPaypalTouched] = useState(false);
+
+  const resetModal = () => {
+    setAddModal(false);
+    setStep('options');
+    setCardForm({ number: '', holder: '', expiry: '', cvv: '' });
+    setCardErrors({});
+    setCardTouched({});
+    setPaypalEmail('');
+    setPaypalError(undefined);
+    setPaypalTouched(false);
+  };
+
+  const handleSelectOption = (key: 'card' | 'paypal' | 'transfer') => {
+    if (key === 'card') {
+      setStep('card-form');
+    } else if (key === 'paypal') {
+      setStep('paypal-form');
+    } else {
+      setMethods((prev) => [
+        ...prev,
+        { id: `m${Date.now()}`, label: 'Transferencia bancaria (pendiente)', icon: 'account-balance', active: false },
+      ]);
+      resetModal();
+    }
+  };
+
+  const validateCardField = (field: keyof CardFormState, value: string): string | undefined => {
+    switch (field) {
+      case 'number': return validateCardNumber(value);
+      case 'holder': return validateHolder(value);
+      case 'expiry': return validateExpiry(value);
+      case 'cvv': return validateCvv(value);
+      default: return undefined;
+    }
+  };
+
+  const handleCardFieldChange = (field: keyof CardFormState, rawValue: string) => {
+    let value = rawValue;
+    if (field === 'number') value = formatCardNumber(rawValue);
+    if (field === 'expiry') value = formatExpiry(rawValue);
+    if (field === 'cvv') value = rawValue.replace(/\D/g, '').slice(0, 4);
+
+    setCardForm((prev) => ({ ...prev, [field]: value }));
+
+    if (cardTouched[field]) {
+      setCardErrors((prev) => ({ ...prev, [field]: validateCardField(field, value) }));
+    }
+  };
+
+  const handleCardFieldBlur = (field: keyof CardFormState) => {
+    setCardTouched((prev) => ({ ...prev, [field]: true }));
+    setCardErrors((prev) => ({ ...prev, [field]: validateCardField(field, cardForm[field]) }));
+  };
+
+  const handleSubmitCard = () => {
+    const newErrors: CardFormErrors = {
+      number: validateCardNumber(cardForm.number),
+      holder: validateHolder(cardForm.holder),
+      expiry: validateExpiry(cardForm.expiry),
+      cvv: validateCvv(cardForm.cvv),
+    };
+    setCardErrors(newErrors);
+    setCardTouched({ number: true, holder: true, expiry: true, cvv: true });
+
+    const hasErrors = Object.values(newErrors).some(Boolean);
+    if (hasErrors) return;
+
+    const last4 = cardForm.number.replace(/\s/g, '').slice(-4);
+    setMethods((prev) => [
+      ...prev,
+      { id: `m${Date.now()}`, label: `Tarjeta •••• ${last4}`, icon: 'credit-card', active: prev.length === 0 },
+    ]);
+    resetModal();
+  };
+
+  const handleSubmitPaypal = () => {
+    const error = validatePaypalEmail(paypalEmail);
+    setPaypalError(error);
+    setPaypalTouched(true);
+    if (error) return;
+
+    setMethods((prev) => [
+      ...prev,
+      { id: `m${Date.now()}`, label: `PayPal — ${paypalEmail.trim()}`, icon: 'account-balance-wallet', active: prev.length === 0 },
+    ]);
+    resetModal();
+  };
 
   return (
     <View className="flex-1 bg-white">
@@ -246,12 +455,9 @@ export default function Billetera() {
           </View>
 
           {/* Métodos guardados */}
-          {[
-            { label: 'Tarjeta Mastercard ••4821', icon: 'credit-card' as const, active: true },
-            { label: 'PayPal — julian@mail.com', icon: 'account-balance-wallet' as const, active: false },
-          ].map((m) => (
+          {methods.map((m) => (
             <TouchableOpacity
-              key={m.label}
+              key={m.id}
               className={`flex-row items-center gap-3 p-3.5 rounded-2xl mb-2.5 border ${
                 m.active
                   ? 'border-secondary bg-secondary/10'
@@ -313,37 +519,193 @@ export default function Billetera() {
         visible={addModal}
         transparent
         animationType="slide"
-        onRequestClose={() => setAddModal(false)}
+        onRequestClose={resetModal}
       >
         <Pressable
           className="flex-1 bg-black/40"
-          onPress={() => setAddModal(false)}
+          onPress={resetModal}
         />
         <SafeAreaView edges={['bottom']} className="bg-white rounded-t-3xl">
           <View className="p-6">
             <View className="w-10 h-1 bg-gray-200 rounded-full self-center mb-5" />
-            <Text className="text-lg font-bold text-primary mb-4">
-              Agregar método de pago
-            </Text>
-            {[
-              { icon: 'credit-card' as const, label: 'Tarjeta de crédito / débito' },
-              { icon: 'account-balance-wallet' as const, label: 'PayPal' },
-              { icon: 'account-balance' as const, label: 'Transferencia bancaria' },
-            ].map((opt) => (
-              <TouchableOpacity
-                key={opt.label}
-                onPress={() => setAddModal(false)}
-                className="flex-row items-center gap-3 py-4 border-b border-gray-100"
-              >
-                <View className="w-10 h-10 rounded-xl bg-gray-100 items-center justify-center">
-                  <MaterialIcons name={opt.icon} size={20} color="#0F1B2D" />
-                </View>
-                <Text className="text-sm font-semibold text-primary flex-1">
-                  {opt.label}
+
+            {/* Paso 1: Elegir tipo */}
+            {step === 'options' && (
+              <>
+                <Text className="text-lg font-bold text-primary mb-4">
+                  Agregar método de pago
                 </Text>
-                <MaterialIcons name="chevron-right" size={20} color="#9CA3AF" />
-              </TouchableOpacity>
-            ))}
+                {ADD_OPTIONS.map((opt) => (
+                  <TouchableOpacity
+                    key={opt.label}
+                    onPress={() => handleSelectOption(opt.key)}
+                    className="flex-row items-center gap-3 py-4 border-b border-gray-100"
+                  >
+                    <View className="w-10 h-10 rounded-xl bg-gray-100 items-center justify-center">
+                      <MaterialIcons name={opt.icon} size={20} color="#0F1B2D" />
+                    </View>
+                    <Text className="text-sm font-semibold text-primary flex-1">
+                      {opt.label}
+                    </Text>
+                    <MaterialIcons name="chevron-right" size={20} color="#9CA3AF" />
+                  </TouchableOpacity>
+                ))}
+              </>
+            )}
+
+            {/* Paso 2a: Formulario de tarjeta */}
+            {step === 'card-form' && (
+              <>
+                <View className="flex-row items-center gap-2 mb-5">
+                  <TouchableOpacity onPress={() => setStep('options')} hitSlop={10}>
+                    <MaterialIcons name="arrow-back" size={20} color="#0F1B2D" />
+                  </TouchableOpacity>
+                  <Text className="text-lg font-bold text-primary">Nueva tarjeta</Text>
+                </View>
+
+                <View className="gap-4">
+                  <View>
+                    <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">
+                      Número de tarjeta
+                    </Text>
+                    <TextInput
+                      value={cardForm.number}
+                      onChangeText={(t) => handleCardFieldChange('number', t)}
+                      onBlur={() => handleCardFieldBlur('number')}
+                      placeholder="1234 5678 9012 3456"
+                      placeholderTextColor="#9CA3AF"
+                      keyboardType="numeric"
+                      className={`bg-gray-50 border rounded-2xl px-5 py-3.5 text-primary font-semibold ${
+                        cardErrors.number && cardTouched.number ? 'border-red-400' : 'border-gray-100'
+                      }`}
+                    />
+                    {cardErrors.number && cardTouched.number ? (
+                      <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">{cardErrors.number}</Text>
+                    ) : null}
+                  </View>
+
+                  <View>
+                    <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">
+                      Nombre del titular
+                    </Text>
+                    <TextInput
+                      value={cardForm.holder}
+                      onChangeText={(t) => handleCardFieldChange('holder', t)}
+                      onBlur={() => handleCardFieldBlur('holder')}
+                      placeholder="Como aparece en la tarjeta"
+                      placeholderTextColor="#9CA3AF"
+                      autoCapitalize="words"
+                      className={`bg-gray-50 border rounded-2xl px-5 py-3.5 text-primary font-semibold ${
+                        cardErrors.holder && cardTouched.holder ? 'border-red-400' : 'border-gray-100'
+                      }`}
+                    />
+                    {cardErrors.holder && cardTouched.holder ? (
+                      <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">{cardErrors.holder}</Text>
+                    ) : null}
+                  </View>
+
+                  <View className="flex-row gap-3">
+                    <View className="flex-1">
+                      <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">
+                        Vencimiento
+                      </Text>
+                      <TextInput
+                        value={cardForm.expiry}
+                        onChangeText={(t) => handleCardFieldChange('expiry', t)}
+                        onBlur={() => handleCardFieldBlur('expiry')}
+                        placeholder="MM/AA"
+                        placeholderTextColor="#9CA3AF"
+                        keyboardType="numeric"
+                        maxLength={5}
+                        className={`bg-gray-50 border rounded-2xl px-5 py-3.5 text-primary font-semibold ${
+                          cardErrors.expiry && cardTouched.expiry ? 'border-red-400' : 'border-gray-100'
+                        }`}
+                      />
+                      {cardErrors.expiry && cardTouched.expiry ? (
+                        <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">{cardErrors.expiry}</Text>
+                      ) : null}
+                    </View>
+
+                    <View className="flex-1">
+                      <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">
+                        CVV
+                      </Text>
+                      <TextInput
+                        value={cardForm.cvv}
+                        onChangeText={(t) => handleCardFieldChange('cvv', t)}
+                        onBlur={() => handleCardFieldBlur('cvv')}
+                        placeholder="123"
+                        placeholderTextColor="#9CA3AF"
+                        keyboardType="numeric"
+                        secureTextEntry
+                        maxLength={4}
+                        className={`bg-gray-50 border rounded-2xl px-5 py-3.5 text-primary font-semibold ${
+                          cardErrors.cvv && cardTouched.cvv ? 'border-red-400' : 'border-gray-100'
+                        }`}
+                      />
+                      {cardErrors.cvv && cardTouched.cvv ? (
+                        <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">{cardErrors.cvv}</Text>
+                      ) : null}
+                    </View>
+                  </View>
+                </View>
+
+                <TouchableOpacity
+                  onPress={handleSubmitCard}
+                  activeOpacity={0.85}
+                  className="bg-primary rounded-2xl py-4 items-center mt-6"
+                >
+                  <Text className="text-white font-bold text-sm">Guardar tarjeta</Text>
+                </TouchableOpacity>
+              </>
+            )}
+
+            {/* Paso 2b: Formulario de PayPal */}
+            {step === 'paypal-form' && (
+              <>
+                <View className="flex-row items-center gap-2 mb-5">
+                  <TouchableOpacity onPress={() => setStep('options')} hitSlop={10}>
+                    <MaterialIcons name="arrow-back" size={20} color="#0F1B2D" />
+                  </TouchableOpacity>
+                  <Text className="text-lg font-bold text-primary">Conectar PayPal</Text>
+                </View>
+
+                <View>
+                  <Text className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">
+                    Correo de PayPal
+                  </Text>
+                  <TextInput
+                    value={paypalEmail}
+                    onChangeText={(t) => {
+                      setPaypalEmail(t);
+                      if (paypalTouched) setPaypalError(validatePaypalEmail(t));
+                    }}
+                    onBlur={() => {
+                      setPaypalTouched(true);
+                      setPaypalError(validatePaypalEmail(paypalEmail));
+                    }}
+                    placeholder="tucorreo@paypal.com"
+                    placeholderTextColor="#9CA3AF"
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    className={`bg-gray-50 border rounded-2xl px-5 py-3.5 text-primary font-semibold ${
+                      paypalError && paypalTouched ? 'border-red-400' : 'border-gray-100'
+                    }`}
+                  />
+                  {paypalError && paypalTouched ? (
+                    <Text className="text-xs text-red-500 font-semibold mt-1.5 ml-1">{paypalError}</Text>
+                  ) : null}
+                </View>
+
+                <TouchableOpacity
+                  onPress={handleSubmitPaypal}
+                  activeOpacity={0.85}
+                  className="bg-primary rounded-2xl py-4 items-center mt-6"
+                >
+                  <Text className="text-white font-bold text-sm">Conectar cuenta</Text>
+                </TouchableOpacity>
+              </>
+            )}
           </View>
         </SafeAreaView>
       </Modal>
