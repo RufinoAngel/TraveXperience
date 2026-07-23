@@ -30,6 +30,6 @@ ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 | Integrante | Contacto | Rol | Observaciones |
 |------------|----------|------|---------------|
 | Esther González Peralta | [Esther González Peralta](https://github.com/Esther-Gonzalez04) | Líder de Base de Datos | Aprobado ✅ |
-| Abril Guzmán Barrera | [Abril Guzmán Barrera](https://github.com/Abrilgb) | Desarrolladora de Base de Datos | Sin revisar |
+| Abril Guzmán Barrera | [Abril Guzmán Barrera](https://github.com/Abrilgb) | Lider de Frontend | Aprobado ✅ |
 | Ángel de Jesús Rufino Mendoza | [Ángel de Jesús Rufino Mendoza](https://github.com/RufinoAngel) | Desarrollador de Base de Datos | Sin revisar |
 | Karen Lizbeth Negrete Hernández | [Karen Lizbeth Negrete Hernández](https://github.com/karenNegrete06) | Desarrolladora de Base de Datos | Sin revisar |
