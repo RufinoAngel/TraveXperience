@@ -35,21 +35,10 @@ const path = require('path');
 const { sequelize } = require('../src/config/mysql');
 const Itinerary = require('../src/models/mysql/Itinerary');
 const logger = require('../src/utils/logger');
-
-const MIN_REAL_SAMPLES = 30; // por debajo de esto, se completa con datos sintéticos
+const { MIN_REAL_SAMPLES, generateSyntheticItineraries } = require('../Simulation/generate_synthetic_itineraries');
 
 /** Genera ejemplos sintéticos plausibles mientras no hay suficiente historial real. */
-const generateSyntheticData = (count) => {
-  const rows = [];
-  for (let i = 0; i < count; i += 1) {
-    const durationDays = 1 + Math.floor(Math.random() * 14); // 1 a 14 días
-    const numActivities = Math.floor(Math.random() * 10); // 0 a 9 actividades
-    // Regla base + ruido: ~$650 MXN/día + $200 por actividad planeada
-    const budget = durationDays * 650 + numActivities * 200 + (Math.random() * 400 - 200);
-    rows.push({ durationDays, numActivities, budget: Math.max(budget, 300) });
-  }
-  return rows;
-};
+const generateSyntheticData = generateSyntheticItineraries;
 
 const loadRealData = async () => {
   const itineraries = await Itinerary.findAll({

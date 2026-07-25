@@ -41,34 +41,13 @@ const path = require('path');
 const { sequelize } = require('../src/config/mysql');
 const User = require('../src/models/mysql/User');
 const logger = require('../src/utils/logger');
+const {
+  MIN_REAL_USERS,
+  toFeatureVector,
+  generateSyntheticUsers,
+} = require('../Simulation/generate_synthetic_users');
 
 const N_CLUSTERS = 4; // ej. "aventurero", "cultural", "relax", "familiar"
-const MIN_REAL_USERS = 40;
-
-/** Extrae un vector numérico normalizado desde travelPreferences (con defaults razonables). */
-const toFeatureVector = (prefs = {}) => [
-  Math.min((prefs.avgBudget || 5000) / 20000, 1), // presupuesto prom. normalizado (tope 20k)
-  Math.min((prefs.age || 30) / 80, 1),
-  prefs.interesAventura ? 1 : 0,
-  prefs.interesCultura ? 1 : 0,
-  prefs.viajaSolo ? 1 : 0,
-];
-
-const generateSyntheticUsers = (count) => {
-  const rows = [];
-  for (let i = 0; i < count; i += 1) {
-    rows.push(
-      toFeatureVector({
-        avgBudget: 1000 + Math.random() * 15000,
-        age: 18 + Math.random() * 55,
-        interesAventura: Math.random() > 0.5,
-        interesCultura: Math.random() > 0.5,
-        viajaSolo: Math.random() > 0.6,
-      })
-    );
-  }
-  return rows;
-};
 
 /** k-means minimalista en JS puro (sin dependencias) sobre arrays de vectores. */
 const kMeans = (vectors, k, iterations = 50) => {
