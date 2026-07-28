@@ -1,0 +1,330 @@
+[
+  {
+    "tempId": 1,
+    "name": "Hotel Real Xicotepec",
+    "category": "Boutique",
+    "description": "Hotel de estilo colonial en el centro de Xicotepec de Juárez.",
+    "address": "Xicotepec, Puebla",
+    "municipality": "Xicotepec",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.962786,
+        20.271778
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "estacionamiento",
+      "desayuno"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Sencilla",
+        "details": "Cama individual, baño privado",
+        "pricePerNight": 650
+      },
+      {
+        "name": "Habitación Doble",
+        "details": "Dos camas matrimoniales",
+        "pricePerNight": 950
+      },
+      {
+        "name": "Suite",
+        "details": "Sala de estar y vista al valle",
+        "pricePerNight": 1500
+      }
+    ],
+    "ownerAdminIndex": 0,
+    "isActive": true
+  },
+  {
+    "tempId": 2,
+    "name": "Hotel Boutique Sierra Norte",
+    "category": "Boutique",
+    "description": "Hotel pequeño con enfoque en turismo de naturaleza y café de la región.",
+    "address": "Xicotepec, Puebla",
+    "municipality": "Xicotepec",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.936478,
+        20.284541
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "restaurante",
+      "tours"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Estándar",
+        "details": "Vista al jardín",
+        "pricePerNight": 800
+      },
+      {
+        "name": "Habitación Superior",
+        "details": "Balcón privado",
+        "pricePerNight": 1200
+      }
+    ],
+    "ownerAdminIndex": 1,
+    "isActive": true
+  },
+  {
+    "tempId": 3,
+    "name": "Hostal Nogal",
+    "category": "Hostal",
+    "description": "Hospedaje económico, ideal para mochileros y grupos pequeños.",
+    "address": "Xicotepec, Puebla",
+    "municipality": "Xicotepec",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.96186,
+        20.269192
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "cocina compartida"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Compartida",
+        "details": "Litera, baño compartido",
+        "pricePerNight": 300
+      },
+      {
+        "name": "Habitación Privada",
+        "details": "Cama matrimonial, baño privado",
+        "pricePerNight": 550
+      }
+    ],
+    "ownerAdminIndex": 2,
+    "isActive": true
+  },
+  {
+    "tempId": 4,
+    "name": "Hotel Presa Necaxa",
+    "category": "Todo incluido",
+    "description": "Hotel con vista directa a la presa, ideal para descanso y pesca.",
+    "address": "Necaxa, Puebla",
+    "municipality": "Necaxa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.006569,
+        20.083197
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "alberca",
+      "restaurante",
+      "estacionamiento"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Vista Presa",
+        "details": "Vista panorámica al embalse",
+        "pricePerNight": 1100
+      },
+      {
+        "name": "Suite Familiar",
+        "details": "Dos habitaciones conectadas",
+        "pricePerNight": 1900
+      }
+    ],
+    "ownerAdminIndex": 0,
+    "isActive": true
+  },
+  {
+    "tempId": 5,
+    "name": "Cabañas Necaxa Adventure",
+    "category": "Cabañas",
+    "description": "Cabañas de madera para grupos que buscan turismo de aventura.",
+    "address": "Necaxa, Puebla",
+    "municipality": "Necaxa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.985689,
+        20.08673
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "fogata",
+      "tours de rappel",
+      "estacionamiento"
+    ],
+    "rooms": [
+      {
+        "name": "Cabaña Pareja",
+        "details": "Para 2 personas",
+        "pricePerNight": 900
+      },
+      {
+        "name": "Cabaña Familiar",
+        "details": "Para hasta 6 personas",
+        "pricePerNight": 1700
+      }
+    ],
+    "ownerAdminIndex": 1,
+    "isActive": true
+  },
+  {
+    "tempId": 6,
+    "name": "Hotel Puerta del Lago",
+    "category": "Económico",
+    "description": "Hospedaje sencillo a pocos minutos de la zona de la presa.",
+    "address": "Necaxa, Puebla",
+    "municipality": "Necaxa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.992821,
+        20.094823
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "estacionamiento"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Sencilla",
+        "details": "Cama individual",
+        "pricePerNight": 500
+      },
+      {
+        "name": "Habitación Doble",
+        "details": "Dos camas",
+        "pricePerNight": 750
+      }
+    ],
+    "ownerAdminIndex": 2,
+    "isActive": true
+  },
+  {
+    "tempId": 7,
+    "name": "Hotel Las Flores Huauchinango",
+    "category": "Boutique",
+    "description": "Hotel temático inspirado en la Feria de la Flor y el Café.",
+    "address": "Huauchinango, Puebla",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.057079,
+        20.187757
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "jardín",
+      "desayuno",
+      "estacionamiento"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Estándar",
+        "details": "Vista al jardín floral",
+        "pricePerNight": 850
+      },
+      {
+        "name": "Suite Flor",
+        "details": "Balcón y sala de estar",
+        "pricePerNight": 1400
+      }
+    ],
+    "ownerAdminIndex": 0,
+    "isActive": true
+  },
+  {
+    "tempId": 8,
+    "name": "Hotel Centro Huauchinango",
+    "category": "Económico",
+    "description": "A unos pasos del centro histórico y el mercado municipal.",
+    "address": "Huauchinango, Puebla",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.058871,
+        20.185111
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "wifi",
+      "estacionamiento"
+    ],
+    "rooms": [
+      {
+        "name": "Habitación Sencilla",
+        "details": "Cama individual, baño privado",
+        "pricePerNight": 600
+      },
+      {
+        "name": "Habitación Doble",
+        "details": "Dos camas matrimoniales",
+        "pricePerNight": 900
+      }
+    ],
+    "ownerAdminIndex": 1,
+    "isActive": true
+  },
+  {
+    "tempId": 9,
+    "name": "Cabañas Patoltecoya",
+    "category": "Cabañas",
+    "description": "Cabañas junto a la laguna de Patoltecoya, ambiente natural.",
+    "address": "Huauchinango, Puebla",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.059305,
+        20.178423
+      ]
+    },
+    "mainImage": null,
+    "images": [],
+    "amenities": [
+      "fogata",
+      "kayak",
+      "estacionamiento"
+    ],
+    "rooms": [
+      {
+        "name": "Cabaña Pareja",
+        "details": "Vista a la laguna",
+        "pricePerNight": 1000
+      },
+      {
+        "name": "Cabaña Familiar",
+        "details": "Para hasta 5 personas",
+        "pricePerNight": 1800
+      }
+    ],
+    "ownerAdminIndex": 2,
+    "isActive": true
+  }
+]

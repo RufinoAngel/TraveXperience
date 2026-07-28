@@ -36,6 +36,7 @@ const { sequelize } = require('../src/config/mysql');
 const Itinerary = require('../src/models/mysql/Itinerary');
 const logger = require('../src/utils/logger');
 const { MIN_REAL_SAMPLES, generateSyntheticItineraries } = require('../Simulation/generate_synthetic_itineraries');
+const { saveSerializedModel } = require('../src/utils/saveSerializedModel');
 
 /** Genera ejemplos sintéticos plausibles mientras no hay suficiente historial real. */
 const generateSyntheticData = generateSyntheticItineraries;
@@ -101,7 +102,14 @@ const train = async () => {
     });
 
     const outputPath = path.resolve(process.env.AI_MODEL_BUDGET_PATH, '..');
-    await model.save(`file://${outputPath}`);
+    try {
+      await model.save(`file://${outputPath}`);
+    } catch (saveError) {
+      // tfjs-node no compiló (o no está instalado) en esta máquina, así que
+      // el esquema "file://" no tiene manejador registrado. Fallback puro-JS.
+      logger.warn(`Guardado nativo no disponible (${saveError.message}). Usando fallback puro-JS.`);
+      await saveSerializedModel(model, outputPath);
+    }
     logger.info(`✅ Modelo de presupuesto guardado en: ${outputPath}`);
 
     tf.dispose([xs, ys, xsNorm, xMax]);

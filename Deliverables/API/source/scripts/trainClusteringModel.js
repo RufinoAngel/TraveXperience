@@ -46,6 +46,7 @@ const {
   toFeatureVector,
   generateSyntheticUsers,
 } = require('../Simulation/generate_synthetic_users');
+const { saveSerializedModel } = require('../src/utils/saveSerializedModel');
 
 const N_CLUSTERS = 4; // ej. "aventurero", "cultural", "relax", "familiar"
 
@@ -152,7 +153,14 @@ const train = async () => {
     });
 
     const outputPath = path.resolve(process.env.AI_MODEL_CLUSTERING_PATH, '..');
-    await model.save(`file://${outputPath}`);
+    try {
+      await model.save(`file://${outputPath}`);
+    } catch (saveError) {
+      // tfjs-node no compiló (o no está instalado) en esta máquina, así que
+      // el esquema "file://" no tiene manejador registrado. Fallback puro-JS.
+      logger.warn(`Guardado nativo no disponible (${saveError.message}). Usando fallback puro-JS.`);
+      await saveSerializedModel(model, outputPath);
+    }
     logger.info(`✅ Modelo de clustering guardado en: ${outputPath}`);
 
     tf.dispose([xs, ys]);

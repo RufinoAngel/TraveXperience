@@ -34,6 +34,7 @@ try {
 
 const path = require('path');
 const logger = require('../utils/logger');
+const { loadSerializedModel } = require('../utils/loadSerializedModel');
 
 logger.info(
   usingNativeBackend
@@ -47,15 +48,29 @@ let budgetModel = null;
 /**
  * Carga ambos modelos desde disco. Debe llamarse una vez al arrancar el servidor.
  */
+const loadModel = async (modelJsonPath) => {
+  try {
+    // Camino rápido: requiere @tensorflow/tfjs-node compilado, que es
+    // quien registra el manejador de carga para el esquema "file://".
+    return await tf.loadLayersModel(`file://${modelJsonPath}`);
+  } catch (error) {
+    // Sin tfjs-node, @tensorflow/tfjs puro no reconoce "file://" y termina
+    // intentando usar fetch() sobre esa URL ("fetch failed"). Fallback: leer
+    // model.json + weights.bin a mano con el mismo IOHandler que usan los
+    // scripts de entrenamiento.
+    return loadSerializedModel(tf, modelJsonPath);
+  }
+};
+
 const loadModels = async () => {
   try {
     const clusteringPath = path.resolve(process.env.AI_MODEL_CLUSTERING_PATH);
     const budgetPath = path.resolve(process.env.AI_MODEL_BUDGET_PATH);
 
-    clusteringModel = await tf.loadLayersModel(`file://${clusteringPath}`);
+    clusteringModel = await loadModel(clusteringPath);
     logger.info('🧠 Modelo de agrupamiento de viajeros cargado.');
 
-    budgetModel = await tf.loadLayersModel(`file://${budgetPath}`);
+    budgetModel = await loadModel(budgetPath);
     logger.info('🧠 Modelo de predicción de presupuesto cargado.');
   } catch (error) {
     // No se detiene el servidor si los modelos no existen aún: se registra

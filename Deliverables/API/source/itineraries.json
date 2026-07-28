@@ -1,0 +1,3227 @@
+[
+  {
+    "tempId": 1,
+    "userTempId": 4,
+    "title": "Vacaciones familiares en Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2026-08-25",
+    "endDate": "2026-08-30",
+    "estimatedBudget": 6215.31,
+    "itineraryDetails": [
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 1
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 5
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 5
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 2
+      },
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 2,
+    "userTempId": 5,
+    "title": "Fin de año en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2025-10-26",
+    "endDate": "2025-11-07",
+    "estimatedBudget": 13341.92,
+    "itineraryDetails": [
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 13
+      },
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 7
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 3,
+    "userTempId": 6,
+    "title": "Fin de año en Cancún",
+    "destination": "Cancún",
+    "startDate": "2026-03-31",
+    "endDate": "2026-03-31",
+    "estimatedBudget": 1749.56,
+    "itineraryDetails": [
+      {
+        "actividad": "Visita a Xcaret",
+        "dia": 1
+      },
+      {
+        "actividad": "Cenote Dos Ojos",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 4,
+    "userTempId": 6,
+    "title": "Viaje cultural a Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2025-09-10",
+    "endDate": "2025-09-12",
+    "estimatedBudget": 2577.06,
+    "itineraryDetails": [
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 3
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 3
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 5,
+    "userTempId": 7,
+    "title": "Roadtrip a Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2026-05-29",
+    "endDate": "2026-06-10",
+    "estimatedBudget": 14175.49,
+    "itineraryDetails": [
+      {
+        "actividad": "Funicular al Pípila",
+        "dia": 3
+      },
+      {
+        "actividad": "Callejón del Beso",
+        "dia": 3
+      },
+      {
+        "actividad": "Museo de las Momias",
+        "dia": 13
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 6,
+    "userTempId": 8,
+    "title": "Aventura por Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-19",
+    "estimatedBudget": 4996.64,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 9
+      },
+      {
+        "actividad": "Cascada de Texolo",
+        "dia": 2
+      },
+      {
+        "actividad": "Museo de Antropología de Xalapa",
+        "dia": 6
+      }
+    ],
+    "status": "en_curso"
+  },
+  {
+    "tempId": 7,
+    "userTempId": 9,
+    "title": "Aventura por Papantla",
+    "destination": "Papantla",
+    "startDate": "2026-05-12",
+    "endDate": "2026-05-12",
+    "estimatedBudget": 756.25,
+    "itineraryDetails": [
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 8,
+    "userTempId": 9,
+    "title": "Viaje cultural a Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2026-03-19",
+    "endDate": "2026-03-23",
+    "estimatedBudget": 4435.69,
+    "itineraryDetails": [
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 4
+      },
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 4
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 9,
+    "userTempId": 10,
+    "title": "Viaje cultural a Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2025-09-12",
+    "endDate": "2025-09-18",
+    "estimatedBudget": 5589.36,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 4
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 1
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 7
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 10,
+    "userTempId": 10,
+    "title": "Aventura por Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-05",
+    "estimatedBudget": 2456.19,
+    "itineraryDetails": [],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 11,
+    "userTempId": 10,
+    "title": "Roadtrip a Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-07",
+    "estimatedBudget": 2413.82,
+    "itineraryDetails": [
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 2
+      },
+      {
+        "actividad": "San Juan Chamula",
+        "dia": 1
+      },
+      {
+        "actividad": "Centro histórico de San Cristóbal",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 12,
+    "userTempId": 11,
+    "title": "Aventura por Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2025-09-17",
+    "endDate": "2025-09-25",
+    "estimatedBudget": 6300.54,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 6
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 3
+      },
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 4
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 13,
+    "userTempId": 12,
+    "title": "Viaje cultural a Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2025-09-16",
+    "endDate": "2025-09-18",
+    "estimatedBudget": 3122.12,
+    "itineraryDetails": [
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 3
+      },
+      {
+        "actividad": "Monte Albán",
+        "dia": 2
+      },
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 1
+      },
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 2
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 14,
+    "userTempId": 13,
+    "title": "Aventura por San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2025-08-27",
+    "endDate": "2025-09-01",
+    "estimatedBudget": 6031.45,
+    "itineraryDetails": [
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 4
+      },
+      {
+        "actividad": "Mercado de artesanías",
+        "dia": 1
+      },
+      {
+        "actividad": "Mirador El Chorro",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 15,
+    "userTempId": 14,
+    "title": "Descanso y playa en Los Cabos",
+    "destination": "Los Cabos",
+    "startDate": "2026-12-02",
+    "endDate": "2026-12-08",
+    "estimatedBudget": 8415.33,
+    "itineraryDetails": [
+      {
+        "actividad": "Playa El Médano",
+        "dia": 7
+      },
+      {
+        "actividad": "El Arco en lancha",
+        "dia": 5
+      },
+      {
+        "actividad": "Buceo en Cabo Pulmo",
+        "dia": 6
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 16,
+    "userTempId": 14,
+    "title": "Fin de año en Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2025-09-02",
+    "endDate": "2025-09-09",
+    "estimatedBudget": 6673.91,
+    "itineraryDetails": [],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 17,
+    "userTempId": 15,
+    "title": "Viaje cultural a Los Cabos",
+    "destination": "Los Cabos",
+    "startDate": "2026-11-29",
+    "endDate": "2026-12-09",
+    "estimatedBudget": 20148.03,
+    "itineraryDetails": [
+      {
+        "actividad": "El Arco en lancha",
+        "dia": 4
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 18,
+    "userTempId": 15,
+    "title": "Fin de año en Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2026-07-08",
+    "endDate": "2026-07-13",
+    "estimatedBudget": 6945.36,
+    "itineraryDetails": [
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 3
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 6
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 19,
+    "userTempId": 15,
+    "title": "Viaje cultural a Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2025-09-06",
+    "endDate": "2025-09-11",
+    "estimatedBudget": 5167.77,
+    "itineraryDetails": [],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 20,
+    "userTempId": 15,
+    "title": "Vacaciones familiares en San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2025-12-01",
+    "endDate": "2025-12-06",
+    "estimatedBudget": 6413.1,
+    "itineraryDetails": [],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 21,
+    "userTempId": 16,
+    "title": "Roadtrip a Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2025-11-10",
+    "endDate": "2025-11-19",
+    "estimatedBudget": 7505.05,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 6
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 3
+      },
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 9
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 22,
+    "userTempId": 17,
+    "title": "Vacaciones familiares en Cancún",
+    "destination": "Cancún",
+    "startDate": "2026-07-07",
+    "endDate": "2026-07-11",
+    "estimatedBudget": 6544.0,
+    "itineraryDetails": [
+      {
+        "actividad": "Tour a Isla Mujeres",
+        "dia": 4
+      },
+      {
+        "actividad": "Visita a Xcaret",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 23,
+    "userTempId": 17,
+    "title": "Descanso y playa en Los Cabos",
+    "destination": "Los Cabos",
+    "startDate": "2026-04-29",
+    "endDate": "2026-05-12",
+    "estimatedBudget": 18715.17,
+    "itineraryDetails": [],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 24,
+    "userTempId": 18,
+    "title": "Fin de año en Tulum",
+    "destination": "Tulum",
+    "startDate": "2026-06-10",
+    "endDate": "2026-06-24",
+    "estimatedBudget": 19254.58,
+    "itineraryDetails": [
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 3
+      },
+      {
+        "actividad": "Playa Paraíso",
+        "dia": 3
+      },
+      {
+        "actividad": "Reserva de Sian Ka'an",
+        "dia": 14
+      },
+      {
+        "actividad": "Zona arqueológica de Tulum",
+        "dia": 12
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 25,
+    "userTempId": 18,
+    "title": "Roadtrip a Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2025-08-14",
+    "endDate": "2025-08-20",
+    "estimatedBudget": 4945.8,
+    "itineraryDetails": [
+      {
+        "actividad": "San Juan Chamula",
+        "dia": 4
+      },
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 5
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 26,
+    "userTempId": 18,
+    "title": "Viaje cultural a Mérida",
+    "destination": "Mérida",
+    "startDate": "2026-03-02",
+    "endDate": "2026-03-06",
+    "estimatedBudget": 4180.67,
+    "itineraryDetails": [
+      {
+        "actividad": "Paseo de Montejo",
+        "dia": 4
+      },
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 3
+      },
+      {
+        "actividad": "Uxmal",
+        "dia": 4
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 27,
+    "userTempId": 19,
+    "title": "Descanso y playa en Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2026-03-14",
+    "endDate": "2026-03-14",
+    "estimatedBudget": 1729.79,
+    "itineraryDetails": [
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 1
+      },
+      {
+        "actividad": "Monte Albán",
+        "dia": 1
+      },
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 1
+      },
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 28,
+    "userTempId": 19,
+    "title": "Escapada de fin de semana a Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2025-10-02",
+    "endDate": "2025-10-16",
+    "estimatedBudget": 7515.17,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 15
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 29,
+    "userTempId": 19,
+    "title": "Aventura por Tulum",
+    "destination": "Tulum",
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-18",
+    "estimatedBudget": 10339.57,
+    "itineraryDetails": [
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 2
+      },
+      {
+        "actividad": "Reserva de Sian Ka'an",
+        "dia": 6
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 30,
+    "userTempId": 20,
+    "title": "Fin de año en Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2025-11-27",
+    "endDate": "2025-11-29",
+    "estimatedBudget": 2266.36,
+    "itineraryDetails": [],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 31,
+    "userTempId": 20,
+    "title": "Vacaciones familiares en Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2026-10-24",
+    "endDate": "2026-10-31",
+    "estimatedBudget": 9778.62,
+    "itineraryDetails": [
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 4
+      },
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 3
+      },
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 7
+      },
+      {
+        "actividad": "Monte Albán",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 32,
+    "userTempId": 20,
+    "title": "Aventura por Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-08-18",
+    "endDate": "2025-08-21",
+    "estimatedBudget": 4578.38,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 1
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 2
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 2
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 3
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 4
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 33,
+    "userTempId": 21,
+    "title": "Viaje cultural a Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2025-09-26",
+    "endDate": "2025-10-04",
+    "estimatedBudget": 11212.63,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 7
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 8
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 34,
+    "userTempId": 21,
+    "title": "Roadtrip a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-22",
+    "estimatedBudget": 8012.1,
+    "itineraryDetails": [],
+    "status": "borrador"
+  },
+  {
+    "tempId": 35,
+    "userTempId": 22,
+    "title": "Viaje cultural a Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2025-11-14",
+    "endDate": "2025-11-14",
+    "estimatedBudget": 1619.65,
+    "itineraryDetails": [
+      {
+        "actividad": "Isla de Sacrificios",
+        "dia": 1
+      },
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 1
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 36,
+    "userTempId": 22,
+    "title": "Aventura por Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2025-11-16",
+    "endDate": "2025-11-17",
+    "estimatedBudget": 3429.25,
+    "itineraryDetails": [
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 1
+      },
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 1
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 37,
+    "userTempId": 23,
+    "title": "Aventura por Papantla",
+    "destination": "Papantla",
+    "startDate": "2026-03-17",
+    "endDate": "2026-03-17",
+    "estimatedBudget": 1383.98,
+    "itineraryDetails": [
+      {
+        "actividad": "El Tajín",
+        "dia": 1
+      },
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 1
+      },
+      {
+        "actividad": "Centro histórico",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 38,
+    "userTempId": 23,
+    "title": "Descanso y playa en Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-09-24",
+    "endDate": "2026-10-08",
+    "estimatedBudget": 13238.99,
+    "itineraryDetails": [
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 12
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 8
+      },
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 6
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 39,
+    "userTempId": 24,
+    "title": "Aventura por Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2025-09-19",
+    "endDate": "2025-09-25",
+    "estimatedBudget": 7305.52,
+    "itineraryDetails": [
+      {
+        "actividad": "Museo de Antropología de Xalapa",
+        "dia": 1
+      },
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 1
+      },
+      {
+        "actividad": "Cascada de Texolo",
+        "dia": 3
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 40,
+    "userTempId": 24,
+    "title": "Aventura por Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2025-12-18",
+    "endDate": "2025-12-29",
+    "estimatedBudget": 13214.71,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 12
+      },
+      {
+        "actividad": "Cascada de Texolo",
+        "dia": 6
+      },
+      {
+        "actividad": "Museo de Antropología de Xalapa",
+        "dia": 10
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 41,
+    "userTempId": 24,
+    "title": "Escapada de fin de semana a Tulum",
+    "destination": "Tulum",
+    "startDate": "2025-09-15",
+    "endDate": "2025-09-25",
+    "estimatedBudget": 20414.45,
+    "itineraryDetails": [
+      {
+        "actividad": "Reserva de Sian Ka'an",
+        "dia": 3
+      },
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 10
+      },
+      {
+        "actividad": "Zona arqueológica de Tulum",
+        "dia": 11
+      },
+      {
+        "actividad": "Playa Paraíso",
+        "dia": 8
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 42,
+    "userTempId": 25,
+    "title": "Descanso y playa en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-12",
+    "estimatedBudget": 11760.14,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 3
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 3
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 4
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 43,
+    "userTempId": 25,
+    "title": "Viaje cultural a Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-08-12",
+    "endDate": "2026-08-17",
+    "estimatedBudget": 9406.53,
+    "itineraryDetails": [
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 1
+      },
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 6
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 2
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 44,
+    "userTempId": 25,
+    "title": "Escapada de fin de semana a Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2026-03-26",
+    "endDate": "2026-04-07",
+    "estimatedBudget": 17428.23,
+    "itineraryDetails": [
+      {
+        "actividad": "Teotihuacán",
+        "dia": 12
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 8
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 4
+      },
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 45,
+    "userTempId": 26,
+    "title": "Fin de año en Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2025-09-28",
+    "endDate": "2025-10-10",
+    "estimatedBudget": 12115.01,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro histórico de San Cristóbal",
+        "dia": 9
+      },
+      {
+        "actividad": "San Juan Chamula",
+        "dia": 9
+      },
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 5
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 46,
+    "userTempId": 27,
+    "title": "Vacaciones familiares en Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-14",
+    "estimatedBudget": 11462.94,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 4
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 47,
+    "userTempId": 27,
+    "title": "Fin de año en Cancún",
+    "destination": "Cancún",
+    "startDate": "2026-07-05",
+    "endDate": "2026-07-13",
+    "estimatedBudget": 19341.47,
+    "itineraryDetails": [
+      {
+        "actividad": "Zona hotelera y playa",
+        "dia": 5
+      },
+      {
+        "actividad": "Tour a Isla Mujeres",
+        "dia": 7
+      },
+      {
+        "actividad": "Visita a Xcaret",
+        "dia": 8
+      },
+      {
+        "actividad": "Snorkel en arrecife",
+        "dia": 9
+      },
+      {
+        "actividad": "Cenote Dos Ojos",
+        "dia": 7
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 48,
+    "userTempId": 27,
+    "title": "Fin de año en Los Cabos",
+    "destination": "Los Cabos",
+    "startDate": "2025-11-06",
+    "endDate": "2025-11-11",
+    "estimatedBudget": 10393.94,
+    "itineraryDetails": [
+      {
+        "actividad": "El Arco en lancha",
+        "dia": 6
+      },
+      {
+        "actividad": "Buceo en Cabo Pulmo",
+        "dia": 5
+      },
+      {
+        "actividad": "Playa El Médano",
+        "dia": 3
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 49,
+    "userTempId": 28,
+    "title": "Roadtrip a Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2025-11-10",
+    "endDate": "2025-11-16",
+    "estimatedBudget": 10373.18,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 3
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 2
+      },
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 50,
+    "userTempId": 28,
+    "title": "Roadtrip a Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-04-17",
+    "endDate": "2026-04-30",
+    "estimatedBudget": 18742.3,
+    "itineraryDetails": [],
+    "status": "borrador"
+  },
+  {
+    "tempId": 51,
+    "userTempId": 29,
+    "title": "Roadtrip a Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2025-10-04",
+    "endDate": "2025-10-12",
+    "estimatedBudget": 11299.12,
+    "itineraryDetails": [
+      {
+        "actividad": "Callejón del Beso",
+        "dia": 6
+      },
+      {
+        "actividad": "Funicular al Pípila",
+        "dia": 1
+      },
+      {
+        "actividad": "Museo de las Momias",
+        "dia": 1
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 52,
+    "userTempId": 30,
+    "title": "Roadtrip a Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-09",
+    "estimatedBudget": 9645.55,
+    "itineraryDetails": [
+      {
+        "actividad": "Malecón y zona romántica",
+        "dia": 5
+      },
+      {
+        "actividad": "Islas Marietas",
+        "dia": 8
+      },
+      {
+        "actividad": "Playa Mismaloya",
+        "dia": 4
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 53,
+    "userTempId": 30,
+    "title": "Descanso y playa en Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2026-10-08",
+    "endDate": "2026-10-09",
+    "estimatedBudget": 1908.87,
+    "itineraryDetails": [
+      {
+        "actividad": "Callejón del Beso",
+        "dia": 2
+      },
+      {
+        "actividad": "Funicular al Pípila",
+        "dia": 2
+      },
+      {
+        "actividad": "Museo de las Momias",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 54,
+    "userTempId": 31,
+    "title": "Aventura por Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-06-19",
+    "endDate": "2026-06-25",
+    "estimatedBudget": 7618.64,
+    "itineraryDetails": [
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 5
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 55,
+    "userTempId": 32,
+    "title": "Viaje cultural a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2026-10-04",
+    "endDate": "2026-10-07",
+    "estimatedBudget": 3952.97,
+    "itineraryDetails": [
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 1
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 56,
+    "userTempId": 32,
+    "title": "Vacaciones familiares en Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2026-03-12",
+    "endDate": "2026-03-25",
+    "estimatedBudget": 10572.5,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 10
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 57,
+    "userTempId": 33,
+    "title": "Vacaciones familiares en Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-07",
+    "estimatedBudget": 16178.03,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro histórico de San Cristóbal",
+        "dia": 2
+      },
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 7
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 58,
+    "userTempId": 34,
+    "title": "Roadtrip a Tulum",
+    "destination": "Tulum",
+    "startDate": "2025-08-21",
+    "endDate": "2025-08-25",
+    "estimatedBudget": 7044.95,
+    "itineraryDetails": [
+      {
+        "actividad": "Reserva de Sian Ka'an",
+        "dia": 1
+      },
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 4
+      },
+      {
+        "actividad": "Zona arqueológica de Tulum",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 59,
+    "userTempId": 34,
+    "title": "Fin de año en Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-07-10",
+    "endDate": "2026-07-10",
+    "estimatedBudget": 1221.81,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 1
+      },
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 1
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 1
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 60,
+    "userTempId": 35,
+    "title": "Aventura por Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-11-09",
+    "endDate": "2025-11-10",
+    "estimatedBudget": 3535.69,
+    "itineraryDetails": [
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 1
+      },
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 2
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 1
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 1
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 61,
+    "userTempId": 36,
+    "title": "Roadtrip a Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2025-11-21",
+    "endDate": "2025-11-26",
+    "estimatedBudget": 5355.78,
+    "itineraryDetails": [
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 5
+      },
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 3
+      },
+      {
+        "actividad": "Monte Albán",
+        "dia": 5
+      },
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 5
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 62,
+    "userTempId": 36,
+    "title": "Roadtrip a Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2026-10-30",
+    "endDate": "2026-11-12",
+    "estimatedBudget": 9600.61,
+    "itineraryDetails": [],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 63,
+    "userTempId": 37,
+    "title": "Roadtrip a Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-06",
+    "estimatedBudget": 7623.31,
+    "itineraryDetails": [
+      {
+        "actividad": "Museo de las Momias",
+        "dia": 10
+      },
+      {
+        "actividad": "Callejón del Beso",
+        "dia": 8
+      },
+      {
+        "actividad": "Funicular al Pípila",
+        "dia": 3
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 64,
+    "userTempId": 37,
+    "title": "Vacaciones familiares en Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2025-11-29",
+    "endDate": "2025-12-12",
+    "estimatedBudget": 6893.86,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 4
+      },
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 1
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 8
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 65,
+    "userTempId": 37,
+    "title": "Roadtrip a Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2026-08-25",
+    "endDate": "2026-09-02",
+    "estimatedBudget": 7960.87,
+    "itineraryDetails": [
+      {
+        "actividad": "Islas Marietas",
+        "dia": 9
+      },
+      {
+        "actividad": "Malecón y zona romántica",
+        "dia": 4
+      },
+      {
+        "actividad": "Playa Mismaloya",
+        "dia": 9
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 66,
+    "userTempId": 37,
+    "title": "Roadtrip a Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-05-18",
+    "endDate": "2026-05-20",
+    "estimatedBudget": 2224.79,
+    "itineraryDetails": [
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 3
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 3
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 3
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 67,
+    "userTempId": 38,
+    "title": "Aventura por Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2026-03-10",
+    "endDate": "2026-03-14",
+    "estimatedBudget": 5936.26,
+    "itineraryDetails": [
+      {
+        "actividad": "Islas Marietas",
+        "dia": 3
+      },
+      {
+        "actividad": "Malecón y zona romántica",
+        "dia": 2
+      },
+      {
+        "actividad": "Playa Mismaloya",
+        "dia": 4
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 68,
+    "userTempId": 38,
+    "title": "Roadtrip a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2026-04-21",
+    "endDate": "2026-04-22",
+    "estimatedBudget": 2243.39,
+    "itineraryDetails": [
+      {
+        "actividad": "Mirador El Chorro",
+        "dia": 2
+      },
+      {
+        "actividad": "Mercado de artesanías",
+        "dia": 1
+      },
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 69,
+    "userTempId": 39,
+    "title": "Descanso y playa en Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-03-20",
+    "endDate": "2026-03-31",
+    "estimatedBudget": 11382.33,
+    "itineraryDetails": [
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 9
+      },
+      {
+        "actividad": "San Juan Chamula",
+        "dia": 12
+      },
+      {
+        "actividad": "Centro histórico de San Cristóbal",
+        "dia": 5
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 70,
+    "userTempId": 40,
+    "title": "Escapada de fin de semana a Mérida",
+    "destination": "Mérida",
+    "startDate": "2025-08-21",
+    "endDate": "2025-08-31",
+    "estimatedBudget": 12796.64,
+    "itineraryDetails": [
+      {
+        "actividad": "Paseo de Montejo",
+        "dia": 2
+      },
+      {
+        "actividad": "Uxmal",
+        "dia": 7
+      },
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 6
+      }
+    ],
+    "status": "en_curso"
+  },
+  {
+    "tempId": 71,
+    "userTempId": 40,
+    "title": "Vacaciones familiares en Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2025-07-06",
+    "endDate": "2025-07-14",
+    "estimatedBudget": 9354.7,
+    "itineraryDetails": [
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 8
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 72,
+    "userTempId": 41,
+    "title": "Escapada de fin de semana a Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-04-19",
+    "endDate": "2026-04-29",
+    "estimatedBudget": 8618.35,
+    "itineraryDetails": [],
+    "status": "borrador"
+  },
+  {
+    "tempId": 73,
+    "userTempId": 41,
+    "title": "Escapada de fin de semana a Mérida",
+    "destination": "Mérida",
+    "startDate": "2025-08-08",
+    "endDate": "2025-08-22",
+    "estimatedBudget": 14409.46,
+    "itineraryDetails": [
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 15
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 74,
+    "userTempId": 41,
+    "title": "Aventura por Papantla",
+    "destination": "Papantla",
+    "startDate": "2026-01-07",
+    "endDate": "2026-01-21",
+    "estimatedBudget": 8308.0,
+    "itineraryDetails": [
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 5
+      },
+      {
+        "actividad": "El Tajín",
+        "dia": 10
+      },
+      {
+        "actividad": "Centro histórico",
+        "dia": 10
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 75,
+    "userTempId": 41,
+    "title": "Fin de año en Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-11-18",
+    "endDate": "2026-12-02",
+    "estimatedBudget": 11961.09,
+    "itineraryDetails": [
+      {
+        "actividad": "San Juan Chamula",
+        "dia": 8
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 76,
+    "userTempId": 42,
+    "title": "Aventura por Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-03-21",
+    "endDate": "2026-04-01",
+    "estimatedBudget": 12072.79,
+    "itineraryDetails": [
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 12
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 77,
+    "userTempId": 43,
+    "title": "Vacaciones familiares en Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2025-12-27",
+    "endDate": "2026-01-05",
+    "estimatedBudget": 13915.59,
+    "itineraryDetails": [
+      {
+        "actividad": "Islas Marietas",
+        "dia": 2
+      },
+      {
+        "actividad": "Playa Mismaloya",
+        "dia": 7
+      },
+      {
+        "actividad": "Malecón y zona romántica",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 78,
+    "userTempId": 43,
+    "title": "Aventura por Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-03-12",
+    "endDate": "2026-03-12",
+    "estimatedBudget": 1607.66,
+    "itineraryDetails": [
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 1
+      },
+      {
+        "actividad": "Malecón y zona portuaria",
+        "dia": 1
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 79,
+    "userTempId": 44,
+    "title": "Roadtrip a Cancún",
+    "destination": "Cancún",
+    "startDate": "2026-03-25",
+    "endDate": "2026-04-04",
+    "estimatedBudget": 21694.54,
+    "itineraryDetails": [
+      {
+        "actividad": "Tour a Isla Mujeres",
+        "dia": 5
+      },
+      {
+        "actividad": "Snorkel en arrecife",
+        "dia": 3
+      },
+      {
+        "actividad": "Visita a Xcaret",
+        "dia": 7
+      },
+      {
+        "actividad": "Zona hotelera y playa",
+        "dia": 11
+      },
+      {
+        "actividad": "Cenote Dos Ojos",
+        "dia": 9
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 80,
+    "userTempId": 44,
+    "title": "Viaje cultural a Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2025-10-29",
+    "endDate": "2025-11-08",
+    "estimatedBudget": 11411.14,
+    "itineraryDetails": [
+      {
+        "actividad": "Museo de las Momias",
+        "dia": 4
+      },
+      {
+        "actividad": "Callejón del Beso",
+        "dia": 3
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 81,
+    "userTempId": 44,
+    "title": "Descanso y playa en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-08-30",
+    "endDate": "2026-09-10",
+    "estimatedBudget": 12846.85,
+    "itineraryDetails": [
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 11
+      },
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 10
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 2
+      }
+    ],
+    "status": "en_curso"
+  },
+  {
+    "tempId": 82,
+    "userTempId": 45,
+    "title": "Roadtrip a Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-09-02",
+    "endDate": "2025-09-15",
+    "estimatedBudget": 16496.23,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 6
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 14
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 9
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 83,
+    "userTempId": 46,
+    "title": "Escapada de fin de semana a Papantla",
+    "destination": "Papantla",
+    "startDate": "2025-10-02",
+    "endDate": "2025-10-16",
+    "estimatedBudget": 11576.11,
+    "itineraryDetails": [
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 3
+      },
+      {
+        "actividad": "El Tajín",
+        "dia": 9
+      },
+      {
+        "actividad": "Centro histórico",
+        "dia": 7
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 84,
+    "userTempId": 46,
+    "title": "Fin de año en Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-05-12",
+    "endDate": "2026-05-23",
+    "estimatedBudget": 12331.98,
+    "itineraryDetails": [],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 85,
+    "userTempId": 46,
+    "title": "Vacaciones familiares en Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2025-09-13",
+    "endDate": "2025-09-13",
+    "estimatedBudget": 1985.07,
+    "itineraryDetails": [
+      {
+        "actividad": "Islas Marietas",
+        "dia": 1
+      },
+      {
+        "actividad": "Malecón y zona romántica",
+        "dia": 1
+      },
+      {
+        "actividad": "Playa Mismaloya",
+        "dia": 1
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 86,
+    "userTempId": 47,
+    "title": "Vacaciones familiares en Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2026-07-19",
+    "endDate": "2026-08-02",
+    "estimatedBudget": 10364.19,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 2
+      },
+      {
+        "actividad": "Cascada de Texolo",
+        "dia": 11
+      },
+      {
+        "actividad": "Museo de Antropología de Xalapa",
+        "dia": 11
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 87,
+    "userTempId": 48,
+    "title": "Fin de año en Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-12-30",
+    "endDate": "2026-01-07",
+    "estimatedBudget": 6647.29,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 1
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 5
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 8
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 9
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 7
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 88,
+    "userTempId": 48,
+    "title": "Roadtrip a Mérida",
+    "destination": "Mérida",
+    "startDate": "2026-10-15",
+    "endDate": "2026-10-20",
+    "estimatedBudget": 4341.01,
+    "itineraryDetails": [
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 2
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 89,
+    "userTempId": 48,
+    "title": "Fin de año en Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-08-02",
+    "endDate": "2025-08-14",
+    "estimatedBudget": 9415.0,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 2
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 10
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 1
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 8
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 10
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 90,
+    "userTempId": 49,
+    "title": "Aventura por Tulum",
+    "destination": "Tulum",
+    "startDate": "2026-08-16",
+    "endDate": "2026-08-23",
+    "estimatedBudget": 7320.48,
+    "itineraryDetails": [
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 91,
+    "userTempId": 50,
+    "title": "Descanso y playa en Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-05-25",
+    "endDate": "2026-05-28",
+    "estimatedBudget": 4927.47,
+    "itineraryDetails": [
+      {
+        "actividad": "Malecón y zona portuaria",
+        "dia": 4
+      },
+      {
+        "actividad": "Isla de Sacrificios",
+        "dia": 3
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 92,
+    "userTempId": 50,
+    "title": "Aventura por Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2026-09-11",
+    "endDate": "2026-09-19",
+    "estimatedBudget": 13614.28,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 9
+      },
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 6
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 7
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 93,
+    "userTempId": 50,
+    "title": "Escapada de fin de semana a Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2026-10-28",
+    "endDate": "2026-10-31",
+    "estimatedBudget": 6768.63,
+    "itineraryDetails": [
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 2
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 94,
+    "userTempId": 51,
+    "title": "Escapada de fin de semana a Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2025-11-15",
+    "endDate": "2025-11-21",
+    "estimatedBudget": 4618.85,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 95,
+    "userTempId": 51,
+    "title": "Fin de año en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2025-10-03",
+    "endDate": "2025-10-11",
+    "estimatedBudget": 8499.49,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 7
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 1
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 2
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 96,
+    "userTempId": 52,
+    "title": "Escapada de fin de semana a Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2026-11-03",
+    "endDate": "2026-11-06",
+    "estimatedBudget": 4124.69,
+    "itineraryDetails": [
+      {
+        "actividad": "Islas Marietas",
+        "dia": 2
+      },
+      {
+        "actividad": "Malecón y zona romántica",
+        "dia": 2
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 97,
+    "userTempId": 52,
+    "title": "Viaje cultural a Papantla",
+    "destination": "Papantla",
+    "startDate": "2026-03-06",
+    "endDate": "2026-03-17",
+    "estimatedBudget": 6401.66,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro histórico",
+        "dia": 4
+      },
+      {
+        "actividad": "El Tajín",
+        "dia": 9
+      },
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 6
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 98,
+    "userTempId": 52,
+    "title": "Roadtrip a Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-05-12",
+    "endDate": "2026-05-16",
+    "estimatedBudget": 3954.44,
+    "itineraryDetails": [
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 4
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 99,
+    "userTempId": 53,
+    "title": "Escapada de fin de semana a Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-01-25",
+    "endDate": "2026-01-30",
+    "estimatedBudget": 6850.23,
+    "itineraryDetails": [
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 5
+      },
+      {
+        "actividad": "Malecón y zona portuaria",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 100,
+    "userTempId": 53,
+    "title": "Fin de año en Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2026-04-29",
+    "endDate": "2026-05-01",
+    "estimatedBudget": 2630.32,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 101,
+    "userTempId": 53,
+    "title": "Descanso y playa en Papantla",
+    "destination": "Papantla",
+    "startDate": "2026-06-11",
+    "endDate": "2026-06-15",
+    "estimatedBudget": 4378.33,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro histórico",
+        "dia": 2
+      },
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 3
+      },
+      {
+        "actividad": "El Tajín",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 102,
+    "userTempId": 54,
+    "title": "Roadtrip a Tulum",
+    "destination": "Tulum",
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-17",
+    "estimatedBudget": 13320.06,
+    "itineraryDetails": [
+      {
+        "actividad": "Zona arqueológica de Tulum",
+        "dia": 7
+      },
+      {
+        "actividad": "Playa Paraíso",
+        "dia": 3
+      },
+      {
+        "actividad": "Reserva de Sian Ka'an",
+        "dia": 14
+      },
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 11
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 103,
+    "userTempId": 56,
+    "title": "Escapada de fin de semana a Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2025-08-31",
+    "endDate": "2025-09-09",
+    "estimatedBudget": 9552.62,
+    "itineraryDetails": [
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 1
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 1
+      },
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 9
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 104,
+    "userTempId": 56,
+    "title": "Descanso y playa en San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2026-04-20",
+    "endDate": "2026-04-20",
+    "estimatedBudget": 1538.5,
+    "itineraryDetails": [
+      {
+        "actividad": "Mirador El Chorro",
+        "dia": 1
+      },
+      {
+        "actividad": "Mercado de artesanías",
+        "dia": 1
+      },
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 105,
+    "userTempId": 57,
+    "title": "Vacaciones familiares en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-03-31",
+    "endDate": "2026-04-12",
+    "estimatedBudget": 10401.25,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 8
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 10
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 4
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 106,
+    "userTempId": 58,
+    "title": "Fin de año en Los Cabos",
+    "destination": "Los Cabos",
+    "startDate": "2025-08-02",
+    "endDate": "2025-08-03",
+    "estimatedBudget": 3586.68,
+    "itineraryDetails": [
+      {
+        "actividad": "Buceo en Cabo Pulmo",
+        "dia": 1
+      },
+      {
+        "actividad": "Playa El Médano",
+        "dia": 1
+      },
+      {
+        "actividad": "El Arco en lancha",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 107,
+    "userTempId": 58,
+    "title": "Viaje cultural a Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2025-10-06",
+    "endDate": "2025-10-20",
+    "estimatedBudget": 14796.94,
+    "itineraryDetails": [
+      {
+        "actividad": "Malecón y zona portuaria",
+        "dia": 15
+      },
+      {
+        "actividad": "Isla de Sacrificios",
+        "dia": 14
+      },
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 12
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 108,
+    "userTempId": 60,
+    "title": "Roadtrip a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2025-08-03",
+    "endDate": "2025-08-05",
+    "estimatedBudget": 3491.48,
+    "itineraryDetails": [
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 3
+      },
+      {
+        "actividad": "Mirador El Chorro",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 109,
+    "userTempId": 8,
+    "title": "Descanso y playa en Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2025-12-14",
+    "endDate": "2025-12-23",
+    "estimatedBudget": 6960.93,
+    "itineraryDetails": [
+      {
+        "actividad": "Funicular al Pípila",
+        "dia": 7
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 110,
+    "userTempId": 28,
+    "title": "Aventura por Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2025-09-19",
+    "endDate": "2025-09-27",
+    "estimatedBudget": 16278.98,
+    "itineraryDetails": [
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 4
+      },
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 2
+      },
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 6
+      },
+      {
+        "actividad": "Monte Albán",
+        "dia": 7
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 111,
+    "userTempId": 44,
+    "title": "Roadtrip a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-12",
+    "estimatedBudget": 8058.88,
+    "itineraryDetails": [
+      {
+        "actividad": "Mercado de artesanías",
+        "dia": 7
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 112,
+    "userTempId": 46,
+    "title": "Fin de año en Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2025-09-26",
+    "endDate": "2025-10-08",
+    "estimatedBudget": 9882.89,
+    "itineraryDetails": [
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 2
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 5
+      },
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 3
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 113,
+    "userTempId": 13,
+    "title": "Aventura por Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-05-21",
+    "endDate": "2026-05-26",
+    "estimatedBudget": 3271.16,
+    "itineraryDetails": [],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 114,
+    "userTempId": 27,
+    "title": "Viaje cultural a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2025-10-13",
+    "endDate": "2025-10-15",
+    "estimatedBudget": 3035.91,
+    "itineraryDetails": [],
+    "status": "borrador"
+  },
+  {
+    "tempId": 115,
+    "userTempId": 39,
+    "title": "Escapada de fin de semana a Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2025-10-14",
+    "endDate": "2025-10-14",
+    "estimatedBudget": 660.58,
+    "itineraryDetails": [],
+    "status": "borrador"
+  },
+  {
+    "tempId": 116,
+    "userTempId": 42,
+    "title": "Vacaciones familiares en Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-07-30",
+    "endDate": "2026-07-30",
+    "estimatedBudget": 1368.48,
+    "itineraryDetails": [
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 1
+      },
+      {
+        "actividad": "Isla de Sacrificios",
+        "dia": 1
+      }
+    ],
+    "status": "en_curso"
+  },
+  {
+    "tempId": 117,
+    "userTempId": 28,
+    "title": "Aventura por Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2025-11-20",
+    "endDate": "2025-11-24",
+    "estimatedBudget": 6985.32,
+    "itineraryDetails": [
+      {
+        "actividad": "Tlaquepaque artesanal",
+        "dia": 2
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 118,
+    "userTempId": 23,
+    "title": "Escapada de fin de semana a Papantla",
+    "destination": "Papantla",
+    "startDate": "2025-09-17",
+    "endDate": "2025-09-22",
+    "estimatedBudget": 4409.78,
+    "itineraryDetails": [
+      {
+        "actividad": "El Tajín",
+        "dia": 5
+      },
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 5
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 119,
+    "userTempId": 23,
+    "title": "Vacaciones familiares en Cancún",
+    "destination": "Cancún",
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-15",
+    "estimatedBudget": 11489.57,
+    "itineraryDetails": [
+      {
+        "actividad": "Visita a Xcaret",
+        "dia": 3
+      },
+      {
+        "actividad": "Zona hotelera y playa",
+        "dia": 3
+      },
+      {
+        "actividad": "Tour a Isla Mujeres",
+        "dia": 5
+      },
+      {
+        "actividad": "Cenote Dos Ojos",
+        "dia": 6
+      },
+      {
+        "actividad": "Snorkel en arrecife",
+        "dia": 2
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 120,
+    "userTempId": 24,
+    "title": "Fin de año en Guanajuato",
+    "destination": "Guanajuato",
+    "startDate": "2026-11-15",
+    "endDate": "2026-11-24",
+    "estimatedBudget": 12193.67,
+    "itineraryDetails": [
+      {
+        "actividad": "Museo de las Momias",
+        "dia": 7
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 121,
+    "userTempId": 27,
+    "title": "Aventura por Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2026-01-21",
+    "endDate": "2026-01-30",
+    "estimatedBudget": 11590.91,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 8
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 4
+      }
+    ],
+    "status": "en_curso"
+  },
+  {
+    "tempId": 122,
+    "userTempId": 8,
+    "title": "Viaje cultural a Xalapa",
+    "destination": "Xalapa",
+    "startDate": "2026-11-24",
+    "endDate": "2026-11-26",
+    "estimatedBudget": 2020.97,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Los Berros",
+        "dia": 3
+      },
+      {
+        "actividad": "Museo de Antropología de Xalapa",
+        "dia": 1
+      },
+      {
+        "actividad": "Cascada de Texolo",
+        "dia": 3
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 123,
+    "userTempId": 32,
+    "title": "Vacaciones familiares en Papantla",
+    "destination": "Papantla",
+    "startDate": "2026-08-15",
+    "endDate": "2026-08-23",
+    "estimatedBudget": 6097.02,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro histórico",
+        "dia": 6
+      },
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 9
+      },
+      {
+        "actividad": "El Tajín",
+        "dia": 2
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 124,
+    "userTempId": 46,
+    "title": "Vacaciones familiares en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2025-12-18",
+    "endDate": "2025-12-28",
+    "estimatedBudget": 10864.29,
+    "itineraryDetails": [
+      {
+        "actividad": "Parque Fundidora",
+        "dia": 7
+      },
+      {
+        "actividad": "Cerro de la Silla",
+        "dia": 2
+      },
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 1
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 125,
+    "userTempId": 51,
+    "title": "Escapada de fin de semana a Mérida",
+    "destination": "Mérida",
+    "startDate": "2026-09-30",
+    "endDate": "2026-10-05",
+    "estimatedBudget": 6128.11,
+    "itineraryDetails": [
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 1
+      },
+      {
+        "actividad": "Paseo de Montejo",
+        "dia": 4
+      },
+      {
+        "actividad": "Uxmal",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 126,
+    "userTempId": 57,
+    "title": "Escapada de fin de semana a Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26",
+    "estimatedBudget": 3515.03,
+    "itineraryDetails": [
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 5
+      },
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 4
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 127,
+    "userTempId": 50,
+    "title": "Roadtrip a Chiapas (San Cristóbal)",
+    "destination": "Chiapas (San Cristóbal)",
+    "startDate": "2026-05-23",
+    "endDate": "2026-05-24",
+    "estimatedBudget": 3600.29,
+    "itineraryDetails": [
+      {
+        "actividad": "Cañón del Sumidero",
+        "dia": 1
+      },
+      {
+        "actividad": "San Juan Chamula",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 128,
+    "userTempId": 51,
+    "title": "Viaje cultural a Mérida",
+    "destination": "Mérida",
+    "startDate": "2025-12-26",
+    "endDate": "2026-01-03",
+    "estimatedBudget": 8704.94,
+    "itineraryDetails": [
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 9
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 129,
+    "userTempId": 55,
+    "title": "Viaje cultural a Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-01-05",
+    "endDate": "2026-01-07",
+    "estimatedBudget": 2648.32,
+    "itineraryDetails": [
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 1
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 3
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 3
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 130,
+    "userTempId": 31,
+    "title": "Fin de año en Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2025-07-05",
+    "endDate": "2025-07-16",
+    "estimatedBudget": 11620.15,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 5
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 131,
+    "userTempId": 40,
+    "title": "Descanso y playa en Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2026-01-08",
+    "endDate": "2026-01-13",
+    "estimatedBudget": 7599.39,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 5
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 6
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 3
+      },
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 5
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 4
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 132,
+    "userTempId": 26,
+    "title": "Descanso y playa en Monterrey",
+    "destination": "Monterrey",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-21",
+    "estimatedBudget": 9064.34,
+    "itineraryDetails": [
+      {
+        "actividad": "Cola de Caballo",
+        "dia": 5
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 133,
+    "userTempId": 47,
+    "title": "Roadtrip a Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2026-05-17",
+    "endDate": "2026-05-18",
+    "estimatedBudget": 1724.22,
+    "itineraryDetails": [
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 134,
+    "userTempId": 36,
+    "title": "Viaje cultural a Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-09-02",
+    "endDate": "2026-09-11",
+    "estimatedBudget": 5056.76,
+    "itineraryDetails": [
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 7
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 135,
+    "userTempId": 38,
+    "title": "Fin de año en Guadalajara",
+    "destination": "Guadalajara",
+    "startDate": "2025-12-18",
+    "endDate": "2025-12-25",
+    "estimatedBudget": 7869.49,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro Histórico y Catedral",
+        "dia": 6
+      },
+      {
+        "actividad": "Tequila (pueblo mágico)",
+        "dia": 8
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 136,
+    "userTempId": 4,
+    "title": "Escapada de fin de semana a Papantla",
+    "destination": "Papantla",
+    "startDate": "2025-11-17",
+    "endDate": "2025-11-20",
+    "estimatedBudget": 2901.82,
+    "itineraryDetails": [
+      {
+        "actividad": "Centro histórico",
+        "dia": 4
+      },
+      {
+        "actividad": "Voladores de Papantla",
+        "dia": 4
+      },
+      {
+        "actividad": "El Tajín",
+        "dia": 4
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 137,
+    "userTempId": 5,
+    "title": "Fin de año en Mérida",
+    "destination": "Mérida",
+    "startDate": "2026-04-26",
+    "endDate": "2026-04-26",
+    "estimatedBudget": 1403.5,
+    "itineraryDetails": [
+      {
+        "actividad": "Paseo de Montejo",
+        "dia": 1
+      },
+      {
+        "actividad": "Cenotes de Cuzamá",
+        "dia": 1
+      }
+    ],
+    "status": "cancelado"
+  },
+  {
+    "tempId": 138,
+    "userTempId": 35,
+    "title": "Aventura por Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-10-25",
+    "endDate": "2025-10-29",
+    "estimatedBudget": 7660.67,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 4
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 1
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 2
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 3
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 139,
+    "userTempId": 32,
+    "title": "Roadtrip a Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2026-02-28",
+    "endDate": "2026-03-03",
+    "estimatedBudget": 4998.51,
+    "itineraryDetails": [
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 2
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 1
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 3
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 3
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 140,
+    "userTempId": 22,
+    "title": "Aventura por San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2025-10-06",
+    "endDate": "2025-10-08",
+    "estimatedBudget": 3872.13,
+    "itineraryDetails": [
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 3
+      },
+      {
+        "actividad": "Mercado de artesanías",
+        "dia": 1
+      },
+      {
+        "actividad": "Mirador El Chorro",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 141,
+    "userTempId": 52,
+    "title": "Fin de año en Puebla (Centro)",
+    "destination": "Puebla (Centro)",
+    "startDate": "2026-11-14",
+    "endDate": "2026-11-16",
+    "estimatedBudget": 2100.35,
+    "itineraryDetails": [
+      {
+        "actividad": "Cholula y Gran Pirámide",
+        "dia": 2
+      },
+      {
+        "actividad": "Talavera en Barrio de los Artistas",
+        "dia": 2
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 1
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 142,
+    "userTempId": 29,
+    "title": "Viaje cultural a San Miguel de Allende",
+    "destination": "San Miguel de Allende",
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-20",
+    "estimatedBudget": 12796.31,
+    "itineraryDetails": [
+      {
+        "actividad": "Mercado de artesanías",
+        "dia": 8
+      },
+      {
+        "actividad": "Parroquia de San Miguel",
+        "dia": 6
+      },
+      {
+        "actividad": "Mirador El Chorro",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 143,
+    "userTempId": 31,
+    "title": "Fin de año en Puerto Vallarta",
+    "destination": "Puerto Vallarta",
+    "startDate": "2026-11-19",
+    "endDate": "2026-11-23",
+    "estimatedBudget": 7430.13,
+    "itineraryDetails": [
+      {
+        "actividad": "Islas Marietas",
+        "dia": 5
+      },
+      {
+        "actividad": "Playa Mismaloya",
+        "dia": 5
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 144,
+    "userTempId": 54,
+    "title": "Fin de año en Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2025-08-19",
+    "endDate": "2025-08-19",
+    "estimatedBudget": 505.3,
+    "itineraryDetails": [],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 145,
+    "userTempId": 5,
+    "title": "Roadtrip a Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2025-12-09",
+    "endDate": "2025-12-16",
+    "estimatedBudget": 7311.49,
+    "itineraryDetails": [
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 3
+      },
+      {
+        "actividad": "Teotihuacán",
+        "dia": 5
+      },
+      {
+        "actividad": "Barrio de Coyoacán",
+        "dia": 2
+      },
+      {
+        "actividad": "Xochimilco en trajinera",
+        "dia": 6
+      },
+      {
+        "actividad": "Centro Histórico y Zócalo",
+        "dia": 5
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 146,
+    "userTempId": 14,
+    "title": "Escapada de fin de semana a Tulum",
+    "destination": "Tulum",
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-20",
+    "estimatedBudget": 14918.24,
+    "itineraryDetails": [
+      {
+        "actividad": "Snorkel en cenote",
+        "dia": 11
+      },
+      {
+        "actividad": "Reserva de Sian Ka'an",
+        "dia": 2
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 147,
+    "userTempId": 34,
+    "title": "Roadtrip a Los Cabos",
+    "destination": "Los Cabos",
+    "startDate": "2025-11-13",
+    "endDate": "2025-11-22",
+    "estimatedBudget": 9519.75,
+    "itineraryDetails": [
+      {
+        "actividad": "Playa El Médano",
+        "dia": 8
+      }
+    ],
+    "status": "confirmado"
+  },
+  {
+    "tempId": 148,
+    "userTempId": 56,
+    "title": "Fin de año en Ciudad de México",
+    "destination": "Ciudad de México",
+    "startDate": "2026-09-06",
+    "endDate": "2026-09-17",
+    "estimatedBudget": 9424.51,
+    "itineraryDetails": [
+      {
+        "actividad": "Teotihuacán",
+        "dia": 4
+      },
+      {
+        "actividad": "Museo Nacional de Antropología",
+        "dia": 7
+      }
+    ],
+    "status": "finalizado"
+  },
+  {
+    "tempId": 149,
+    "userTempId": 10,
+    "title": "Vacaciones familiares en Veracruz",
+    "destination": "Veracruz",
+    "startDate": "2026-07-12",
+    "endDate": "2026-07-26",
+    "estimatedBudget": 10278.2,
+    "itineraryDetails": [
+      {
+        "actividad": "Malecón y zona portuaria",
+        "dia": 13
+      },
+      {
+        "actividad": "Acuario de Veracruz",
+        "dia": 14
+      }
+    ],
+    "status": "borrador"
+  },
+  {
+    "tempId": 150,
+    "userTempId": 47,
+    "title": "Viaje cultural a Oaxaca",
+    "destination": "Oaxaca",
+    "startDate": "2025-09-09",
+    "endDate": "2025-09-17",
+    "estimatedBudget": 8733.98,
+    "itineraryDetails": [
+      {
+        "actividad": "Mercado de Benito Juárez",
+        "dia": 6
+      },
+      {
+        "actividad": "Hierve el Agua",
+        "dia": 4
+      },
+      {
+        "actividad": "Mezcalería tradicional",
+        "dia": 3
+      },
+      {
+        "actividad": "Monte Albán",
+        "dia": 7
+      }
+    ],
+    "status": "finalizado"
+  }
+]

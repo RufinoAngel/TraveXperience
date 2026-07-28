@@ -1,0 +1,1771 @@
+[
+  {
+    "tempId": 1,
+    "userTempId": 17,
+    "entityType": "place",
+    "entityTempId": 1,
+    "entityName": "Parroquia de San Juan Bautista",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-05-27T18:35:00"
+  },
+  {
+    "tempId": 2,
+    "userTempId": 58,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-06-12T17:32:00"
+  },
+  {
+    "tempId": 3,
+    "userTempId": 20,
+    "entityType": "place",
+    "entityTempId": 1,
+    "entityName": "Parroquia de San Juan Bautista",
+    "rating": 5,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-07-01T21:55:00"
+  },
+  {
+    "tempId": 4,
+    "userTempId": 17,
+    "entityType": "hotel",
+    "entityTempId": 8,
+    "entityName": "Hotel Centro Huauchinango",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "local"
+    ],
+    "createdAt": "2026-02-10T09:52:00"
+  },
+  {
+    "tempId": 5,
+    "userTempId": 41,
+    "entityType": "hotel",
+    "entityTempId": 1,
+    "entityName": "Hotel Real Xicotepec",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "economico"
+    ],
+    "createdAt": "2026-02-09T19:41:00"
+  },
+  {
+    "tempId": 6,
+    "userTempId": 18,
+    "entityType": "place",
+    "entityTempId": 16,
+    "entityName": "Mirador Presa Necaxa",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "local",
+      "economico"
+    ],
+    "createdAt": "2026-01-25T11:04:00"
+  },
+  {
+    "tempId": 7,
+    "userTempId": 34,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 2,
+    "comment": "No fue lo que esperaba, el servicio puede mejorar.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-06-22T22:28:00"
+  },
+  {
+    "tempId": 8,
+    "userTempId": 20,
+    "entityType": "place",
+    "entityTempId": 16,
+    "entityName": "Mirador Presa Necaxa",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-02-17T08:42:00"
+  },
+  {
+    "tempId": 9,
+    "userTempId": 37,
+    "entityType": "place",
+    "entityTempId": 12,
+    "entityName": "Casco Histórico de Necaxa",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-22T08:25:00"
+  },
+  {
+    "tempId": 10,
+    "userTempId": 45,
+    "entityType": "place",
+    "entityTempId": 5,
+    "entityName": "Restaurante La Troje",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "local"
+    ],
+    "createdAt": "2026-05-12T10:32:00"
+  },
+  {
+    "tempId": 11,
+    "userTempId": 19,
+    "entityType": "place",
+    "entityTempId": 4,
+    "entityName": "Poza Azul",
+    "rating": 2,
+    "comment": "El lugar está bien pero la atención fue lenta.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-02-23T19:55:00"
+  },
+  {
+    "tempId": 12,
+    "userTempId": 27,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 5,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "local",
+      "economico"
+    ],
+    "createdAt": "2026-02-18T22:01:00"
+  },
+  {
+    "tempId": 13,
+    "userTempId": 5,
+    "entityType": "hotel",
+    "entityTempId": 1,
+    "entityName": "Hotel Real Xicotepec",
+    "rating": 5,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-07-14T04:20:00"
+  },
+  {
+    "tempId": 14,
+    "userTempId": 8,
+    "entityType": "hotel",
+    "entityTempId": 1,
+    "entityName": "Hotel Real Xicotepec",
+    "rating": 2,
+    "comment": "El lugar está bien pero la atención fue lenta.",
+    "photos": [],
+    "tags": [
+      "economico"
+    ],
+    "createdAt": "2026-07-01T21:32:00"
+  },
+  {
+    "tempId": 15,
+    "userTempId": 38,
+    "entityType": "place",
+    "entityTempId": 24,
+    "entityName": "Mercado Municipal de Huauchinango",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-06-28T02:30:00"
+  },
+  {
+    "tempId": 16,
+    "userTempId": 8,
+    "entityType": "place",
+    "entityTempId": 27,
+    "entityName": "Cascada San Miguel Tenango",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-07-16T04:18:00"
+  },
+  {
+    "tempId": 17,
+    "userTempId": 28,
+    "entityType": "place",
+    "entityTempId": 25,
+    "entityName": "Mirador Cerro San Miguel",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-06-29T21:20:00"
+  },
+  {
+    "tempId": 18,
+    "userTempId": 11,
+    "entityType": "place",
+    "entityTempId": 17,
+    "entityName": "Capilla San Miguel Necaxa",
+    "rating": 5,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-03-24T09:31:00"
+  },
+  {
+    "tempId": 19,
+    "userTempId": 57,
+    "entityType": "hotel",
+    "entityTempId": 5,
+    "entityName": "Cabañas Necaxa Adventure",
+    "rating": 3,
+    "comment": "Se disfruta, aunque en temporada alta hay mucha gente.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-01T04:55:00"
+  },
+  {
+    "tempId": 20,
+    "userTempId": 34,
+    "entityType": "place",
+    "entityTempId": 2,
+    "entityName": "Mirador Cruz de Ocotal",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-02-01T08:44:00"
+  },
+  {
+    "tempId": 21,
+    "userTempId": 4,
+    "entityType": "place",
+    "entityTempId": 24,
+    "entityName": "Mercado Municipal de Huauchinango",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-09T18:12:00"
+  },
+  {
+    "tempId": 22,
+    "userTempId": 25,
+    "entityType": "place",
+    "entityTempId": 29,
+    "entityName": "Posada Las Flores",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-01-30T15:48:00"
+  },
+  {
+    "tempId": 23,
+    "userTempId": 44,
+    "entityType": "place",
+    "entityTempId": 28,
+    "entityName": "Centro Cultural Huauchinango",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-12T16:23:00"
+  },
+  {
+    "tempId": 24,
+    "userTempId": 24,
+    "entityType": "place",
+    "entityTempId": 14,
+    "entityName": "Cascada de Necaxa",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-07-03T15:08:00"
+  },
+  {
+    "tempId": 25,
+    "userTempId": 14,
+    "entityType": "place",
+    "entityTempId": 8,
+    "entityName": "Museo Comunitario de Xicotepec",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-05T11:20:00"
+  },
+  {
+    "tempId": 26,
+    "userTempId": 37,
+    "entityType": "hotel",
+    "entityTempId": 2,
+    "entityName": "Hotel Boutique Sierra Norte",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-06-30T22:43:00"
+  },
+  {
+    "tempId": 27,
+    "userTempId": 59,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 2,
+    "comment": "El lugar está bien pero la atención fue lenta.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "local"
+    ],
+    "createdAt": "2026-02-03T05:59:00"
+  },
+  {
+    "tempId": 28,
+    "userTempId": 45,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-12T16:11:00"
+  },
+  {
+    "tempId": 29,
+    "userTempId": 13,
+    "entityType": "place",
+    "entityTempId": 4,
+    "entityName": "Poza Azul",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-02-08T06:19:00"
+  },
+  {
+    "tempId": 30,
+    "userTempId": 44,
+    "entityType": "place",
+    "entityTempId": 24,
+    "entityName": "Mercado Municipal de Huauchinango",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-20T15:49:00"
+  },
+  {
+    "tempId": 31,
+    "userTempId": 49,
+    "entityType": "place",
+    "entityTempId": 1,
+    "entityName": "Parroquia de San Juan Bautista",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "economico"
+    ],
+    "createdAt": "2026-05-23T15:11:00"
+  },
+  {
+    "tempId": 32,
+    "userTempId": 26,
+    "entityType": "hotel",
+    "entityTempId": 5,
+    "entityName": "Cabañas Necaxa Adventure",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "local",
+      "economico"
+    ],
+    "createdAt": "2026-04-10T01:03:00"
+  },
+  {
+    "tempId": 33,
+    "userTempId": 18,
+    "entityType": "place",
+    "entityTempId": 6,
+    "entityName": "Feria del Café y la Naranja",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-26T09:48:00"
+  },
+  {
+    "tempId": 34,
+    "userTempId": 44,
+    "entityType": "place",
+    "entityTempId": 1,
+    "entityName": "Parroquia de San Juan Bautista",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "local",
+      "vista"
+    ],
+    "createdAt": "2026-03-23T13:19:00"
+  },
+  {
+    "tempId": 35,
+    "userTempId": 17,
+    "entityType": "place",
+    "entityTempId": 7,
+    "entityName": "Cascada Salto del Águila",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-18T11:55:00"
+  },
+  {
+    "tempId": 36,
+    "userTempId": 23,
+    "entityType": "hotel",
+    "entityTempId": 5,
+    "entityName": "Cabañas Necaxa Adventure",
+    "rating": 5,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-04-21T07:55:00"
+  },
+  {
+    "tempId": 37,
+    "userTempId": 6,
+    "entityType": "place",
+    "entityTempId": 29,
+    "entityName": "Posada Las Flores",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-07-12T17:09:00"
+  },
+  {
+    "tempId": 38,
+    "userTempId": 59,
+    "entityType": "place",
+    "entityTempId": 5,
+    "entityName": "Restaurante La Troje",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-05T13:17:00"
+  },
+  {
+    "tempId": 39,
+    "userTempId": 54,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "local",
+      "aventura"
+    ],
+    "createdAt": "2026-03-15T05:16:00"
+  },
+  {
+    "tempId": 40,
+    "userTempId": 9,
+    "entityType": "place",
+    "entityTempId": 15,
+    "entityName": "Restaurante El Embarcadero",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-02-06T18:27:00"
+  },
+  {
+    "tempId": 41,
+    "userTempId": 36,
+    "entityType": "hotel",
+    "entityTempId": 6,
+    "entityName": "Hotel Puerta del Lago",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "vista"
+    ],
+    "createdAt": "2026-06-13T06:27:00"
+  },
+  {
+    "tempId": 42,
+    "userTempId": 21,
+    "entityType": "hotel",
+    "entityTempId": 7,
+    "entityName": "Hotel Las Flores Huauchinango",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "local"
+    ],
+    "createdAt": "2026-02-15T11:59:00"
+  },
+  {
+    "tempId": 43,
+    "userTempId": 38,
+    "entityType": "place",
+    "entityTempId": 3,
+    "entityName": "Mercado Municipal de Xicotepec",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "local",
+      "familiar"
+    ],
+    "createdAt": "2026-03-16T21:16:00"
+  },
+  {
+    "tempId": 44,
+    "userTempId": 14,
+    "entityType": "place",
+    "entityTempId": 5,
+    "entityName": "Restaurante La Troje",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-05-12T16:30:00"
+  },
+  {
+    "tempId": 45,
+    "userTempId": 35,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "familiar"
+    ],
+    "createdAt": "2026-05-31T10:21:00"
+  },
+  {
+    "tempId": 46,
+    "userTempId": 5,
+    "entityType": "place",
+    "entityTempId": 17,
+    "entityName": "Capilla San Miguel Necaxa",
+    "rating": 3,
+    "comment": "Estuvo bien, aunque esperaba un poco más por el precio.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-31T19:46:00"
+  },
+  {
+    "tempId": 47,
+    "userTempId": 4,
+    "entityType": "place",
+    "entityTempId": 19,
+    "entityName": "Posada Central Necaxa",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-11T08:54:00"
+  },
+  {
+    "tempId": 48,
+    "userTempId": 35,
+    "entityType": "hotel",
+    "entityTempId": 8,
+    "entityName": "Hotel Centro Huauchinango",
+    "rating": 3,
+    "comment": "Se disfruta, aunque en temporada alta hay mucha gente.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "economico"
+    ],
+    "createdAt": "2026-01-21T07:04:00"
+  },
+  {
+    "tempId": 49,
+    "userTempId": 31,
+    "entityType": "place",
+    "entityTempId": 2,
+    "entityName": "Mirador Cruz de Ocotal",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "local",
+      "economico"
+    ],
+    "createdAt": "2026-03-04T17:05:00"
+  },
+  {
+    "tempId": 50,
+    "userTempId": 44,
+    "entityType": "hotel",
+    "entityTempId": 5,
+    "entityName": "Cabañas Necaxa Adventure",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-03T04:23:00"
+  },
+  {
+    "tempId": 51,
+    "userTempId": 58,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-30T04:40:00"
+  },
+  {
+    "tempId": 52,
+    "userTempId": 16,
+    "entityType": "place",
+    "entityTempId": 14,
+    "entityName": "Cascada de Necaxa",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-06-15T16:52:00"
+  },
+  {
+    "tempId": 53,
+    "userTempId": 50,
+    "entityType": "place",
+    "entityTempId": 6,
+    "entityName": "Feria del Café y la Naranja",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-03-02T01:52:00"
+  },
+  {
+    "tempId": 54,
+    "userTempId": 16,
+    "entityType": "place",
+    "entityTempId": 26,
+    "entityName": "Restaurante Rincón Serrano",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-29T05:17:00"
+  },
+  {
+    "tempId": 55,
+    "userTempId": 26,
+    "entityType": "place",
+    "entityTempId": 24,
+    "entityName": "Mercado Municipal de Huauchinango",
+    "rating": 3,
+    "comment": "Se disfruta, aunque en temporada alta hay mucha gente.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "economico"
+    ],
+    "createdAt": "2026-07-01T08:54:00"
+  },
+  {
+    "tempId": 56,
+    "userTempId": 5,
+    "entityType": "place",
+    "entityTempId": 3,
+    "entityName": "Mercado Municipal de Xicotepec",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "local",
+      "aventura"
+    ],
+    "createdAt": "2026-06-12T17:49:00"
+  },
+  {
+    "tempId": 57,
+    "userTempId": 11,
+    "entityType": "place",
+    "entityTempId": 14,
+    "entityName": "Cascada de Necaxa",
+    "rating": 3,
+    "comment": "Estuvo bien, aunque esperaba un poco más por el precio.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-02-21T22:52:00"
+  },
+  {
+    "tempId": 58,
+    "userTempId": 47,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 2,
+    "comment": "No fue lo que esperaba, el servicio puede mejorar.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-03-22T10:28:00"
+  },
+  {
+    "tempId": 59,
+    "userTempId": 26,
+    "entityType": "place",
+    "entityTempId": 28,
+    "entityName": "Centro Cultural Huauchinango",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-07T01:58:00"
+  },
+  {
+    "tempId": 60,
+    "userTempId": 58,
+    "entityType": "place",
+    "entityTempId": 13,
+    "entityName": "Puente Colgante de Necaxa",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-04-07T17:22:00"
+  },
+  {
+    "tempId": 61,
+    "userTempId": 14,
+    "entityType": "place",
+    "entityTempId": 7,
+    "entityName": "Cascada Salto del Águila",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-01-20T03:35:00"
+  },
+  {
+    "tempId": 62,
+    "userTempId": 40,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 3,
+    "comment": "Se disfruta, aunque en temporada alta hay mucha gente.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-05-09T20:13:00"
+  },
+  {
+    "tempId": 63,
+    "userTempId": 51,
+    "entityType": "place",
+    "entityTempId": 11,
+    "entityName": "Presa Necaxa",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-26T06:16:00"
+  },
+  {
+    "tempId": 64,
+    "userTempId": 27,
+    "entityType": "place",
+    "entityTempId": 28,
+    "entityName": "Centro Cultural Huauchinango",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-06-02T21:09:00"
+  },
+  {
+    "tempId": 65,
+    "userTempId": 25,
+    "entityType": "place",
+    "entityTempId": 20,
+    "entityName": "Feria de la Presa",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-07-07T16:43:00"
+  },
+  {
+    "tempId": 66,
+    "userTempId": 46,
+    "entityType": "place",
+    "entityTempId": 20,
+    "entityName": "Feria de la Presa",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "familiar"
+    ],
+    "createdAt": "2026-04-11T07:29:00"
+  },
+  {
+    "tempId": 67,
+    "userTempId": 45,
+    "entityType": "place",
+    "entityTempId": 14,
+    "entityName": "Cascada de Necaxa",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "local"
+    ],
+    "createdAt": "2026-02-12T20:13:00"
+  },
+  {
+    "tempId": 68,
+    "userTempId": 19,
+    "entityType": "place",
+    "entityTempId": 17,
+    "entityName": "Capilla San Miguel Necaxa",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-30T03:36:00"
+  },
+  {
+    "tempId": 69,
+    "userTempId": 4,
+    "entityType": "place",
+    "entityTempId": 7,
+    "entityName": "Cascada Salto del Águila",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-03-03T07:34:00"
+  },
+  {
+    "tempId": 70,
+    "userTempId": 37,
+    "entityType": "hotel",
+    "entityTempId": 7,
+    "entityName": "Hotel Las Flores Huauchinango",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "aventura",
+      "familiar"
+    ],
+    "createdAt": "2026-03-01T04:18:00"
+  },
+  {
+    "tempId": 71,
+    "userTempId": 52,
+    "entityType": "place",
+    "entityTempId": 3,
+    "entityName": "Mercado Municipal de Xicotepec",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-06-06T08:26:00"
+  },
+  {
+    "tempId": 72,
+    "userTempId": 43,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 2,
+    "comment": "El lugar está bien pero la atención fue lenta.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-03-07T11:22:00"
+  },
+  {
+    "tempId": 73,
+    "userTempId": 23,
+    "entityType": "place",
+    "entityTempId": 24,
+    "entityName": "Mercado Municipal de Huauchinango",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "local"
+    ],
+    "createdAt": "2026-01-31T01:13:00"
+  },
+  {
+    "tempId": 74,
+    "userTempId": 22,
+    "entityType": "place",
+    "entityTempId": 2,
+    "entityName": "Mirador Cruz de Ocotal",
+    "rating": 1,
+    "comment": "No fue lo que esperaba, el servicio puede mejorar.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "economico"
+    ],
+    "createdAt": "2026-04-06T02:36:00"
+  },
+  {
+    "tempId": 75,
+    "userTempId": 7,
+    "entityType": "place",
+    "entityTempId": 21,
+    "entityName": "Parroquia de San Miguel Arcángel",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "familiar"
+    ],
+    "createdAt": "2026-05-23T10:14:00"
+  },
+  {
+    "tempId": 76,
+    "userTempId": 34,
+    "entityType": "place",
+    "entityTempId": 17,
+    "entityName": "Capilla San Miguel Necaxa",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-08T20:01:00"
+  },
+  {
+    "tempId": 77,
+    "userTempId": 55,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 3,
+    "comment": "Estuvo bien, aunque esperaba un poco más por el precio.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "local"
+    ],
+    "createdAt": "2026-02-10T10:31:00"
+  },
+  {
+    "tempId": 78,
+    "userTempId": 59,
+    "entityType": "place",
+    "entityTempId": 4,
+    "entityName": "Poza Azul",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-17T09:52:00"
+  },
+  {
+    "tempId": 79,
+    "userTempId": 46,
+    "entityType": "place",
+    "entityTempId": 27,
+    "entityName": "Cascada San Miguel Tenango",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "local",
+      "aventura"
+    ],
+    "createdAt": "2026-04-17T00:27:00"
+  },
+  {
+    "tempId": 80,
+    "userTempId": 56,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-18T20:28:00"
+  },
+  {
+    "tempId": 81,
+    "userTempId": 23,
+    "entityType": "hotel",
+    "entityTempId": 3,
+    "entityName": "Hostal Nogal",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-02-13T02:14:00"
+  },
+  {
+    "tempId": 82,
+    "userTempId": 40,
+    "entityType": "hotel",
+    "entityTempId": 8,
+    "entityName": "Hotel Centro Huauchinango",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-06-01T16:28:00"
+  },
+  {
+    "tempId": 83,
+    "userTempId": 45,
+    "entityType": "place",
+    "entityTempId": 13,
+    "entityName": "Puente Colgante de Necaxa",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "local"
+    ],
+    "createdAt": "2026-05-11T15:33:00"
+  },
+  {
+    "tempId": 84,
+    "userTempId": 10,
+    "entityType": "place",
+    "entityTempId": 15,
+    "entityName": "Restaurante El Embarcadero",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-01-27T18:25:00"
+  },
+  {
+    "tempId": 85,
+    "userTempId": 19,
+    "entityType": "place",
+    "entityTempId": 24,
+    "entityName": "Mercado Municipal de Huauchinango",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-24T13:29:00"
+  },
+  {
+    "tempId": 86,
+    "userTempId": 51,
+    "entityType": "place",
+    "entityTempId": 9,
+    "entityName": "Posada Rey Tepetzintla",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-27T04:07:00"
+  },
+  {
+    "tempId": 87,
+    "userTempId": 53,
+    "entityType": "place",
+    "entityTempId": 14,
+    "entityName": "Cascada de Necaxa",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "economico"
+    ],
+    "createdAt": "2026-04-16T19:19:00"
+  },
+  {
+    "tempId": 88,
+    "userTempId": 57,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "aventura"
+    ],
+    "createdAt": "2026-02-02T12:23:00"
+  },
+  {
+    "tempId": 89,
+    "userTempId": 10,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "aventura"
+    ],
+    "createdAt": "2026-02-25T05:29:00"
+  },
+  {
+    "tempId": 90,
+    "userTempId": 56,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-01T17:02:00"
+  },
+  {
+    "tempId": 91,
+    "userTempId": 46,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-05-08T19:46:00"
+  },
+  {
+    "tempId": 92,
+    "userTempId": 26,
+    "entityType": "place",
+    "entityTempId": 21,
+    "entityName": "Parroquia de San Miguel Arcángel",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-02-24T04:02:00"
+  },
+  {
+    "tempId": 93,
+    "userTempId": 47,
+    "entityType": "place",
+    "entityTempId": 18,
+    "entityName": "Área de Campamento Necaxa",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-05-24T11:01:00"
+  },
+  {
+    "tempId": 94,
+    "userTempId": 50,
+    "entityType": "hotel",
+    "entityTempId": 4,
+    "entityName": "Hotel Presa Necaxa",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-04-17T02:35:00"
+  },
+  {
+    "tempId": 95,
+    "userTempId": 41,
+    "entityType": "place",
+    "entityTempId": 25,
+    "entityName": "Mirador Cerro San Miguel",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-03-03T19:07:00"
+  },
+  {
+    "tempId": 96,
+    "userTempId": 41,
+    "entityType": "hotel",
+    "entityTempId": 7,
+    "entityName": "Hotel Las Flores Huauchinango",
+    "rating": 3,
+    "comment": "Estuvo bien, aunque esperaba un poco más por el precio.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-07-14T16:27:00"
+  },
+  {
+    "tempId": 97,
+    "userTempId": 7,
+    "entityType": "hotel",
+    "entityTempId": 5,
+    "entityName": "Cabañas Necaxa Adventure",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-03T10:56:00"
+  },
+  {
+    "tempId": 98,
+    "userTempId": 41,
+    "entityType": "hotel",
+    "entityTempId": 5,
+    "entityName": "Cabañas Necaxa Adventure",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-25T21:43:00"
+  },
+  {
+    "tempId": 99,
+    "userTempId": 51,
+    "entityType": "place",
+    "entityTempId": 7,
+    "entityName": "Cascada Salto del Águila",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-07T03:51:00"
+  },
+  {
+    "tempId": 100,
+    "userTempId": 10,
+    "entityType": "place",
+    "entityTempId": 28,
+    "entityName": "Centro Cultural Huauchinango",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-04-24T09:35:00"
+  },
+  {
+    "tempId": 101,
+    "userTempId": 26,
+    "entityType": "place",
+    "entityTempId": 22,
+    "entityName": "Laguna de Patoltecoya",
+    "rating": 5,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "aventura"
+    ],
+    "createdAt": "2026-03-17T06:09:00"
+  },
+  {
+    "tempId": 102,
+    "userTempId": 50,
+    "entityType": "place",
+    "entityTempId": 5,
+    "entityName": "Restaurante La Troje",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-07-19T11:07:00"
+  },
+  {
+    "tempId": 103,
+    "userTempId": 9,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "vista",
+      "familiar"
+    ],
+    "createdAt": "2026-06-21T10:01:00"
+  },
+  {
+    "tempId": 104,
+    "userTempId": 30,
+    "entityType": "place",
+    "entityTempId": 10,
+    "entityName": "Mirador Las Peñas",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "aventura",
+      "economico"
+    ],
+    "createdAt": "2026-04-28T17:36:00"
+  },
+  {
+    "tempId": 105,
+    "userTempId": 31,
+    "entityType": "hotel",
+    "entityTempId": 4,
+    "entityName": "Hotel Presa Necaxa",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-06-20T14:19:00"
+  },
+  {
+    "tempId": 106,
+    "userTempId": 13,
+    "entityType": "place",
+    "entityTempId": 12,
+    "entityName": "Casco Histórico de Necaxa",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-20T08:02:00"
+  },
+  {
+    "tempId": 107,
+    "userTempId": 55,
+    "entityType": "place",
+    "entityTempId": 3,
+    "entityName": "Mercado Municipal de Xicotepec",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-19T17:23:00"
+  },
+  {
+    "tempId": 108,
+    "userTempId": 19,
+    "entityType": "hotel",
+    "entityTempId": 9,
+    "entityName": "Cabañas Patoltecoya",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "aventura"
+    ],
+    "createdAt": "2026-06-02T15:35:00"
+  },
+  {
+    "tempId": 109,
+    "userTempId": 15,
+    "entityType": "place",
+    "entityTempId": 20,
+    "entityName": "Feria de la Presa",
+    "rating": 4,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-03-17T11:02:00"
+  },
+  {
+    "tempId": 110,
+    "userTempId": 25,
+    "entityType": "hotel",
+    "entityTempId": 6,
+    "entityName": "Hotel Puerta del Lago",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "economico"
+    ],
+    "createdAt": "2026-04-08T22:47:00"
+  },
+  {
+    "tempId": 111,
+    "userTempId": 12,
+    "entityType": "place",
+    "entityTempId": 25,
+    "entityName": "Mirador Cerro San Miguel",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "familiar"
+    ],
+    "createdAt": "2026-02-01T16:03:00"
+  },
+  {
+    "tempId": 112,
+    "userTempId": 4,
+    "entityType": "hotel",
+    "entityTempId": 1,
+    "entityName": "Hotel Real Xicotepec",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-04-03T04:05:00"
+  },
+  {
+    "tempId": 113,
+    "userTempId": 14,
+    "entityType": "place",
+    "entityTempId": 27,
+    "entityName": "Cascada San Miguel Tenango",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-14T07:52:00"
+  },
+  {
+    "tempId": 114,
+    "userTempId": 44,
+    "entityType": "place",
+    "entityTempId": 18,
+    "entityName": "Área de Campamento Necaxa",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-23T19:00:00"
+  },
+  {
+    "tempId": 115,
+    "userTempId": 17,
+    "entityType": "place",
+    "entityTempId": 10,
+    "entityName": "Mirador Las Peñas",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "vista"
+    ],
+    "createdAt": "2026-02-12T01:27:00"
+  },
+  {
+    "tempId": 116,
+    "userTempId": 10,
+    "entityType": "hotel",
+    "entityTempId": 1,
+    "entityName": "Hotel Real Xicotepec",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "local",
+      "vista"
+    ],
+    "createdAt": "2026-07-15T17:34:00"
+  },
+  {
+    "tempId": 117,
+    "userTempId": 16,
+    "entityType": "place",
+    "entityTempId": 6,
+    "entityName": "Feria del Café y la Naranja",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-07-10T06:34:00"
+  },
+  {
+    "tempId": 118,
+    "userTempId": 14,
+    "entityType": "place",
+    "entityTempId": 20,
+    "entityName": "Feria de la Presa",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-02-27T14:31:00"
+  },
+  {
+    "tempId": 119,
+    "userTempId": 46,
+    "entityType": "place",
+    "entityTempId": 5,
+    "entityName": "Restaurante La Troje",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-01-30T11:17:00"
+  },
+  {
+    "tempId": 120,
+    "userTempId": 33,
+    "entityType": "place",
+    "entityTempId": 8,
+    "entityName": "Museo Comunitario de Xicotepec",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-05-20T14:24:00"
+  },
+  {
+    "tempId": 121,
+    "userTempId": 11,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 5,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "vista"
+    ],
+    "createdAt": "2026-02-09T11:01:00"
+  },
+  {
+    "tempId": 122,
+    "userTempId": 38,
+    "entityType": "place",
+    "entityTempId": 20,
+    "entityName": "Feria de la Presa",
+    "rating": 5,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "vista"
+    ],
+    "createdAt": "2026-06-01T17:36:00"
+  },
+  {
+    "tempId": 123,
+    "userTempId": 50,
+    "entityType": "place",
+    "entityTempId": 8,
+    "entityName": "Museo Comunitario de Xicotepec",
+    "rating": 4,
+    "comment": "Muy buena atención y el lugar es hermoso, vale la pena visitarlo.",
+    "photos": [],
+    "tags": [
+      "aventura",
+      "vista"
+    ],
+    "createdAt": "2026-03-27T11:55:00"
+  },
+  {
+    "tempId": 124,
+    "userTempId": 10,
+    "entityType": "place",
+    "entityTempId": 10,
+    "entityName": "Mirador Las Peñas",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "economico",
+      "local"
+    ],
+    "createdAt": "2026-05-31T11:58:00"
+  },
+  {
+    "tempId": 125,
+    "userTempId": 57,
+    "entityType": "place",
+    "entityTempId": 30,
+    "entityName": "Balneario Agua Fría",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-05-22T22:50:00"
+  },
+  {
+    "tempId": 126,
+    "userTempId": 11,
+    "entityType": "place",
+    "entityTempId": 28,
+    "entityName": "Centro Cultural Huauchinango",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho, muy limpio y bien atendido.",
+    "photos": [],
+    "tags": [
+      "aventura"
+    ],
+    "createdAt": "2026-03-11T19:19:00"
+  },
+  {
+    "tempId": 127,
+    "userTempId": 56,
+    "entityType": "place",
+    "entityTempId": 25,
+    "entityName": "Mirador Cerro San Miguel",
+    "rating": 4,
+    "comment": "Superó mis expectativas, ideal para ir en familia.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "aventura"
+    ],
+    "createdAt": "2026-02-13T01:40:00"
+  },
+  {
+    "tempId": 128,
+    "userTempId": 54,
+    "entityType": "place",
+    "entityTempId": 16,
+    "entityName": "Mirador Presa Necaxa",
+    "rating": 5,
+    "comment": "El mejor lugar que he visitado en la región, altamente recomendado.",
+    "photos": [],
+    "tags": [
+      "familiar",
+      "vista"
+    ],
+    "createdAt": "2026-04-26T17:39:00"
+  },
+  {
+    "tempId": 129,
+    "userTempId": 23,
+    "entityType": "place",
+    "entityTempId": 29,
+    "entityName": "Posada Las Flores",
+    "rating": 3,
+    "comment": "Buen lugar pero el acceso es algo complicado.",
+    "photos": [],
+    "tags": [],
+    "createdAt": "2026-03-11T13:10:00"
+  },
+  {
+    "tempId": 130,
+    "userTempId": 22,
+    "entityType": "place",
+    "entityTempId": 7,
+    "entityName": "Cascada Salto del Águila",
+    "rating": 4,
+    "comment": "Una experiencia increíble, regresaría sin duda.",
+    "photos": [],
+    "tags": [
+      "local"
+    ],
+    "createdAt": "2026-05-04T06:46:00"
+  }
+]
