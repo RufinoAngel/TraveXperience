@@ -56,6 +56,15 @@ const User = sequelize.define(
       type: DataTypes.STRING(300),
       allowNull: true,
     },
+    profilePhoto: {
+      type: DataTypes.STRING(500),
+      allowNull: true,
+    },
+    photos: {
+      type: DataTypes.JSON,
+      allowNull: true,
+      defaultValue: [],
+    },
     // Preferencias de viaje usadas como input del modelo de clustering
     travelPreferences: {
       type: DataTypes.JSON,

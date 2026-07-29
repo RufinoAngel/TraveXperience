@@ -126,62 +126,22 @@ users = [generate_user(i) for i in range(1, 61)]
 # ---------------------------------------------------------------------------
 
 DESTINATIONS = {
-    "Cancún": {"cost_tier": "alto", "activities": [
-        "Snorkel en arrecife", "Tour a Isla Mujeres", "Visita a Xcaret",
-        "Zona hotelera y playa", "Cenote Dos Ojos",
+    "Huauchinango": {"cost_tier": "bajo", "activities": [
+        "Centro de Huauchinango y miradores", "Mercado de los Sábados",
+        "Parroquia de San Miguel Arcángel", "Mirador de la Peña",
+        "Ruta de pueblos y gastronomía de la Sierra Norte",
     ]},
-    "Tulum": {"cost_tier": "alto", "activities": [
-        "Zona arqueológica de Tulum", "Snorkel en cenote", "Playa Paraíso",
-        "Reserva de Sian Ka'an",
+    "Necaxa": {"cost_tier": "bajo", "activities": [
+        "Cascada de Necaxa", "Presa de Necaxa", "Puentes colgantes de Necaxa",
+        "Recorrido por la zona hidroeléctrica",
     ]},
-    "Los Cabos": {"cost_tier": "alto", "activities": [
-        "El Arco en lancha", "Buceo en Cabo Pulmo", "Playa El Médano",
-    ]},
-    "Ciudad de México": {"cost_tier": "medio", "activities": [
-        "Museo Nacional de Antropología", "Centro Histórico y Zócalo",
-        "Xochimilco en trajinera", "Teotihuacán", "Barrio de Coyoacán",
-    ]},
-    "Oaxaca": {"cost_tier": "medio", "activities": [
-        "Mercado de Benito Juárez", "Monte Albán", "Hierve el Agua",
-        "Mezcalería tradicional",
-    ]},
-    "Guadalajara": {"cost_tier": "medio", "activities": [
-        "Centro Histórico y Catedral", "Tlaquepaque artesanal", "Tequila (pueblo mágico)",
-    ]},
-    "Puerto Vallarta": {"cost_tier": "medio-alto", "activities": [
-        "Malecón y zona romántica", "Islas Marietas", "Playa Mismaloya",
-    ]},
-    "Mérida": {"cost_tier": "medio", "activities": [
-        "Paseo de Montejo", "Cenotes de Cuzamá", "Uxmal",
-    ]},
-    "San Miguel de Allende": {"cost_tier": "medio", "activities": [
-        "Parroquia de San Miguel", "Mercado de artesanías", "Mirador El Chorro",
-    ]},
-    "Guanajuato": {"cost_tier": "medio", "activities": [
-        "Callejón del Beso", "Museo de las Momias", "Funicular al Pípila",
-    ]},
-    "Veracruz": {"cost_tier": "bajo-medio", "activities": [
-        "Malecón y zona portuaria", "Acuario de Veracruz", "Isla de Sacrificios",
-    ]},
-    "Monterrey": {"cost_tier": "medio", "activities": [
-        "Parque Fundidora", "Cerro de la Silla", "Cola de Caballo",
-    ]},
-    "Puebla (Centro)": {"cost_tier": "bajo", "activities": [
-        "Centro Histórico y Zócalo", "Talavera en Barrio de los Artistas",
-        "Cholula y Gran Pirámide",
-    ]},
-    "Xalapa": {"cost_tier": "bajo", "activities": [
-        "Museo de Antropología de Xalapa", "Parque Los Berros", "Cascada de Texolo",
-    ]},
-    "Chiapas (San Cristóbal)": {"cost_tier": "medio", "activities": [
-        "Cañón del Sumidero", "Centro histórico de San Cristóbal", "San Juan Chamula",
-    ]},
-    "Papantla": {"cost_tier": "bajo", "activities": [
-        "El Tajín", "Voladores de Papantla", "Centro histórico",
+    "Xicotepec de Juárez": {"cost_tier": "bajo", "activities": [
+        "Xicotepec de Juárez y sus plazas tradicionales", "Museo Comunitario de Xicotepec",
+        "Mirador de Xicotepec", "Ruta de pueblos y gastronomía de la Sierra Norte",
     ]},
 }
 
-COST_MULTIPLIER = {"bajo": 550, "bajo-medio": 650, "medio": 800, "medio-alto": 1000, "alto": 1300}
+COST_MULTIPLIER = {"bajo": 550}
 
 STATUSES_WEIGHTED = (
     ["finalizado"] * 40 + ["confirmado"] * 30 + ["borrador"] * 15 +
@@ -214,7 +174,7 @@ def generate_itinerary(temp_id, owner):
         dest_info["activities"], k=min(num_activities, len(dest_info["activities"]))
     )
     itinerary_details = [
-        {"actividad": act, "dia": random.randint(1, duration)}
+        {"actividad": act, "dia": random.randint(1, duration), "municipio": dest_name}
         for act in chosen_activities
     ]
 
@@ -259,10 +219,13 @@ while len(itineraries) < 150:
     temp_id += 1
 itineraries = itineraries[:150]
 
-with open("/home/claude/seed-data/users.json", "w", encoding="utf-8") as f:
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(BASE_DIR, "users.json"), "w", encoding="utf-8") as f:
     json.dump(users, f, ensure_ascii=False, indent=2)
 
-with open("/home/claude/seed-data/itineraries.json", "w", encoding="utf-8") as f:
+with open(os.path.join(BASE_DIR, "itineraries.json"), "w", encoding="utf-8") as f:
     json.dump(itineraries, f, ensure_ascii=False, indent=2)
 
 print(f"Usuarios generados: {len(users)}")

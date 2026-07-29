@@ -16,6 +16,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const compression = require('compression');
+const path = require('path');
 
 const apiRoutes = require('./routes');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
@@ -40,6 +41,7 @@ app.use('/api/v1/payments/webhook', express.raw({ type: 'application/json' }));
 
 app.use(express.json({ limit: '2mb' })); // Parseo de JSON en el body
 app.use(express.urlencoded({ extended: true }));
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 // --- Logging HTTP ----------------------------------------------------------
 if (process.env.NODE_ENV === 'development') {

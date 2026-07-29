@@ -14,6 +14,7 @@ const ApiResponse = require('../utils/apiResponse');
 const aiService = require('../services/aiService');
 const { getIO } = require('../sockets');
 const logger = require('../utils/logger');
+const { getDefaultItineraryDetails, getRegionMunicipalities } = require('../utils/itineraryRegionHelper');
 
 /**
  * Verifica que el itinerario exista y pertenezca al usuario autenticado
@@ -83,6 +84,20 @@ const createItinerary = async (req, res, next) => {
     }
 
     let finalBudget = estimatedBudget;
+    let finalItineraryDetails = Array.isArray(itineraryDetails) && itineraryDetails.length > 0
+      ? itineraryDetails
+      : getDefaultItineraryDetails(destination);
+
+    if (destination) {
+      const regionMunicipalities = getRegionMunicipalities(destination);
+      if (regionMunicipalities.length > 0) {
+        finalItineraryDetails = finalItineraryDetails.map((item, index) => ({
+          ...item,
+          dia: item.dia || index + 1,
+          municipio: item.municipio || regionMunicipalities[index % regionMunicipalities.length],
+        }));
+      }
+    }
 
     if (finalBudget === undefined && aiService.isReady()) {
       try {
@@ -102,7 +117,7 @@ const createItinerary = async (req, res, next) => {
       destination,
       startDate,
       endDate,
-      itineraryDetails: itineraryDetails || [],
+      itineraryDetails: finalItineraryDetails,
       estimatedBudget: finalBudget ?? null,
       status: 'borrador',
     });
@@ -135,6 +150,13 @@ const updateItinerary = async (req, res, next) => {
         itinerary[field] = req.body[field];
       }
     });
+
+    if (req.body.destination && getRegionMunicipalities(req.body.destination).length > 0) {
+      const defaultDetails = getDefaultItineraryDetails(req.body.destination);
+      itinerary.itineraryDetails = Array.isArray(req.body.itineraryDetails) && req.body.itineraryDetails.length > 0
+        ? req.body.itineraryDetails
+        : defaultDetails;
+    }
 
     await itinerary.save();
 

@@ -17,6 +17,7 @@ const AppError = require('../utils/AppError');
 const ApiResponse = require('../utils/apiResponse');
 const tokenService = require('../services/tokenService');
 const logger = require('../utils/logger');
+const { toPublicUrl } = require('../utils/upload');
 
 const SALT_ROUNDS = Number(process.env.BCRYPT_SALT_ROUNDS) || 10;
 
@@ -33,6 +34,8 @@ const toPublicUser = (user) => ({
   location: user.location,
   bio: user.bio,
   travelPreferences: user.travelPreferences,
+  profilePhoto: user.profilePhoto,
+  photos: user.photos || [],
   createdAt: user.createdAt,
 });
 
@@ -203,6 +206,33 @@ const updateProfile = async (req, res, next) => {
         user[field] = req.body[field];
       }
     });
+
+    const profilePhotoFile = req.file || (req.files && req.files.profilePhoto && req.files.profilePhoto[0]);
+    if (profilePhotoFile) {
+      user.profilePhoto = toPublicUrl(profilePhotoFile.path);
+    }
+
+    const uploadedPhotos = req.files && req.files.photos ? req.files.photos.map((file) => toPublicUrl(file.path)) : [];
+    if (uploadedPhotos.length > 0) {
+      const currentPhotos = Array.isArray(user.photos) ? user.photos : [];
+      user.photos = [...currentPhotos, ...uploadedPhotos];
+    }
+
+    if (req.body.photos !== undefined) {
+      let parsedPhotos = req.body.photos;
+      if (typeof parsedPhotos === 'string') {
+        try {
+          parsedPhotos = JSON.parse(parsedPhotos);
+        } catch {
+          parsedPhotos = [parsedPhotos];
+        }
+      }
+      user.photos = Array.isArray(parsedPhotos) ? parsedPhotos : [];
+    }
+
+    if (req.body.profilePhotoUrl) {
+      user.profilePhoto = req.body.profilePhotoUrl;
+    }
 
     await user.save();
 

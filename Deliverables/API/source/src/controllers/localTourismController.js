@@ -26,7 +26,7 @@ const logger = require('../utils/logger');
  */
 const getNearbyPlaces = async (req, res, next) => {
   try {
-    const { lat, lng, radius, category, limit } = req.query;
+    const { lat, lng, radius, category, limit, destination } = req.query;
 
     if (lat === undefined || lng === undefined) {
       throw new AppError('Se requieren los parámetros "lat" y "lng".', 400);
@@ -34,7 +34,7 @@ const getNearbyPlaces = async (req, res, next) => {
 
     let places, maxDistance;
     try {
-      ({ places, maxDistance } = await geoService.findNearbyPlaces({ lat, lng, radius, category, limit }));
+      ({ places, maxDistance } = await geoService.findNearbyPlaces({ lat, lng, radius, category, limit, destination }));
     } catch (geoError) {
       throw new AppError(geoError.message, 400);
     }

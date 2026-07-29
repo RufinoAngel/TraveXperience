@@ -13,6 +13,7 @@ const router = express.Router();
 const authController = require('../controllers/authController');
 const { protect } = require('../middlewares/authMiddleware');
 const validateRequest = require('../middlewares/validateRequest');
+const { upload } = require('../utils/upload');
 
 router.post(
   '/register',
@@ -53,6 +54,10 @@ router.get('/me', protect, authController.getMe);
 router.put(
   '/profile',
   protect,
+  upload.fields([
+    { name: 'profilePhoto', maxCount: 1 },
+    { name: 'photos', maxCount: 10 },
+  ]),
   [
     body('fullName').optional().trim().notEmpty().withMessage('El nombre no puede quedar vacío.'),
     body('phone').optional({ nullable: true }).trim().isLength({ max: 20 }),
@@ -62,6 +67,9 @@ router.put(
   validateRequest,
   authController.updateProfile
 );
+
+router.post('/profile/photo', protect, upload.single('profilePhoto'), authController.updateProfile);
+router.post('/profile/photos', protect, upload.array('photos', 10), authController.updateProfile);
 
 router.put(
   '/preferences',

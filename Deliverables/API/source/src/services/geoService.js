@@ -9,6 +9,7 @@
  */
 
 const Place = require('../models/mongodb/Place');
+const { getRegionMunicipalities } = require('../utils/itineraryRegionHelper');
 
 const DEFAULT_RADIUS_METERS = 5000;
 const MAX_RADIUS_METERS = 50000;
@@ -17,7 +18,7 @@ const MAX_RADIUS_METERS = 50000;
  * Ejecuta una búsqueda $nearSphere sobre la colección Place.
  * @param {{lat:number, lng:number, radius?:number, category?:string, limit?:number}} params
  */
-const findNearbyPlaces = async ({ lat, lng, radius, category, limit }) => {
+const findNearbyPlaces = async ({ lat, lng, radius, category, limit, destination }) => {
   const latitude = Number(lat);
   const longitude = Number(lng);
   const maxDistance = Math.min(Number(radius) || DEFAULT_RADIUS_METERS, MAX_RADIUS_METERS);
@@ -38,6 +39,16 @@ const findNearbyPlaces = async ({ lat, lng, radius, category, limit }) => {
   };
 
   if (category) query.category = category;
+
+  const regionMunicipalities = getRegionMunicipalities(destination || '');
+  if (regionMunicipalities.length > 0) {
+    const municipalityRegex = regionMunicipalities.map((name) => new RegExp(name, 'i'));
+    query.$or = [
+      { municipality: { $in: regionMunicipalities } },
+      { address: { $in: municipalityRegex } },
+      { name: { $in: municipalityRegex } },
+    ];
+  }
 
   return { places: await Place.find(query).limit(resultLimit).lean(), maxDistance };
 };
