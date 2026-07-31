@@ -7,18 +7,23 @@ Esta carpeta contiene el Modelo Relacional de la base de datos. En él se repres
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases
-│   ├── NoSQL
+│   ├── ETL
+│   ├── NoSQL 
 │   │   ├── Backups
 │   │   ├── DD
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD
-│       └── RM ← Carpeta actual
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups 
+│   │   ├── DD 
+│   │   ├── ERD 
+│   │   └── RM ← Carpeta actual
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

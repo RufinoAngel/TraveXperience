@@ -9,18 +9,23 @@ Esta carpeta contiene el Diccionario de Datos de la base de datos NoSQL. Aquí s
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases
-│   ├── NoSQL
-│   │   ├── Backups
+│   ├── ETL
+│   ├── NoSQL 
+│   │   ├── Backups 
 │   │   ├── DD ← Carpeta actual
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD
-│       └── RM
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups
+│   │   ├── DD
+│   │   ├── ERD
+│   │   └── RM
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

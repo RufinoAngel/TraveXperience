@@ -8,19 +8,24 @@ Esta carpeta contiene los respaldos de la base de datos NoSQL. Su propósito es 
 ```
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
-├── DataBases
-│   ├── NoSQL
+├──DataBases
+│   ├── ETL
+│   ├── NoSQL 
 │   │   ├── Backups ← Carpeta actual
 │   │   ├── DD
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD
-│       └── RM
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups
+│   │   ├── DD
+│   │   ├── ERD
+│   │   └── RM
+│   │
+│   └── Warehouse
 │
-├── DataModels 
+├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

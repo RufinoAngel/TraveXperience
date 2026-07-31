@@ -8,18 +8,23 @@ Esta carpeta contiene los respaldos de la base de datos SQL utilizados para la r
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases
-│   ├── NoSQL
+│   ├── ETL
+│   ├── NoSQL 
 │   │   ├── Backups
 │   │   ├── DD
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups ← Carpeta actual
-│       ├── DD
-│       ├── ERD
-│       └── RM
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups ← Carpeta actual
+│   │   ├── DD
+│   │   ├── ERD
+│   │   └── RM
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

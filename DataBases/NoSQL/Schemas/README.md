@@ -8,18 +8,23 @@ Esta carpeta contiene los esquemas utilizados para definir la estructura y valid
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases
-│   ├── NoSQL
-│   │   ├── Backups
-│   │   ├── DD
+│   ├── ETL
+│   ├── NoSQL 
+│   │   ├── Backups 
+│   │   ├── DD 
 │   │   └── Schemas ← Carpeta actual
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD
-│       └── RM
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups
+│   │   ├── DD
+│   │   ├── ERD
+│   │   └── RM
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

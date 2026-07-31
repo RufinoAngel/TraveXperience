@@ -12,18 +12,23 @@ Esta carpeta contiene todos los recursos relacionados con el diseño, implementa
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases ← Carpeta actual
-│   ├── NoSQL
+│   ├── ETL
+│   ├── NoSQL 
 │   │   ├── Backups
 │   │   ├── DD
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD
-│       └── RM
+│   ├── Seeds
+│   ├── SQL 
+│   │   ├── Backups 
+│   │   ├── DD 
+│   │   ├── ERD 
+│   │   └── RM 
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

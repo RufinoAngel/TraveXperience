@@ -8,18 +8,23 @@ Esta carpeta contiene los Diagramas Entidad-Relación (ERD) del proyecto. Estos 
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases
-│   ├── NoSQL
+│   ├── ETL
+│   ├── NoSQL 
 │   │   ├── Backups
 │   │   ├── DD
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD ← Carpeta actual
-│       └── RM
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups 
+│   │   ├── DD 
+│   │   ├── ERD ← Carpeta actual
+│   │   └── RM
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md

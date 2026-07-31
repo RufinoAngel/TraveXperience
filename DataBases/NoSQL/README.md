@@ -7,18 +7,23 @@ Esta carpeta contiene toda la documentación y recursos relacionados con la base
 ECBD_9B_IDGS-PC-Hospital-RH-Karencios
 │
 ├──DataBases
+│   ├── ETL
 │   ├── NoSQL ← Carpeta actual
 │   │   ├── Backups
 │   │   ├── DD
 │   │   └── Schemas
 │   │
-│   └── SQL
-│       ├── Backups
-│       ├── DD
-│       ├── ERD
-│       └── RM
+│   ├── Seeds
+│   ├── SQL
+│   │   ├── Backups
+│   │   ├── DD
+│   │   ├── ERD
+│   │   └── RM
+│   │
+│   └── Warehouse
 │
 ├── DataModels
+├── Data
 ├── Deliverables
 ├── Docs
 └── README.md
