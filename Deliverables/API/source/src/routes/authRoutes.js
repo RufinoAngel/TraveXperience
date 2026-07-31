@@ -25,6 +25,8 @@ router.post(
       .withMessage('La contraseña debe tener al menos 8 caracteres.'),
     body('role').optional().isIn(['usuario', 'administrador']).withMessage('Rol inválido.'),
     body('companyName').optional().trim(),
+    body('phone').optional({ nullable: true }).trim().isLength({ max: 20 }),
+    body('location').optional({ nullable: true }).trim().isLength({ max: 150 }),
   ],
   validateRequest,
   authController.register
@@ -38,6 +40,13 @@ router.post(
   ],
   validateRequest,
   authController.login
+);
+
+router.post(
+  '/google',
+  [body('idToken').notEmpty().withMessage('Se requiere el idToken de Google.')],
+  validateRequest,
+  authController.googleAuth
 );
 
 router.post(

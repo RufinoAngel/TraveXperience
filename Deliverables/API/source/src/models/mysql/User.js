@@ -29,8 +29,17 @@ const User = sequelize.define(
       validate: { isEmail: true },
     },
     passwordHash: {
+      // Nulo para cuentas creadas exclusivamente vía "Continuar con Google"
+      // (no tienen contraseña propia hasta que la configuren manualmente).
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
+    },
+    // ID único de Google (campo "sub" del token verificado). Presente solo
+    // en cuentas vinculadas con Google Sign-In.
+    googleId: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      unique: true,
     },
     role: {
       type: DataTypes.ENUM('usuario', 'administrador'),

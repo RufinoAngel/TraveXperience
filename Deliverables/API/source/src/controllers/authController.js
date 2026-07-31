@@ -11,6 +11,7 @@
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const { Op } = require('sequelize');
+const { OAuth2Client } = require('google-auth-library');
 
 const User = require('../models/mysql/User');
 const AppError = require('../utils/AppError');
@@ -20,6 +21,9 @@ const logger = require('../utils/logger');
 const { toPublicUrl } = require('../utils/upload');
 
 const SALT_ROUNDS = Number(process.env.BCRYPT_SALT_ROUNDS) || 10;
+
+const { GOOGLE_CLIENT_ID } = process.env;
+const googleClient = GOOGLE_CLIENT_ID ? new OAuth2Client(GOOGLE_CLIENT_ID) : null;
 
 /**
  * Serializa el usuario para respuestas de la API, ocultando campos sensibles.
@@ -46,7 +50,7 @@ const toPublicUser = (user) => ({
  */
 const register = async (req, res, next) => {
   try {
-    const { fullName, email, password, role, companyName } = req.body;
+    const { fullName, email, password, role, companyName, phone, location } = req.body;
 
     const existing = await User.findOne({ where: { email } });
     if (existing) {
@@ -65,6 +69,10 @@ const register = async (req, res, next) => {
       passwordHash,
       role: role || 'usuario',
       companyName: role === 'administrador' ? companyName : null,
+      // Datos de perfil capturados desde el registro público (solo aplica a "usuario";
+      // las cuentas de administrador se dan de alta por otro medio, sin estos campos).
+      phone: role === 'administrador' ? null : phone || null,
+      location: role === 'administrador' ? null : location || null,
     });
 
     const { accessToken, refreshToken, refreshTokenHash } = tokenService.issueTokenPair(user);
@@ -98,6 +106,14 @@ const login = async (req, res, next) => {
       throw new AppError('Credenciales inválidas.', 401);
     }
 
+    if (!user.passwordHash) {
+      // Cuenta creada vía Google Sign-In: no tiene contraseña propia todavía.
+      throw new AppError(
+        'Esta cuenta usa "Continuar con Google". Inicia sesión con Google o configura una contraseña desde tu perfil.',
+        401
+      );
+    }
+
     const passwordMatches = await bcrypt.compare(password, user.passwordHash);
     if (!passwordMatches) {
       throw new AppError('Credenciales inválidas.', 401);
@@ -108,6 +124,90 @@ const login = async (req, res, next) => {
     await user.save();
 
     return ApiResponse.success(res, 200, 'Inicio de sesión exitoso.', {
+      user: toPublicUser(user),
+      accessToken,
+      refreshToken,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+/**
+ * POST /auth/google
+ * Login/registro con "Continuar con Google". Recibe el idToken emitido
+ * por el botón de Google Identity Services en el frontend, lo verifica
+ * contra GOOGLE_CLIENT_ID y crea o vincula la cuenta correspondiente.
+ * Si el backend no tiene GOOGLE_CLIENT_ID configurado, responde 503 en
+ * vez de fingir que la autenticación funcionó.
+ */
+const googleAuth = async (req, res, next) => {
+  try {
+    if (!googleClient) {
+      throw new AppError(
+        'El inicio de sesión con Google no está configurado en el servidor (falta GOOGLE_CLIENT_ID).',
+        503
+      );
+    }
+
+    const { idToken } = req.body;
+    if (!idToken) {
+      throw new AppError('Se requiere el idToken de Google.', 400);
+    }
+
+    let payload;
+    try {
+      const ticket = await googleClient.verifyIdToken({
+        idToken,
+        audience: GOOGLE_CLIENT_ID,
+      });
+      payload = ticket.getPayload();
+    } catch {
+      throw new AppError('El token de Google es inválido o expiró.', 401);
+    }
+
+    if (!payload || !payload.email) {
+      throw new AppError('No se pudo obtener el correo desde la cuenta de Google.', 401);
+    }
+
+    if (payload.email_verified === false) {
+      throw new AppError('Tu correo de Google no está verificado.', 401);
+    }
+
+    let user = await User.findOne({ where: { googleId: payload.sub } });
+
+    if (!user) {
+      user = await User.findOne({ where: { email: payload.email } });
+    }
+
+    if (user) {
+      if (!user.isActive) {
+        throw new AppError('Esta cuenta está desactivada.', 401);
+      }
+      // Vincula el googleId si el usuario ya existía por registro tradicional.
+      if (!user.googleId) {
+        user.googleId = payload.sub;
+      }
+      if (!user.profilePhoto && payload.picture) {
+        user.profilePhoto = payload.picture;
+      }
+    } else {
+      user = await User.create({
+        fullName: payload.name || payload.email.split('@')[0],
+        email: payload.email,
+        passwordHash: null,
+        role: 'usuario',
+        googleId: payload.sub,
+        profilePhoto: payload.picture || null,
+      });
+      logger.info(`Nuevo usuario registrado vía Google: ${user.email}`);
+    }
+
+    const { accessToken, refreshToken, refreshTokenHash } = tokenService.issueTokenPair(user);
+    user.refreshTokenHash = refreshTokenHash;
+    await user.save();
+
+    return ApiResponse.success(res, 200, 'Inicio de sesión con Google exitoso.', {
       user: toPublicUser(user),
       accessToken,
       refreshToken,
@@ -358,6 +458,7 @@ const resetPassword = async (req, res, next) => {
 module.exports = {
   register,
   login,
+  googleAuth,
   refreshToken,
   logout,
   getMe,
