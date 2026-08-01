@@ -71,6 +71,15 @@ const placeSchema = new Schema(
     photoReference: {
       type: String,
     },
+    // true cuando `location` ya fue contrastada contra un match real de
+    // Google Places (ver scripts/seedPlaces.js -> refineLocationsWithGoogle).
+    // Evita volver a gastar cuota / arriesgar un mal match en corridas
+    // posteriores del script, y permite que un admin marque manualmente
+    // como verificada una coordenada corregida a mano.
+    locationVerified: {
+      type: Boolean,
+      default: false,
+    },
     tags: [{ type: String }], // ej. ["familiar", "vista", "económico"]
     priceLevel: {
       type: Number,

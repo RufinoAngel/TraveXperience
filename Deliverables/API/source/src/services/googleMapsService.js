@@ -174,31 +174,61 @@ const fetchPlacePhoto = async (photoReference, maxWidth = 800) => {
 };
 
 /**
- * Construye la URL pública (a través de nuestro propio proxy) para una
- * foto ya localizada con findPlacePhotoReference. `apiBaseUrl` debe ser la
- * URL base de la API (ej. "http://localhost:4000/api/v1" o el dominio real
- * en producción), SIN slash final.
+ * Construye la URL pública para cualquier tipo de imagen soportado:
+ * - rutas locales del backend (ej. /uploads/profiles/avatar.jpeg)
+ * - URLs externas absolutas (http:// o https://)
+ * - referencias de Google Places (photo_reference)
+ *
+ * `apiBaseUrl` puede llegar como la raíz pública del backend
+ * (ej. "http://localhost:4000") o como la base de la API
+ * (ej. "http://localhost:4000/api/v1"). La función normaliza ambos casos
+ * para evitar que una imagen local termine siendo servida bajo /api/v1.
  */
-const buildPhotoProxyUrl = (apiBaseUrl, photoReference) =>
-  `${apiBaseUrl}/maps/photo?ref=${encodeURIComponent(photoReference)}`;
+const buildPhotoProxyUrl = (apiBaseUrl, photoReference) => {
+  if (!photoReference) return null;
+
+  const normalizedBaseUrl = String(apiBaseUrl || '').replace(/\/+$/, '');
+  const publicBaseUrl = normalizedBaseUrl.endsWith('/api/v1')
+    ? normalizedBaseUrl.replace(/\/api\/v1$/, '')
+    : normalizedBaseUrl;
+  const apiBaseUrlWithVersion = normalizedBaseUrl.endsWith('/api/v1')
+    ? normalizedBaseUrl
+    : `${normalizedBaseUrl}/api/v1`;
+
+  // Si es una imagen local, servirla directamente desde la raíz del backend.
+  if (photoReference.startsWith('/uploads')) {
+    return `${publicBaseUrl}${photoReference}`;
+  }
+
+  // Si es una URL completa, usarla tal cual.
+  if (
+    photoReference.startsWith('http://') ||
+    photoReference.startsWith('https://')
+  ) {
+    return photoReference;
+  }
+
+  // Si es una referencia de Google Places, usar el proxy interno.
+  return `${apiBaseUrlWithVersion}/maps/photo?ref=${encodeURIComponent(photoReference)}`;
+};
 
 /**
- * Genera una imagen de respaldo local en formato data URL para que el
- * frontend siempre tenga una imagen visible sin depender de servicios
- * externos como Unsplash o Google Places.
+ * Genera una imagen de respaldo para que el frontend siempre tenga algo
+ * visible cuando Google Places no tiene foto de un lugar.
+ *
+ * OJO: antes esto devolvía un data URI de SVG
+ * (data:image/svg+xml;charset=UTF-8,...). Se veía bien en el navegador
+ * (el <img> del front web decodifica SVG sin problema), pero el
+ * componente <Image> de React Native NO soporta SVG — sus decodificadores
+ * nativos (iOS/Android) solo entienden formatos raster (PNG/JPEG/GIF/WebP),
+ * así que en la app móvil esas imágenes simplemente no cargaban
+ * ("unknown image format"). Por eso ahora se genera un PNG real.
  */
 const buildFallbackImageUrl = (query, width = 1200, height = 800) => {
   const safeQuery = String(query || 'turismo puebla').trim() || 'turismo puebla';
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
-      <rect width="100%" height="100%" fill="#1f6f4a"/>
-      <rect x="24" y="24" width="${width - 48}" height="${height - 48}" rx="24" fill="#2b8a5b"/>
-      <circle cx="${width * 0.35}" cy="${height * 0.38}" r="90" fill="#f0c96b"/>
-      <path d="M220 620c60-120 180-180 300-180s240 60 300 180" fill="#f7f3e8"/>
-      <text x="50%" y="78%" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="white">${safeQuery}</text>
-    </svg>`;
-
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+  const params = new URLSearchParams({ text: safeQuery });
+  // Mismos colores del diseño anterior (verde de fondo, texto claro).
+  return `https://placehold.co/${width}x${height}/1f6f4a/f7f3e8.png?${params.toString()}`;
 };
 
 module.exports = {

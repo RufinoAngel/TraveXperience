@@ -39,6 +39,7 @@ const toPublicUser = (user) => ({
   bio: user.bio,
   travelPreferences: user.travelPreferences,
   profilePhoto: user.profilePhoto,
+  avatar: user.avatar,
   photos: user.photos || [],
   createdAt: user.createdAt,
 });
@@ -343,6 +344,33 @@ const updateProfile = async (req, res, next) => {
 };
 
 /**
+ * PUT /auth/profile/avatar
+ * Actualiza específicamente la foto de perfil ("avatar") del usuario.
+ * Recibe la imagen como multipart/form-data en el campo "avatar", la
+ * guarda con el mismo mecanismo de almacenamiento que ya usa el resto
+ * de fotos del perfil, y persiste la referencia en la columna `avatar`.
+ * Responde con el usuario completo (mismo formato que /auth/profile)
+ * para que la app pueda refrescar la pantalla de inmediato.
+ */
+const updateAvatar = async (req, res, next) => {
+  try {
+    if (!req.file) {
+      throw new AppError('Se requiere un archivo de imagen en el campo "avatar".', 400);
+    }
+
+    const user = await User.findByPk(req.user.id);
+    if (!user) throw new AppError('Usuario no encontrado.', 404);
+
+    user.avatar = toPublicUrl(req.file.path);
+    await user.save();
+
+    return ApiResponse.success(res, 200, 'Foto de perfil actualizada.', { user: toPublicUser(user) });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+/**
  * PUT /auth/preferences
  * Actualiza las preferencias de viaje, que alimentan directamente al
  * modelo de clustering (Machine Learning) para personalizar recomendaciones.
@@ -463,8 +491,10 @@ module.exports = {
   logout,
   getMe,
   updateProfile,
+  updateAvatar,
   updatePreferences,
   changePassword,
   forgotPassword,
   resetPassword,
+  toPublicUser,
 };

@@ -80,6 +80,9 @@ router.put(
 router.post('/profile/photo', protect, upload.single('profilePhoto'), authController.updateProfile);
 router.post('/profile/photos', protect, upload.array('photos', 10), authController.updateProfile);
 
+// Foto de perfil ("avatar"): multipart/form-data, campo "avatar".
+router.put('/profile/avatar', protect, upload.single('avatar'), authController.updateAvatar);
+
 router.put(
   '/preferences',
   protect,

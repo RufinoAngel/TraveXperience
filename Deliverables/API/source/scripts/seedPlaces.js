@@ -47,7 +47,7 @@ const logger = require('../src/utils/logger');
 // Base pública de la API para armar las URLs del proxy de fotos
 // (GET /maps/photo?ref=...). Ajusta API_PUBLIC_URL en .env si tu servidor
 // corre en otro puerto/dominio; por defecto asume desarrollo local.
-const API_PUBLIC_URL = process.env.API_PUBLIC_URL || 'http://localhost:4000/api/v1';
+const API_PUBLIC_URL = process.env.API_PUBLIC_URL || 'http://192.168.90.11:4000/api/v1';
 
 const sleep = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
 
@@ -970,7 +970,7 @@ const findRealCoordinates = async (query) => {
     '&fields=geometry,name,formatted_address' +
     `&key=${apiKey}`;
 
-  const response = await fetch(url);
+  const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
   const data = await response.json();
 
   if (data.status === 'OK' && data.candidates && data.candidates.length > 0) {
@@ -986,31 +986,75 @@ const findRealCoordinates = async (query) => {
   return null; // Sin match real en Google (lugar inventado/genérico o nombre poco específico)
 };
 
+// Radio máximo (km) que aceptamos entre la coordenada aproximada que
+// pusimos a mano en `samplePlaces` y el match que devuelve Google. Nombres
+// genéricos ("Parque Juárez", "Zona de Pesca"...) existen en muchos pueblos
+// de México; si Google matchea uno lejano, es casi seguro que es el lugar
+// equivocado y NO queremos que eso mueva silenciosamente el punto fuera de
+// la Sierra Norte (rompería las búsquedas $near de "Cerca de mí").
+const MAX_MATCH_DISTANCE_KM = 15;
+
+const haversineKm = ([lng1, lat1], [lng2, lat2]) => {
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const R = 6371;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+};
+
 /**
- * Recorre todos los lugares del catálogo (samplePlaces) y, cuando Google
- * encuentra un match real para "nombre + dirección/municipio", sobreescribe
- * la coordenada estimada por la coordenada real. Si no hay match, deja la
- * coordenada aproximada tal cual y lo reporta en el log, para que sepas
- * cuáles todavía no están verificadas.
+ * Recorre los lugares del catálogo (samplePlaces) que TODAVÍA no tengan
+ * `locationVerified: true` y, cuando Google encuentra un match real para
+ * "nombre + dirección/municipio", sobreescribe la coordenada estimada por
+ * la coordenada real — pero solo si el match cae dentro de
+ * MAX_MATCH_DISTANCE_KM de la coordenada aproximada original; si Google
+ * matchea algo demasiado lejos, se descarta y se reporta para revisión
+ * manual en vez de aplicarse a ciegas.
  *
- * No borra ni inserta lugares — solo actualiza `location` de los que ya
- * existen en la base, así que es seguro volver a correrlo cuantas veces
- * quieras (aunque consume cuota de la API de Google en cada corrida).
+ * Es idempotente: una vez que un lugar queda `locationVerified: true` (con
+ * match aceptado) ya no se vuelve a consultar en corridas futuras, así no
+ * se gasta cuota de más ni se arriesga a pisar una corrección manual hecha
+ * directo en la base (para forzar una nueva verificación, hay que resetear
+ * `locationVerified` a false a mano).
  */
 const refineLocationsWithGoogle = async () => {
   let updated = 0;
   const unmatched = [];
+  const rejectedByDistance = [];
+  let skippedAlreadyVerified = 0;
 
   for (const place of samplePlaces) {
+    const existing = await Place.findOne(
+      { name: place.name, municipality: place.municipality },
+      { locationVerified: 1 }
+    );
+    if (existing?.locationVerified) {
+      skippedAlreadyVerified += 1;
+      continue;
+    }
+
     const query = `${place.name}, ${place.address || place.municipality + ', Puebla'}`;
     try {
       const match = await findRealCoordinates(query);
       if (match) {
-        await Place.updateOne(
-          { name: place.name, municipality: place.municipality },
-          { location: { type: 'Point', coordinates: [match.lng, match.lat] } }
-        );
-        updated += 1;
+        const distanceKm = haversineKm(place.location.coordinates, [match.lng, match.lat]);
+        if (distanceKm > MAX_MATCH_DISTANCE_KM) {
+          rejectedByDistance.push(
+            `${place.name} (${place.municipality}) — match a ${distanceKm.toFixed(1)} km: "${match.matchedName}", ${match.matchedAddress}`
+          );
+        } else {
+          await Place.updateOne(
+            { name: place.name, municipality: place.municipality },
+            {
+              location: { type: 'Point', coordinates: [match.lng, match.lat] },
+              locationVerified: true,
+            }
+          );
+          updated += 1;
+        }
       } else {
         unmatched.push(`${place.name} (${place.municipality})`);
       }
@@ -1021,7 +1065,14 @@ const refineLocationsWithGoogle = async () => {
     await sleep(200); // respetar límites de la API
   }
 
-  logger.info(`📍 ${updated}/${samplePlaces.length} coordenadas actualizadas con datos reales de Google Places.`);
+  logger.info(
+    `📍 ${updated} coordenadas actualizadas con datos reales de Google Places, ${skippedAlreadyVerified} ya estaban verificadas y no se tocaron.`
+  );
+  if (rejectedByDistance.length > 0) {
+    logger.warn(
+      `⚠️  ${rejectedByDistance.length} matches de Google descartados por estar a más de ${MAX_MATCH_DISTANCE_KM} km (probable lugar equivocado, se dejó la coordenada aproximada):\n   - ${rejectedByDistance.join('\n   - ')}`
+    );
+  }
   if (unmatched.length > 0) {
     logger.info(
       `ℹ️  ${unmatched.length} lugares sin match real en Google (probablemente nombres genéricos o poco específicos), se dejó la coordenada aproximada:\n   - ${unmatched.join('\n   - ')}`

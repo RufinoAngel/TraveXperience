@@ -18,6 +18,8 @@ require('./TransportRoute');
 require('./TransportFareClass');
 require('./SavedCard');
 require('./Transaction');
+require('./WearablePairingCode');
+require('./WearableDevice');
 
 // Si en el futuro agregas más modelos MySQL,
 // simplemente impórtalos aquí.

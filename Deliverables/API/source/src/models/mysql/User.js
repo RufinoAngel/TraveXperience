@@ -69,6 +69,14 @@ const User = sequelize.define(
       type: DataTypes.STRING(500),
       allowNull: true,
     },
+    // Foto de perfil ("avatar") gestionada desde PUT /auth/profile/avatar.
+    // Se guarda como URL/ruta pública (o referencia) al archivo ya
+    // almacenado por el mismo mecanismo que usa profilePhoto; la app
+    // sabe convertir cualquiera de las dos formas en una imagen visible.
+    avatar: {
+      type: DataTypes.STRING(500),
+      allowNull: true,
+    },
     photos: {
       type: DataTypes.JSON,
       allowNull: true,

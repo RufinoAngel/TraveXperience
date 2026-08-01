@@ -17,11 +17,28 @@
  * -----------------------------------------------------------------------
  */
 
+const crypto = require('crypto');
+const { Op } = require('sequelize');
+
 const Itinerary = require('../models/mysql/Itinerary');
+const User = require('../models/mysql/User');
+const WearablePairingCode = require('../models/mysql/WearablePairingCode');
+const WearableDevice = require('../models/mysql/WearableDevice');
 const ActivityLog = require('../models/mongodb/ActivityLog');
 const geoService = require('../services/geoService');
+const tokenService = require('../services/tokenService');
+const { toPublicUser } = require('./authController');
+const { getIO } = require('../sockets');
 const AppError = require('../utils/AppError');
 const ApiResponse = require('../utils/apiResponse');
+const logger = require('../utils/logger');
+
+// Vinculación por código (celular pide código -> reloj lo canjea):
+// vive muy poco tiempo y es de un solo uso.
+const PAIRING_CODE_TTL_MS = 5 * 60 * 1000; // 5 minutos
+const PAIRING_CODE_MAX_ATTEMPTS = 5;
+
+const generateRandomCode = () => String(crypto.randomInt(0, 1000000)).padStart(6, '0');
 
 // Radio reducido por defecto: en el reloj interesan solo lugares
 // realmente cercanos y accesibles a pie durante el recorrido.
@@ -214,4 +231,222 @@ const getActiveItinerary = async (req, res, next) => {
   }
 };
 
-module.exports = { getNearbyLight, syncLocation, getAlerts, getActiveItinerary };
+/**
+ * POST /wearable/pair/generate-code
+ * Se llama desde el CELULAR con su token de sesión normal. Genera un
+ * código corto (6 dígitos, difícil de adivinar porque usa crypto.randomInt)
+ * y lo guarda asociado al usuario con vencimiento corto (5 minutos). Si el
+ * usuario ya tenía un código vigente, lo invalida primero para que nunca
+ * haya más de uno activo al mismo tiempo.
+ */
+const generatePairingCode = async (req, res, next) => {
+  try {
+    const now = new Date();
+
+    // Invalida cualquier código previo del usuario que siga vigente.
+    await WearablePairingCode.update(
+      { usedAt: now },
+      {
+        where: {
+          userId: req.user.id,
+          usedAt: null,
+          expiresAt: { [Op.gt]: now },
+        },
+      }
+    );
+
+    let code;
+    for (let attempt = 0; attempt < PAIRING_CODE_MAX_ATTEMPTS; attempt += 1) {
+      const candidate = generateRandomCode();
+      // eslint-disable-next-line no-await-in-loop
+      const clash = await WearablePairingCode.findOne({
+        where: { code: candidate, usedAt: null, expiresAt: { [Op.gt]: now } },
+      });
+      if (!clash) {
+        code = candidate;
+        break;
+      }
+    }
+
+    if (!code) {
+      throw new AppError('No se pudo generar un código de vinculación. Intenta de nuevo.', 500);
+    }
+
+    const expiresAt = new Date(Date.now() + PAIRING_CODE_TTL_MS);
+
+    await WearablePairingCode.create({
+      userId: req.user.id,
+      code,
+      expiresAt,
+    });
+
+    return ApiResponse.success(res, 201, 'Código de vinculación generado.', { code, expiresAt });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+/**
+ * POST /wearable/pair/redeem
+ * Se llama desde el RELOJ, sin token previo (para eso sirve). Recibe el
+ * código que el usuario transcribió y, opcionalmente, el nombre del
+ * dispositivo. Si el código es válido y no ha expirado, identifica al
+ * usuario dueño, emite un par de credenciales exactamente igual que en
+ * el login normal, invalida el código (un solo uso) y registra el
+ * dispositivo vinculado. Además avisa al celular en tiempo real por
+ * socket para que no tenga que hacer polling.
+ */
+const redeemPairingCode = async (req, res, next) => {
+  try {
+    const { code, deviceName } = req.body;
+
+    const pairing = await WearablePairingCode.findOne({
+      where: { code, usedAt: null, expiresAt: { [Op.gt]: new Date() } },
+      order: [['createdAt', 'DESC']],
+    });
+
+    if (!pairing) {
+      throw new AppError('El código es inválido o ya expiró. Genera uno nuevo desde el celular.', 400);
+    }
+
+    const user = await User.findByPk(pairing.userId);
+    if (!user || !user.isActive) {
+      throw new AppError('La cuenta asociada a este código ya no está disponible.', 401);
+    }
+
+    const finalDeviceName = (deviceName && String(deviceName).trim()) || 'Wear OS';
+
+    // Mismas credenciales que emite el login normal.
+    const { accessToken, refreshToken, refreshTokenHash } = tokenService.issueTokenPair(user);
+    user.refreshTokenHash = refreshTokenHash;
+    await user.save();
+
+    pairing.usedAt = new Date();
+    pairing.deviceName = finalDeviceName;
+    await pairing.save();
+
+    const device = await WearableDevice.create({
+      userId: user.id,
+      deviceName: finalDeviceName,
+      lastSeenAt: new Date(),
+    });
+
+    // Notifica al celular en tiempo real que el reloj ya quedó vinculado
+    // (si el socket no está conectado en ese momento, no pasa nada: el
+    // celular puede seguir usando el endpoint de estado como respaldo).
+    try {
+      getIO()
+        .to(`user:${user.id}`)
+        .emit('wearable:paired', {
+          deviceId: device.id,
+          deviceName: device.deviceName,
+          pairedAt: device.createdAt,
+        });
+    } catch (socketError) {
+      logger.warn(`No se pudo emitir wearable:paired: ${socketError.message}`);
+    }
+
+    return ApiResponse.success(res, 200, 'Reloj vinculado exitosamente.', {
+      user: toPublicUser(user),
+      accessToken,
+      refreshToken,
+      device: { id: device.id, deviceName: device.deviceName },
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+/**
+ * GET /wearable/pair/status/:code
+ * Respaldo por polling (sin sockets): el CELULAR pregunta, con su token,
+ * si un código que generó ya fue canjeado por el reloj y con qué nombre
+ * de dispositivo.
+ */
+const getPairingStatus = async (req, res, next) => {
+  try {
+    const { code } = req.params;
+
+    const pairing = await WearablePairingCode.findOne({
+      where: { code, userId: req.user.id },
+      order: [['createdAt', 'DESC']],
+    });
+
+    if (!pairing) {
+      throw new AppError('No se encontró ese código de vinculación.', 404);
+    }
+
+    const paired = Boolean(pairing.usedAt);
+
+    return ApiResponse.success(res, 200, paired ? 'El reloj ya quedó vinculado.' : 'Aún esperando al reloj.', {
+      paired,
+      deviceName: pairing.deviceName,
+      expired: !paired && pairing.expiresAt < new Date(),
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+/**
+ * GET /wearable/devices
+ * Lista los relojes ya vinculados a la cuenta del usuario autenticado
+ * (pantalla "Dispositivos vinculados").
+ */
+const listDevices = async (req, res, next) => {
+  try {
+    const devices = await WearableDevice.findAll({
+      where: { userId: req.user.id },
+      order: [['createdAt', 'DESC']],
+    });
+
+    return ApiResponse.success(res, 200, 'Dispositivos vinculados obtenidos.', {
+      devices: devices.map((device) => ({
+        id: device.id,
+        deviceName: device.deviceName,
+        pairedAt: device.createdAt,
+        lastSeenAt: device.lastSeenAt,
+      })),
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+/**
+ * DELETE /wearable/devices/:id
+ * Desvincula un reloj de la cuenta del usuario (botón "Desvincular
+ * dispositivo"). Solo borra el registro de vinculación: dado que hoy el
+ * reloj comparte el mismo refreshToken de la cuenta (no uno por
+ * dispositivo), esto no revoca su sesión por sí solo; si se necesita
+ * revocar acceso real habría que migrar a tokens por dispositivo.
+ */
+const unlinkDevice = async (req, res, next) => {
+  try {
+    const device = await WearableDevice.findOne({
+      where: { id: req.params.id, userId: req.user.id },
+    });
+
+    if (!device) {
+      throw new AppError('Dispositivo no encontrado.', 404);
+    }
+
+    await device.destroy();
+
+    return ApiResponse.success(res, 200, 'Dispositivo desvinculado correctamente.');
+  } catch (error) {
+    return next(error);
+  }
+};
+
+module.exports = {
+  getNearbyLight,
+  syncLocation,
+  getAlerts,
+  getActiveItinerary,
+  generatePairingCode,
+  redeemPairingCode,
+  getPairingStatus,
+  listDevices,
+  unlinkDevice,
+};
