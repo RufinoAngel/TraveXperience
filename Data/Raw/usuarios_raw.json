@@ -1,0 +1,1720 @@
+[
+  {
+    "tempId": 46,
+    "fullName": "Paola Nayeli Vázquez Morales",
+    "email": "paola.nayeli.vázquez.morales46@gmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {},
+    "isSynthetic": false
+  },
+  {
+    "tempId": 65,
+    "fullName": "José Luis Xolo Cruz",
+    "email": "josé.luis.xolo.cruz65@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 11461.26,
+      "age": 26,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 25,
+    "fullName": "Fernanda Guadalupe Aquino Salas",
+    "email": "fernanda.guadalupe.aquino.salas25@hotmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 2088.15,
+      "age": 47,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 36,
+    "fullName": "Paola Nayeli Martínez Ruiz",
+    "email": "paola.nayeli.martínez.ruiz36@gmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 15753.26,
+      "age": 20,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 61,
+    "fullName": "Jorge Alberto Negrete Silva",
+    "email": "jorge.alberto.negrete.silva61@outlook.com",
+    "role": "administrador",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 9327.64,
+      "age": 33,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 16,
+    "fullName": "María Fernanda Hernández Pérez",
+    "email": "maría.fernanda.hernández.pérez16@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 1883.11,
+      "age": 22,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 110,
+    "fullName": "Laura Patricia Rufino Bautista",
+    "email": "laura.patricia.rufino.bautista110@hotmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 13709.12,
+      "age": 40,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 92,
+    "fullName": "José Luis Torres Vázquez",
+    "email": "josé.luis.torres.vázquez92@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 1500.47,
+      "age": 41,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 70,
+    "fullName": "Ricardo Iván Negrete Silva",
+    "email": "ricardo.iván.negrete.silva70@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 13894.1,
+      "age": 22,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 69,
+    "fullName": "Paola Nayeli Rufino Bautista",
+    "email": "paola.nayeli.rufino.bautista69@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 4597.98,
+      "age": 53,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 71,
+    "fullName": "Carlos Eduardo Reyes Aguilar",
+    "email": "carlos.eduardo.reyes.aguilar71@gmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 3234.84,
+      "age": 35,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 10,
+    "fullName": "Brenda Lizeth Torres Vázquez",
+    "email": "brenda.lizeth.torres.vázquez10@gmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 13911.7,
+      "age": 18,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 29,
+    "fullName": "Paola Nayeli Aquino Salas",
+    "email": "paola.nayeli.aquino.salas29@outlook.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 1761.98,
+      "age": 58,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 22,
+    "fullName": "Diana Itzel Torres Vázquez",
+    "email": "diana.itzel.torres.vázquez22@hotmail.com",
+    "role": "usuario",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 1877.25,
+      "age": 65,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 31,
+    "fullName": "Emmanuel Martínez Ruiz",
+    "email": "emmanuel.martínez.ruiz31@gmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {},
+    "isSynthetic": false
+  },
+  {
+    "tempId": 60,
+    "fullName": "Miguel Ángel Vázquez Morales",
+    "email": "miguel.ángel.vázquez.morales60@hotmail.com",
+    "role": "administrador",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 12967.49,
+      "age": 39,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 30,
+    "fullName": "Alejandra Monserrat Reyes Aguilar",
+    "email": "alejandra.monserrat.reyes.aguilar30@hotmail.com",
+    "role": "administrador",
+    "location": "Papantla, Veracruz",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 9413.6,
+      "age": 25,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 2,
+    "fullName": "Ana Sofía García López",
+    "email": "ana.sofía.garcía.lópez2@outlook.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 10030.28,
+      "age": 53,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 27,
+    "fullName": "Sergio Iván Negrete Silva",
+    "email": "sergio.iván.negrete.silva27@gmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 15757.8,
+      "age": 69,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 47,
+    "fullName": "Sergio Iván Hernández Pérez",
+    "email": "sergio.iván.hernández.pérez47@gmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 4468.92,
+      "age": 62,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 87,
+    "fullName": "Luis Fernando Ramírez Flores",
+    "email": "luis.fernando.ramírez.flores87@outlook.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 4662.96,
+      "age": 44,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 101,
+    "fullName": "Jorge Alberto Ramírez Flores",
+    "email": "jorge.alberto.ramírez.flores101@outlook.com",
+    "role": "usuario",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 12829.66,
+      "age": 56,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 37,
+    "fullName": "Itzel Abigail García López",
+    "email": "itzel.abigail.garcía.lópez37@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 11631.78,
+      "age": 18,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 50,
+    "fullName": "Paola Nayeli Cruz Santiago",
+    "email": "paola.nayeli.cruz.santiago50@gmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 6832.86,
+      "age": 60,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 58,
+    "fullName": "Laura Patricia Cruz Santiago",
+    "email": "laura.patricia.cruz.santiago58@gmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 8826.2,
+      "age": 59,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 66,
+    "fullName": "Alejandra Monserrat Ramírez Flores",
+    "email": "alejandra.monserrat.ramírez.flores66@outlook.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 1770.65,
+      "age": 73,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 13,
+    "fullName": "Carlos Eduardo Aquino Salas",
+    "email": "carlos.eduardo.aquino.salas13@outlook.com",
+    "role": "administrador",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 15779.82,
+      "age": 69,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 5,
+    "fullName": "Jorge Alberto Guzmán Barrera",
+    "email": "jorge.alberto.guzmán.barrera5@gmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 2196.88,
+      "age": 32,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 6,
+    "fullName": "Paola Nayeli Negrete Silva",
+    "email": "paola.nayeli.negrete.silva6@gmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 10720.53,
+      "age": 56,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 53,
+    "fullName": "Ana Sofía Guzmán Barrera",
+    "email": "ana.sofía.guzmán.barrera53@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 1603.87,
+      "age": 19,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 96,
+    "fullName": "María Fernanda Mendoza Castillo",
+    "email": "maría.fernanda.mendoza.castillo96@hotmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 9421.11,
+      "age": 57,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 51,
+    "fullName": "Itzel Abigail Mendoza Castillo",
+    "email": "itzel.abigail.mendoza.castillo51@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 2259.21,
+      "age": 45,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 77,
+    "fullName": "Brenda Lizeth Ramírez Flores",
+    "email": "brenda.lizeth.ramírez.flores77@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 8477.4,
+      "age": 46,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 56,
+    "fullName": "Diana Itzel Hernández Pérez",
+    "email": "diana.itzel.hernández.pérez56@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 13458.57,
+      "age": 33,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 72,
+    "fullName": "Carlos Eduardo Vázquez Morales",
+    "email": "carlos.eduardo.vázquez.morales72@outlook.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 11496.01,
+      "age": 35,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 67,
+    "fullName": "Laura Patricia Guzmán Barrera",
+    "email": "laura.patricia.guzmán.barrera67@hotmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 5557.53,
+      "age": 33,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 17,
+    "fullName": "Sergio Iván Martínez Ruiz",
+    "email": "sergio.iván.martínez.ruiz17@outlook.com",
+    "role": "administrador",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 14235.75,
+      "age": 54,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 91,
+    "fullName": "Ricardo Iván Guzmán Barrera",
+    "email": "ricardo.iván.guzmán.barrera91@hotmail.com",
+    "role": "usuario",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 10105.97,
+      "age": 40,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 41,
+    "fullName": "Alejandra Monserrat Vázquez Morales",
+    "email": "alejandra.monserrat.vázquez.morales41@outlook.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 8667.61,
+      "age": 68,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 79,
+    "fullName": "Carlos Eduardo Rufino Bautista",
+    "email": "carlos.eduardo.rufino.bautista79@gmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 8475.63,
+      "age": 63,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 62,
+    "fullName": "Jorge Alberto Torres Vázquez",
+    "email": "jorge.alberto.torres.vázquez62@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 6535.31,
+      "age": 53,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 97,
+    "fullName": "Laura Patricia Xolo Cruz",
+    "email": "laura.patricia.xolo.cruz97@gmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 5565.47,
+      "age": 49,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 88,
+    "fullName": "Daniel Osvaldo Aquino Salas",
+    "email": "daniel.osvaldo.aquino.salas88@gmail.com",
+    "role": "usuario",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 4482.83,
+      "age": 58,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 39,
+    "fullName": "Karla Vanessa Negrete Silva",
+    "email": "karla.vanessa.negrete.silva39@outlook.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 2909.32,
+      "age": 44,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 26,
+    "fullName": "Luis Fernando Aquino Salas",
+    "email": "luis.fernando.aquino.salas26@outlook.com",
+    "role": "usuario",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": null,
+    "travelPreferences": {},
+    "isSynthetic": false
+  },
+  {
+    "tempId": 15,
+    "fullName": "Karla Vanessa Rufino Bautista",
+    "email": "karla.vanessa.rufino.bautista15@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 7571.5,
+      "age": 51,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 3,
+    "fullName": "Miguel Ángel Negrete Silva",
+    "email": "miguel.ángel.negrete.silva3@outlook.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 5168.07,
+      "age": 31,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 76,
+    "fullName": "Paola Nayeli Ramírez Flores",
+    "email": "paola.nayeli.ramírez.flores76@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 12588.22,
+      "age": 73,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 43,
+    "fullName": "Daniel Osvaldo Cruz Santiago",
+    "email": "daniel.osvaldo.cruz.santiago43@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 10840.87,
+      "age": 18,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 34,
+    "fullName": "Carlos Eduardo Cruz Santiago",
+    "email": "carlos.eduardo.cruz.santiago34@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 13878.9,
+      "age": 32,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 32,
+    "fullName": "Diana Itzel Rufino Bautista",
+    "email": "diana.itzel.rufino.bautista32@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 2541.9,
+      "age": 67,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 38,
+    "fullName": "Emmanuel Hernández Pérez",
+    "email": "emmanuel.hernández.pérez38@gmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 14811.56,
+      "age": 57,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 64,
+    "fullName": "Itzel Abigail Guzmán Barrera",
+    "email": "itzel.abigail.guzmán.barrera64@gmail.com",
+    "role": "administrador",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 5244.98,
+      "age": 24,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 81,
+    "fullName": "Ricardo Iván Negrete Silva",
+    "email": "ricardo.iván.negrete.silva81@gmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 9804.07,
+      "age": 60,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 102,
+    "fullName": "María Fernanda Martínez Ruiz",
+    "email": "maría.fernanda.martínez.ruiz102@outlook.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {},
+    "isSynthetic": true
+  },
+  {
+    "tempId": 108,
+    "fullName": "Daniel Osvaldo Hernández Pérez",
+    "email": "daniel.osvaldo.hernández.pérez108@hotmail.com",
+    "role": "administrador",
+    "location": "Papantla, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 2280.47,
+      "age": 45,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 93,
+    "fullName": "Sergio Iván Aquino Salas",
+    "email": "sergio.iván.aquino.salas93@gmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 8962.79,
+      "age": 35,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 23,
+    "fullName": "Brenda Lizeth Hernández Pérez",
+    "email": "brenda.lizeth.hernández.pérez23@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 2027.82,
+      "age": 22,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 8,
+    "fullName": "Alejandra Monserrat Martínez Ruiz",
+    "email": "alejandra.monserrat.martínez.ruiz8@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 4699.41,
+      "age": 53,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 33,
+    "fullName": "Miguel Ángel Aquino Salas",
+    "email": "miguel.ángel.aquino.salas33@hotmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 3690.41,
+      "age": 39,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 84,
+    "fullName": "Laura Patricia Cruz Santiago",
+    "email": "laura.patricia.cruz.santiago84@hotmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 15549.35,
+      "age": 22,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 14,
+    "fullName": "Sergio Iván Guzmán Barrera",
+    "email": "sergio.iván.guzmán.barrera14@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 10896.26,
+      "age": 53,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 18,
+    "fullName": "Emmanuel Cruz Santiago",
+    "email": "emmanuel.cruz.santiago18@hotmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 11936.14,
+      "age": 61,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 83,
+    "fullName": "Laura Patricia Vázquez Morales",
+    "email": "laura.patricia.vázquez.morales83@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 2893.69,
+      "age": 55,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 86,
+    "fullName": "Ana Sofía Cruz Santiago",
+    "email": "ana.sofía.cruz.santiago86@outlook.com",
+    "role": "administrador",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 12405.55,
+      "age": 63,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 63,
+    "fullName": "Ricardo Iván Torres Vázquez",
+    "email": "ricardo.iván.torres.vázquez63@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 11819.26,
+      "age": 38,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 55,
+    "fullName": "Carlos Eduardo Mendoza Castillo",
+    "email": "carlos.eduardo.mendoza.castillo55@gmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": null,
+    "travelPreferences": {},
+    "isSynthetic": false
+  },
+  {
+    "tempId": 57,
+    "fullName": "Sergio Iván Cruz Santiago",
+    "email": "sergio.iván.cruz.santiago57@outlook.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 2034.35,
+      "age": 59,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 103,
+    "fullName": "Paola Nayeli Xolo Cruz",
+    "email": "paola.nayeli.xolo.cruz103@hotmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 7314.41,
+      "age": 25,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 75,
+    "fullName": "Fernanda Guadalupe Rufino Bautista",
+    "email": "fernanda.guadalupe.rufino.bautista75@hotmail.com",
+    "role": "administrador",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 3412.37,
+      "age": 44,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 74,
+    "fullName": "Daniel Osvaldo Reyes Aguilar",
+    "email": "daniel.osvaldo.reyes.aguilar74@outlook.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 14741.09,
+      "age": 29,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 80,
+    "fullName": "Sergio Iván Martínez Ruiz",
+    "email": "sergio.iván.martínez.ruiz80@gmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 14828.02,
+      "age": 50,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 20,
+    "fullName": "Sergio Iván González Peralta",
+    "email": "sergio.iván.gonzález.peralta20@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {},
+    "isSynthetic": false
+  },
+  {
+    "tempId": 7,
+    "fullName": "José Luis García López",
+    "email": "josé.luis.garcía.lópez7@hotmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 13075.69,
+      "age": 43,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 11,
+    "fullName": "Ricardo Iván Cruz Santiago",
+    "email": "ricardo.iván.cruz.santiago11@outlook.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 1048.68,
+      "age": 64,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 94,
+    "fullName": "Carlos Eduardo Vázquez Morales",
+    "email": "carlos.eduardo.vázquez.morales94@hotmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 3111.36,
+      "age": 32,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 42,
+    "fullName": "Jorge Alberto Rufino Bautista",
+    "email": "jorge.alberto.rufino.bautista42@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 13098.44,
+      "age": 27,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 100,
+    "fullName": "Diana Itzel Rufino Bautista",
+    "email": "diana.itzel.rufino.bautista100@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 15566.4,
+      "age": 21,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 48,
+    "fullName": "Diana Itzel González Peralta",
+    "email": "diana.itzel.gonzález.peralta48@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 14572.58,
+      "age": 55,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 21,
+    "fullName": "Emmanuel Vázquez Morales",
+    "email": "emmanuel.vázquez.morales21@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 13969.76,
+      "age": 21,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 99,
+    "fullName": "Carlos Eduardo Rufino Bautista",
+    "email": "carlos.eduardo.rufino.bautista99@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 14525.44,
+      "age": 59,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 59,
+    "fullName": "Jorge Alberto González Peralta",
+    "email": "jorge.alberto.gonzález.peralta59@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 5183.92,
+      "age": 46,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 54,
+    "fullName": "Itzel Abigail García López",
+    "email": "itzel.abigail.garcía.lópez54@outlook.com",
+    "role": "usuario",
+    "location": "Tlaxco, Tlaxcala",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 4843.66,
+      "age": 41,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 49,
+    "fullName": "Ricardo Iván Guzmán Barrera",
+    "email": "ricardo.iván.guzmán.barrera49@hotmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 14374.62,
+      "age": 71,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 28,
+    "fullName": "Paola Nayeli Hernández Pérez",
+    "email": "paola.nayeli.hernández.pérez28@outlook.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 12136.25,
+      "age": 27,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 68,
+    "fullName": "Alejandra Monserrat Torres Vázquez",
+    "email": "alejandra.monserrat.torres.vázquez68@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 15850.47,
+      "age": 37,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 12,
+    "fullName": "Brenda Lizeth Mendoza Castillo",
+    "email": "brenda.lizeth.mendoza.castillo12@outlook.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 6608.71,
+      "age": 28,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 105,
+    "fullName": "Carlos Eduardo Vázquez Morales",
+    "email": "carlos.eduardo.vázquez.morales105@hotmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 7653.43,
+      "age": 23,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 82,
+    "fullName": "Fernanda Guadalupe González Peralta",
+    "email": "fernanda.guadalupe.gonzález.peralta82@gmail.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 11462.48,
+      "age": 54,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 95,
+    "fullName": "Paola Nayeli Reyes Aguilar",
+    "email": "paola.nayeli.reyes.aguilar95@gmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 6528.78,
+      "age": 65,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 9,
+    "fullName": "Brenda Lizeth Vázquez Morales",
+    "email": "brenda.lizeth.vázquez.morales9@hotmail.com",
+    "role": "administrador",
+    "location": "Tuxpan, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 1706.75,
+      "age": 25,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 52,
+    "fullName": "Fernanda Guadalupe Guzmán Barrera",
+    "email": "fernanda.guadalupe.guzmán.barrera52@hotmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 5173.85,
+      "age": 71,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 109,
+    "fullName": "Emmanuel Ramírez Flores",
+    "email": "emmanuel.ramírez.flores109@hotmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 15116.95,
+      "age": 45,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 73,
+    "fullName": "María Fernanda Hernández Pérez",
+    "email": "maría.fernanda.hernández.pérez73@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 11114.48,
+      "age": 73,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 19,
+    "fullName": "Diana Itzel García López",
+    "email": "diana.itzel.garcía.lópez19@gmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 3102.73,
+      "age": 29,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 104,
+    "fullName": "Omar Alejandro Xolo Cruz",
+    "email": "omar.alejandro.xolo.cruz104@outlook.com",
+    "role": "usuario",
+    "location": "Tuxpan, Veracruz",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 14631.28,
+      "age": 60,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 1,
+    "fullName": "Carlos Eduardo Xolo Cruz",
+    "email": "carlos.eduardo.xolo.cruz1@outlook.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 4673.38,
+      "age": 26,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 45,
+    "fullName": "Sergio Iván Vázquez Morales",
+    "email": "sergio.iván.vázquez.morales45@gmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 12154.83,
+      "age": 48,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 44,
+    "fullName": "Sergio Iván García López",
+    "email": "sergio.iván.garcía.lópez44@hotmail.com",
+    "role": "usuario",
+    "location": "Pahuatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 2820.38,
+      "age": 26,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 40,
+    "fullName": "Sergio Iván González Peralta",
+    "email": "sergio.iván.gonzález.peralta40@gmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": null,
+    "travelPreferences": {},
+    "isSynthetic": false
+  },
+  {
+    "tempId": 98,
+    "fullName": "Emmanuel Rufino Bautista",
+    "email": "emmanuel.rufino.bautista98@outlook.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": "Buscando siempre la próxima aventura de fin de semana.",
+    "travelPreferences": {
+      "avgBudget": 8340.21,
+      "age": 44,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 90,
+    "fullName": "Karla Vanessa Mendoza Castillo",
+    "email": "karla.vanessa.mendoza.castillo90@gmail.com",
+    "role": "administrador",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 5438.09,
+      "age": 62,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 106,
+    "fullName": "Omar Alejandro Reyes Aguilar",
+    "email": "omar.alejandro.reyes.aguilar106@hotmail.com",
+    "role": "usuario",
+    "location": "Huauchinango, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 8583.27,
+      "age": 45,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 24,
+    "fullName": "Emmanuel Rufino Bautista",
+    "email": "emmanuel.rufino.bautista24@gmail.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 8841.74,
+      "age": 34,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 4,
+    "fullName": "José Luis Negrete Silva",
+    "email": "josé.luis.negrete.silva4@gmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 2872.39,
+      "age": 42,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 35,
+    "fullName": "Fernanda Guadalupe Torres Vázquez",
+    "email": "fernanda.guadalupe.torres.vázquez35@hotmail.com",
+    "role": "usuario",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 15503.34,
+      "age": 35,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": false
+  },
+  {
+    "tempId": 89,
+    "fullName": "Alejandra Monserrat Ramírez Flores",
+    "email": "alejandra.monserrat.ramírez.flores89@gmail.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 5487.31,
+      "age": 45,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 107,
+    "fullName": "Alejandra Monserrat Aquino Salas",
+    "email": "alejandra.monserrat.aquino.salas107@gmail.com",
+    "role": "usuario",
+    "location": "Papantla, Veracruz",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 6083.97,
+      "age": 47,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 85,
+    "fullName": "Sergio Iván Cruz Santiago",
+    "email": "sergio.iván.cruz.santiago85@outlook.com",
+    "role": "usuario",
+    "location": "Zacatlán, Puebla",
+    "bio": "Me gusta explorar naturaleza y comida local.",
+    "travelPreferences": {
+      "avgBudget": 10401.99,
+      "age": 66,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  },
+  {
+    "tempId": 78,
+    "fullName": "María Fernanda Rufino Bautista",
+    "email": "maría.fernanda.rufino.bautista78@outlook.com",
+    "role": "usuario",
+    "location": "Zihuateutla, Puebla",
+    "bio": null,
+    "travelPreferences": {
+      "avgBudget": 4589.46,
+      "age": 28,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    },
+    "isSynthetic": true
+  }
+]

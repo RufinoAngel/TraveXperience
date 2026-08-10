@@ -1,0 +1,3815 @@
+[
+  {
+    "id": 1,
+    "userId": 93,
+    "entityType": "place",
+    "entityId": 47,
+    "entityName": "Sitio Cultural Zacatlán #47",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 2,
+    "userId": 38,
+    "entityType": "place",
+    "entityId": 30,
+    "entityName": "Hotel Xicotepec de Juárez #30",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 3,
+    "userId": 23,
+    "entityType": "place",
+    "entityId": 53,
+    "entityName": "Hotel Tuxpan #53",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 4,
+    "userId": 87,
+    "entityType": "place",
+    "entityId": 52,
+    "entityName": "Playa Tuxpan #52",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 5,
+    "userId": 98,
+    "entityType": "place",
+    "entityId": 55,
+    "entityName": "Hotel Xicotepec de Juárez #55",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 6,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 7,
+    "userId": 57,
+    "entityType": "place",
+    "entityId": 58,
+    "entityName": "Playa Grutas de Karmidas #58",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "romántico",
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 8,
+    "userId": 44,
+    "entityType": "place",
+    "entityId": 53,
+    "entityName": "Hotel Tuxpan #53",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 9,
+    "userId": 59,
+    "entityType": "place",
+    "entityId": 26,
+    "entityName": "Entretenimiento Cascada de Tulimán #26",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 10,
+    "userId": 103,
+    "entityType": "place",
+    "entityId": 42,
+    "entityName": "Restaurante Tuxpan #42",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 11,
+    "userId": 93,
+    "entityType": "place",
+    "entityId": 45,
+    "entityName": "Hotel Papantla #45",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 12,
+    "userId": 76,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 13,
+    "userId": 46,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "familiar",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 14,
+    "userId": 63,
+    "entityType": "place",
+    "entityId": 59,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #59",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 15,
+    "userId": 9,
+    "entityType": "place",
+    "entityId": 3,
+    "entityName": "Playa Pahuatlán (Pueblo Mágico) #3",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 16,
+    "userId": 44,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "económico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 17,
+    "userId": 85,
+    "entityType": "place",
+    "entityId": 23,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #23",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "pet_friendly",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 18,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 1,
+    "entityName": "Hotel Cuetzalan #1",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 19,
+    "userId": 64,
+    "entityType": "place",
+    "entityId": 55,
+    "entityName": "Hotel Xicotepec de Juárez #55",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 20,
+    "userId": 31,
+    "entityType": "place",
+    "entityId": 21,
+    "entityName": "Restaurante Xicotepec de Juárez #21",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 21,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 36,
+    "entityName": "Entretenimiento Cascada de Tulimán #36",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 22,
+    "userId": 57,
+    "entityType": "place",
+    "entityId": 30,
+    "entityName": "Hotel Xicotepec de Juárez #30",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 23,
+    "userId": 16,
+    "entityType": "place",
+    "entityId": 21,
+    "entityName": "Restaurante Xicotepec de Juárez #21",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 24,
+    "userId": 5,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "familiar",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 25,
+    "userId": 66,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "aventura",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 26,
+    "userId": 106,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 27,
+    "userId": 72,
+    "entityType": "place",
+    "entityId": 22,
+    "entityName": "Playa Papantla #22",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "nocturno",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 28,
+    "userId": 13,
+    "entityType": "place",
+    "entityId": 8,
+    "entityName": "Playa Papantla #8",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "aventura",
+      "familiar"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 29,
+    "userId": 82,
+    "entityType": "place",
+    "entityId": 54,
+    "entityName": "Restaurante Xicotepec de Juárez #54",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 30,
+    "userId": 22,
+    "entityType": "place",
+    "entityId": 58,
+    "entityName": "Playa Grutas de Karmidas #58",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 31,
+    "userId": 79,
+    "entityType": "place",
+    "entityId": 17,
+    "entityName": "Sitio Cultural Pahuatlán (Pueblo Mágico) #17",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 32,
+    "userId": 110,
+    "entityType": "place",
+    "entityId": 60,
+    "entityName": "Playa Xicotepec de Juárez #60",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 33,
+    "userId": 44,
+    "entityType": "place",
+    "entityId": 46,
+    "entityName": "Evento Cascada de Tulimán #46",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 34,
+    "userId": 82,
+    "entityType": "place",
+    "entityId": 60,
+    "entityName": "Playa Xicotepec de Juárez #60",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "económico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 35,
+    "userId": 76,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "vista",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 36,
+    "userId": 56,
+    "entityType": "place",
+    "entityId": 36,
+    "entityName": "Entretenimiento Cascada de Tulimán #36",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 37,
+    "userId": 105,
+    "entityType": "place",
+    "entityId": 47,
+    "entityName": "Sitio Cultural Zacatlán #47",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 38,
+    "userId": 77,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "accesible",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 39,
+    "userId": 89,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 40,
+    "userId": 38,
+    "entityType": "place",
+    "entityId": 22,
+    "entityName": "Playa Papantla #22",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 41,
+    "userId": 90,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 42,
+    "userId": 95,
+    "entityType": "place",
+    "entityId": 46,
+    "entityName": "Evento Cascada de Tulimán #46",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "aventura",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 43,
+    "userId": 45,
+    "entityType": "place",
+    "entityId": 44,
+    "entityName": "Entretenimiento Grutas de Karmidas #44",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "vista",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 44,
+    "userId": 15,
+    "entityType": "place",
+    "entityId": 46,
+    "entityName": "Evento Cascada de Tulimán #46",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 45,
+    "userId": 96,
+    "entityType": "place",
+    "entityId": 44,
+    "entityName": "Entretenimiento Grutas de Karmidas #44",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "romántico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 46,
+    "userId": 14,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 47,
+    "userId": 86,
+    "entityType": "place",
+    "entityId": 4,
+    "entityName": "Restaurante Papantla #4",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 48,
+    "userId": 101,
+    "entityType": "place",
+    "entityId": 49,
+    "entityName": "Sitio Cultural Puerto de Veracruz #49",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 49,
+    "userId": 108,
+    "entityType": "place",
+    "entityId": 10,
+    "entityName": "Hotel Huauchinango #10",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 50,
+    "userId": 70,
+    "entityType": "place",
+    "entityId": 49,
+    "entityName": "Sitio Cultural Puerto de Veracruz #49",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 51,
+    "userId": 79,
+    "entityType": "place",
+    "entityId": 7,
+    "entityName": "Naturaleza Papantla #7",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "aventura",
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 52,
+    "userId": 66,
+    "entityType": "place",
+    "entityId": 16,
+    "entityName": "Playa Papantla #16",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "romántico",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 53,
+    "userId": 54,
+    "entityType": "place",
+    "entityId": 25,
+    "entityName": "Sitio Cultural Xicotepec de Juárez #25",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "accesible",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 54,
+    "userId": 33,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 55,
+    "userId": 29,
+    "entityType": "place",
+    "entityId": 54,
+    "entityName": "Restaurante Xicotepec de Juárez #54",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "accesible",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 56,
+    "userId": 93,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 57,
+    "userId": 88,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 58,
+    "userId": 66,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 59,
+    "userId": 36,
+    "entityType": "place",
+    "entityId": 28,
+    "entityName": "Naturaleza Grutas de Karmidas #28",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "romántico",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 60,
+    "userId": 43,
+    "entityType": "place",
+    "entityId": 1,
+    "entityName": "Hotel Cuetzalan #1",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 61,
+    "userId": 42,
+    "entityType": "place",
+    "entityId": 60,
+    "entityName": "Playa Xicotepec de Juárez #60",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "familiar",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 62,
+    "userId": 102,
+    "entityType": "place",
+    "entityId": 32,
+    "entityName": "Entretenimiento Cuetzalan #32",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "accesible",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 63,
+    "userId": 67,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 64,
+    "userId": 70,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "pet_friendly",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 65,
+    "userId": 28,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible",
+      "vista"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 66,
+    "userId": 97,
+    "entityType": "place",
+    "entityId": 14,
+    "entityName": "Evento Tuxpan #14",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "nocturno",
+      "romántico"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 67,
+    "userId": 45,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 68,
+    "userId": 88,
+    "entityType": "place",
+    "entityId": 3,
+    "entityName": "Playa Pahuatlán (Pueblo Mágico) #3",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 69,
+    "userId": 70,
+    "entityType": "place",
+    "entityId": 17,
+    "entityName": "Sitio Cultural Pahuatlán (Pueblo Mágico) #17",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 70,
+    "userId": 103,
+    "entityType": "place",
+    "entityId": 33,
+    "entityName": "Naturaleza Grutas de Karmidas #33",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "nocturno",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 71,
+    "userId": 84,
+    "entityType": "place",
+    "entityId": 58,
+    "entityName": "Playa Grutas de Karmidas #58",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 72,
+    "userId": 22,
+    "entityType": "place",
+    "entityId": 7,
+    "entityName": "Naturaleza Papantla #7",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "familiar",
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 73,
+    "userId": 81,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 74,
+    "userId": 69,
+    "entityType": "place",
+    "entityId": 14,
+    "entityName": "Evento Tuxpan #14",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "pet_friendly",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 75,
+    "userId": 59,
+    "entityType": "place",
+    "entityId": 2,
+    "entityName": "Sitio Cultural Xicotepec de Juárez #2",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 76,
+    "userId": 23,
+    "entityType": "place",
+    "entityId": 4,
+    "entityName": "Restaurante Papantla #4",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 77,
+    "userId": 34,
+    "entityType": "place",
+    "entityId": 59,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #59",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 78,
+    "userId": 41,
+    "entityType": "place",
+    "entityId": 28,
+    "entityName": "Naturaleza Grutas de Karmidas #28",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 79,
+    "userId": 1,
+    "entityType": "place",
+    "entityId": 35,
+    "entityName": "Evento Cuetzalan #35",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "económico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 80,
+    "userId": 109,
+    "entityType": "place",
+    "entityId": 45,
+    "entityName": "Hotel Papantla #45",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 81,
+    "userId": 101,
+    "entityType": "place",
+    "entityId": 19,
+    "entityName": "Restaurante Pahuatlán (Pueblo Mágico) #19",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "romántico",
+      "nocturno"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 82,
+    "userId": 57,
+    "entityType": "place",
+    "entityId": 49,
+    "entityName": "Sitio Cultural Puerto de Veracruz #49",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 83,
+    "userId": 69,
+    "entityType": "place",
+    "entityId": 11,
+    "entityName": "Naturaleza Puerto de Veracruz #11",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 84,
+    "userId": 103,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 85,
+    "userId": 102,
+    "entityType": "place",
+    "entityId": 44,
+    "entityName": "Entretenimiento Grutas de Karmidas #44",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "accesible",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 86,
+    "userId": 6,
+    "entityType": "place",
+    "entityId": 8,
+    "entityName": "Playa Papantla #8",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 87,
+    "userId": 71,
+    "entityType": "place",
+    "entityId": 35,
+    "entityName": "Evento Cuetzalan #35",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 88,
+    "userId": 95,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible",
+      "económico"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 89,
+    "userId": 24,
+    "entityType": "place",
+    "entityId": 11,
+    "entityName": "Naturaleza Puerto de Veracruz #11",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 90,
+    "userId": 15,
+    "entityType": "place",
+    "entityId": 13,
+    "entityName": "Entretenimiento Xicotepec de Juárez #13",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 91,
+    "userId": 97,
+    "entityType": "place",
+    "entityId": 55,
+    "entityName": "Hotel Xicotepec de Juárez #55",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "nocturno",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 92,
+    "userId": 86,
+    "entityType": "place",
+    "entityId": 19,
+    "entityName": "Restaurante Pahuatlán (Pueblo Mágico) #19",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 93,
+    "userId": 93,
+    "entityType": "place",
+    "entityId": 13,
+    "entityName": "Entretenimiento Xicotepec de Juárez #13",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno",
+      "vista"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 94,
+    "userId": 84,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 95,
+    "userId": 9,
+    "entityType": "place",
+    "entityId": 40,
+    "entityName": "Hotel Huauchinango #40",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 96,
+    "userId": 43,
+    "entityType": "place",
+    "entityId": 29,
+    "entityName": "Evento Puerto de Veracruz #29",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico",
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 97,
+    "userId": 73,
+    "entityType": "place",
+    "entityId": 37,
+    "entityName": "Hotel Tuxpan #37",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 98,
+    "userId": 41,
+    "entityType": "place",
+    "entityId": 1,
+    "entityName": "Hotel Cuetzalan #1",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 99,
+    "userId": 108,
+    "entityType": "place",
+    "entityId": 18,
+    "entityName": "Naturaleza Cuetzalan #18",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 100,
+    "userId": 58,
+    "entityType": "place",
+    "entityId": 30,
+    "entityName": "Hotel Xicotepec de Juárez #30",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 101,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "económico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 102,
+    "userId": 69,
+    "entityType": "place",
+    "entityId": 58,
+    "entityName": "Playa Grutas de Karmidas #58",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 103,
+    "userId": 10,
+    "entityType": "place",
+    "entityId": 47,
+    "entityName": "Sitio Cultural Zacatlán #47",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 104,
+    "userId": 75,
+    "entityType": "place",
+    "entityId": 53,
+    "entityName": "Hotel Tuxpan #53",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "pet_friendly",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 105,
+    "userId": 5,
+    "entityType": "place",
+    "entityId": 59,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #59",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "romántico",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 106,
+    "userId": 100,
+    "entityType": "place",
+    "entityId": 42,
+    "entityName": "Restaurante Tuxpan #42",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 107,
+    "userId": 99,
+    "entityType": "place",
+    "entityId": 15,
+    "entityName": "Hotel Xicotepec de Juárez #15",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico",
+      "económico"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 108,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 26,
+    "entityName": "Entretenimiento Cascada de Tulimán #26",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "familiar",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 109,
+    "userId": 66,
+    "entityType": "place",
+    "entityId": 49,
+    "entityName": "Sitio Cultural Puerto de Veracruz #49",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 110,
+    "userId": 73,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "vista",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 111,
+    "userId": 29,
+    "entityType": "place",
+    "entityId": 3,
+    "entityName": "Playa Pahuatlán (Pueblo Mágico) #3",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 112,
+    "userId": 30,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 113,
+    "userId": 61,
+    "entityType": "place",
+    "entityId": 25,
+    "entityName": "Sitio Cultural Xicotepec de Juárez #25",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 114,
+    "userId": 91,
+    "entityType": "place",
+    "entityId": 7,
+    "entityName": "Naturaleza Papantla #7",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "romántico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 115,
+    "userId": 84,
+    "entityType": "place",
+    "entityId": 25,
+    "entityName": "Sitio Cultural Xicotepec de Juárez #25",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 116,
+    "userId": 33,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 117,
+    "userId": 105,
+    "entityType": "place",
+    "entityId": 23,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #23",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 118,
+    "userId": 18,
+    "entityType": "place",
+    "entityId": 33,
+    "entityName": "Naturaleza Grutas de Karmidas #33",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 119,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 33,
+    "entityName": "Naturaleza Grutas de Karmidas #33",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 120,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 11,
+    "entityName": "Naturaleza Puerto de Veracruz #11",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "económico",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 121,
+    "userId": 43,
+    "entityType": "place",
+    "entityId": 52,
+    "entityName": "Playa Tuxpan #52",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "económico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 122,
+    "userId": 76,
+    "entityType": "place",
+    "entityId": 14,
+    "entityName": "Evento Tuxpan #14",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 123,
+    "userId": 6,
+    "entityType": "place",
+    "entityId": 16,
+    "entityName": "Playa Papantla #16",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 124,
+    "userId": 81,
+    "entityType": "place",
+    "entityId": 9,
+    "entityName": "Entretenimiento Cuetzalan #9",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "familiar",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 125,
+    "userId": 34,
+    "entityType": "place",
+    "entityId": 11,
+    "entityName": "Naturaleza Puerto de Veracruz #11",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 126,
+    "userId": 73,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "familiar",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 127,
+    "userId": 58,
+    "entityType": "place",
+    "entityId": 14,
+    "entityName": "Evento Tuxpan #14",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno",
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 128,
+    "userId": 107,
+    "entityType": "place",
+    "entityId": 15,
+    "entityName": "Hotel Xicotepec de Juárez #15",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 129,
+    "userId": 85,
+    "entityType": "place",
+    "entityId": 40,
+    "entityName": "Hotel Huauchinango #40",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "romántico",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 130,
+    "userId": 76,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 131,
+    "userId": 17,
+    "entityType": "place",
+    "entityId": 25,
+    "entityName": "Sitio Cultural Xicotepec de Juárez #25",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 132,
+    "userId": 65,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "pet_friendly",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 133,
+    "userId": 61,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "familiar",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 134,
+    "userId": 62,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "vista",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 135,
+    "userId": 100,
+    "entityType": "place",
+    "entityId": 58,
+    "entityName": "Playa Grutas de Karmidas #58",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "pet_friendly",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 136,
+    "userId": 6,
+    "entityType": "place",
+    "entityId": 56,
+    "entityName": "Playa Xicotepec de Juárez #56",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "pet_friendly",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 137,
+    "userId": 76,
+    "entityType": "place",
+    "entityId": 23,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #23",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "económico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 138,
+    "userId": 99,
+    "entityType": "place",
+    "entityId": 31,
+    "entityName": "Entretenimiento Cuetzalan #31",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 139,
+    "userId": 70,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 140,
+    "userId": 96,
+    "entityType": "place",
+    "entityId": 46,
+    "entityName": "Evento Cascada de Tulimán #46",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 141,
+    "userId": 1,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 142,
+    "userId": 14,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 143,
+    "userId": 110,
+    "entityType": "place",
+    "entityId": 17,
+    "entityName": "Sitio Cultural Pahuatlán (Pueblo Mágico) #17",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "pet_friendly",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 144,
+    "userId": 51,
+    "entityType": "place",
+    "entityId": 44,
+    "entityName": "Entretenimiento Grutas de Karmidas #44",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 145,
+    "userId": 48,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "nocturno",
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 146,
+    "userId": 91,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 147,
+    "userId": 101,
+    "entityType": "place",
+    "entityId": 29,
+    "entityName": "Evento Puerto de Veracruz #29",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "vista",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 148,
+    "userId": 44,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "familiar",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 149,
+    "userId": 12,
+    "entityType": "place",
+    "entityId": 52,
+    "entityName": "Playa Tuxpan #52",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 150,
+    "userId": 9,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 151,
+    "userId": 5,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "pet_friendly",
+      "aventura"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 152,
+    "userId": 77,
+    "entityType": "place",
+    "entityId": 46,
+    "entityName": "Evento Cascada de Tulimán #46",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 153,
+    "userId": 2,
+    "entityType": "place",
+    "entityId": 29,
+    "entityName": "Evento Puerto de Veracruz #29",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 154,
+    "userId": 5,
+    "entityType": "place",
+    "entityId": 13,
+    "entityName": "Entretenimiento Xicotepec de Juárez #13",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "aventura",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 155,
+    "userId": 31,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "familiar",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 156,
+    "userId": 52,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 157,
+    "userId": 2,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "económico",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 158,
+    "userId": 107,
+    "entityType": "place",
+    "entityId": 47,
+    "entityName": "Sitio Cultural Zacatlán #47",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "accesible",
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 159,
+    "userId": 25,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 160,
+    "userId": 23,
+    "entityType": "place",
+    "entityId": 17,
+    "entityName": "Sitio Cultural Pahuatlán (Pueblo Mágico) #17",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 161,
+    "userId": 38,
+    "entityType": "place",
+    "entityId": 33,
+    "entityName": "Naturaleza Grutas de Karmidas #33",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 162,
+    "userId": 69,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "romántico",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 163,
+    "userId": 62,
+    "entityType": "place",
+    "entityId": 37,
+    "entityName": "Hotel Tuxpan #37",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 164,
+    "userId": 59,
+    "entityType": "place",
+    "entityId": 44,
+    "entityName": "Entretenimiento Grutas de Karmidas #44",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "familiar",
+      "aventura"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 165,
+    "userId": 49,
+    "entityType": "place",
+    "entityId": 5,
+    "entityName": "Evento Puerto de Veracruz #5",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "aventura",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 166,
+    "userId": 46,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "familiar",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 167,
+    "userId": 12,
+    "entityType": "place",
+    "entityId": 19,
+    "entityName": "Restaurante Pahuatlán (Pueblo Mágico) #19",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 168,
+    "userId": 41,
+    "entityType": "place",
+    "entityId": 31,
+    "entityName": "Entretenimiento Cuetzalan #31",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 169,
+    "userId": 96,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "aventura",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 170,
+    "userId": 31,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 171,
+    "userId": 32,
+    "entityType": "place",
+    "entityId": 54,
+    "entityName": "Restaurante Xicotepec de Juárez #54",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 172,
+    "userId": 11,
+    "entityType": "place",
+    "entityId": 59,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #59",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 173,
+    "userId": 62,
+    "entityType": "place",
+    "entityId": 55,
+    "entityName": "Hotel Xicotepec de Juárez #55",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 174,
+    "userId": 24,
+    "entityType": "place",
+    "entityId": 32,
+    "entityName": "Entretenimiento Cuetzalan #32",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "romántico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 175,
+    "userId": 68,
+    "entityType": "place",
+    "entityId": 4,
+    "entityName": "Restaurante Papantla #4",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 176,
+    "userId": 45,
+    "entityType": "place",
+    "entityId": 33,
+    "entityName": "Naturaleza Grutas de Karmidas #33",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 177,
+    "userId": 67,
+    "entityType": "place",
+    "entityId": 45,
+    "entityName": "Hotel Papantla #45",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 178,
+    "userId": 27,
+    "entityType": "place",
+    "entityId": 44,
+    "entityName": "Entretenimiento Grutas de Karmidas #44",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 179,
+    "userId": 34,
+    "entityType": "place",
+    "entityId": 40,
+    "entityName": "Hotel Huauchinango #40",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 180,
+    "userId": 35,
+    "entityType": "place",
+    "entityId": 16,
+    "entityName": "Playa Papantla #16",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 181,
+    "userId": 55,
+    "entityType": "place",
+    "entityId": 32,
+    "entityName": "Entretenimiento Cuetzalan #32",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 182,
+    "userId": 110,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 183,
+    "userId": 17,
+    "entityType": "place",
+    "entityId": 37,
+    "entityName": "Hotel Tuxpan #37",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "aventura",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 184,
+    "userId": 31,
+    "entityType": "place",
+    "entityId": 52,
+    "entityName": "Playa Tuxpan #52",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "pet_friendly",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 185,
+    "userId": 103,
+    "entityType": "place",
+    "entityId": 10,
+    "entityName": "Hotel Huauchinango #10",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "vista",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 186,
+    "userId": 64,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 187,
+    "userId": 63,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 188,
+    "userId": 13,
+    "entityType": "place",
+    "entityId": 26,
+    "entityName": "Entretenimiento Cascada de Tulimán #26",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "vista",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 189,
+    "userId": 108,
+    "entityType": "place",
+    "entityId": 31,
+    "entityName": "Entretenimiento Cuetzalan #31",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "económico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 190,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "romántico",
+      "vista"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 191,
+    "userId": 45,
+    "entityType": "place",
+    "entityId": 8,
+    "entityName": "Playa Papantla #8",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "aventura",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 192,
+    "userId": 37,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 193,
+    "userId": 95,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 194,
+    "userId": 81,
+    "entityType": "place",
+    "entityId": 30,
+    "entityName": "Hotel Xicotepec de Juárez #30",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 195,
+    "userId": 81,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "pet_friendly",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 196,
+    "userId": 44,
+    "entityType": "place",
+    "entityId": 11,
+    "entityName": "Naturaleza Puerto de Veracruz #11",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 197,
+    "userId": 38,
+    "entityType": "place",
+    "entityId": 42,
+    "entityName": "Restaurante Tuxpan #42",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "romántico",
+      "nocturno"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 198,
+    "userId": 57,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 199,
+    "userId": 110,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 200,
+    "userId": 33,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "económico",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 201,
+    "userId": 13,
+    "entityType": "place",
+    "entityId": 7,
+    "entityName": "Naturaleza Papantla #7",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 202,
+    "userId": 99,
+    "entityType": "place",
+    "entityId": 2,
+    "entityName": "Sitio Cultural Xicotepec de Juárez #2",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 203,
+    "userId": 20,
+    "entityType": "place",
+    "entityId": 40,
+    "entityName": "Hotel Huauchinango #40",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 204,
+    "userId": 32,
+    "entityType": "place",
+    "entityId": 15,
+    "entityName": "Hotel Xicotepec de Juárez #15",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "romántico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 205,
+    "userId": 108,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 206,
+    "userId": 46,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 207,
+    "userId": 57,
+    "entityType": "place",
+    "entityId": 36,
+    "entityName": "Entretenimiento Cascada de Tulimán #36",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 208,
+    "userId": 77,
+    "entityType": "place",
+    "entityId": 38,
+    "entityName": "Hotel Huauchinango #38",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 209,
+    "userId": 45,
+    "entityType": "place",
+    "entityId": 59,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #59",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 210,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 20,
+    "entityName": "Restaurante Cuetzalan #20",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 211,
+    "userId": 1,
+    "entityType": "place",
+    "entityId": 1,
+    "entityName": "Hotel Cuetzalan #1",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "vista",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 212,
+    "userId": 2,
+    "entityType": "place",
+    "entityId": 35,
+    "entityName": "Evento Cuetzalan #35",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "nocturno",
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 213,
+    "userId": 99,
+    "entityType": "place",
+    "entityId": 1,
+    "entityName": "Hotel Cuetzalan #1",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 214,
+    "userId": 1,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "accesible",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 215,
+    "userId": 32,
+    "entityType": "place",
+    "entityId": 26,
+    "entityName": "Entretenimiento Cascada de Tulimán #26",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 216,
+    "userId": 34,
+    "entityType": "place",
+    "entityId": 15,
+    "entityName": "Hotel Xicotepec de Juárez #15",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 217,
+    "userId": 98,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "romántico",
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 218,
+    "userId": 25,
+    "entityType": "place",
+    "entityId": 27,
+    "entityName": "Naturaleza Puerto de Veracruz #27",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 219,
+    "userId": 15,
+    "entityType": "place",
+    "entityId": 19,
+    "entityName": "Restaurante Pahuatlán (Pueblo Mágico) #19",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "nocturno",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 220,
+    "userId": 80,
+    "entityType": "place",
+    "entityId": 45,
+    "entityName": "Hotel Papantla #45",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 221,
+    "userId": 7,
+    "entityType": "place",
+    "entityId": 10,
+    "entityName": "Hotel Huauchinango #10",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "familiar",
+      "económico"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 222,
+    "userId": 17,
+    "entityType": "place",
+    "entityId": 18,
+    "entityName": "Naturaleza Cuetzalan #18",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "nocturno",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 223,
+    "userId": 20,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 224,
+    "userId": 54,
+    "entityType": "place",
+    "entityId": 22,
+    "entityName": "Playa Papantla #22",
+    "rating": 4,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 225,
+    "userId": 102,
+    "entityType": "place",
+    "entityId": 45,
+    "entityName": "Hotel Papantla #45",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 226,
+    "userId": 97,
+    "entityType": "place",
+    "entityId": 54,
+    "entityName": "Restaurante Xicotepec de Juárez #54",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 227,
+    "userId": 51,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 228,
+    "userId": 25,
+    "entityType": "place",
+    "entityId": 12,
+    "entityName": "Entretenimiento Cascada de Tulimán #12",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 229,
+    "userId": 92,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 230,
+    "userId": 95,
+    "entityType": "place",
+    "entityId": 16,
+    "entityName": "Playa Papantla #16",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 231,
+    "userId": 99,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 232,
+    "userId": 50,
+    "entityType": "place",
+    "entityId": 31,
+    "entityName": "Entretenimiento Cuetzalan #31",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "romántico",
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 233,
+    "userId": 71,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "económico",
+      "vista"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 234,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 13,
+    "entityName": "Entretenimiento Xicotepec de Juárez #13",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 235,
+    "userId": 82,
+    "entityType": "place",
+    "entityId": 16,
+    "entityName": "Playa Papantla #16",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 236,
+    "userId": 36,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "económico",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 237,
+    "userId": 75,
+    "entityType": "place",
+    "entityId": 3,
+    "entityName": "Playa Pahuatlán (Pueblo Mágico) #3",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 238,
+    "userId": 99,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 239,
+    "userId": 12,
+    "entityType": "place",
+    "entityId": 32,
+    "entityName": "Entretenimiento Cuetzalan #32",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 240,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 23,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #23",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 241,
+    "userId": 63,
+    "entityType": "place",
+    "entityId": 9,
+    "entityName": "Entretenimiento Cuetzalan #9",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 242,
+    "userId": 57,
+    "entityType": "place",
+    "entityId": 52,
+    "entityName": "Playa Tuxpan #52",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "aventura",
+      "familiar"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 243,
+    "userId": 18,
+    "entityType": "place",
+    "entityId": 47,
+    "entityName": "Sitio Cultural Zacatlán #47",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 244,
+    "userId": 38,
+    "entityType": "place",
+    "entityId": 36,
+    "entityName": "Entretenimiento Cascada de Tulimán #36",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "nocturno",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 245,
+    "userId": 45,
+    "entityType": "place",
+    "entityId": 35,
+    "entityName": "Evento Cuetzalan #35",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 246,
+    "userId": 68,
+    "entityType": "place",
+    "entityId": 5,
+    "entityName": "Evento Puerto de Veracruz #5",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 247,
+    "userId": 34,
+    "entityType": "place",
+    "entityId": 53,
+    "entityName": "Hotel Tuxpan #53",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "accesible",
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 248,
+    "userId": 24,
+    "entityType": "place",
+    "entityId": 47,
+    "entityName": "Sitio Cultural Zacatlán #47",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 249,
+    "userId": 80,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 250,
+    "userId": 69,
+    "entityType": "place",
+    "entityId": 43,
+    "entityName": "Evento Cuetzalan #43",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 251,
+    "userId": 71,
+    "entityType": "place",
+    "entityId": 50,
+    "entityName": "Restaurante Tuxpan #50",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 252,
+    "userId": 53,
+    "entityType": "place",
+    "entityId": 21,
+    "entityName": "Restaurante Xicotepec de Juárez #21",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "accesible",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 253,
+    "userId": 107,
+    "entityType": "place",
+    "entityId": 3,
+    "entityName": "Playa Pahuatlán (Pueblo Mágico) #3",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 254,
+    "userId": 14,
+    "entityType": "place",
+    "entityId": 13,
+    "entityName": "Entretenimiento Xicotepec de Juárez #13",
+    "rating": 2,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 255,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 37,
+    "entityName": "Hotel Tuxpan #37",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 256,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 4,
+    "entityName": "Restaurante Papantla #4",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 257,
+    "userId": 27,
+    "entityType": "place",
+    "entityId": 1,
+    "entityName": "Hotel Cuetzalan #1",
+    "rating": 5,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "nocturno",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 258,
+    "userId": 82,
+    "entityType": "place",
+    "entityId": 52,
+    "entityName": "Playa Tuxpan #52",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 259,
+    "userId": 48,
+    "entityType": "place",
+    "entityId": 53,
+    "entityName": "Hotel Tuxpan #53",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "familiar",
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 260,
+    "userId": 6,
+    "entityType": "place",
+    "entityId": 34,
+    "entityName": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "rating": 5,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "económico",
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 261,
+    "userId": 67,
+    "entityType": "place",
+    "entityId": 14,
+    "entityName": "Evento Tuxpan #14",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 262,
+    "userId": 50,
+    "entityType": "place",
+    "entityId": 35,
+    "entityName": "Evento Cuetzalan #35",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 263,
+    "userId": 81,
+    "entityType": "place",
+    "entityId": 37,
+    "entityName": "Hotel Tuxpan #37",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 264,
+    "userId": 14,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "accesible",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 265,
+    "userId": 14,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 266,
+    "userId": 44,
+    "entityType": "place",
+    "entityId": 33,
+    "entityName": "Naturaleza Grutas de Karmidas #33",
+    "rating": 2,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "vista",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 267,
+    "userId": 46,
+    "entityType": "place",
+    "entityId": 60,
+    "entityName": "Playa Xicotepec de Juárez #60",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 268,
+    "userId": 82,
+    "entityType": "place",
+    "entityId": 49,
+    "entityName": "Sitio Cultural Puerto de Veracruz #49",
+    "rating": 3,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 269,
+    "userId": 70,
+    "entityType": "place",
+    "entityId": 37,
+    "entityName": "Hotel Tuxpan #37",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 270,
+    "userId": 58,
+    "entityType": "place",
+    "entityId": 24,
+    "entityName": "Entretenimiento Puerto de Veracruz #24",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 271,
+    "userId": 77,
+    "entityType": "place",
+    "entityId": 19,
+    "entityName": "Restaurante Pahuatlán (Pueblo Mágico) #19",
+    "rating": 1,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 272,
+    "userId": 39,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 273,
+    "userId": 110,
+    "entityType": "place",
+    "entityId": 14,
+    "entityName": "Evento Tuxpan #14",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 274,
+    "userId": 5,
+    "entityType": "place",
+    "entityId": 7,
+    "entityName": "Naturaleza Papantla #7",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "accesible"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 275,
+    "userId": 47,
+    "entityType": "place",
+    "entityId": 17,
+    "entityName": "Sitio Cultural Pahuatlán (Pueblo Mágico) #17",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "aventura",
+      "económico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 276,
+    "userId": 74,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "aventura"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 277,
+    "userId": 62,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 1,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 278,
+    "userId": 83,
+    "entityType": "place",
+    "entityId": 39,
+    "entityName": "Evento Tuxpan #39",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 279,
+    "userId": 100,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 5,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 280,
+    "userId": 105,
+    "entityType": "place",
+    "entityId": 57,
+    "entityName": "Entretenimiento Xicotepec de Juárez #57",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 281,
+    "userId": 84,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "familiar",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 282,
+    "userId": 68,
+    "entityType": "place",
+    "entityId": 20,
+    "entityName": "Restaurante Cuetzalan #20",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 283,
+    "userId": 65,
+    "entityType": "place",
+    "entityId": 21,
+    "entityName": "Restaurante Xicotepec de Juárez #21",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "aventura",
+      "económico"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 284,
+    "userId": 97,
+    "entityType": "place",
+    "entityId": 29,
+    "entityName": "Evento Puerto de Veracruz #29",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "económico",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 285,
+    "userId": 51,
+    "entityType": "place",
+    "entityId": 51,
+    "entityName": "Naturaleza Grutas de Karmidas #51",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 286,
+    "userId": 61,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "familiar",
+      "romántico"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 287,
+    "userId": 52,
+    "entityType": "place",
+    "entityId": 6,
+    "entityName": "Sitio Cultural Puerto de Veracruz #6",
+    "rating": 4,
+    "comment": "Vale la pena la visita, volveríamos.",
+    "tags": [
+      "pet_friendly",
+      "nocturno"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 288,
+    "userId": 72,
+    "entityType": "place",
+    "entityId": 31,
+    "entityName": "Entretenimiento Cuetzalan #31",
+    "rating": 2,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 289,
+    "userId": 74,
+    "entityType": "place",
+    "entityId": 42,
+    "entityName": "Restaurante Tuxpan #42",
+    "rating": 4,
+    "comment": "Atención agradable y buena vista.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 290,
+    "userId": 10,
+    "entityType": "place",
+    "entityId": 16,
+    "entityName": "Playa Papantla #16",
+    "rating": 5,
+    "comment": "Muy buena experiencia en familia.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 291,
+    "userId": 86,
+    "entityType": "place",
+    "entityId": 8,
+    "entityName": "Playa Papantla #8",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "pet_friendly"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 292,
+    "userId": 42,
+    "entityType": "place",
+    "entityId": 13,
+    "entityName": "Entretenimiento Xicotepec de Juárez #13",
+    "rating": 3,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 293,
+    "userId": 79,
+    "entityType": "place",
+    "entityId": 23,
+    "entityName": "Evento Pahuatlán (Pueblo Mágico) #23",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "vista"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 294,
+    "userId": 105,
+    "entityType": "place",
+    "entityId": 60,
+    "entityName": "Playa Xicotepec de Juárez #60",
+    "rating": 4,
+    "comment": "Excelente lugar, lo recomiendo mucho.",
+    "tags": [],
+    "isReliable": true
+  },
+  {
+    "id": 295,
+    "userId": 97,
+    "entityType": "place",
+    "entityId": 10,
+    "entityName": "Hotel Huauchinango #10",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "económico",
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 296,
+    "userId": 19,
+    "entityType": "place",
+    "entityId": 40,
+    "entityName": "Hotel Huauchinango #40",
+    "rating": 1,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 297,
+    "userId": 58,
+    "entityType": "place",
+    "entityId": 20,
+    "entityName": "Restaurante Cuetzalan #20",
+    "rating": 3,
+    "comment": "No cumplió lo que ofrecía.",
+    "tags": [
+      "familiar"
+    ],
+    "isReliable": false
+  },
+  {
+    "id": 298,
+    "userId": 69,
+    "entityType": "place",
+    "entityId": 48,
+    "entityName": "Playa Cuetzalan #48",
+    "rating": 3,
+    "comment": "Precio elevado para lo que ofrece.",
+    "tags": [],
+    "isReliable": false
+  },
+  {
+    "id": 299,
+    "userId": 62,
+    "entityType": "place",
+    "entityId": 36,
+    "entityName": "Entretenimiento Cascada de Tulimán #36",
+    "rating": 2,
+    "comment": "Mal servicio, no lo recomiendo.",
+    "tags": [
+      "vista",
+      "accesible"
+    ],
+    "isReliable": true
+  },
+  {
+    "id": 300,
+    "userId": 85,
+    "entityType": "place",
+    "entityId": 38,
+    "entityName": "Hotel Huauchinango #38",
+    "rating": 1,
+    "comment": "Estaba descuidado y sucio.",
+    "tags": [
+      "familiar",
+      "vista"
+    ],
+    "isReliable": true
+  }
+]
