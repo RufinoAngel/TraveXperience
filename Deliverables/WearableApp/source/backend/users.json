@@ -1,0 +1,1022 @@
+[
+  {
+    "tempId": 1,
+    "fullName": "María Fernanda Xolo Cruz",
+    "email": "maria.fernanda.xolo.cruz1@outlook.com",
+    "role": "administrador",
+    "companyName": "Hoteles Sierra Norte",
+    "phone": "+526001338908",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 8362.93,
+      "age": 33,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 2,
+    "fullName": "Verónica Gómez Ramírez",
+    "email": "veronica.gomez.ramirez2@gmail.com",
+    "role": "administrador",
+    "companyName": "Tours Xicotepec",
+    "phone": "+522351161559",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta planear vacaciones familiares con actividades para todos.",
+    "travelPreferences": {
+      "avgBudget": 7915.91,
+      "age": 46,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 3,
+    "fullName": "Verónica López Reyes",
+    "email": "veronica.lopez.reyes3@hotmail.com",
+    "role": "administrador",
+    "companyName": "Cabañas Necaxa Adventure",
+    "phone": "+521034131647",
+    "location": "Huauchinango, Puebla",
+    "bio": "Busco siempre la próxima aventura: rappel, tirolesa, lo que sea con adrenalina.",
+    "travelPreferences": {
+      "avgBudget": 2765.72,
+      "age": 23,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 4,
+    "fullName": "Sergio Sánchez Bautista",
+    "email": "sergio.sanchez.bautista4@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+523276483503",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 5369.11,
+      "age": 35,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 5,
+    "fullName": "Lizbeth Cruz Martínez",
+    "email": "lizbeth.cruz.martinez5@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+527242388496",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 7165.06,
+      "age": 31,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 6,
+    "fullName": "Iván Rodríguez Romero",
+    "email": "ivan.rodriguez.romero6@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526697848018",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me fascina visitar museos, zonas arqueológicas e historia local.",
+    "travelPreferences": {
+      "avgBudget": 7919.78,
+      "age": 49,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 7,
+    "fullName": "Fátima López Flores",
+    "email": "fatima.lopez.flores7@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528148932528",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Viajo casi siempre con mi familia, buscando lugares tranquilos y seguros.",
+    "travelPreferences": {
+      "avgBudget": 9160.67,
+      "age": 45,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 8,
+    "fullName": "Estefanía Torres Jiménez",
+    "email": "estefania.torres.jimenez8@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+523911718227",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 2576.3,
+      "age": 19,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 9,
+    "fullName": "Rodrigo Contreras Gómez",
+    "email": "rodrigo.contreras.gomez9@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+525787133150",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 7191.94,
+      "age": 31,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 10,
+    "fullName": "Paola Ramírez Hernández",
+    "email": "paola.ramirez.hernandez10@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528347382997",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me encanta el senderismo y explorar cascadas cerca de la Sierra.",
+    "travelPreferences": {
+      "avgBudget": 4508.72,
+      "age": 22,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 11,
+    "fullName": "Cecilia Sánchez López",
+    "email": "cecilia.sanchez.lopez11@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+520651333872",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me encanta el senderismo y explorar cascadas cerca de la Sierra.",
+    "travelPreferences": {
+      "avgBudget": 4051.77,
+      "age": 24,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 12,
+    "fullName": "Gustavo Ramírez Martínez",
+    "email": "gustavo.ramirez.martinez12@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+522677360260",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajo casi siempre con mi familia, buscando lugares tranquilos y seguros.",
+    "travelPreferences": {
+      "avgBudget": 6177.09,
+      "age": 46,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 13,
+    "fullName": "Gustavo Flores Gómez",
+    "email": "gustavo.flores.gomez13@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+529805009788",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajo casi siempre con mi familia, buscando lugares tranquilos y seguros.",
+    "travelPreferences": {
+      "avgBudget": 7857.56,
+      "age": 62,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 14,
+    "fullName": "Rodrigo Martínez Pérez",
+    "email": "rodrigo.martinez.perez14@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+529909169985",
+    "location": "Huauchinango, Puebla",
+    "bio": "Busco siempre la próxima aventura: rappel, tirolesa, lo que sea con adrenalina.",
+    "travelPreferences": {
+      "avgBudget": 4795.59,
+      "age": 22,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 15,
+    "fullName": "Adrián Ramírez Cruz",
+    "email": "adrian.ramirez.cruz15@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+520799118384",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 10014.92,
+      "age": 43,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 16,
+    "fullName": "Itzel Ramírez Vázquez",
+    "email": "itzel.ramirez.vazquez16@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528084124118",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 11870.83,
+      "age": 36,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 17,
+    "fullName": "Omar Sánchez Zacarías",
+    "email": "omar.sanchez.zacarias17@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+521640052427",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 6008.97,
+      "age": 39,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 18,
+    "fullName": "Verónica Hernández López",
+    "email": "veronica.hernandez.lopez18@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526204505331",
+    "location": "Huauchinango, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 3538.78,
+      "age": 22,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 19,
+    "fullName": "Cecilia Contreras Xolo",
+    "email": "cecilia.contreras.xolo19@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+522563421607",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 4584.96,
+      "age": 27,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 20,
+    "fullName": "Gustavo Vázquez Flores",
+    "email": "gustavo.vazquez.flores20@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+525868501429",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta planear vacaciones familiares con actividades para todos.",
+    "travelPreferences": {
+      "avgBudget": 9343.24,
+      "age": 70,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 21,
+    "fullName": "Omar Gómez Vázquez",
+    "email": "omar.gomez.vazquez21@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526088356159",
+    "location": "Necaxa, Puebla",
+    "bio": "Viajo casi siempre con mi familia, buscando lugares tranquilos y seguros.",
+    "travelPreferences": {
+      "avgBudget": 16794.06,
+      "age": 64,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 22,
+    "fullName": "Ximena Xolo Flores",
+    "email": "ximena.xolo.flores22@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526299468044",
+    "location": "Necaxa, Puebla",
+    "bio": "Disfruto el descanso en playa con mis hijos más que la aventura extrema.",
+    "travelPreferences": {
+      "avgBudget": 12652.95,
+      "age": 50,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 23,
+    "fullName": "Erick Contreras Aguilar",
+    "email": "erick.contreras.aguilar23@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+522148951343",
+    "location": "Necaxa, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 10349.88,
+      "age": 38,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 24,
+    "fullName": "Miguel Ramírez Jiménez",
+    "email": "miguel.ramirez.jimenez24@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+523201632870",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta planear vacaciones familiares con actividades para todos.",
+    "travelPreferences": {
+      "avgBudget": 14620.15,
+      "age": 57,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 25,
+    "fullName": "Alejandro Morales Rodríguez",
+    "email": "alejandro.morales.rodriguez25@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528727743487",
+    "location": "Necaxa, Puebla",
+    "bio": "Prefiero un buen recorrido cultural antes que cualquier otra cosa.",
+    "travelPreferences": {
+      "avgBudget": 17400.48,
+      "age": 69,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 26,
+    "fullName": "Gustavo Martínez Zacarías",
+    "email": "gustavo.martinez.zacarias26@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526231665876",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 5106.99,
+      "age": 36,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 27,
+    "fullName": "Diego Reyes Meza",
+    "email": "diego.reyes.meza27@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526688937346",
+    "location": "Huauchinango, Puebla",
+    "bio": "Amante del arte, la arquitectura colonial y los mercados artesanales.",
+    "travelPreferences": {
+      "avgBudget": 11723.76,
+      "age": 55,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 28,
+    "fullName": "Adrián Bautista Bautista",
+    "email": "adrian.bautista.bautista28@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+529901627204",
+    "location": "Necaxa, Puebla",
+    "bio": "Me gusta planear vacaciones familiares con actividades para todos.",
+    "travelPreferences": {
+      "avgBudget": 17768.66,
+      "age": 69,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 29,
+    "fullName": "Gustavo Torres Torres",
+    "email": "gustavo.torres.torres29@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528053100330",
+    "location": "Necaxa, Puebla",
+    "bio": "Disfruto el descanso en playa con mis hijos más que la aventura extrema.",
+    "travelPreferences": {
+      "avgBudget": 16018.93,
+      "age": 66,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 30,
+    "fullName": "Fernando Jiménez Bautista",
+    "email": "fernando.jimenez.bautista30@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+529124190496",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 2791.13,
+      "age": 25,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 31,
+    "fullName": "Karla Martínez Domínguez",
+    "email": "karla.martinez.dominguez31@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+525865185067",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me fascina visitar museos, zonas arqueológicas e historia local.",
+    "travelPreferences": {
+      "avgBudget": 14211.11,
+      "age": 62,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 32,
+    "fullName": "Sergio Aguilar Morales",
+    "email": "sergio.aguilar.morales32@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+527694531473",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Prefiero un buen recorrido cultural antes que cualquier otra cosa.",
+    "travelPreferences": {
+      "avgBudget": 9240.99,
+      "age": 63,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 33,
+    "fullName": "Lizbeth Torres Hernández",
+    "email": "lizbeth.torres.hernandez33@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528083136783",
+    "location": "Necaxa, Puebla",
+    "bio": "Amante del arte, la arquitectura colonial y los mercados artesanales.",
+    "travelPreferences": {
+      "avgBudget": 10084.07,
+      "age": 49,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 34,
+    "fullName": "Ángel Morales Hernández",
+    "email": "angel.morales.hernandez34@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528856855744",
+    "location": "Necaxa, Puebla",
+    "bio": "Si hay una montaña que escalar o un río que cruzar, ahí voy a estar.",
+    "travelPreferences": {
+      "avgBudget": 3535.44,
+      "age": 23,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 35,
+    "fullName": "Jorge Torres López",
+    "email": "jorge.torres.lopez35@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528941343524",
+    "location": "Huauchinango, Puebla",
+    "bio": "Disfruto el descanso en playa con mis hijos más que la aventura extrema.",
+    "travelPreferences": {
+      "avgBudget": 14863.26,
+      "age": 65,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 36,
+    "fullName": "Alejandra Cruz García",
+    "email": "alejandra.cruz.garcia36@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+520947775204",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me encanta el senderismo y explorar cascadas cerca de la Sierra.",
+    "travelPreferences": {
+      "avgBudget": 4134.77,
+      "age": 21,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 37,
+    "fullName": "José Luis Reyes Jiménez",
+    "email": "jose.luis.reyes.jimenez37@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+521318699938",
+    "location": "Huauchinango, Puebla",
+    "bio": "Fanático del buceo y los deportes extremos cuando salgo de viaje.",
+    "travelPreferences": {
+      "avgBudget": 3469.94,
+      "age": 22,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 38,
+    "fullName": "Gustavo Flores Domínguez",
+    "email": "gustavo.flores.dominguez38@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+524123281206",
+    "location": "Necaxa, Puebla",
+    "bio": "Disfruto mucho conocer la gastronomía y las tradiciones de cada pueblo.",
+    "travelPreferences": {
+      "avgBudget": 7190.8,
+      "age": 45,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 39,
+    "fullName": "Nayeli Flores García",
+    "email": "nayeli.flores.garcia39@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+529361832421",
+    "location": "Necaxa, Puebla",
+    "bio": "Me gusta combinar naturaleza con algo de vida nocturna.",
+    "travelPreferences": {
+      "avgBudget": 9499.08,
+      "age": 32,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 40,
+    "fullName": "Emmanuel Contreras Xolo",
+    "email": "emmanuel.contreras.xolo40@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528877190659",
+    "location": "Huauchinango, Puebla",
+    "bio": "Me gusta planear vacaciones familiares con actividades para todos.",
+    "travelPreferences": {
+      "avgBudget": 9649.09,
+      "age": 70,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 41,
+    "fullName": "Iván Bautista Domínguez",
+    "email": "ivan.bautista.dominguez41@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528742967175",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Prefiero un buen recorrido cultural antes que cualquier otra cosa.",
+    "travelPreferences": {
+      "avgBudget": 6482.78,
+      "age": 55,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 42,
+    "fullName": "Alejandro Pérez Torres",
+    "email": "alejandro.perez.torres42@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+527154516808",
+    "location": "Huauchinango, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 10084.0,
+      "age": 44,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 43,
+    "fullName": "Jorge Romero Vázquez",
+    "email": "jorge.romero.vazquez43@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+527109324808",
+    "location": "Necaxa, Puebla",
+    "bio": "Prefiero un buen recorrido cultural antes que cualquier otra cosa.",
+    "travelPreferences": {
+      "avgBudget": 12590.64,
+      "age": 57,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 44,
+    "fullName": "Alejandro Morales López",
+    "email": "alejandro.morales.lopez44@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+523782639821",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Prefiero un buen recorrido cultural antes que cualquier otra cosa.",
+    "travelPreferences": {
+      "avgBudget": 9281.1,
+      "age": 59,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 45,
+    "fullName": "Cecilia Torres Romero",
+    "email": "cecilia.torres.romero45@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+522787558867",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta combinar naturaleza con algo de vida nocturna.",
+    "travelPreferences": {
+      "avgBudget": 11991.22,
+      "age": 35,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 46,
+    "fullName": "Yolanda Domínguez Reyes",
+    "email": "yolanda.dominguez.reyes46@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+522702895171",
+    "location": "Necaxa, Puebla",
+    "bio": "Me gusta combinar naturaleza con algo de vida nocturna.",
+    "travelPreferences": {
+      "avgBudget": 10491.27,
+      "age": 32,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 47,
+    "fullName": "María Fernanda Xolo Rodríguez",
+    "email": "maria.fernanda.xolo.rodriguez47@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526158657809",
+    "location": "Huauchinango, Puebla",
+    "bio": "Viajero curioso, cada destino lo disfruto diferente.",
+    "travelPreferences": {
+      "avgBudget": 6120.18,
+      "age": 44,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 48,
+    "fullName": "Emmanuel Ramírez Xolo",
+    "email": "emmanuel.ramirez.xolo48@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+524005045562",
+    "location": "Necaxa, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 1851.78,
+      "age": 23,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 49,
+    "fullName": "Paola Bautista Pérez",
+    "email": "paola.bautista.perez49@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+523747407482",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Busco siempre la próxima aventura: rappel, tirolesa, lo que sea con adrenalina.",
+    "travelPreferences": {
+      "avgBudget": 2342.9,
+      "age": 28,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 50,
+    "fullName": "Sergio Domínguez Flores",
+    "email": "sergio.dominguez.flores50@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+523695944064",
+    "location": "Necaxa, Puebla",
+    "bio": "Me fascina visitar museos, zonas arqueológicas e historia local.",
+    "travelPreferences": {
+      "avgBudget": 17992.48,
+      "age": 58,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 51,
+    "fullName": "Guadalupe Contreras Xolo",
+    "email": "guadalupe.contreras.xolo51@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+522104709521",
+    "location": "Necaxa, Puebla",
+    "bio": "Me gusta planear vacaciones familiares con actividades para todos.",
+    "travelPreferences": {
+      "avgBudget": 8628.05,
+      "age": 49,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 52,
+    "fullName": "Diego Pérez Sánchez",
+    "email": "diego.perez.sanchez52@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+524745171236",
+    "location": "Huauchinango, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 2453.85,
+      "age": 26,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 53,
+    "fullName": "Marco Antonio Hernández Cruz",
+    "email": "marco.antonio.hernandez.cruz53@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+521370985931",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Amante del arte, la arquitectura colonial y los mercados artesanales.",
+    "travelPreferences": {
+      "avgBudget": 13014.72,
+      "age": 52,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 54,
+    "fullName": "Andrea Aguilar Gómez",
+    "email": "andrea.aguilar.gomez54@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+528267586926",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Busco siempre la próxima aventura: rappel, tirolesa, lo que sea con adrenalina.",
+    "travelPreferences": {
+      "avgBudget": 1906.42,
+      "age": 25,
+      "interesAventura": true,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 55,
+    "fullName": "Ángel Contreras Gómez",
+    "email": "angel.contreras.gomez55@gmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+521585064317",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me gusta combinar naturaleza con algo de vida nocturna.",
+    "travelPreferences": {
+      "avgBudget": 5888.9,
+      "age": 35,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 56,
+    "fullName": "Estefanía Hernández García",
+    "email": "estefania.hernandez.garcia56@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+529335290422",
+    "location": "Necaxa, Puebla",
+    "bio": "Disfruto mucho conocer la gastronomía y las tradiciones de cada pueblo.",
+    "travelPreferences": {
+      "avgBudget": 6823.32,
+      "age": 68,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 57,
+    "fullName": "Ricardo López Bautista",
+    "email": "ricardo.lopez.bautista57@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+524026811775",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Busco siempre la próxima aventura: rappel, tirolesa, lo que sea con adrenalina.",
+    "travelPreferences": {
+      "avgBudget": 2633.2,
+      "age": 19,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": true
+    }
+  },
+  {
+    "tempId": 58,
+    "fullName": "Araceli Romero Ramírez",
+    "email": "araceli.romero.ramirez58@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+520766177115",
+    "location": "Xicotepec de Juárez, Puebla",
+    "bio": "Me fascina visitar museos, zonas arqueológicas e historia local.",
+    "travelPreferences": {
+      "avgBudget": 9619.56,
+      "age": 57,
+      "interesAventura": false,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 59,
+    "fullName": "Fernando Cruz Contreras",
+    "email": "fernando.cruz.contreras59@hotmail.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+526118367365",
+    "location": "Huauchinango, Puebla",
+    "bio": "Disfruto el descanso en playa con mis hijos más que la aventura extrema.",
+    "travelPreferences": {
+      "avgBudget": 12366.68,
+      "age": 58,
+      "interesAventura": false,
+      "interesCultura": true,
+      "viajaSolo": false
+    }
+  },
+  {
+    "tempId": 60,
+    "fullName": "Alejandro Torres Gómez",
+    "email": "alejandro.torres.gomez60@outlook.com",
+    "role": "usuario",
+    "companyName": null,
+    "phone": "+521161528098",
+    "location": "Huauchinango, Puebla",
+    "bio": "Un poco de todo: cultura por el día, buena comida por la noche.",
+    "travelPreferences": {
+      "avgBudget": 7794.14,
+      "age": 38,
+      "interesAventura": true,
+      "interesCultura": false,
+      "viajaSolo": false
+    }
+  }
+]
