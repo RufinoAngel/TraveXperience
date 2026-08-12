@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "name": "Hotel Cuetzalan #1",
+    "category": "hotel",
+    "municipality": "Pahuatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.6117,
+        20.86728
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.8,
+    "ratingCount": 128,
+    "tags": [
+      "pet_friendly",
+      "vista"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sitio Cultural Xicotepec de Juárez #2",
+    "category": "sitio_cultural",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.16735,
+        19.89578
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 4.5,
+    "ratingCount": 120,
+    "tags": [
+      "accesible",
+      "pet_friendly",
+      "romántico"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Playa Pahuatlán (Pueblo Mágico) #3",
+    "category": "playa",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.38122,
+        20.87953
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 3.8,
+    "ratingCount": 202,
+    "tags": [
+      "familiar",
+      "pet_friendly",
+      "económico"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Restaurante Papantla #4",
+    "category": "restaurante",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.3708,
+        20.37083
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 3.1,
+    "ratingCount": 81,
+    "tags": [
+      "accesible",
+      "romántico",
+      "familiar"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Evento Puerto de Veracruz #5",
+    "category": "evento",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.12798,
+        20.52414
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 4.6,
+    "ratingCount": 207,
+    "tags": [
+      "romántico",
+      "económico"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sitio Cultural Puerto de Veracruz #6",
+    "category": "sitio_cultural",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.44169,
+        20.26852
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.8,
+    "ratingCount": 0,
+    "tags": [
+      "aventura",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Naturaleza Papantla #7",
+    "category": "naturaleza",
+    "municipality": "Xicotepec de Juárez",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.68967,
+        19.83659
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 2.9,
+    "ratingCount": 180,
+    "tags": [
+      "económico"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Playa Papantla #8",
+    "category": "playa",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.5172,
+        20.69578
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.3,
+    "ratingCount": 82,
+    "tags": [
+      "vista"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Entretenimiento Cuetzalan #9",
+    "category": "entretenimiento",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.02576,
+        20.55882
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 4.3,
+    "ratingCount": 143,
+    "tags": [
+      "accesible",
+      "económico",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Hotel Huauchinango #10",
+    "category": "hotel",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.33958,
+        20.38674
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 4.3,
+    "ratingCount": 242,
+    "tags": [
+      "pet_friendly",
+      "nocturno",
+      "romántico"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Naturaleza Puerto de Veracruz #11",
+    "category": "naturaleza",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.82713,
+        19.71886
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 4.8,
+    "ratingCount": 36,
+    "tags": [
+      "económico",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Entretenimiento Cascada de Tulimán #12",
+    "category": "entretenimiento",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.16658,
+        20.09617
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 2.5,
+    "ratingCount": 53,
+    "tags": [
+      "económico"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Entretenimiento Xicotepec de Juárez #13",
+    "category": "entretenimiento",
+    "municipality": "Xicotepec de Juárez",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.60558,
+        20.10058
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 3.6,
+    "ratingCount": 107,
+    "tags": [
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Evento Tuxpan #14",
+    "category": "evento",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.09554,
+        20.2717
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 4.5,
+    "ratingCount": 147,
+    "tags": [
+      "aventura",
+      "económico",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Hotel Xicotepec de Juárez #15",
+    "category": "hotel",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.53509,
+        19.76845
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.9,
+    "ratingCount": 18,
+    "tags": [
+      "vista",
+      "aventura"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Playa Papantla #16",
+    "category": "playa",
+    "municipality": "Pahuatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.46,
+        19.87309
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.6,
+    "ratingCount": 167,
+    "tags": [
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Sitio Cultural Pahuatlán (Pueblo Mágico) #17",
+    "category": "sitio_cultural",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.42849,
+        19.86852
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.2,
+    "ratingCount": 76,
+    "tags": [
+      "económico"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Naturaleza Cuetzalan #18",
+    "category": "naturaleza",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.86388,
+        19.73956
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.4,
+    "ratingCount": 109,
+    "tags": [
+      "romántico"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Restaurante Pahuatlán (Pueblo Mágico) #19",
+    "category": "restaurante",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.79989,
+        20.66868
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.0,
+    "ratingCount": 163,
+    "tags": [
+      "económico",
+      "aventura"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Restaurante Cuetzalan #20",
+    "category": "restaurante",
+    "municipality": "Pahuatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.17998,
+        20.69252
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 2.7,
+    "ratingCount": 139,
+    "tags": [
+      "vista",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Restaurante Xicotepec de Juárez #21",
+    "category": "restaurante",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.10672,
+        20.74259
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 3.7,
+    "ratingCount": 57,
+    "tags": [
+      "familiar",
+      "económico"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Playa Papantla #22",
+    "category": "playa",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.74904,
+        20.58268
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 3.9,
+    "ratingCount": 215,
+    "tags": [
+      "pet_friendly",
+      "romántico"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Evento Pahuatlán (Pueblo Mágico) #23",
+    "category": "evento",
+    "municipality": "Pahuatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.42637,
+        20.50448
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 2.7,
+    "ratingCount": 231,
+    "tags": [
+      "familiar",
+      "romántico",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Entretenimiento Puerto de Veracruz #24",
+    "category": "entretenimiento",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.58946,
+        20.76055
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 4.9,
+    "ratingCount": 114,
+    "tags": [
+      "vista"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sitio Cultural Xicotepec de Juárez #25",
+    "category": "sitio_cultural",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.57985,
+        20.8466
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 5.0,
+    "ratingCount": 111,
+    "tags": [
+      "vista"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Entretenimiento Cascada de Tulimán #26",
+    "category": "entretenimiento",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.24054,
+        20.68093
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 3.9,
+    "ratingCount": 141,
+    "tags": [
+      "romántico",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Naturaleza Puerto de Veracruz #27",
+    "category": "naturaleza",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.50184,
+        20.22979
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.5,
+    "ratingCount": 37,
+    "tags": [
+      "económico",
+      "familiar",
+      "romántico"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Naturaleza Grutas de Karmidas #28",
+    "category": "naturaleza",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.60711,
+        20.61545
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 3.2,
+    "ratingCount": 167,
+    "tags": [
+      "nocturno",
+      "familiar"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Evento Puerto de Veracruz #29",
+    "category": "evento",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.06643,
+        19.88664
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.5,
+    "ratingCount": 225,
+    "tags": [
+      "aventura",
+      "familiar"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Hotel Xicotepec de Juárez #30",
+    "category": "hotel",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.445,
+        20.5749
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 3.3,
+    "ratingCount": 215,
+    "tags": [
+      "económico",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Entretenimiento Cuetzalan #31",
+    "category": "entretenimiento",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.18942,
+        19.95355
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.3,
+    "ratingCount": 154,
+    "tags": [
+      "económico",
+      "nocturno",
+      "aventura"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Entretenimiento Cuetzalan #32",
+    "category": "entretenimiento",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.56124,
+        19.93367
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.8,
+    "ratingCount": 40,
+    "tags": [
+      "romántico"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Naturaleza Grutas de Karmidas #33",
+    "category": "naturaleza",
+    "municipality": "Xicotepec de Juárez",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.06594,
+        20.53148
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 3.0,
+    "ratingCount": 213,
+    "tags": [
+      "familiar"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Hotel Pahuatlán (Pueblo Mágico) #34",
+    "category": "hotel",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.00226,
+        19.97939
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.6,
+    "ratingCount": 129,
+    "tags": [
+      "económico",
+      "accesible"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Evento Cuetzalan #35",
+    "category": "evento",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.10304,
+        19.71668
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 4.0,
+    "ratingCount": 89,
+    "tags": [
+      "vista",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Entretenimiento Cascada de Tulimán #36",
+    "category": "entretenimiento",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.65125,
+        20.75339
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.5,
+    "ratingCount": 41,
+    "tags": [
+      "aventura",
+      "pet_friendly",
+      "económico"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Hotel Tuxpan #37",
+    "category": "hotel",
+    "municipality": "Xicotepec de Juárez",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.73677,
+        20.45686
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.7,
+    "ratingCount": 33,
+    "tags": [
+      "vista",
+      "romántico",
+      "familiar"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Hotel Huauchinango #38",
+    "category": "hotel",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.81999,
+        19.94852
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 4.6,
+    "ratingCount": 117,
+    "tags": [
+      "aventura",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Evento Tuxpan #39",
+    "category": "evento",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.92523,
+        20.04257
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 3.8,
+    "ratingCount": 169,
+    "tags": [
+      "romántico",
+      "vista"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Hotel Huauchinango #40",
+    "category": "hotel",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.97191,
+        20.5013
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 3.2,
+    "ratingCount": 182,
+    "tags": [
+      "romántico",
+      "económico",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Playa Puerto de Veracruz #41",
+    "category": "playa",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.26164,
+        20.30075
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.2,
+    "ratingCount": 184,
+    "tags": [
+      "nocturno"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Restaurante Tuxpan #42",
+    "category": "restaurante",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.23869,
+        20.87696
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 4.0,
+    "ratingCount": 146,
+    "tags": [
+      "accesible"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Evento Cuetzalan #43",
+    "category": "evento",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.28316,
+        20.55186
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.6,
+    "ratingCount": 215,
+    "tags": [
+      "vista",
+      "nocturno",
+      "familiar"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Entretenimiento Grutas de Karmidas #44",
+    "category": "entretenimiento",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.6609,
+        20.24494
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.1,
+    "ratingCount": 56,
+    "tags": [
+      "aventura",
+      "accesible"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Hotel Papantla #45",
+    "category": "hotel",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.04543,
+        20.72572
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 3.7,
+    "ratingCount": 30,
+    "tags": [
+      "familiar",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Evento Cascada de Tulimán #46",
+    "category": "evento",
+    "municipality": "Pahuatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.85362,
+        20.44128
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 3.8,
+    "ratingCount": 222,
+    "tags": [
+      "pet_friendly",
+      "romántico",
+      "vista"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Sitio Cultural Zacatlán #47",
+    "category": "sitio_cultural",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.50498,
+        20.17573
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 3.5,
+    "ratingCount": 145,
+    "tags": [
+      "vista",
+      "nocturno"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Playa Cuetzalan #48",
+    "category": "playa",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.33357,
+        20.71487
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 3.3,
+    "ratingCount": 14,
+    "tags": [
+      "nocturno"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Sitio Cultural Puerto de Veracruz #49",
+    "category": "sitio_cultural",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.63657,
+        20.00823
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 4.5,
+    "ratingCount": 199,
+    "tags": [
+      "vista"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Restaurante Tuxpan #50",
+    "category": "restaurante",
+    "municipality": "Pahuatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.78981,
+        20.41738
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 2.5,
+    "ratingCount": 136,
+    "tags": [
+      "accesible"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Naturaleza Grutas de Karmidas #51",
+    "category": "naturaleza",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.47959,
+        20.82008
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 4.2,
+    "ratingCount": 160,
+    "tags": [
+      "aventura",
+      "económico",
+      "accesible"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Playa Tuxpan #52",
+    "category": "playa",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.17549,
+        20.73238
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 2.7,
+    "ratingCount": 11,
+    "tags": [
+      "romántico",
+      "aventura"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Hotel Tuxpan #53",
+    "category": "hotel",
+    "municipality": "Tlaxco",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.83436,
+        20.5534
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 5.0,
+    "ratingCount": 125,
+    "tags": [
+      "aventura",
+      "económico"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Restaurante Xicotepec de Juárez #54",
+    "category": "restaurante",
+    "municipality": "Huauchinango",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.44815,
+        20.8177
+      ]
+    },
+    "priceLevel": 2,
+    "ratingAvg": 4.3,
+    "ratingCount": 33,
+    "tags": [
+      "familiar"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Hotel Xicotepec de Juárez #55",
+    "category": "hotel",
+    "municipality": "Tuxpan",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.34722,
+        20.38763
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 4.4,
+    "ratingCount": 159,
+    "tags": [
+      "familiar"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Playa Xicotepec de Juárez #56",
+    "category": "playa",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.76572,
+        20.47436
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 3.6,
+    "ratingCount": 31,
+    "tags": [
+      "romántico",
+      "aventura",
+      "accesible"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Entretenimiento Xicotepec de Juárez #57",
+    "category": "entretenimiento",
+    "municipality": "Zacatlán",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.71577,
+        19.86375
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 4.2,
+    "ratingCount": 169,
+    "tags": [
+      "romántico",
+      "nocturno",
+      "pet_friendly"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Playa Grutas de Karmidas #58",
+    "category": "playa",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.04741,
+        20.52087
+      ]
+    },
+    "priceLevel": 3,
+    "ratingAvg": 2.8,
+    "ratingCount": 27,
+    "tags": [
+      "aventura",
+      "romántico"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Evento Pahuatlán (Pueblo Mágico) #59",
+    "category": "evento",
+    "municipality": "Papantla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.23441,
+        19.9197
+      ]
+    },
+    "priceLevel": 4,
+    "ratingAvg": 3.2,
+    "ratingCount": 10,
+    "tags": [
+      "nocturno",
+      "económico",
+      "accesible"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Playa Xicotepec de Juárez #60",
+    "category": "playa",
+    "municipality": "Zihuateutla",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -98.15328,
+        20.79975
+      ]
+    },
+    "priceLevel": 1,
+    "ratingAvg": 4.6,
+    "ratingCount": 171,
+    "tags": [
+      "vista",
+      "familiar"
+    ]
+  }
+]

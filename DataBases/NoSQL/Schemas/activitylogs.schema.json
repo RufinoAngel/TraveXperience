@@ -1,0 +1,18 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "activitylogs",
+    "description": "Registro de eventos de comportamiento del usuario. Alimenta el reentrenamiento del modelo de Machine Learning.",
+    "required": ["userId", "eventType", "source"],
+    "properties": {
+      "userId": { "bsonType": "int", "description": "Puente lógico -> MySQL users.id" },
+      "eventType": {
+        "enum": ["search", "view_place", "save_favorite", "book_itinerary", "app_open", "wearable_sync"],
+        "description": "Tipo de evento registrado"
+      },
+      "metadata": { "description": "Payload libre según eventType (tipo Mixed)" },
+      "source": { "enum": ["web", "mobile", "smartwatch"], "description": "Plataforma origen del evento" },
+      "createdAt": { "bsonType": "date", "description": "Fecha del evento" }
+    }
+  }
+}
