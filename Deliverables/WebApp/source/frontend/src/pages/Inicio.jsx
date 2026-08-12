@@ -1,0 +1,259 @@
+import React, { useState, useRef } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
+
+function NearMeHome({ onNavigate }) {
+  // Estado para los filtros de categorías cercanos
+  const [activeFilter, setActiveFilter] = useState('Todo Cerca');
+  
+  // Estado para manejar favoritos de forma interactiva
+  const [favorites, setFavorites] = useState({});
+
+  // Lista enriquecida de experiencias cercanas (Ubicación: Londres / South Kensington)
+  const [places, setPlaces] = useState([
+    {
+      id: 'acamayas-portal',
+      title: 'Restaurante Las Acamayas',
+      type: 'Restaurantes',
+      icon: 'restaurant',
+      pinColor: 'bg-error text-white',
+      distance: '0.4 km',
+      rating: '4.9',
+      reviews: '1.2k',
+      tags: ['#Regional', '#Acamayas'],
+      desc: 'Cocina típica de la Sierra Norte de Puebla en los portales del centro. Famoso por sus acamayas al mojo de ajo y molotes de tinga.',
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80',
+      coords: { top: '40%', left: '30%' }
+    },
+    {
+      id: 'museo-carranza',
+      title: 'Museo Casa Carranza',
+      type: 'Museos',
+      icon: 'museum',
+      pinColor: 'bg-secondary-container text-primary',
+      distance: '0.8 km',
+      rating: '4.8',
+      reviews: '3.5k',
+      tags: ['#Historia', '#Cultura'],
+      desc: 'Casa donde fue velado Venustiano Carranza en 1920, con objetos personales, documentos y fotografías de la Revolución.',
+      image: 'https://images.unsplash.com/photo-1584285405429-136bf988e786?auto=format&fit=crop&w=600&q=80',
+      coords: { top: '35%', left: '55%' }
+    },
+    {
+      id: 'xochipila',
+      title: 'Centro Ceremonial Xochipila',
+      type: 'Entretenimiento',
+      icon: 'theater_comedy',
+      pinColor: 'bg-secondary text-white',
+      distance: '1.2 km',
+      rating: '4.7',
+      reviews: '850',
+      tags: ['#Tradición', '#Rituales'],
+      desc: 'Peña sagrada en el corazón del pueblo, punto de encuentro para rituales indígenas y celebraciones del solsticio.',
+      image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=600&q=80',
+      coords: { top: '50%', left: '75%' }
+    }
+  ]);
+
+  const scrollRef = useRef(null);
+
+  // Alternar el estado de favorito
+  const toggleFavorite = (id) => {
+    setFavorites(prev => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  // Filtrar lugares según selección
+  const filteredPlaces = activeFilter === 'Todo Cerca' 
+    ? places 
+    : places.filter(place => place.type.toLowerCase() === activeFilter.toLowerCase() || (activeFilter === 'Eventos' && place.type === 'Evento'));
+
+  // Hacer scroll automático a la tarjeta cuando se presiona un pin del mapa
+  const scrollToCard = (id) => {
+    const cardElement = document.getElementById(`card-${id}`);
+    if (cardElement) {
+      cardElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  };
+
+  const categories = [
+    { name: 'Todo Cerca', icon: 'explore' },
+    { name: 'Restaurantes', icon: 'restaurant' },
+    { name: 'Museos', icon: 'museum' },
+    { name: 'Eventos', icon: 'event' },
+    { name: 'Entretenimiento', icon: 'theater_comedy' }
+  ];
+
+  return (
+    <div className="bg-background text-on-background font-body-md overflow-hidden h-screen flex flex-col antialiased">
+
+      {/* Main Area: Interactive Map Background Layout */}
+      <main className="relative flex-grow overflow-hidden flex flex-col pt-20">
+        
+        {/* Map Background Canvas Component */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            className="w-full h-full object-cover opacity-90 select-none pointer-events-none" 
+            alt="Vista aérea de la sierra de Xicotepec de Juárez" 
+            src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1920&q=80" 
+          />
+          {/* Capa de degradados premium */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-background pointer-events-none"></div>
+          
+          {/* Renderizado de pines dinámicos en base al filtro seleccionado */}
+          {filteredPlaces.map((place) => (
+            <div 
+              key={place.id}
+              className="absolute transition-all duration-300 transform hover:scale-110 active:scale-95" 
+              style={{ top: place.coords.top, left: place.coords.left }}
+            >
+              <button 
+                onClick={() => scrollToCard(place.id)}
+                className={`w-9 h-9 ${place.pinColor} rounded-full flex items-center justify-center shadow-xl border-2 border-white cursor-pointer transition-transform`}
+                title={`Ver ${place.title}`}
+              >
+                <span className="material-symbols-outlined text-sm font-light">{place.icon}</span>
+              </button>
+              <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded shadow-md whitespace-nowrap opacity-0 hover:opacity-100 md:opacity-100 md:bg-white/90 md:text-primary backdrop-blur-sm transition-opacity pointer-events-none">
+                {place.title}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Capas superiores de Contenido */}
+        <div className="relative z-10 flex flex-col h-full justify-between pointer-events-none">
+          
+          {/* Quick Filter Bar Container */}
+          <section className="w-full mt-6 px-6 md:px-16 pointer-events-auto">
+            <div className="max-w-7xl mx-auto flex items-center gap-3 py-2 overflow-x-auto scrollbar-none">
+              {categories.map((cat) => (
+                <button
+                  key={cat.name}
+                  onClick={() => setActiveFilter(cat.name)}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap shadow-sm transition-all border border-transparent cursor-pointer active:scale-95 ${
+                    activeFilter === cat.name
+                      ? 'bg-secondary-container text-on-secondary-container font-extrabold'
+                      : 'backdrop-blur-md bg-white/80 border-outline-variant/60 text-primary hover:bg-surface-container-high'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-base">{cat.icon}</span>
+                  <span>{cat.name}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* Title Hero Section */}
+          <section className="px-6 md:px-16 mt-4 flex-grow flex flex-col justify-center">
+            <div className="max-w-7xl w-full mx-auto">
+              <h1 className="text-4xl md:text-5xl font-black font-display-lg text-primary tracking-tight">
+                Descubre <span className="text-secondary-fixed-dim border-b-4 border-secondary-container">Xicotepec</span>
+              </h1>
+              <p className="text-sm md:text-base text-on-surface-variant max-w-md mt-3 font-medium leading-relaxed drop-shadow-sm">
+                Encuentra experiencias seleccionadas a 2 km de tu ubicación actual en el centro de Xicotepec de Juárez.
+              </p>
+            </div>
+          </section>
+
+          {/* Horizontal Scroll Experience Cards */}
+          <section className="w-full pb-24 md:pb-12 px-6 md:px-16 pointer-events-auto">
+            <div className="max-w-7xl mx-auto">
+              <div 
+                ref={scrollRef}
+                className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth scrollbar-none"
+              >
+                {filteredPlaces.map((place) => (
+                  <div 
+                    key={place.id}
+                    id={`card-${place.id}`}
+                    className="snap-center min-w-[290px] sm:min-w-[340px] md:min-w-[400px] max-w-[400px] group flex-shrink-0"
+                  >
+                    <div className="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/50 hover:border-outline-variant shadow-lg hover:shadow-2xl transition-all duration-300">
+                      
+                      {/* Cabecera de Imagen */}
+                      <div className="relative h-44 overflow-hidden bg-surface-container-high">
+                        <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={place.title} src={place.image} />
+                        
+                        {/* Botón de favoritos conectado al estado */}
+                        <div className="absolute top-3 right-3">
+                          <button 
+                            onClick={() => toggleFavorite(place.id)}
+                            className={`w-9 h-9 rounded-full backdrop-blur-md flex items-center justify-center transition-all border-none cursor-pointer shadow-sm active:scale-90 ${
+                              favorites[place.id] ? 'bg-white text-error' : 'bg-white/80 text-primary hover:text-error hover:bg-white'
+                            }`}
+                          >
+                            <span className={`material-symbols-outlined text-lg ${favorites[place.id] ? 'fill-1' : ''}`}>
+                              favorite
+                            </span>
+                          </button>
+                        </div>
+
+                        <div className="absolute bottom-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-0.5 rounded-md text-[11px] font-bold shadow-sm">
+                          {place.rating} ★ ({place.reviews})
+                        </div>
+                      </div>
+
+                      {/* Cuerpo de la tarjeta */}
+                      <div className="p-5">
+                        <div className="flex justify-between items-start gap-2">
+                          <div>
+                            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest">{place.type}</span>
+                            <h3 className="text-base font-bold text-primary mt-0.5 tracking-tight">{place.title}</h3>
+                          </div>
+                          <div className="text-right whitespace-nowrap">
+                            <span className="text-xs font-bold text-on-surface-variant bg-surface-container shadow-inner px-2 py-0.5 rounded-md">{place.distance}</span>
+                          </div>
+                        </div>
+                        
+                        <p className="mt-2 text-xs text-on-surface-variant font-medium leading-relaxed line-clamp-2">{place.desc}</p>
+                        
+                        {/* Footer de Tarjeta */}
+                        <div className="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+                          <div className="flex gap-1.5">
+                            {place.tags.map(tag => (
+                              <span key={tag} className="bg-surface-container px-2 py-0.5 rounded-md text-[10px] font-semibold text-on-surface-variant">{tag}</span>
+                            ))}
+                          </div>
+                          <button 
+                            onClick={() => { if (onNavigate) onNavigate('hotel-detail', { hotel: place }); }}
+                            className="text-xs font-bold text-primary bg-transparent border-none p-0 flex items-center gap-0.5 hover:text-secondary transition-colors cursor-pointer group/btn"
+                          >
+                            <span>Ver más</span>
+                            <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                ))}
+
+                {/* Mensaje si no hay resultados en el filtro */}
+                {filteredPlaces.length === 0 && (
+                  <div className="w-full bg-white/90 backdrop-blur-md rounded-2xl p-8 text-center border border-dashed border-outline-variant/60">
+                    <span className="material-symbols-outlined text-outline-variant text-4xl mb-2">location_away</span>
+                    <h4 className="text-sm font-bold text-primary">No se encontraron experiencias</h4>
+                    <p className="text-xs text-on-surface-variant font-medium mt-1">Intenta seleccionar otra categoría de filtro arriba.</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        {/* Floating Action Recenter Button */}
+        <div className="fixed bottom-24 md:bottom-8 right-6 z-20 pointer-events-auto">
+          <button className="flex items-center gap-2 bg-primary text-on-primary px-5 py-3.5 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all border-none cursor-pointer font-bold text-xs tracking-wide">
+            <span className="material-symbols-outlined text-base">my_location</span>
+            <span>Recentrar Mapa</span>
+          </button>
+        </div>
+      </main>
+
+
+    </div>
+  );
+}
+
+export default NearMeHome;
