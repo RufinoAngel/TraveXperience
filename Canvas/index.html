@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelo Canvas · TraveXperience</title>
+<style>
+:root{--ink:#0b2545;--mut:#4b6584;--line:#d3e2f5;--card:#fff;--bg:#eaf3fd;--teal:#0b5ed7;--plus:#f0a31a;--plusbg:#fff1cf;--fut:#5b4fc4;--out:#6c7f96;--g:#3f9b5a;--y:#e8c53a;--o:#e07b2a;--r:#c8372d}
+*{box-sizing:border-box}
+html{background:#0a2a5e}
+body{margin:0;color:var(--ink);font:16px/1.5 "Avenir Next","Segoe UI",system-ui,sans-serif;min-height:100vh;background:linear-gradient(180deg,#0a2a5e 0%,#1456b8 38%,#3b95e6 72%,#9fd0f5 100%) fixed}
+.sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+header,main,footer{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 20px}
+.dot{position:absolute;bottom:-30px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,rgba(190,225,255,.55) 45%,rgba(120,190,255,.15) 75%);box-shadow:0 0 14px rgba(160,210,255,.7);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}12%{opacity:.85}88%{opacity:.6}100%{transform:translate(var(--dx),-112vh);opacity:0}}
+.plane{position:absolute;left:0;display:flex;align-items:center;animation:fly linear infinite}
+.plane svg{width:var(--s);height:var(--s);fill:#fff;filter:drop-shadow(0 3px 6px rgba(0,30,80,.35));transform:rotate(90deg)}
+.plane:before{content:"";width:calc(var(--s) * 3.2);height:2px;margin-right:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.75) 0 8px,transparent 8px 15px);-webkit-mask:linear-gradient(90deg,transparent,#000);mask:linear-gradient(90deg,transparent,#000)}
+@keyframes fly{from{transform:translateX(-24vw)}to{transform:translateX(112vw)}}
+.plane.rev{flex-direction:row-reverse;animation-name:flyr;left:auto;right:0}
+.plane.rev svg{transform:rotate(-90deg)}
+.plane.rev:before{margin:0 2px 0 0;-webkit-mask:linear-gradient(270deg,transparent,#000);mask:linear-gradient(270deg,transparent,#000)}
+@keyframes flyr{from{transform:translateX(24vw)}to{transform:translateX(-112vw)}}
+@media(prefers-reduced-motion:reduce){.dot,.plane{animation:none}.dot{opacity:.5;bottom:auto}.plane{display:none}}
+header{padding-top:34px;padding-bottom:8px;color:#fff}
+h1{font:700 clamp(1.7rem,3.6vw,2.6rem)/1.1 Georgia,"Times New Roman",serif;margin:0 0 8px;text-shadow:0 2px 12px rgba(0,30,80,.45)}
+.sub{color:#d9ebff;margin:0 0 16px;max-width:68ch}
+.bar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:.9rem;color:#d9ebff}
+.scale{display:inline-flex;gap:3px;vertical-align:middle}
+.scale i{width:10px;height:10px;border-radius:50%;display:block;box-shadow:0 0 0 1.5px #fff}
+label.sw{display:inline-flex;gap:8px;align-items:center;cursor:pointer;color:#fff;font-weight:600;background:rgba(255,255,255,.14);padding:6px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.35)}
+.canvas{display:grid;grid-template-columns:repeat(10,1fr);gap:12px;margin:18px 0 28px;grid-template-areas:"soc soc act act val val rel rel seg seg" "soc soc rec rec val val can can seg seg" "cos cos cos cos cos ing ing ing ing ing"}
+.blk{all:unset;box-sizing:border-box;cursor:pointer;background:rgba(255,255,255,.95);border-radius:12px;border-top:6px solid var(--c);padding:14px 16px;display:flex;flex-direction:column;gap:7px;min-height:150px;box-shadow:0 8px 24px rgba(0,30,90,.28);transition:transform .15s,box-shadow .15s}
+.blk:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,30,90,.38)}
+.blk:focus-visible,button:focus-visible{outline:3px solid var(--plus);outline-offset:2px}
+.blk b{font-size:1.02rem;display:flex;gap:9px;align-items:center;line-height:1.2}
+.blk b em{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:.85rem}
+.blk small{color:var(--mut);font-size:.83rem;line-height:1.35}
+.blk ul{margin:2px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:5px}
+.blk li{font-size:.76rem;padding:2px 9px;border-radius:99px;background:#eef5fe;border:1px solid var(--line)}
+.hl .blk li.plus{background:var(--plusbg);border-color:var(--plus)}
+.hl .blk:not(.hasplus){opacity:.5}
+.blk .more{margin-top:auto;font-size:.8rem;color:var(--c);font-weight:700}
+dialog{border:0;border-radius:14px;padding:0;width:min(720px,94vw);max-height:90vh;background:#fff;color:var(--ink);box-shadow:0 24px 60px rgba(0,20,70,.5)}
+dialog::backdrop{background:rgba(5,25,70,.65);backdrop-filter:blur(3px)}
+.dh{position:sticky;top:0;background:linear-gradient(120deg,var(--c),#0a2a5e);color:#fff;padding:18px 22px 14px;display:flex;justify-content:space-between;gap:10px}
+.dh h2{font:700 1.4rem/1.2 Georgia,serif;margin:0}
+.x{all:unset;cursor:pointer;font-size:1.6rem;line-height:1;padding:2px 9px;border-radius:6px;color:#fff}
+.db{padding:6px 22px 14px}
+.db h3{font-size:.95rem;margin:18px 0 6px;color:var(--c)}
+.def{margin:10px 0}
+.it{padding:9px 0;border-bottom:1px solid var(--line)}
+.it:last-child{border:0}
+.it strong{display:block}.it span{color:var(--mut);font-size:.93rem}
+.tag{font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.t-plus{background:var(--plusbg);color:#9a6400;border:1px solid var(--plus)}.t-futuro{color:var(--fut);border:1px solid var(--fut)}.t-fuera{color:var(--out);border:1px solid var(--out)}
+.nav{display:flex;justify-content:space-between;padding:12px 22px;border-top:1px solid var(--line);position:sticky;bottom:0;background:#fff}
+.nav button{all:unset;cursor:pointer;color:var(--c);font-weight:700;padding:6px 10px;border-radius:6px}
+footer{padding-bottom:34px;color:#e3f0ff;font-size:.85rem}
+@media(max-width:820px){.canvas{grid-template-columns:1fr;grid-template-areas:"seg" "val" "can" "rel" "ing" "rec" "act" "soc" "cos"}.blk{min-height:0}}
+</style>
+<style>
+html,dialog,.db,body{scrollbar-width:none;-ms-overflow-style:none}
+::-webkit-scrollbar{display:none;width:0;height:0}
+header,main,footer{max-width:1280px;padding-left:32px;padding-right:32px}
+header{padding-top:60px;padding-bottom:14px}
+header:before{content:"";display:block;width:60px;height:3px;border-radius:3px;background:linear-gradient(90deg,#f6cf74,#d9a441);margin-bottom:20px}
+h1{font-size:clamp(2.1rem,4.6vw,3.4rem);letter-spacing:-.015em;margin-bottom:14px}
+.sub{font-size:1.08rem;line-height:1.7;max-width:60ch;margin-bottom:24px}
+.canvas{gap:22px;margin:30px 0 48px}
+.blk{padding:28px 28px 22px;gap:14px;min-height:260px;border-radius:20px;border:1px solid rgba(255,255,255,.8);border-top:5px solid var(--c);background:linear-gradient(180deg,#fff,#f1f7ff);box-shadow:0 22px 50px rgba(0,25,80,.32),inset 0 1px 0 #fff}
+.blk:hover{transform:translateY(-4px);box-shadow:0 28px 58px rgba(0,25,80,.42)}
+.blk b{font-size:1.15rem;gap:13px}
+.blk b em{width:34px;height:34px;font-size:1rem;box-shadow:0 0 0 5px #e1edfc}
+.blk .qq{font:italic 400 1.02rem/1.4 Georgia,"Times New Roman",serif;color:var(--c)}
+.blk .sm{margin:0;color:var(--mut);font-size:.93rem;line-height:1.65}
+.blk ul{margin-top:2px;gap:7px}
+.blk li{font-size:.78rem;padding:4px 12px}
+.blk .more{font-size:.86rem;padding-top:12px;border-top:1px solid var(--line)}
+dialog{animation:pop .24s ease}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.dh{padding:26px 32px 20px}
+.dh h2{font-size:1.6rem}
+.db{padding:8px 32px 22px}
+.db h3{margin:24px 0 8px;font-size:.98rem;letter-spacing:.01em}
+.def,.qm{line-height:1.75}
+.qm{font:italic 1.12rem/1.5 Georgia,serif;color:var(--ink);margin:4px 0}
+.ej{background:#eef5fe;border-left:4px solid var(--c);padding:14px 18px;border-radius:10px;line-height:1.7;margin:8px 0}
+.it{padding:16px 0}.it span{line-height:1.65;display:block;margin-top:3px}
+.nav{padding:14px 32px}
+footer{padding-bottom:48px;line-height:1.7}
+@media(max-width:820px){header,main,footer{padding-left:18px;padding-right:18px}header{padding-top:36px}.canvas{gap:16px}.blk{min-height:0;padding:22px 20px 18px}.dh,.db,.nav{padding-left:20px;padding-right:20px}}
+header,main,footer{max-width:1520px}
+.canvas{gap:24px}
+.blk{padding:26px 24px 22px;min-height:230px}
+.blk b{font-size:1.08rem}
+.blk ul{display:none}
+.blk .sm{font-size:.92rem}
+.hl .blk.hasplus{box-shadow:0 0 0 4px var(--plus),0 22px 50px rgba(0,25,80,.32)}
+.hl .blk:not(.hasplus){opacity:.45}
+.tx{display:none}
+.tall .tx{display:block;margin-top:8px;padding:14px 16px;border-radius:12px;background:#eef5fe;border-left:4px solid var(--c);font-size:.88rem;line-height:1.65;color:var(--ink)}
+.tall .tx b{display:inline;font-size:.88rem;color:var(--c);gap:0}
+.it strong .tag{display:inline-block;margin-top:0;line-height:1.6;font-size:.72rem}
+.blk ul{display:flex;flex-direction:column;gap:9px;margin:4px 0 0}
+.blk li{position:relative;padding:0 0 0 20px;border:0;background:none;border-radius:6px;font-size:.92rem;line-height:1.4}
+.blk li:before{content:"";position:absolute;left:3px;top:.45em;width:8px;height:8px;border-radius:50%;background:var(--c)}
+.blk li.plus:before{background:var(--plus);box-shadow:0 0 0 3px var(--plusbg)}
+.blk li.futuro:before{background:#fff;border:2px solid var(--fut);width:9px;height:9px}
+.blk li.fuera:before{background:var(--out)}
+.hl .blk li.plus{background:var(--plusbg);padding:4px 8px 4px 24px}
+.hl .blk li.plus:before{left:8px;top:.8em}
+.blk .more{margin-top:auto}
+.it span{color:var(--ink);font-weight:500}
+.ext{margin:8px 0 0;color:var(--mut);font-size:.94rem;line-height:1.75}
+</style>
+</head>
+<body>
+<div class="sky" id="sky" aria-hidden="true"></div>
+<header>
+<h1>TraveXperience: Modelo Canvas</h1>
+<p class="sub">Plataforma inteligente para la planificación de viajes y experiencias locales, con alertas de zonas de riesgo y clima. Toca cualquier bloque para ver qué hace y su detalle completo.</p>
+<div class="bar">
+<label class="sw"><input type="checkbox" id="hl"> Resaltar el plus de alertas y clima</label>
+<span>Niveles de riesgo <span class="scale"><i style="background:var(--g)"></i><i style="background:var(--y)"></i><i style="background:var(--o)"></i><i style="background:var(--r)"></i></span></span>
+</div>
+</header>
+<main><div class="canvas" id="canvas"></div></main>
+<footer>El smartwatch (Wear OS) y los modelos de IA no reciben cambios en este periodo. Las alertas se muestran siempre con su fuente y fecha de actualización.</footer>
+<dialog id="dlg" aria-labelledby="dt">
+<div class="dh"><h2 id="dt"></h2><button class="x" id="cl" aria-label="Cerrar">×</button></div>
+<div class="db" id="dbody"></div>
+<div class="nav"><button id="pv"></button><button id="nx"></button></div>
+</dialog>
+<script>
+const P="plus",F="futuro",O="fuera";
+const B=[
+{id:"seg",n:1,t:"Segmentos de clientes",q:"A quién le sirve la plataforma",
+def:"Define quiénes son los usuarios y clientes. Cada grupo tiene necesidades distintas, y de ahí sale lo que se le ofrece y por qué canal se le llega.",
+link:"Cada segmento recibe una propuesta de valor (2) a través de los canales (3).",
+it:[["Turistas independientes","Mochileros, parejas y familias que organizan su viaje desde el celular. Es el segmento principal."],
+["Viajeros de aventura y naturaleza","Senderismo, playa y montaña. Son los más expuestos a riesgos naturales y quienes más aprovechan las alertas.",P],
+["Primerizos o a destinos desconocidos","No conocen la zona y necesitan saber qué áreas evitar antes de ir.",P],
+["Mujeres que viajan solas y adultos mayores","Priorizan la seguridad al elegir lugares y horarios.",P],
+["Viajeros de negocios y nómadas digitales","Viajan seguido y necesitan clima y alertas rápidas.",""],
+["Negocios, anfitriones y guías locales","Lado de la oferta: publican sus experiencias y reciben visitantes.",""],
+["Agencias de viaje y aseguradoras","Clientes B2B para una fase posterior.",F],
+["Cliente inicial","Turistas de 18 a 40 años que planean desde el celular y valoran la seguridad.",""]]},
+{id:"val",n:2,t:"Propuesta de valor",q:"Por qué usar TraveXperience y no otra app",
+def:"Es el problema que se resuelve y el beneficio que se entrega. Es el centro del modelo: todo lo demás existe para producirla y hacerla llegar.",
+link:"Se entrega por los canales (3), se sostiene con actividades (7) y recursos (6) y genera los ingresos (5).",
+it:[["Planeación completa en un solo lugar","Destinos, itinerarios, presupuesto y experiencias locales sin saltar entre apps."],
+["Recomendaciones personalizadas","Según perfil, presupuesto e intereses, con los modelos de IA que ya existen.",""],
+["Experiencias cercanas y fuera de casa","Los módulos “Cerca de Mí” y “Fuera de Casa” ya forman parte de la plataforma."],
+["Mapa de zonas de riesgo","Cuatro niveles de color: verde, amarillo, naranja y rojo.",P],
+["Clima y riesgos naturales por fechas","Pronóstico y alertas de huracanes, sismos e incendios sobre las fechas del viaje.",P],
+["Aviso en el itinerario con alternativas","Si un lugar cae en zona de riesgo, la app avisa y sugiere otros.",P],
+["Transparencia","Cada alerta muestra su fuente y su fecha de actualización.",P]]},
+{id:"can",n:3,t:"Canales",q:"Cómo llega la plataforma al usuario",
+def:"Son los medios por los que el usuario conoce, usa y recibe soporte de la plataforma: dónde se encuentra, cómo se entrega y cómo se mantiene el contacto.",
+link:"Llevan la propuesta (2) a los segmentos (1) y sostienen la relación (4).",
+it:[["App móvil","React Native con Expo, versión de prueba distribuida con enlace o QR."],
+["PWA","Instalable desde el navegador, desplegada públicamente (probablemente en Render)."],
+["Notificaciones push y correo","Aquí llegan las alertas de riesgo y clima.",P],
+["Redes sociales","TikTok e Instagram con contenido de viajes seguros."],
+["Alianzas","Hostales, aerolíneas, aseguradoras y oficinas de turismo."],
+["Blogs y comunidades de viajeros","Contenido y recomendaciones para atraer usuarios."],
+["Play Store y App Store","Publicación oficial.",F],
+["Smartwatch (Wear OS)","Existe, pero no se actualiza en este periodo.",O]]},
+{id:"rel",n:4,t:"Relación con clientes",q:"Cómo se mantiene al usuario",
+def:"Describe el tipo de vínculo con cada segmento: desde autoservicio automatizado hasta atención personal. Determina cuánto cuesta atraer y conservar usuarios.",
+link:"Se apoya en los canales (3) y alimenta los ingresos (5) mediante la permanencia del usuario.",
+it:[["Autoservicio con alertas automáticas","El usuario recibe avisos sin pedirlos, según su itinerario.",P],
+["Personalización continua","Las recomendaciones mejoran con el historial y las preferencias."],
+["Reseñas y favoritos","Los viajeros opinan y guardan lugares."],
+["Soporte por chat o correo","Con prioridad cuando es una emergencia."],
+["Comunidad con reportes verificados","Reportes de viajeros en tiempo real, con moderación.",F]]},
+{id:"ing",n:5,t:"Fuentes de ingresos",q:"Cómo gana dinero la plataforma",
+def:"Muestra de dónde sale el dinero y cuánto está dispuesto a pagar cada segmento. Pueden ser pagos únicos, suscripciones, comisiones o licencias.",
+link:"Los pagan los segmentos (1) a cambio de la propuesta (2) y cubren la estructura de costos (9).",
+it:[["Freemium","Planeación, mapa y alertas generales gratis para atraer usuarios."],
+["Suscripción Premium","Alertas en tiempo real, itinerarios ilimitados, contactos de confianza y modo sin conexión.",F],
+["Comisiones por reservas","Experiencias, tours y alojamientos reservados desde la plataforma.",F],
+["Comisiones por seguros de viaje","Seguros recomendados dentro de la plataforma."],
+["Planes para negocios locales","Perfil destacado y herramientas de gestión."],
+["Licencias B2B","API o panel para agencias y aseguradoras.",F]]},
+{id:"rec",n:6,t:"Recursos clave",q:"Qué se necesita para operar",
+def:"Son los activos sin los cuales el modelo no funciona: tecnología, datos, personas y marca. Se necesitan para crear y entregar la propuesta de valor.",
+link:"Hacen posibles las actividades (7) y se obtienen con ayuda de los socios (8).",
+it:[["Plataforma técnica","API en Node.js, bases de datos MySQL y MongoDB, app móvil y PWA."],
+["Servicio de clima y motor de zonas de riesgo","Se amplía el servicio de clima que ya existe y se agrega el cálculo de niveles de riesgo.",P],
+["Datos y APIs externas","Open-Meteo, GDACS, USGS, NASA FIRMS y alertas oficiales de viaje.",P],
+["Modelos de IA actuales","Recomendaciones, presupuesto y clustering; se quedan como están.",O],
+["Datos de lugares, hoteles y reseñas","La base de contenido de la plataforma."],
+["Equipo y documentación","Desarrollo y producto, más RF, RNF, plan de pruebas y riesgos."],
+["Infraestructura y monitoreo","Hosting en Render y Sentry para detectar errores en producción."]]},
+{id:"act",n:7,t:"Actividades clave",q:"Qué hay que hacer para que funcione",
+def:"Son las acciones más importantes que debe realizar el equipo para crear la propuesta de valor, llegar a los usuarios y sostener el negocio.",
+link:"Usan los recursos (6) y producen la propuesta (2).",
+it:[["Mantener la API, la app y la PWA","Corregir errores y evolucionar lo que ya existe."],
+["Ampliar el clima por destino y fecha","Pronóstico para los días del viaje.",P],
+["Integrar fuentes de riesgos naturales","Ingestión periódica de USGS, GDACS y NASA FIRMS.",P],
+["Calcular el nivel de riesgo","Por zona y fecha, en cuatro niveles.",P],
+["Integrar alertas con itinerarios","Avisar riesgos y sugerir alternativas.",P],
+["Verificar lugares y proveedores","Que lo publicado sea real y confiable."],
+["Pruebas y monitoreo","Pipeline automatizado, pruebas de privacidad y Sentry."],
+["Marketing y alianzas","Atraer usuarios y cerrar acuerdos."]]},
+{id:"soc",n:8,t:"Socios clave",q:"Con quién se trabaja",
+def:"Son los proveedores y aliados que aportan lo que la plataforma no puede hacer sola: datos, infraestructura, alcance o credibilidad.",
+link:"Aportan recursos (6) y ayudan a realizar actividades (7).",
+it:[["Negocios, anfitriones y guías locales","Aportan las experiencias que se ofrecen."],
+["Proveedores de datos","Open-Meteo, GDACS, USGS, NASA FIRMS y SMN/CONAGUA.",P],
+["Entidades de alerta de viaje","SRE y Departamento de Estado de EE. UU.",P],
+["Proveedores de mapas","Google Maps y OpenStreetMap."],
+["Aseguradoras de viaje","Aliadas y futuras clientes."],
+["Aerolíneas, hoteles y plataformas de reserva","Alcance y reservas."],
+["Oficinas de turismo y gobiernos locales","Información oficial y difusión."],
+["Proveedores de infraestructura","Render para el despliegue y Sentry para el monitoreo."]]},
+{id:"cos",n:9,t:"Estructura de costos",q:"Cuánto cuesta operar",
+def:"Reúne los costos de crear, entregar y mantener la propuesta de valor, tanto fijos como variables. Se compara con los ingresos para saber si el modelo es sostenible.",
+link:"Surgen de recursos (6), actividades (7) y socios (8), y se cubren con los ingresos (5).",
+it:[["Desarrollo y mantenimiento","Trabajo del equipo sobre la API, la app y la PWA."],
+["Hosting en Render","La instancia que no se apaga cuesta alrededor de $7 al mes; por verificar en la página oficial.",""],
+["Bases de datos","MySQL y MongoDB probablemente en un servicio aparte."],
+["APIs y mapas","Varias gratuitas; otras de pago al crecer el uso.",P],
+["Monitoreo y notificaciones","Sentry y notificaciones push."],
+["Verificación y soporte","Revisar proveedores y atender usuarios."],
+["Marketing","Adquisición de usuarios."],
+["Cuentas de tiendas","Google Play y Apple al publicar oficialmente.",F],
+["Legales","Descargo sobre la precisión de las alertas y protección de datos personales.",P]]}
+];
+const X={"seg": {"qq": "¿Para quién estamos construyendo esto?", "s": "Son los grupos de personas y negocios que usarán la plataforma. Conocerlos bien permite ofrecerle a cada uno justo lo que necesita.", "def": "Este bloque responde a una pregunta básica: ¿quiénes son nuestros usuarios y clientes? No todos los viajeros son iguales: una familia que va a la playa no necesita lo mismo que alguien que sube una montaña solo. Dividir al público en segmentos permite decidir qué funciones construir primero, cómo hablarle a cada grupo y por qué canal encontrarlo. También incluye a quienes están del otro lado: los negocios y guías locales que ofrecen las experiencias.", "ej": "Un viajero primerizo que va a un destino que no conoce arma su itinerario y recibe un aviso de que uno de los lugares está en zona de riesgo naranja, con dos alternativas. Ese viajero es un segmento: necesita seguridad y orientación, y por eso el módulo de alertas fue pensado para él.", "it": [["Turistas independientes", "Personas que organizan su viaje sin agencia: mochileros, parejas y familias. Buscan ahorrar tiempo, comparar opciones y llevar todo en el celular. Son el grupo principal de la plataforma.", ""], ["Viajeros de aventura y naturaleza", "Quienes hacen senderismo o van a la playa y a la montaña. Se exponen a lluvias, tormentas, corrientes y terrenos peligrosos, así que el pronóstico y las alertas naturales les sirven más que a nadie.", "plus"], ["Primerizos o a destinos desconocidos", "No conocen el lugar y no saben qué zonas evitar. La plataforma les muestra el nivel de riesgo de cada sitio antes de ir, como un guía que ya conoce el destino.", "plus"], ["Mujeres que viajan solas y adultos mayores", "Valoran la seguridad al elegir dónde ir, a qué hora y cómo llegar. El mapa de riesgo y los avisos les ayudan a decidir con más tranquilidad.", "plus"], ["Viajeros de negocios y nómadas digitales", "Viajan seguido y con poco tiempo. Quieren consultar clima y alertas en segundos para no perder vuelos ni reuniones.", ""], ["Negocios, anfitriones y guías locales", "Son el lado de la oferta: publican sus experiencias, llegan a viajeros que buscan algo auténtico y se benefician cuando el turista llega informado y seguro.", ""], ["Agencias de viaje y aseguradoras", "Podrían usar los datos de riesgo en su propio trabajo o recomendar la plataforma a sus clientes. Es una línea de negocio para más adelante.", "futuro"], ["Cliente inicial", "Para arrancar se elige un solo grupo: turistas de 18 a 40 años que planean desde el celular y valoran la seguridad. Son fáciles de alcanzar en redes sociales y los que más usan el módulo.", ""]]}, "val": {"qq": "¿Por qué elegirían TraveXperience?", "s": "Es la razón por la que alguien usaría la plataforma: planear el viaje y saber si es seguro, todo en un solo lugar.", "def": "Es el corazón del modelo. Explica qué problema se resuelve y qué gana el usuario. Hoy los viajeros planean en una app y revisan clima y seguridad en otras, con información dispersa. TraveXperience junta todo y avisa a tiempo, en lugar de dejar que el viajero lo descubra tarde.", "ej": "María agrega una cascada a su itinerario del sábado. La app revisa el pronóstico, avisa que habrá lluvia intensa ese día y le sugiere hacer el mismo plan el domingo."}, "can": {"qq": "¿Por dónde nos encuentran y nos usan?", "s": "Son los medios por los que el usuario conoce la plataforma, la usa y recibe avisos.", "def": "Un canal es cualquier punto de contacto: la app, la PWA instalable desde el navegador, las notificaciones, las redes sociales o una alianza con un hostal. Sirven para tres cosas: que la gente se entere, que pueda usar el producto y que reciba soporte y avisos después.", "ej": "Un viajero ve un video en TikTok, abre la PWA sin instalar nada, se registra y, ya en el viaje, recibe una notificación cuando cambia el clima de su destino."}, "rel": {"qq": "¿Cómo nos mantenemos cerca del usuario?", "s": "Es el trato con cada usuario: avisos automáticos, recomendaciones a su medida y ayuda cuando la necesita.", "def": "Define si el vínculo es automático o personal, y cuánto cuesta mantenerlo. En TraveXperience la mayoría es autoservicio: la plataforma avisa y recomienda sin que nadie la atienda. Cuando hay una emergencia, la ayuda humana tiene prioridad. Una buena relación hace que el usuario regrese a planear su siguiente viaje.", "ej": "Después de su primer viaje, la app nota que a Luis le gustan las experiencias de naturaleza y le recomienda destinos similares, avisándole de su clima y sus riesgos."}, "ing": {"qq": "¿Cómo se sostiene económicamente?", "s": "Muestra de dónde saldrá el dinero para mantener la plataforma funcionando.", "def": "Todo proyecto necesita ingresos para seguir vivo. Aquí se combina una versión gratuita que atrae usuarios con otras formas de pago: suscripción, comisiones por reservas o seguros, planes para negocios locales y licencias para empresas. Lo gratuito resuelve el problema básico y lo pagado agrega comodidad.", "ej": "Un usuario gratuito ve el mapa y las alertas generales. Si viaja mucho, paga Premium para recibir alertas en tiempo real y compartirlas con contactos de confianza."}, "rec": {"qq": "¿Qué necesitamos para operar?", "s": "Son las cosas sin las que la plataforma no funcionaría: tecnología, datos, personas y documentación.", "def": "Un recurso puede ser tecnológico, de datos, humano o financiero. Aquí lo principal es lo ya construido (API, bases de datos, app y PWA), los datos externos de clima y desastres, el equipo que lo mantiene y la documentación del proyecto. Sin ellos no se puede crear ni entregar la propuesta de valor.", "ej": "Para avisar de un sismo cerca del destino hacen falta tres recursos: la fuente de datos (USGS), la API que los procesa y la base de datos que guarda los itinerarios afectados."}, "act": {"qq": "¿Qué tenemos que hacer para que funcione?", "s": "Son las tareas más importantes del equipo para que la plataforma funcione y mejore.", "def": "Si los recursos son lo que se tiene, las actividades son lo que se hace con ellos: desarrollar, conectar las fuentes de datos, calcular los niveles de riesgo, probar y monitorear. Son las acciones que convierten los recursos en una propuesta de valor que el usuario pueda sentir.", "ej": "Cada pocos minutos la API consulta las fuentes de alertas, calcula si algún lugar de un itinerario quedó en riesgo y, si es así, genera un aviso para ese viajero."}, "soc": {"qq": "¿Quién nos ayuda a lograrlo?", "s": "Son las organizaciones que aportan lo que la plataforma no puede hacer sola.", "def": "Ningún proyecto lo hace todo. Los socios aportan datos (clima, sismos, alertas oficiales), infraestructura (hosting y monitoreo), alcance (aerolíneas, hoteles, turismo) y las experiencias mismas (negocios y guías locales). Se eligen para ahorrar costo, reducir riesgos o llegar más lejos.", "ej": "En lugar de medir el clima por su cuenta, la plataforma usa Open-Meteo. En lugar de inventar alertas, cita al USGS y a la SRE, y por eso puede mostrar la fuente de cada aviso."}, "cos": {"qq": "¿Cuánto cuesta mantenerlo vivo?", "s": "Reúne los gastos de construir, operar y mantener la plataforma.", "def": "Incluye costos fijos, como el hosting, y variables, que crecen con el uso, como las APIs de mapas. Se compara con los ingresos para saber si el proyecto es sostenible. Algunos costos son pequeños hoy y crecen con más usuarios, por eso se proyectan por escenarios.", "ej": "Mantener la API sin que se apague en Render cuesta alrededor de $7 al mes (por verificar). Es poco, pero sin ese gasto las alertas no llegarían a tiempo."}};B.forEach(b=>Object.assign(b,X[b.id]));
+const E={"val": ["Reúne en una sola pantalla lo que normalmente se reparte entre varias apps: elegir destino, armar el itinerario por días, calcular el presupuesto y ver experiencias. Así el viajero no pierde información al cambiar de herramienta.", "Los modelos de IA que ya existen sugieren lugares y presupuesto según lo que el usuario ha elegido antes. Mientras más usa la plataforma, más se ajustan las sugerencias. Esta parte no cambia en este periodo.", "“Cerca de Mí” muestra opciones alrededor de donde está el viajero y “Fuera de Casa” ayuda a planear salidas a otros destinos. Son la base sobre la que se conectan las alertas.", "Colorea las zonas según su nivel: verde es tranquilo, amarillo pide atención, naranja exige precaución y rojo conviene evitarlo. Así el viajero entiende el riesgo de un vistazo, sin leer reportes largos.", "Consulta el pronóstico de los días exactos del viaje y avisa de huracanes, sismos o incendios cercanos. Parte del servicio de clima ya existe y se amplía para trabajar por fecha y destino.", "Cruza cada lugar del itinerario con las zonas de riesgo y las alertas activas. Si hay conflicto, notifica y propone al menos dos alternativas cercanas con menor riesgo.", "Cada alerta indica quién la emitió y cuándo se actualizó, y si el dato es viejo se marca como desactualizado. Así el usuario sabe cuánto confiar y queda claro que la información es orientativa."], "can": ["Es el canal principal durante el viaje: el usuario lleva su itinerario y recibe avisos en el bolsillo. Está hecha en React Native con Expo y se distribuye como versión de prueba.", "Es la versión web que se abre desde el navegador y se instala como si fuera una app, sin pasar por tiendas. Permite que evaluadores y nuevos usuarios la prueben con solo un enlace.", "Son el canal de las alertas: avisan cuando cambia el clima, hay un riesgo natural o un lugar del itinerario entra en zona de riesgo. También sirven para recordar viajes próximos.", "TikTok e Instagram muestran destinos, consejos de seguridad y ejemplos de la app. Es la forma más barata de llegar al cliente inicial de 18 a 40 años.", "Hostales, aerolíneas, aseguradoras y oficinas de turismo pueden recomendar la plataforma a sus clientes. A cambio, ofrecen al viajero un servicio más completo.", "Guías, foros y grupos de viajeros posicionan la marca y generan confianza. El contenido sobre viajes seguros atrae a quien busca información antes de salir.", "Publicar oficialmente da más visibilidad y confianza, pero requiere cuentas de desarrollador y revisión de las tiendas. Por eso queda para una fase posterior.", "La app para reloj (Wear OS) ya existe, pero no recibirá actualización en este periodo, así que por ahora no mostrará las nuevas alertas."], "rel": ["El usuario no tiene que pedir nada: guarda su itinerario y el sistema vigila por él. Esto escala sin atención humana y es la base del plus de alertas.", "La plataforma aprende de los lugares que el usuario guarda y de sus gustos para recomendar mejor. También puede permitirle elegir cuánto riesgo está dispuesto a asumir.", "Las opiniones de otros viajeros ayudan a decidir y los favoritos permiten guardar lugares para después. Generan contenido propio y hacen que el usuario vuelva.", "Atención por chat o correo para dudas y problemas. Los casos de emergencia, como un riesgo en pleno viaje, se atienden primero.", "Reportes de viajeros sobre situaciones en tiempo real, revisados por moderadores antes de mostrarse. Queda para una fase futura porque requiere moderación y volumen de usuarios."], "ing": ["Se puede planear, ver el mapa y recibir alertas generales sin pagar. Esto atrae usuarios y demuestra el valor antes de pedir dinero.", "Pensada para quien viaja seguido: alertas en tiempo real, itinerarios sin límite, contactos de confianza que reciben avisos y modo sin conexión. Sería una suscripción mensual o anual, en fase futura.", "Si el usuario reserva una experiencia, un tour o un hospedaje desde la plataforma, se cobra un porcentaje al proveedor. Requiere pagos y reservas, que quedan fuera de este periodo.", "Al recomendar un seguro de viaje según el destino y su nivel de riesgo, la aseguradora paga una comisión por cada venta. Conecta bien con el módulo de alertas.", "Los negocios y guías pagan por aparecer destacados y por herramientas para gestionar sus experiencias. Beneficia a la economía local y a la plataforma.", "Agencias y aseguradoras podrían pagar por acceder a los datos de riesgo mediante una API o un panel propio. Es una línea de crecimiento a futuro."], "rec": ["La API en Node.js conecta las bases de datos MySQL y MongoDB con la app móvil y la PWA. Ya está construida y es el punto de partida del módulo nuevo.", "El servicio de clima ya existe y se amplía por destino y fecha. El motor de riesgo es nuevo: decide en qué nivel cae cada zona y cada lugar.", "Open-Meteo para clima, GDACS y USGS para desastres, NASA FIRMS para incendios y alertas oficiales de viaje. Son públicas, pero hay que vigilar sus límites y caídas.", "Recomendaciones, presupuesto y clustering siguen funcionando como hasta ahora. Se usan, pero no se reentrenan ni se modifican.", "Es el contenido que hace útil la plataforma y contra el cual se cruzan las zonas de riesgo. Sin lugares registrados no habría nada que avisar.", "Las personas que desarrollan y prueban, más los documentos de requerimientos, plan de pruebas y riesgos que guían el trabajo y sirven de evidencia.", "Render aloja la API y la PWA, y Sentry registra los errores de usuarios reales para corregirlos rápido. Con ellos el sistema se mantiene en línea y medible."], "act": ["Corregir errores, actualizar dependencias y evitar que lo nuevo rompa lo que ya funciona. Es trabajo continuo y se apoya en pruebas automáticas.", "Pasar de consultar el clima de un lugar a pronosticarlo para cada día del viaje. Se hace sobre el servicio que ya existe.", "Programar consultas periódicas a USGS, GDACS y NASA FIRMS, guardar los resultados y usar caché si alguna fuente falla.", "Combinar tipo de zona, alertas activas, clima y fecha para asignar uno de los cuatro niveles. Las reglas deben ser claras para poder explicárselas al usuario.", "Revisar cada lugar de cada itinerario contra las zonas de riesgo, generar el aviso y proponer alternativas. Es donde el plus se vuelve visible.", "Comprobar que los negocios y guías existen y que su información es correcta, para que las recomendaciones sean confiables.", "Pruebas automáticas en cada cambio, pruebas de privacidad y consentimiento, y Sentry en producción. Si una prueba falla, el cambio no se publica.", "Dar a conocer la plataforma, aplicar los cuestionarios y cerrar acuerdos con negocios y aliados. Sin usuarios, el mejor módulo no sirve."], "soc": ["Aportan las experiencias que el viajero busca. A cambio reciben visitas y visibilidad.", "Open-Meteo, GDACS, USGS, NASA FIRMS y SMN/CONAGUA entregan clima, sismos, incendios y alertas. Son la base del plus y por eso se cita su fuente.", "La SRE y el Departamento de Estado de EE. UU. publican avisos de seguridad por país o región. Se usan como referencia oficial.", "Google Maps y OpenStreetMap dibujan el mapa y ubican los lugares. Conviene vigilar el costo de Google Maps al crecer el uso.", "Pueden recomendar la plataforma, recibir comisiones por seguros vendidos o pagar por los datos de riesgo.", "Dan alcance y, a futuro, permitirían reservar sin salir de la app.", "Aportan información oficial de los destinos y ayudan a difundir la plataforma.", "Render para desplegar y Sentry para monitorear. Si fallan o suben precios afecta la operación, por eso se revisan sus planes."], "cos": ["Es el trabajo del equipo sobre la API, la app y la PWA. En un proyecto escolar es tiempo y en uno comercial sería sueldo.", "Mantener la API sin que se apague cuesta alrededor de $7 al mes según fuentes de terceros. Hay que verificarlo en la página oficial antes de usarlo en el cartel.", "Render ofrece Postgres, pero la plataforma usa MySQL y MongoDB, así que probablemente se necesite un servicio aparte, como MongoDB Atlas.", "Varias son gratuitas, pero al crecer el uso pueden cobrar. Se mide el consumo real para proyectar el costo.", "Sentry y las notificaciones push tienen planes gratuitos con límites. Se revisan al aumentar los usuarios.", "Revisar proveedores y atender usuarios requiere horas de trabajo que crecen con la plataforma.", "Anuncios, contenido y alianzas para conseguir usuarios. Es un costo que se ajusta según el presupuesto.", "Google Play cobra un pago único y Apple uno anual. Solo se necesitan al publicar oficialmente.", "Avisos de privacidad, consentimiento y un descargo de que las alertas son orientativas. Protegen al usuario y al proyecto."]};B.forEach(b=>b.it.forEach((x,i)=>x[3]=(E[b.id]||[])[i]||""));
+const C=["#0b5ed7","#1e88e5","#00a3d9","#2f6fd6","#0d47a1","#1565c0","#039be5","#3949ab","#0277bd"];
+const cv=document.getElementById("canvas"),dlg=document.getElementById("dlg"),L={plus:"Plus de alertas",futuro:"Fase futura",fuera:"Sin cambios"};
+B.forEach((b,i)=>{
+const e=document.createElement("button");e.className="blk"+(["soc","val","seg"].includes(b.id)?" tall":"")+(b.it.some(x=>x[2]==P)?" hasplus":"");e.style.gridArea=b.id;e.style.setProperty("--c",C[i]);
+e.innerHTML=`<b><em>${b.n}</em>${b.t}</b><ul>${b.it.map(x=>`<li class="${x[2]||""}">${x[0]}</li>`).join("")}</ul><span class="more">Abrir la explicación y el detalle</span>`;
+e.onclick=()=>open(i);cv.appendChild(e)});
+let cur=0;
+function open(i){cur=i;const b=B[i];
+dlg.style.setProperty("--c",C[i]);document.getElementById("dt").textContent=`${b.n}. ${b.t}`;
+document.getElementById("dbody").innerHTML=`<h3>La pregunta que responde</h3><p class="qm">${b.qq}</p><h3>Qué hace este bloque</h3><p class="def">${b.def}</p><h3>Un ejemplo en TraveXperience</h3><div class="ej">${b.ej}</div><h3>Cada punto, explicado</h3>${b.it.map(x=>`<div class="it"><strong>${x[0]}${x[2]?`<span class="tag t-${x[2]}">${L[x[2]]}</span>`:""}</strong><span>${x[1]}</span>${x[3]?`<p class="ext">${x[3]}</p>`:""}</div>`).join("")}<h3>Cómo se conecta</h3><p class="def">${b.link}</p>`;
+const p=B[(i+8)%9],n=B[(i+1)%9];pv.textContent="← "+p.t;nx.textContent=n.t+" →";
+if(!dlg.open)dlg.showModal();dlg.scrollTop=0;history.replaceState(null,"","#"+b.id)}
+pv.onclick=()=>open((cur+8)%9);nx.onclick=()=>open((cur+1)%9);
+cl.onclick=()=>dlg.close();
+dlg.addEventListener("close",()=>history.replaceState(null,"",location.pathname));
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+addEventListener("keydown",e=>{if(!dlg.open)return;if(e.key=="ArrowRight")nx.click();if(e.key=="ArrowLeft")pv.click()});
+hl.onchange=()=>cv.classList.toggle("hl",hl.checked);
+
+const sk=document.getElementById("sky"),rnd=(a,b)=>a+Math.random()*(b-a);
+for(let i=0;i<26;i++){const d=document.createElement("i");d.className="dot";const z=rnd(5,18);
+d.style.cssText=`left:${rnd(0,100)}%;width:${z}px;height:${z}px;animation-duration:${rnd(16,36)}s;animation-delay:-${rnd(0,36)}s;--dx:${rnd(-60,60)}px`;sk.appendChild(d)}
+const PL='<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>';
+[[9,34,38,0,0],[27,22,52,-18,1],[46,44,44,-30,0],[64,28,60,-9,1],[82,38,48,-22,0]].forEach(([t,s,dur,dl,r])=>{
+const p=document.createElement("div");p.className="plane"+(r?" rev":"");p.innerHTML=PL;
+p.style.cssText=`top:${t}%;--s:${s}px;animation-duration:${dur}s;animation-delay:${dl}s;opacity:${s>40?.95:.75}`;sk.appendChild(p)});
+const h=B.findIndex(b=>"#"+b.id==location.hash);if(h>=0)open(h);
+</script>
+</body>
+</html>
